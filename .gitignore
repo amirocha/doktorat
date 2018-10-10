@@ -1,1 +1,11 @@
+# Virtual Enviroment files
 env/
+
+# Raw data files
+*.30m
+*.tab
+
+# Output figures
+*.eps
+
+od_Marcina/
