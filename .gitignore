@@ -3,9 +3,14 @@ env/
 
 # Raw data files
 *.30m
+
+#lmv maps
 *.tab
+*.lmv
+*.wei
 
 # Output figures
 *.eps
 
 od_Marcina/
+VO/
