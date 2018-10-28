@@ -1,0 +1,9 @@
+!
+! 25-OCT-2018 10:20:04
+! Input file  : serpens_cn10_conv.30m
+! Input command: ANALYSE\PRINT area -5 5 /OUTPUT test.txt
+!
+ 41     48.473   -215.892 -0.45354    
+ 72     48.473   -201.242 -0.79014    
+ 73     33.823   -201.242 -0.93329    
+ 74     19.173   -201.242 -0.95602    

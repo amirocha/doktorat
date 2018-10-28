@@ -1,0 +1,99 @@
+! DESCRIP.: 	Resamples noisy averaged spectrum in velocity (after reduction)
+! EXEC. COMM: 	> @resample_ave_spec_3sigma
+! INPUTS:	---
+! OUTPUTS:	---
+! NOTES:	---
+! AUTHOR: Marcin Gladkowski, Agata Karska
+! CREATED: 20.08.2018
+
+
+set def
+
+define integer NX Xref 	! NX: the number of channels desired
+						! Xref: the new reference channel 
+define real vel vel_inc	! vel: the value at the reference channel
+						! vel_inc: the new channel separation
+
+file in b1b_hcn10_conv
+
+find /all
+
+
+!set range 149.6 177.4 -156.6 -128.8	! position offsets: west east south north
+									! -----
+									! Range is consistent with the HPBW and
+									! the same should be used the same for 
+									! other mols and srcs.
+									! -----
+									! HPBW: Half Power Beam Width
+									! HPBW = 2460/freq (GHz) -> ["] 
+									! HPBW is the biggest (~ 28") for HCN
+
+!protostars position +- 13.9'' (0.5 of convoluted HCN 1-0 HBWM) 
+
+!SMM1 -14.5, 13.3, -12.5, 15.3
+!SMM2 149.6,177.4,-156.6,-128.8
+!SMM3 131.6,159.4,-92.7,-64.9
+!SMM4 92.6,120.4,-137.2,-109.4
+!SMM5 13.1,40.9,63.9,91.7
+!SMM6 109.1,136.9,-89.1,-61.3
+!SMM9-36.85,-9.05,67.1,94.9
+!SMM10 23.6,51.4,14.6,42.4
+!SMM12 128.6,156.4,-140.1,-112.3
+									
+set match 0		! take a tolerance of search ranges (in arcsec), 0 = exact ranges
+find /all		! If the tolerance is absent, the default value is 2 arcsec.
+
+set unit v
+
+\set weight equal	!	Weighting to be used for summations - it is needed after convolution
+					!	weighting type: TIME (default), EQUAL, or SIGMA (1/sigma**2)
+					!	Sigma isn't recommended unless you just made a baseline fit before
+					!	Equal weight behaves differently in AVERAGE and ACCUMULATE 
+					!	(which produces the sum)
+average /nocheck
+
+
+!drop 1609
+!drop 1610
+!drop 1611
+!drop 1612
+!drop 1613
+!drop 1614
+!drop 1615
+!drop 1616
+!drop 1617
+!drop 1618
+!drop 1619
+!drop 1620
+!drop 3223
+!drop 3224
+!drop 3225
+!drop 3226
+!drop 3227
+!drop 3228
+!drop 3229
+!drop 3230
+
+let NX 720 		! For CN 1-0 is 560; HCN 1-0/H13CN 1-0 is 720;
+		   		! H13CN 2-1: 370; CS 3-2: 430; C34S 3-2: 440
+let XREF NX/2 	! NX/2 defines how many channels do you want at the both sides
+let vel velocity
+let vel_inc 0.5 ! a new sampling with 0.5 km/s
+
+resample NX XREF vel vel_inc velocity	! RESAMPLE NX Xref Xval Xinc Unit
+										! NX: the number of channels desired
+										! Xref: the new reference channel 
+										! Xval (vel): the value at the reference channel
+										! Xinc (vel_inc): the new channel separation
+										! Unit: velocity or frequency
+set mode x -80 70
+set window -50 50
+
+plot
+
+draw window
+
+base 0 /plot
+
+print area -20.2 -5.7 /output b1b_hcn10_int.txt

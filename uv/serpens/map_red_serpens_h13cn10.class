@@ -1,0 +1,231 @@
+define double l_new b_new
+
+file in  "../spectraOdp.30m"
+
+find /all
+set source SERSMM1 
+set line HC13N(1-0)
+!set frequency 88580 88680
+find /all
+
+file out serpens_h13cn10_red.30m single /overwrite
+
+for i 1 to found
+    get n
+    set window -50 50
+    modify beam_eff 0.81
+    !draw kill 458
+    !draw kill 465
+    draw kill 464
+    draw kill 461
+    draw kill 462
+    draw kill 463
+    !draw kill 162
+    !draw kill 163
+    draw kill 1373
+    !draw kill 1372
+    draw kill 1374
+    draw kill 1375
+    draw kill 1376
+    !draw kill 1377
+    !draw kill 1378
+    !draw kill 1379
+    !draw kill 1367
+    !draw kill 1368
+    !draw kill 1369
+    !draw kill 1370
+    !draw kill 1371
+    !draw kill 1372
+    !draw kill 1696
+    !draw kill 2274
+    !draw kill 2275
+    !draw kill 2276
+    !draw kill 2278
+    !draw kill 2279
+    !draw kill 2295
+    !draw kill 2294
+    !draw kill 2293
+    !draw kill 2292
+    !draw kill 2282
+    !draw kill 2283
+    draw kill 2285
+    !draw kill 2280
+    !draw kill 2280
+    !draw kill 2281
+    !draw kill 2292
+    !draw kill 2291
+    !draw kill 2289
+    !draw kill 2290
+
+    !draw fill 457
+    !draw fill 458
+    !draw fill 465
+    draw fill 464
+    draw fill 461
+    draw fill 462
+    draw fill 463
+    !draw fill 162
+    !draw fill 163
+    draw fill 1373
+    !draw fill 1372
+    draw fill 1374
+    draw fill 1375
+    draw fill 1376
+    !draw fill 1377
+    !draw fill 1378
+    !draw fill 1379
+    !draw fill 1367
+    !draw fill 1368
+    !draw fill 1369
+    !draw fill 1370
+    !draw fill 1371
+    !draw fill 1372
+    !draw fill 1696
+    !draw fill 2274
+    !draw fill 2275
+    !draw fill 2276
+    !draw fill 2278
+    !draw fill 2279
+    !draw fill 2295
+    !draw fill 2294
+    !draw fill 2293
+    !draw fill 2292
+    !draw fill 2282
+    !draw fill 2283
+    draw fill 2285
+    !draw fill 2280
+    !draw fill 2280
+    !draw fill 2281
+    !draw fill 2292
+    !draw fill 2291
+    !draw fill 2289
+    !draw fill 2290
+
+    base 0
+    write
+next
+
+let l_new lambda*12/pi
+let b_new beta*180/pi
+
+find /source SERSMM34 /line H13CN(1-0)
+
+for i 1 to found
+    get n
+    set window -50 50
+    modify beam_eff 0.81
+    draw kill 456
+    !draw kill 465
+    draw kill 464
+    draw kill 461
+    draw kill 462
+    draw kill 463
+    !draw kill 162
+    !draw kill 163
+    draw kill 1373
+    !draw kill 1372
+    draw kill 1374
+    draw kill 1375
+    draw kill 1376
+    !draw kill 1377
+    !draw kill 1378
+    !draw kill 1379
+    !draw kill 1367
+    !draw kill 1368
+    !draw kill 1369
+    !draw kill 1370
+    !draw kill 1371
+    !draw kill 1372
+    !draw kill 1696
+    !draw kill 2274
+    !draw kill 2275
+    !draw kill 2276
+    !draw kill 2278
+    !draw kill 2279
+    !draw kill 2295
+    !draw kill 2294
+    !draw kill 2293
+    !draw kill 2292
+    !draw kill 2282
+    !draw kill 2283
+    draw kill 2285
+    !draw kill 2280
+    !draw kill 2280
+    !draw kill 2281
+    !draw kill 2292
+    !draw kill 2291
+    !draw kill 2289
+    !draw kill 2290
+
+    draw fill 456
+    !draw fill 458
+    !draw fill 465
+    draw fill 464
+    draw fill 461
+    draw fill 462
+    draw fill 463
+    !draw fill 162
+    !draw fill 163
+    draw fill 1373
+    !draw fill 1372
+    draw fill 1374
+    draw fill 1375
+    draw fill 1376
+    !draw fill 1377
+    !draw fill 1378
+    !draw fill 1379
+    !draw fill 1367
+    !draw fill 1368
+    !draw fill 1369
+    !draw fill 1370
+    !draw fill 1371
+    !draw fill 1372
+    !draw fill 1696
+    !draw fill 2274
+    !draw fill 2275
+    !draw fill 2276
+    !draw fill 2278
+    !draw fill 2279
+    !draw fill 2295
+    !draw fill 2294
+    !draw fill 2293
+    !draw fill 2292
+    !draw fill 2282
+    !draw fill 2283
+    draw fill 2285
+    !draw fill 2280
+    !draw fill 2280
+    !draw fill 2281
+    !draw fill 2292
+    !draw fill 2291
+    !draw fill 2289
+    !draw fill 2290
+
+    base 0
+    modify source SERSMM1
+    modify position l_new b_new
+    write
+next
+
+delete /var l_new b_new
+
+!file in serpens_h13cn10
+!find /all
+
+!table serpens_h13cn10 new
+!xy_map serpens_h13cn10
+
+! IRAM BEAM EFICIENCIES
+! -------------------------------------------
+! Name	|	Trans.	|	Freq. (GHz)	|	Beff 
+! -------------------------------------------
+! HCN	|	1-0		|	88.6		|	0.81
+! CN(F1)|	1-0		|	113.1		|	0.78
+! CS	|	3-2		|	146.97		|	0.73
+! C34S  |   3-2     |   144.62		|   0.73
+! H13CN |	1-0     |   86.34       |   0.81
+! H13CN |	2-1		|	172.68		|	0.68 (estimated by me, linear diff.)	
+! -------------------------------------------! between Beff for 210 and 145 GHz,
+                                             ! which gives 0.05 more than is for 
+                                             ! 210 GHz (0.63 + 0.05), but centre
+                                             ! is for 177.5 not ~173 GHz

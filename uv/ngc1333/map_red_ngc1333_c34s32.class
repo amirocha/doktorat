@@ -1,0 +1,86 @@
+define double l_new b_new
+
+file in  "../spectraOdp.30m"
+
+find /all
+set source NGC1333-I2A 
+set line C34S(3-2)
+!set frequency 146916 147022
+find /all
+
+
+
+
+file out ngc1333_c34s32_red.30m single /overwrite
+
+for i 1 to found
+    get n
+    modify beam_eff 0.73
+    set window -50 50
+    draw kill 461
+    draw kill 1373
+    draw kill 2285
+    
+    draw fill 461
+    draw fill 1373
+    draw fill 2285
+    base 0
+    write
+next
+
+let l_new lambda*12/pi
+let b_new beta*180/pi
+
+find /all
+set source NGC1333-I4AB
+set line CS(3-2)
+!set frequency 146916 147022
+find /all
+
+for i 1 to found
+    get n
+    modify beam_eff 0.73
+    set window -50 50
+    draw kill 457
+    draw kill 1374
+    draw kill 460
+    draw kill 461
+    draw kill 465
+    draw kill 1373
+    draw kill 2285
+    
+    draw fill 457
+    draw fill 1374
+    draw fill 460
+    draw fill 461
+    draw fill 465
+    draw fill 1373
+    draw fill 2285
+    base 0
+    modify source NGC1333-I2A 
+    modify position l_new b_new
+    write
+next
+
+delete /var l_new b_new
+
+!file in serpens_cs32
+!find /all
+
+!table serpens_cs32 new
+!xy_map serpens_cs32
+
+! IRAM BEAM EFICIENCIES
+! -------------------------------------------
+! Name	|	Trans.	|	Freq. (GHz)	|	Beff 
+! -------------------------------------------
+! HCN	|	1-0		|	88.6		|	0.81
+! CN(F1)|	1-0		|	113.1		|	0.78
+! CS	|	3-2		|	146.97		|	0.73
+! C34S  |   3-2     |   144.62		|   0.73
+! H13CN |	1-0     |   86.34       |   0.81
+! H13CN |	2-1		|	172.68		|	0.68 (estimated by me, linear diff.)	
+! -------------------------------------------! between Beff for 210 and 145 GHz,
+                                             ! which gives 0.05 more than is for 
+                                             ! 210 GHz (0.63 + 0.05), but centre
+                                             ! is for 177.5 not ~173 GHz
