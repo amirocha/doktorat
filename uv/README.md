@@ -148,6 +148,7 @@ uśrednianie widma
 >p
 
 Jeśli widać spiki, zawęzić obszar komendą 'set mode x'
+> zawęzić okno komendą 'set window -50 50' (lub inny zakres w zależności, gdzie mamy emisję)
 
 >base 0 - dopasowanie continuum (linia prosta) /można tez wyższego rzędu base 1, itp.
 
@@ -182,8 +183,23 @@ spisujemy wartość rms i wkopiujemy do pliku [źródło]_[molekuła]_3sigma.py 
 - zmiana umiejscowienia tytułu = linia 'greg\draw text 80 230 "NGC1333 HCN J=1-0"' + manewrowanie cyframi
 
 
+### WIDMA ###
+
+Znająć pozycję źródła i zakres wiązki dla danej molekuły, możemy wyciągnąć uśrednione widmo z danej pozycji.
+
+1) class2ascii.class:
+- zmienić nazwę pliku wejściowego [źródło]_[molekuła]_conv
+- odkomentowujemy 'set range' i wpisujemy pozycje źródła. Format: x1 x2 y1 y2
+- zmienić nazwę pliku wyjściowego [źródło]_[molekuła]_[pozycja].txt
+- zmienić 'let NX' zgodnie z opisem (linia 30)
+- dla molekuły H13CN(2-1) odkomentowujemy także 'smooth'
+
+2) do wykonania skryptu serpens_1-7_ave_spectra_vel_resam.py potrzebujemy 7 pozycji we wszystkich molekułach (poza H13CN(2-1))
 
 
 
+NOTATKI:
+- NGC1333 nie uśrednia się linia C32S(3-2) -> należy odkomentować 'set 146916 147022'
+- NGC1333 linia H13CN(1-0) spiki na środku emisji - widmo nie nadaje się do obróbki
 
 
