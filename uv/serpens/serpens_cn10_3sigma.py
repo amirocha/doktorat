@@ -33,13 +33,13 @@ spec_df = pd.read_table('serpens_cn10_ave_spec.txt', delim_whitespace=True, head
 
 ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ###
 # left (x1) and right (x2) ranges in which we are looking for minima 
-x1_ran_df = spec_df[(spec_df[0] > -75.0) & (spec_df[0] < -70.)]    #change ranges!! 
-x2_ran_df = spec_df[(spec_df[0] > -70) & (spec_df[0] < -67.)]
+x1_ran_df = spec_df[(spec_df[0] > -45) & (spec_df[0] < -40.)]    #change ranges!! 
+x2_ran_df = spec_df[(spec_df[0] > -40) & (spec_df[0] < -35)]
 
 #change ranges!!
 # SERPENS HCN10: -5.0 - -0.0  and 10. - 20.
 # SERPENS CN10: -45.0 - -40.0  and -40. - -35.
-# SERPENS CN10: -20.0 - -15.0  and -15. - -10.
+# SERPENS CN10: -20.0 - -15.0  and -15. - -11.
 # SERPENS CN10: 5.0 - 8.0  and 8. - 12.
 # SERPENS CN10: 12.0 - 15.0  and 15. - 18
 # SERPENS CN10: -75 - -70.0  and -70. - -67

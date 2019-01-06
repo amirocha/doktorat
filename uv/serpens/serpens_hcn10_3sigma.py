@@ -11,7 +11,7 @@ because it's the biggest for this molecule. We used the same beam size for other
 #!/usr/bin/python3.5
 
 # name the output file
-psname = 'serpens_hcn10_3s.eps'
+psname = 'smm1_hcn10_3s.eps'
 
 # import packages
 from numpy import *
@@ -25,7 +25,7 @@ import pandas as pd
 # find the x ranges (in km/s), which are above 3RMS
 # level - for flux integration of line
 
-rms = 2.222E-02 # rms taken from CLASS
+rms = 1.343E-02 # rms taken from CLASS
 rms_3 = 3*rms
 
 # read the spectrum

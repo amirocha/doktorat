@@ -1,0 +1,35 @@
+12CO6-5 (3sigma):  1.4 14.4
+
+13CO6-5 (3sigma):  6.3 10.5
+
+C18O6-5 (1sigma):  6.6 10.1
+
+12CO6-5 (3sigma) SMM1: -50.9 4.8
+
+HCN1-0 (3sigma) SMM1: -4.8 1.1
+
+CN1-0 (3sigma): -70.2 -68.9 and 13.9 17.1 and 6.1 10.9 and -16.4 -13.7 and -40.4 -37.3
+
+HCN1-0 (3sigma): -3.0 18.8
+
+
+
+---outflows maps---
+
+CO6-5 as in Yildiz+2015, App.A
+
+CN1-0: 
+/based on a protostar center spectrum/
+SMM1 blue: -72.5 -69.5 , -42 -39, -17 -15, 5 8.5 , 12.5 15.5 
+SMM1 red: -68.5 -67, -38.5 -35.5, -14 -11.5, 9.5 12.5 , 16.5 18.5
+
+SMM3 blue: -72.5 -70.5, -42 -40, -18 -15.5, 3 7.5, 12.5 15
+SMM3 red: -69.5 -68, -39.5 -37, -15 -12.5, 8 11.5, 15.5 17.5
+
+HCN1-0: 
+/based on a protostar center spectrum/
+SMM1 blue: -3 -0.5, 4 6.5, 10 12
+SMM1 red: 0.5 3, 9 10, 14 17.5
+
+SMM3 blue: -2 -0.5, 2 6.5, 8.5 11.3
+SMM3 red: 0 2, 7 8.3, 12 18

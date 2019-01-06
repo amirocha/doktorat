@@ -22,14 +22,14 @@ greg\set coord user
 greg\set character 0.5
 greg\pen /def
 
-	 greg\column x 2 y 3 z 4 /file serpens_hcn10_int.txt
+	 greg\column x 2 y 3 z 4 /file smm1_hcn10_int.txt
     greg2\rgdata x y z /blank '3*sigma'
     greg\limits /rgdata /reverse x
     greg\level sigma to up by sigma
 
     greg\plot /scaling lin '3*sigma' up /blanking '3*sigma' 0
 
- 	 greg\column x 2 y 3 z 4 /file serpens_hcn10_int.txt
+ 	 greg\column x 2 y 3 z 4 /file smm1_hcn10_int.txt
     greg2\rgdata x y z /blank sigma
     greg\limits /rgdata /reverse x 
     greg\level '3*sigma' to up by '3*sigma'
@@ -311,5 +311,5 @@ greg\label "\GD\Ga (Arcsec) " /x
  
 
 
-sys "rm -f serpens_hcn10.eps"
-hardcopy "serpens_hcn10.eps"
+sys "rm -f smm1_hcn10.eps"
+hardcopy "smm1_hcn10.eps"

@@ -1,0 +1,69 @@
+Inwentaryzacja 29.12.2018
+
+###katalog 'serpens'###
+
+13co65_scans.txt - wypisane wszystkie skany dla pliku SMM1_13CO_6-5.apex poleceniem w CLASSie 'list /scan /output 13co65_scans.txt', aby sprawdzić, czy są tam dane pokrywające region SMM34. Spoiler: nie ma
+
+13CO6-5_spectrum.eps - rysunek uśrednionego widma z danych SMM1_13CO_6-5.apex, by pokazać, że coś jest nie tak z kontinuum
+
+add_area.py - skrypt dodający scałkowany strumień poszczególnych komponentów CN 1-0. Pliki wsadowe: [źródło]_[molekuła]_/[wypływ]/_numer_int.txt   Plik wynikowy [źródło]_[molekuła]_int.txt
+
+add_area_hcn.py - to samo, tylko mniej komponentów (plików wsadowych)
+
+blue_red_outflows.pdf - odtworzenie rysunków wypływów wokół SMM1 i SMM34 z pracy Yildiz+2015
+
+c18o65_scans.txt - jak 13co65_scans.txt, ale dla SMM1_C18O_6-5.apex
+
+class2ascii.class - skrypt CLASSowy wyciągający uśrednione widmo na zewnątrz w zadanym zakresie (z całości) wraz z zakresami (poniżej w komentarzach)
+
+CO_printarea_corrections.py - skrypt wycinający dane powyżej deklinacji 180. Dla danych CO 6-5 pojawiają się dodatkowe obszary wysoko nad Serpens Main - do wycięcia
+
+cut.py - skrypt wycinający widmo w zakresie -100 do 100 km/s, żeby dało się je ładnie wyrysować
+
+divide_area.py - skrypt dzielący przez siebie pliki *_int.txt, głównie dla CN/HCN. Sprawdza, gdzie siatki się pokrywają i tam dzieli
+
+flux_integral_ranges - plik z zapisanymi przedziałami całkowanie CLASSową metodą 'print area'
+
+hcn10_aligned_int.txt - plik wynikowy całkowania metodą 'print area' dla HCN poprawionego na zmiany po konwolucji (chodzi o definicje osi i położenie 'oczek' siatki, tak, żeby zgadzały się z danymi dla CN i dało się je podzielić)
+
+line_ratios_O_H2O - wykres zależności linii OI/H2O do CN/HCN dla pozycji SMM3 r,b,c oraz SMM4 b i SMM1. plik wynikowy skryptu 'plot_ratios.py'
+
+line_ratios_O_H2O-SMM1 - jw. bez SMM1
+
+line_ratios_OH_H2O - jak line_ratios_O_H2O, ale dla linii OH/H2O
+
+line_ratios_O_H2O-SMM1 - jw. bez SMM1
+
+line_ratios_O_OH - jak line_ratios_O_H2O, ale dla linii O/OH
+
+map_[molekuła]_positions.class - skrypt CLASSowy do rysowania map konturowych/kolorowych zawierający wyliczone pozycje protogwiazd i wypływów. Plik wsadowy: *_int.txt. Plik wynikowy: *_positions.eps
+
+map_cn10_hcn10.class - jw., ale rysunej jedną molekułę w konturach, a drugą w kolorze
+
+map_cn10_divided_hcn10.class - jak map_[molekuła]_positions.class, ale dla podzielonego strumienia CN/HCN
+
+map_hcn10_and_co65.class - jak map_cn10_hcn10.class, ale dla HCN 1-0 i CO 6-5
+
+map_red_serpens_[molekuła].class - CLASSowe pliki redukcyjne: usuwają spiki, modyfikują wiązkę, odejmują kontinuum, wyciągają dane przejście. Plik wsadowy: surowe dane. Plik wynikowy: serpens_[molekuła]_red.30m
+
+map_[obszar]_[molekuła]_positions.class - jak, ale dla zawężonego obszaru (mniej źródeł/znaczników)
+
+plot_grid_conv_hcn10.class - skrypt Marcina do plotowania mapek gridowych po konwolucji
+
+plot_ratios.py - skrypt do rysowania wykresów stosunków linii z obszarów SMM1 (Goicoechea+2012), SMM3 i SMM4 (Dionatos+2012) dla czerwonego/niebieskiego wypływu i centrum protogwiazdy. Strumienie w liniach OI,OH,H2O z ww. publikacji. Pliki wyjściowe: line_ratios_*
+
+ratios.txt - plik z wypisanymi strumieniami w liniach OI,OH,H2O z prac Goicoechea+2012, Dionatos+2012 oraz CN, HCN z 'print area'(plików *_int.txt) dla danej molekuły. Wartości strumieniach wybierane zostały w punktach SMM3b i r o współrzędnych z Dionatos+2012 Tab.1. - strumień liczony z uśrednionego widma w "oczku" siatki (o rozmiarze wiązki) zawierającym dany punkt. Pozycje oznaczone "c" (centrum) liczone analogicznie w pozycjach protogwiazd
+
+resample_ave_spec_3sigma.class - skrypt Marcina do próbkowania widm i liczenia strumieni metodą 'print area'
+
+
+
+
+
+
+
+
+
+
+ 
+

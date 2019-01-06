@@ -3,7 +3,7 @@
 import math as m
 
 
-file1=open('serpens_cn10_1_int.txt','r')
+file1=open('smm34_cn10_blue_1.txt','r')
 lines=file1.readlines()
 file1.close()
 
@@ -16,7 +16,7 @@ for i in range(5,len(lines)):  #read the first area
 
 
 
-file2=open('serpens_cn10_2_int.txt','r')
+file2=open('smm34_cn10_blue_2.txt','r')
 lines2=file2.readlines()
 file2.close()
 
@@ -29,7 +29,7 @@ for i in range(5,len(lines2)):  #read the second area
    added2.append(elem2)
   
 
-file3=open('serpens_cn10_3_int.txt','r')
+file3=open('smm34_cn10_blue_3.txt','r')
 lines=file3.readlines()
 file3.close()
 
@@ -40,7 +40,7 @@ for i in range(5,len(lines)):  #read the third area
    elem2=float(elem[3])
    added3.append(elem2)
 
-file4=open('serpens_cn10_4_int.txt','r')
+file4=open('smm34_cn10_blue_4.txt','r')
 lines=file4.readlines()
 file4.close()
 
@@ -52,7 +52,7 @@ for i in range(5,len(lines)):  #read the fourth area
    added4.append(elem2)
 
 
-file5=open('serpens_cn10_5_int.txt','r')
+file5=open('smm34_cn10_blue_5.txt','r')
 lines=file5.readlines()
 file5.close()
 
@@ -94,7 +94,7 @@ for i in range(5,len(lines)):  #rewrite the third column
    elem3='     '+elem2+'  '
    column3.append(elem3)
 
-fileend=open('cn10_area.txt','w')
+fileend=open('smm34_cn10_blue.txt','w')
 
 results=[]
 for i in range(len(column1)):

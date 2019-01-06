@@ -1,0 +1,111 @@
+
+define double sigma
+let sigma 2.3
+define double up
+let up 50
+set unit v
+greg\pen /weight 1.75
+set font duplex
+set character 0.5
+!set plot histogram 
+
+
+!lut color
+!LET LUT%HUE[I] = 16*INT((256-2*I)|16)
+!LET LUT%HUE[I] = 256*(1-(I/LUT%SIZE))
+!lut lut
+
+
+greg1\set plot landscape
+set viewport 0.05 0.3 0.42 0.75
+greg\set coord user
+greg\set character 0.5
+greg\pen /def
+
+    greg\column x 2 y 3 z 4 /file smm1_co65_red_map.txt
+    greg2\rgdata x y z /blank sigma
+    greg\limits /rgdata /reverse x 
+    greg\level '3*sigma' to up by '3*sigma'
+
+    greg\pen /colour 1 !red outflows
+    greg\rgmap /abs
+
+    greg\column x 2 y 3 z 4 /file smm1_co65_blue_map.txt
+    greg2\rgdata x y z /blank sigma
+    greg\limits /rgdata /reverse x 
+    greg\level '3*sigma' to up by '3*sigma'
+
+    greg\pen /colour 3 !blue outflows
+    greg\rgmap /abs
+
+!axes
+    greg\set character 0.3
+    greg\pen /colour 0
+    greg\box n o i
+
+    greg\set character 0.3
+    greg\pen /colour 0
+    greg\box p o i
+
+    !wedge top /scaling lin sigma up
+
+ 
+
+
+!positions
+
+
+greg\set character 0.5   !position 2
+    greg\pen /colour 6 /weight 3
+    greg1\set marker 4 1 .4 0
+    set coord user
+    greg1\draw marker -11. 33
+    greg\pen /colour 0 /weight 1
+    set font duplex
+    set character 0.25
+    greg1\draw text -7. 33 "2"
+
+!smm1
+    greg\pen /def
+    greg\pen /colour 0 /weight 2   !----- to jest kolor i grubosc lini
+    !greg\draw line -0.6 1.4 /user /clip   !------ tutaj ta pozioma
+    greg\draw relocate 7.48 -28.14 /user  !----- te dwie kolejne liniki sa do ukosnej
+    greg\draw line -8.68 30.94 /user /clip
+    greg\pen /def
+
+!protostars
+    greg1\column /close
+    greg\pen /colour 0 /weight 3 !SMM1
+    greg\set character 0.5   !font size
+    greg1\set marker 4 1 .4 0
+    set coord user
+    greg1\draw marker -0.6 1.4
+    greg\pen /colour 0 /weight 1
+    set font duplex
+    set character 0.25
+    greg1\draw text -0.6 11.4 "SMM1" !location of the text (+10arc to dec)
+
+    greg\set character 0.5   !SMM10
+    greg\pen /colour 0 /weight 3
+    greg1\set marker 4 1 .4 0
+    set coord user
+    greg1\draw marker 37.5 28.5
+    greg\pen /colour 0 /weight 1
+    set font duplex
+    set character 0.25
+    greg1\draw text 37.5 38.5 "SMM10" 
+
+
+greg\pen /colour 0 /weight 1
+greg\set character 0.4
+greg\label "\GD\Gd (Arcsec) " /y
+greg\label "\GD\Ga (Arcsec) " /x
+    greg\set character 0.5
+    greg\pen /colour 0 /weight 1
+	greg\draw text 0 90 "Serpens C0 J=6-5"
+
+ 
+
+
+sys "rm -f smm1_co65_outflows.eps"
+hardcopy "smm1_co65_outflows.eps"

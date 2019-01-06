@@ -1,0 +1,4 @@
+Protostar Molecule Flux
+smm1 co65 60.987182
+smm2 co65 1
+smm2 cn10 3

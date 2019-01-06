@@ -1,0 +1,11 @@
+Position    Molecule    Pixels number     M_outfllow [M_sun]      Mass loss [M_sun/yr]     R [AU]       t_dyn [yr]     F_outflow [M_sun/yr km/s
+
+smm1 North    co65           23                2.886e-03                4.019e-06           7589             718                 1.007e-02
+smm1 South    co65           74                7.472e-03                2.821e-06          27990            2648                 7.067e-03
+
+smm1Sum/Ave    co65           95                1.036e-02                3.420e-06          35580            1683                 1.713e-02
+
+smm1 North   hcn10            5                1.755e+02                2.444e-01           7589             718                 8.026e-13
+smm1 South   hcn10            8                2.990e+02                1.129e-01          27990            2648                 3.707e-13
+
+smm1Sum/Ave   hcn10           11                4.745e+02                1.787e-01          35580            1683                 1.173e-12

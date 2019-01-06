@@ -14,7 +14,7 @@ define integer NX Xref 	! NX: the number of channels desired
 define real vel vel_inc	! vel: the value at the reference channel
 						! vel_inc: the new channel separation
 
-file in serpens_cs32_conv
+file in serpens_hcn10_conv
 
 find /all
 
@@ -51,31 +51,10 @@ set unit v
 					!	Sigma isn't recommended unless you just made a baseline fit before
 					!	Equal weight behaves differently in AVERAGE and ACCUMULATE 
 					!	(which produces the sum)
-average /nocheck
+average /nocheck  /res ! for CO6-5, 13CO6-5, C18O6-5: /res
 
 
-!drop 1609
-!drop 1610
-!drop 1611
-!drop 1612
-!drop 1613
-!drop 1614
-!drop 1615
-!drop 1616
-!drop 1617
-!drop 1618
-!drop 1619
-!drop 1620
-!drop 3223
-!drop 3224
-!drop 3225
-!drop 3226
-!drop 3227
-!drop 3228
-!drop 3229
-!drop 3230
-
-let NX 430 		! For CN 1-0 is 560; HCN 1-0/H13CN 1-0 is 720;
+let NX 720		! For CN 1-0 is 560; HCN 1-0/H13CN 1-0 is 720;
 		   		! H13CN 2-1: 370; CS 3-2: 430; C34S 3-2: 440
 let XREF NX/2 	! NX/2 defines how many channels do you want at the both sides
 let vel velocity
@@ -87,13 +66,13 @@ resample NX XREF vel vel_inc velocity	! RESAMPLE NX Xref Xval Xinc Unit
 										! Xval (vel): the value at the reference channel
 										! Xinc (vel_inc): the new channel separation
 										! Unit: velocity or frequency
-set mode x -80 70
+!set mode x -80 70
 set window -50 50
 
 plot
 
 draw window
 
-base 0 /plot
+base 0 /plot  !for C18O6-5: base 2
 
-print area 2.4 12.1 /output serpens_cs32_int.txt
+print area 4 6.5 /output smm1_hcn10_blue_2.txt

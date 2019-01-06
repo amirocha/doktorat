@@ -1,0 +1,15 @@
+
+file in  "SMM1_C18O_6-5.apex"
+
+find /all
+
+
+file out serpens_c18o65_red.30m single /overwrite
+
+for i 1 to found
+    get n
+    set window -50 50
+    base 2    !change for C18O for "2" 
+    write
+next
+

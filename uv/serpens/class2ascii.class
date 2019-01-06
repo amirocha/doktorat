@@ -6,13 +6,13 @@ define real vel vel_inc	! vel: the value at the reference channel
 						! vel_inc: the new channel separation
 
 
-file in serpens_cs32_conv
+file in serpens_cn10_conv.30m
 find /all
 
-!set range -36.85 -9.05 67.1 94.9
+set range 3.86 33.96 -80 -50.7
 find /all
 
-average /nocheck /weight equal
+average /nocheck /weight equal   ! for _red files: /res   !for _conv files: /weight equal
 !smooth !for h13cn21 only!!
 
 !plot
@@ -21,13 +21,13 @@ set mode x tot
 
 set unit v
 
-sic output serpens_cs32_ave_spec.txt 
+sic output smm1_cn10_blue_max.txt
 
 for i 1 to channels
 	say 'rx[i]' 'ry[i]' /format g16.8 g16.8 
 next
 
-let NX 430		! For CN 1-0 is 560; HCN 1-0/H13CN 1-0 is 720;
+let NX 760		! For CN 1-0 is 560; HCN 1-0/H13CN 1-0 is 720;
 		   		! H13CN 2-1: 370; CS 3-2: 430; C34S 3-2: 440
 let XREF NX/2 	! NX/2 defines how many channels do you want at the both sides
 let vel velocity
@@ -74,4 +74,8 @@ sic output
 !pos4 49 63 -119 -105
 !pos5 -61. -47 74 88
 !pos6 136. 140 -73 -59
+
+!outflows
+
+!SMM1 blue: 3.86 33.96 -80 -50.7
 

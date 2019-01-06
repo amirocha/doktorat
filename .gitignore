@@ -3,6 +3,7 @@ env/
 
 # Raw data files
 *.30m
+*.apex
 
 #lmv maps
 *.tab
@@ -11,6 +12,8 @@ env/
 
 # Output figures
 *.eps
+*.png
+*.jpg
 
 od_Marcina/
 VO/

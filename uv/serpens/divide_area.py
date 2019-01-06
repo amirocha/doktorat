@@ -4,11 +4,11 @@ import math as m
 
 
 
-file2=open('serpens_hcn10_int.txt','r')
+file2=open('serpens_hcn10_int.txt,'r')
 lines2=file2.readlines()
 file2.close()
 
-file1=open('cn10_area.txt','r')
+file1=open('serpens_cn10_int.txt','r')
 lines=file1.readlines()
 file1.close()
 
@@ -32,7 +32,6 @@ for i in range(len(cn10)):  #add all lists
 column1=[] 
 for i in range(len(cn10)):  #rewrite the first column
    column1.append(i+1)
-print column1
 
 column2=[] 
 for i in range(len(cn10)):  #rewrite the second column

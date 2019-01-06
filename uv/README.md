@@ -43,12 +43,15 @@ map_red_[źródło]_[molekuła].class
 - skrypt Larsa
 - modyfikacja źródła (w 3 miejscach!!) i linii oraz nazwy pliku wynikowego
 - dopasowuje dane z dwóch obszarów (SMM1 i SMM34): trik z let l_new lambda*12/pi
-- jeśli linia jest "zepsuta" (nie uśrednia się prawidłowo), należy zawęzić częstotliwość
 - pamiętać o zmianie wiązki wg tabelki na dole
 - wpisać ręcznie draw kill i draw fill (numery zepsutych kanałów)
 - możliwość wykonania mapki lmv (odkomentować !table serpens_cs32 new !xy_map serpens_cs32)
 - wyjście: [źródło]_[molekuła]_red.30m
 
+jeśli linia jest nie uśrednia się prawidłowo (błąd: index is inconsistent), należy zawęzić częstotliwość lub spróbować uśredniać z opcją /res
+
+!!!Opcja:
+Pliki CO z APEXa wydają się być poredukowane, ale mają zły poziom kontinuum. Do redukcji tych danych wystarczy plik map_red_serpens_co.class ze zmianą pliku wejściowego (różne molekuły) i wyjściowego. Ten skrypt dopasowuje tylko kontinuum do każdego skanu. W przypadku C18O najlepiej zadziałała opcja "base 2".
 
 
 ### KONWOLUCJA ###
@@ -96,6 +99,12 @@ TUTAJ POJAWIA SIĘ ZMIANA Z 0 na 29.3:
 
 LAS> let map%reso 29.3
 
+------------
+!!!Ważne!!!!
+Jeśli chcemy porównywać mapy - dzielić flux lub nakładać je na siebie mapę referencyjną robimy normalnie, a w tej, którą chcemy dopasować, należy dopisać:
+let map%like <mapa_referencyjne_conv_tab.lmv>
+------------
+
 2) Tworzymy mapę LMV:
 
 LAS> table [źródło]_hcn10_conv_tab new
@@ -135,6 +144,7 @@ Usunięte obserwacje/skany to:
 dla Serpensa!
 
 
+
 ### MAPKI ###
 
 
@@ -171,9 +181,17 @@ spisujemy wartość rms i wkopiujemy do pliku [źródło]_[molekuła]_3sigma.py 
 - zmienić nazwę pliku wyjściowego [źródło]_[molekuła]_int.txt
 - zmienić nazwę pliku wejściowego [źródło]_[molekuła]_conv
 - ewentualnie zmienić 'set window' do zakresu 3 sigma
+- zmienić 'let NX' na odpowiednią wartość wg komentarza
 - upewnić się, że 'set range' jest zakomentowane (bo mapujemy całość)
 
-5) plik map_[molekuła].class:
+!!!Opcja:
+4a) w przypadku map w CO z APEXa występują dodatkowe dane wysoko nad naszym obiektem. Prawdopodobnie jest to jakiś błąd instrumentalny. Aby usunąć dodatkowe dane, należy zastosować skrypt CO_printarea_corrections.py:
+- zmienić nazwę pliku wejściowego [źródło]_[molekuła]_int.txt
+- zmienić nazwę pliku wyjściowego [źródło]_[molekuła]_cut.txt
+dalej postępujemy z plikiem "*_cut.txt" tak jakby był "*_int.txt"
+
+
+5) plik map_[molekuła]_positions.class:
 - zmienić nazwę pliku wejściowego w liniach 25 i 32 (greg\column x 2 y 3 z 4 /file [źródło]_[molekuła]_int.txt)
 - zmienić tytuł mapy np. greg\draw text 80 230 "NGC1333 HCN J=1-0"
 - zmienić nazwę pliku wyściowego [źródło]_[molekuła].eps w dwóch ostatnich liniach

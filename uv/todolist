@@ -1,0 +1,24 @@
+NGC1333
+- HCN zrobione
+- H13CN złe
+- C34S  poprawić redukcję na dropy!!
+- CN/ CS problemy z base 0: E-BASE,  No line window or polygon defined
+- pozycja SVS13A: 03 h 29 m 03. s 3, δ J2000 = +31 ◦ 16 ′ 03. ′′ 8   = -7,9*15  +164,8
+- pozycja SVS13B: 03 29 03.075 +31 15 51.71  = -8,125*15 +152,71
+- środek obrazka 03:29:11.2 dec: 31:13:19.0
+
+- IRAS4A1 03 29 10.531 +31 13 30.96 = -10,035 +11,96 [De Simone 2018]
+- IRAS4A2 03 29 10.429 +31 13 32.1 = -11,565 +13,1
+- IRAS4B1 03 29 12.012 +31 13 08.07 = +12.18 -10,93
+- IRAS4B2 03 29 12.84 +31 13 06.98 = +24,6 -12,02
+- IRAS2A1 03 28 55.575 +31 14 37,05 = -231,645 +78,05
+- IRAS2A2 03 28 55.677 +31 14 35,56 = -232,845 +76,56
+- IRAS2A3 03 28 55.514 +31 14 34,84 = -230,400 +75,84
+
+Serpens
+- środek obrazka: 18:29:49.6 01:15:20.5   CO: 18:29:49.6 01:15:20.0
+- mapki HCN, CN, CS
+- wyciągniete widmo dla SMM1: HCN, CS, CN: smm1-9
+- powtórzyć redukcję H13CN 1-0 - wycina za dużo - ręczna redukcja na spiki
+- 13CO6-5: dziwny oscylacyjny szum -> wysoki rms -> wzięłam 1sigma
+
