@@ -1,6 +1,6 @@
 
 define double sigma
-let sigma 0.6
+let sigma 1.5
 define double up
 let up 20
 set unit v
@@ -25,7 +25,7 @@ greg\pen /def
     greg\column x 2 y 3 z 4 /file smm1_hcn10_red_map.txt
     greg2\rgdata x y z /blank sigma
     greg\limits /rgdata /reverse x 
-    greg\level '3*sigma' to up by '3*sigma'
+    greg\level '1*sigma' to up by '1*sigma'
 
     greg\pen /colour 1 !red outflows
     greg\rgmap /abs
@@ -33,7 +33,7 @@ greg\pen /def
     greg\column x 2 y 3 z 4 /file smm1_hcn10_blue_map.txt
     greg2\rgdata x y z /blank sigma
     greg\limits /rgdata /reverse x 
-    greg\level '3*sigma' to up by '3*sigma'
+    greg\level '1*sigma' to up by '1*sigma'
 
     greg\pen /colour 3 !blue outflows
     greg\rgmap /abs

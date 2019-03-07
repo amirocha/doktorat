@@ -1,11 +1,12 @@
 """Outflow parameters calculation (based on Yildiz et al. 2015)"""
 
 import math as m
+from decimal import Decimal
 
 regions=['N','S']
-molecules=['hcn10']
+molecules=['co65']
 itteration_per_region={'S': 8, 'N': 5} #CO6-5: S-74, N-27 //HCN1-0 S-8, N-5
-radius = {'N':31.62, 'S': 60.83} #ouflow size in arcsec  CO6-5 SMM1 North: 22.36'' //CO6-5 SMM1 South: 82.46'' //HCN1-0 SMM1 North: 31.62'' //HCN1-0 SMM1 South: 60.83''
+radius = {'N':22.36, 'S': 82.46} #ouflow size in arcsec  CO6-5 SMM1 North: 22.36'' //CO6-5 SMM1 South: 82.46'' //HCN1-0 SMM1 North: 31.62'' //HCN1-0 SMM1 South: 60.83''
 
 k=1.38065*10**(-23) #Boltzmann's constant in J/K
 m_H = 1.008*1.660538921*(10**(-27)) #mass of hydrogen atom [kg]
@@ -33,12 +34,12 @@ def calculate_mass(data, mol, D, M_outflow, T_ex=100):
 	pixel_size={'co65': 4.5, 'hcn10': 14.65} 
 	relative_abudance={'co65': 1.2*(10**(4)), 'hcn10': 10**(9)} #H_2/mol relative abudances: CO6-5 (Yildiz et al. 2012), HCN1-0 (Hirota et al. 1998)
 
-	N=(1937*((freq[mol]/1000)**2)*float(data[3]))/(A[mol])  #freq in GHz (Yildiz et al. 2015, eq. (1))
+	N=(1937*((freq[mol]/1000.)**2)*float(data[3]))/(A[mol])  #freq in GHz (Yildiz et al. 2015, eq. (1))
 		
 	N_g=N/g[mol] #column density devided by g (eq.1)
 	# Total column density for all lines (eq. 2)
 	N_tot = N_g * partition_function(mol, T_ex) * m.exp(Eu[mol]/T_ex)  
-	print(N_tot)
+	print('%.2E' % Decimal(N_tot))
 	M_out = 2.8*m_H*(pixel_size[mol]**2)*relative_abudance[mol]*N_tot #outflow mass [kg*arcsec^2*cm^-2] (eq.3)
 	pixel_size_in_radians = pixel_size[mol]*((2*m.pi)/(360*60*60)) # arcsec -> rad
 	pixel_size_in_cms = pixel_size_in_radians*D #rad -> cm
@@ -84,7 +85,7 @@ def main():  #activate the rest of functions
 			R_km=R_cm/100000. #ouflow size in km
 			R_AU=R_cm/14959787070000. #ouflow size in AU
 			R_AU_corr=R_AU/m.sin(c_rad) #corrected for inclination
-			print(m.sin(c_rad))
+			#print(m.sin(c_rad))
 			R=R_km/m.sin(c_rad)  #R in km corrected for inclination 
 			V_max = abs(-50.1) #outflow maximum velocity (greater integration limit) [km/s]
 	
@@ -106,11 +107,12 @@ def main():  #activate the rest of functions
 			L_kin_watt=0.5*F_outflow_s*M_sun*V_max*1000. #kinetic luminosity [kg*m^2*s^-3]
 			L_kin=L_kin_watt/L_sun #kinetic luminosity [L_sun]
 			results.append((M_outflow, M_dot, R_AU_corr, t_dyn, F_outflow, i))
-
+'''
 	file2.write("%3s %7s %12s %24s %24s %14s %15s %25s\n" % (data[1][0]+" North",data[1][1],results[0][5]+1,'{:0.3e}'.format(results[0][0]), '{:0.3e}'.format(results[0][1]), int(results[0][2]), int(results[0][3]), '{:0.3e}'.format(results[0][4])))
 	file2.write("%3s %7s %12s %24s %24s %14s %15s %25s\n" % (data[1][0]+" South",data[1][1],i+1,'{:0.3e}'.format(results[1][0]), '{:0.3e}'.format(results[1][1]), int(results[1][2]), int(results[1][3]), '{:0.3e}'.format(results[1][4])))
 	file2.write("\n")
 	file2.write("%3s %7s %12s %24s %24s %14s %15s %25s\n" % (data[1][0]+"Sum/Ave",data[1][1],results[0][5]+results[1][5],'{:0.3e}'.format(results[0][0]+results[1][0]), '{:0.3e}'.format((results[0][1]+results[1][1])/2.), int(results[0][2]+results[1][2]), int((results[0][3]+results[1][3])/2.), '{:0.3e}'.format((results[0][4]+results[1][4]))))
 	file2.close()
+'''
 if __name__ == '__main__': 
 	main()

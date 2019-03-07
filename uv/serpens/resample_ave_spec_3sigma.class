@@ -75,4 +75,4 @@ draw window
 
 base 0 /plot  !for C18O6-5: base 2
 
-print area 4 6.5 /output smm1_hcn10_blue_2.txt
+print area 12 19.6 /output smm1_hcn10_v2_red.txt

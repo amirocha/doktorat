@@ -1,0 +1,9 @@
+file in ../../serpens_co65_conv 
+set range 19.65 24.15 -14.35 -9.85
+find /all
+average /nocheck /weight equal
+sic output ../spectra/smm1_co65_19.txt
+for i 1 to channels
+	say 'rx[i]' 'ry[i]' /format g16.8 g16.8
+next
+sic output

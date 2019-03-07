@@ -1,0 +1,14 @@
+SMM1
+
+co65 (Yildiz+2015) V_in: blue = 6.0, red = 10.5
+                   V_out: blue = -10.5, red = 31
+
+hcn10: V_in: blue = 5.0, red = 14.9
+       V_out: blue = -2.6, red = 16.5
+
+hcn10_v2 (only outer parts): V_in: blue = 0.3, red = 12.0
+                             V_out: blue = -6.1, red = 19.6
+(based on spectra in outflows positions: 'smm1_hcn10_blue_outflow_10_-50.txt' and 'serpens_pos2_hcn10.txt')
+
+[hcn10 main component: V_in: blue = 6.9, red = 8.9 ]
+                      V_out: blue = 5, red = 10

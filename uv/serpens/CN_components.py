@@ -111,7 +111,7 @@ for i in range(5,len(lines)):  #read the total fluxes (all components added)
    elem2=float(elem[3])
    fluxes.append(elem2)
 
-maxima_list=find_maxima(50, fluxes)   #choose 50 the highest values of total fluxes and cut the other components' lists
+maxima_list=find_maxima(10, fluxes)   #choose 10 the highest values of total fluxes and cut the other components' lists
 comp1=prepare_list(maxima_list, comp1)
 comp2=prepare_list(maxima_list, comp2)
 comp3=prepare_list(maxima_list, comp3)

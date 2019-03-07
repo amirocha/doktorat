@@ -3,7 +3,7 @@
 #!/usr/bin/python3.5
 
 # name the output file
-psname = 'smm1_cn10_blue_max.eps'
+psname = 'test.eps'
 
 # import packages
 from numpy import *
@@ -20,7 +20,7 @@ import pandas as pd
 rms = 2.139E-02 # rms taken from CLASS
 rms_3 = 3*rms
 
-input_file='smm1_cn10_blue_max.txt'
+input_file='serpens_smm10_hcn10.txt'
 # read the spectrum
 spec_df = pd.read_table(input_file, delim_whitespace=True, header=None)
 

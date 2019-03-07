@@ -11,6 +11,7 @@ Jak to się je:
 - zapis pliku w repozyturium: `git add <nazwa_pliku>` //  wielu plików `git add -A`
 - dodanie wpisu (czyli co sie zmieniło): `git commit -m "wiadomość"`
 - `git push`
+- ściąganie plików z neta: `git pull`
 
 
 No i tyle.

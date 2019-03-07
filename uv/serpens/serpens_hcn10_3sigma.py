@@ -11,7 +11,7 @@ because it's the biggest for this molecule. We used the same beam size for other
 #!/usr/bin/python3.5
 
 # name the output file
-psname = 'smm1_hcn10_3s.eps'
+psname = 'smm1_hcn10_3s_main.eps'
 
 # import packages
 from numpy import *

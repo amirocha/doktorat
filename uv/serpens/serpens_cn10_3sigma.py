@@ -11,7 +11,7 @@ because it's the biggest for this molecule. We used the same beam size for other
 #!/usr/bin/python3.5
 
 # name the output file
-psname = 'serpens_cn10_3s.eps'
+psname = 'serpens_cn10_3s_smm4_component5.eps'
 
 # import packages
 from numpy import *
@@ -29,20 +29,20 @@ rms = 2.139E-02 # rms taken from CLASS
 rms_3 = 3*rms
 
 # read the spectrum
-spec_df = pd.read_table('serpens_cn10_ave_spec.txt', delim_whitespace=True, header=None)
+spec_df = pd.read_table('serpens_cn10_smm4.txt', delim_whitespace=True, header=None)
 
 ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ###
 # left (x1) and right (x2) ranges in which we are looking for minima 
-x1_ran_df = spec_df[(spec_df[0] > -45) & (spec_df[0] < -40.)]    #change ranges!! 
-x2_ran_df = spec_df[(spec_df[0] > -40) & (spec_df[0] < -35)]
+x1_ran_df = spec_df[(spec_df[0] > 12.) & (spec_df[0] < 15.)]    #change ranges!! 
+x2_ran_df = spec_df[(spec_df[0] > 15.) & (spec_df[0] < 18)]
 
 #change ranges!!
 # SERPENS HCN10: -5.0 - -0.0  and 10. - 20.
-# SERPENS CN10: -45.0 - -40.0  and -40. - -35.
-# SERPENS CN10: -20.0 - -15.0  and -15. - -11.
-# SERPENS CN10: 5.0 - 8.0  and 8. - 12.
-# SERPENS CN10: 12.0 - 15.0  and 15. - 18
-# SERPENS CN10: -75 - -70.0  and -70. - -67
+# SERPENS CN10: -45.0 - -40.0  and -40. - -35. //smm1: -42.5 -40 -40 -33
+# SERPENS CN10: -20.0 - -15.0  and -15. - -11. //pos4: -17 -15 -15 -11
+# SERPENS CN10: 5.0 - 8.0  and 8. - 12. //pos4: 3 8 8 15
+# SERPENS CN10: 12.0 - 15.0  and 15. - 18 //pos4: 10.0 - 15.0  and 15. - 20
+# SERPENS CN10: -75 - -70.0  and -70. - -67  //pos4+smm4 -72 -68 -68 -66
 
 # for both X ranges take the column with flux and calculate abs(yi - 3rms)
 y1_i_rms_3 = (x1_ran_df[1]-rms_3).abs()
@@ -69,11 +69,13 @@ print ('X2 (3s) =', final2_df[1].ix[min2].round(1))
 
 ### 1 SIGMA ### 1 SIGMA ### 1 SIGMA ### 1 SIGMA ### 1 SIGMA ###
 # left (x3) and right (x4) ranges in which we are looking for minima 
-x3_ran_df = spec_df[(spec_df[0] > -3.0) & (spec_df[0] < 0.0)]  #change ranges!!
-x4_ran_df = spec_df[(spec_df[0] > 16.0) & (spec_df[0] < 17.1)]
+x3_ran_df = spec_df[(spec_df[0] > 12) & (spec_df[0] < 15)]  #change ranges!!
+x4_ran_df = spec_df[(spec_df[0] > 15) & (spec_df[0] < 18)]
 
 #change ranges!!
 # NGC1333 HCN10: -30.0 - -20.0  and -5. - -1.
+# Serpens CN10:  //smm1: -43 -40 -40 -37
+# SERPENS CN10:  // smm1: -75 - -70.0  and -70. - -67
 
 # for both X ranges take the column with flux and calculate abs(yi - 3rms)
 y3_i_rms = (x3_ran_df[1]-rms).abs()
@@ -134,7 +136,7 @@ matplotlib.rcParams.update(params)
 """ READ INPUT DATA
 ########## SERPENS, HCN 1-0, center of ave.: 163.5 -142.7, range: 149.6 177.4 -156.6 -128.8 ##########
 """
-v_hcn10, Tmb_hcn10 = loadtxt('serpens_cn10_ave_spec.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_hcn10, Tmb_hcn10 = loadtxt('serpens_cn10_smm1.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 ax = fig.add_subplot(111)
