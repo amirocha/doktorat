@@ -1,0 +1,8 @@
+\begin{thebibliography}{1}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Suresh} {et~al.}(2016){Suresh}, {Dunham}, {Arce}, {Evans}, {Bourke},
+  {Merello}, \& {Wu}}]{Sur16}
+{Suresh}, A., {Dunham}, M.~M., {Arce}, H.~G., {et~al.} 2016, \aj, 152, 36
+
+\end{thebibliography}

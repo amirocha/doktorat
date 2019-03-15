@@ -1,0 +1,33 @@
+Reference spectrum:
+  Source Name       : SERSMM1
+  Coordinate System : EQUATORIAL  2000.0
+  Proj. Center (rad): lambda     4.842532, beta     0.021916, tolerance 4.8E-08
+  Line Name         : CS(3-2)
+  Frequency (MHz)   : rest    1.470E+05, resol    3.906E-02
+  Velocity (km/s)   : resol   -7.968E-02, offset    0.000E+00
+  Alignment (chan)  : tolerance    10.0%
+  Calibration       : beeff  0.690,gain  0.050
+  Switching         : unfolded FSW, nphase 1, offsets .000
+
+
+Source Name       : SERSMM1
+  Coordinate System : EQUATORIAL  2000.0
+  Proj. Center (rad): lambda     4.842532, beta     0.021916, tolerance 4.8E-08
+  Line Name         : CN(F1)(1-0)
+  Frequency (MHz)   : rest    1.135E+05, resol    3.906E-02
+  Velocity (km/s)   : resol   -1.032E-01, offset    0.000E+00
+  Alignment (chan)  : tolerance    10.0%
+  Calibration       : beeff  0.750,gain  0.050
+  Switching         : unfolded FSW, nphase 1, offsets .000
+
+Source Name       : SERSMM1
+  Coordinate System : EQUATORIAL  2000.0
+  Proj. Center (rad): lambda     4.842532, beta     0.021916, tolerance 4.8E-08
+  Line Name         : HCN(1-0)
+  Frequency (MHz)   : rest    8.863E+04, resol    7.812E-02
+  Velocity (km/s)   : resol   -2.643E-01, offset    0.000E+00
+  Alignment (chan)  : tolerance    10.0%
+  Calibration       : beeff  0.810,gain  0.050
+  Switching         : unfolded FSW, nphase 1, offsets .000
+
+
