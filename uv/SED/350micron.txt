@@ -1,0 +1,15 @@
+Suresh, A., Dunham, M. M., Arce, H. G., et al. 2016, AJ, 152, 36
+
+ Deconvolved angular source radius   Peak intensity   Flux density in 20'' diameter aperture 
+Rad	[arcsec]     Spk [Jy/beam]     err [Jy/beam]  S20 [Jy]    err [Jy]  S40 [Jy]   err [Jy] 
+
+SMM9 25.1	24.3 	5.10 	50.0	12.90	108.8	35.50
+SMM1 21.5	68.3	14.30	117.8	30.30	179.6	58.60
+SMM5 12.3 	8.7 	1.80 	20.7 	5.40 	50.6	16.50
+SMM10 14.2 	7.9 	1.70 	20.4 	5.30 	51.4	16.70
+SMM4 18.4	20.7 	4.30 	46.4	12.00 	97.8	32.00
+SMM6 18.4	10.4 	2.20 	29.1 	7.50 	81.0	26.40
+SMM12 16.5	11.8 	2.50 	32.1 	8.20 	88.7	29.00
+SMM3 16.7	18.3 	3.80 	37.4 	9.60 	84.0	27.40
+SMM2 18.4	11.7 	2.50 	30.8 	7.90 	78.6	25.60
+SMM8 

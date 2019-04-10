@@ -1,0 +1,7 @@
+Results:
+
+		Trapezium L_bol/T_bol    Interpolate L_bol/ T_bol
+SMM1:
+Agata's data only: 108.71493769966972 40.802816845698274 104.38251009885111 39.03904221144552
+All data: 
+
