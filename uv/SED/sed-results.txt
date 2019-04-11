@@ -1,7 +1,28 @@
 Results:
 
-		Trapezium L_bol/T_bol    Interpolate L_bol/ T_bol
+		Trapezium L_bol/T_bol    Interpolate L_bol/ T_bol (cubic)     Interpolate L_bol/ T_bol (linear)    [L_sun/K]
 SMM1:
-Agata's data only: 108.71493769966972 40.802816845698274 104.38251009885111 39.03904221144552
-All data: 
+Agata's data only: 108.71 39.49                     104.38 39.04                        108.72 40.35
+All data:          108.71 39.025                    103.34 39.21                        107.27 40.55
 
+SMM2:              5.10 32.18                       51.77 309.33                        5.10 41.60
+
+SMM3:   
+Agata's data only: 24.99 40.74                      15.38 -10.45                        27.48 42.38
+All data:          27.48 37.87                      8.17 -28.98                         24.99 48.41
+
+SMM4:                                                    
+Agata's data only: 11.64 32.22                      22.37 144.39                        11.64 31.17
+All data:          13.60 24.17                      21.48 150.56                        13.60 29.54
+
+SMM5:              4.49 129.93                      4.34 130.19                         4.49 148.24
+
+SMM6:              43.39 500.73                     43.57 525.55                        43.39 526.44
+
+SMM8:              4 points only
+
+SMM9:              11.69 34.51                      -5.64 266.61                        11.69 46.14
+
+SMM10:             5.13 70.81                       2.93 40.85                          5.13 85.09
+
+SMM12:             6.68 90.88                       5.89 111.69                         6.68 100.87

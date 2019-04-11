@@ -49,6 +49,7 @@ def do_very_difficult_and_important_for_humanity_operations_on_star_data(data, h
     herschel_colors = '0;m*;m*;m*;m*;m*'.split(';')
     herschel_wawelenghts=[0,70,160,250,350,500]
     some_numbers = data.split()
+    print(some_numbers)
     star_name = some_numbers.pop(0)
     points = []
     colors = []
@@ -61,7 +62,7 @@ def do_very_difficult_and_important_for_humanity_operations_on_star_data(data, h
         if float(herschel_data.split()[i]) > 0.:
             points.append((herschel_wawelenghts[i], m.log10(float(herschel_data.split()[i])))) #Jy
             colors.append(herschel_colors[i])
-    print(points)
+    
     return star_name, points, colors
 
  
@@ -78,6 +79,15 @@ def make_very_nice_picture(title, points, colors):
     plt.savefig(title, format='png')
     plt.close()
 
+def write_to_file(title, points):
+    fileend=open('sed_converted','a')
+    for i in range(len(points)):
+        wavelength=points[i][0]
+        flux=10**points[i][1]
+        line=str(title)+' '+str(wavelength)+' '+str(flux)+'\n'
+        fileend.writelines(line)
+    fileend.close()
+    
 
 def main():
     data = read_data('sed.txt')
@@ -85,8 +95,10 @@ def main():
     wave_lenghts = [float(lenght) for lenght in data[0].split()[1:]]
    
     for i in range(1,len(data)):
+        print(i)
         title, points, colors = do_very_difficult_and_important_for_humanity_operations_on_star_data(data[i], herschel_data[i], wave_lenghts)
-        make_very_nice_picture(title, points, colors)
+        #make_very_nice_picture(title, points, colors)
+        write_to_file(title, points)
 
 
 if __name__ == '__main__':
