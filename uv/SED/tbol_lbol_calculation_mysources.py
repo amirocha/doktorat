@@ -100,8 +100,8 @@ def calculate_tbol_lbol(freq_list, flux_list, integral):
 	return tbol, lbol
 
 
-file_name='smm4.inp'   
-file_name_newpoints='smm4_newpoints.txt'
+file_name='smm1.inp'   
+file_name_newpoints='smm1_newpoints.txt'
   
   
 dist=429. 
@@ -235,22 +235,27 @@ print(lbol_trapez_all, tbol_trapez_all)
 
 
 newpoints_freq_log = [m.log10(freq) for freq in newpoints_freq]
-newpoints_flux_div_freq_log = [m.log10(1e-26*newpoints_fluxes[i]*newpoints_freq[i]) for i in range(len(newpoints_fluxes))] 
+newpoints_fluxes_watt = flux_in_watts(newpoints_fluxes)
+newpoints_flux_log = [m.log10(flux) for flux in newpoints_fluxes_watt]
+newpoints_flux_mul_freq_log = [m.log10(1e-26*newpoints_fluxes[i]*newpoints_freq[i]) for i in range(len(newpoints_fluxes))] 
 fluxfreq_watts_log = list_in_log_scale(fluxfreq_watts)
 
 
 
-fig=plt.figure()
-plt.title('SMM4')
+fig, ax = plt.subplots()
+plt.title('SMM1')
 #plt.ylabel(r'log(F$\cdot \nu$) [W $\cdot$ m$^{-2}$]')
-plt.ylabel(r'log(F) [W $\cdot$ m$^{-2}$ $\cdot$ Hz${-1}$')
+plt.ylabel(r'log(F) [W $\cdot$ m$^{-2}$ $\cdot$ Hz${-1}$]')
 plt.xlabel(r'log($\nu$) [Hz]')
 #plt.plot(freq_log, fluxfreq_watts_log, 'ro', linewidth=1)
-plt.plot(all_points_freq_log, all_points_fluxes_log, 'ro', linewidth=1)
+plt.plot(all_points_freq_log, all_points_fluxes_log, 'bo', linewidth=1)
 plt.plot(freq_allpoints_interpol_log, flux_allpoints_interpol_log, 'k-', linewidth=0.6)
-#plt.plot(newpoints_freq_log, newpoints_flux_div_freq_log, 'bo', linewidth=1)
+plt.plot(newpoints_freq_log, newpoints_flux_log, 'ro', linewidth=1)
+props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
+ax.text(0.05, 0.15, r'T$_{bol}$ = '+"%.2f" % round(tbol_interpol,2)+' K', transform=ax.transAxes, fontsize=12, verticalalignment='bottom', bbox=props)
+ax.text(0.05, 0.05, r'L$_{bol}$ = '+"%.2f" % round(lbol_interpol,2)+r' L$_{Sun}$', transform=ax.transAxes, fontsize=12, verticalalignment='bottom', bbox=props)
 
-plt.savefig('smm4_linear_interpolation_allpoints.png')
+plt.savefig('sed_smm1_fit.png')
 plt.close()
 
 '''

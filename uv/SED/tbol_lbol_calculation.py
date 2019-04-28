@@ -100,7 +100,7 @@ def calculate_tbol_lbol(freq_list, flux_list, integral):
 	return tbol, lbol
 
 
-file_name='smm12.inp'   
+file_name='smm2.inp'   
 file_name_newpoints='smm4_newpoints.txt'
   
   
@@ -192,16 +192,16 @@ fluxes_log=list_in_log_scale(fluxes_watts)
 l='linear'
 c='cubic'
 
-interpolation, freq_interpol, flux_interpol = interpolate(freq, fluxes_watts, c , 100.)
+interpolation, freq_interpol, flux_interpol = interpolate(freq, fluxes_watts, l , 100.)
 
-interpolation_log, freq_interpol_log, flux_interpol_log = interpolate(freq_log, fluxes_log, c, 100.)
+interpolation_log, freq_interpol_log, flux_interpol_log = interpolate(freq_log, fluxes_log, l, 100.)
 
 #interpolation_allpoints, freq_allpoints_interpol, flux_allpoints_interpol = interpolate(all_points_freq, all_points_fluxes_watts, l, 100.)
 
 #interpolation_allpoints_log, freq_allpoints_interpol_log, flux_allpoints_interpol_log = interpolate(all_points_freq_log, all_points_fluxes_log, l, 100.)
 
 
-trapez_integral=integrate(freq, fluxes_watts)
+#trapez_integral=integrate(freq, fluxes_watts)
 #trapez_integral_all=integrate(all_points_freq, all_points_fluxes_watts)
 integral_interpol=integrate_function(interpolation, freq_interpol[0], freq_interpol[-1])  #value
 #allpoints_integral=integrate_function(interpolation_allpoints,  freq_allpoints_interpol[0],  freq_allpoints_interpol[-1]) #value
@@ -212,12 +212,12 @@ fluxfreq_watts=calculate_flux_nu(fluxes_watts, freq)
 #fluxfreq_watts_all=calculate_flux_nu(all_points_fluxes_watts, all_points_freq)
 
 
-tbol_trapez, lbol_trapez=calculate_tbol_lbol(freq,fluxfreq_watts,trapez_integral)
+#tbol_trapez, lbol_trapez=calculate_tbol_lbol(freq,fluxfreq_watts,trapez_integral)
 #tbol_trapez_all, lbol_trapez_all=calculate_tbol_lbol(all_points_freq,fluxfreq_watts_all,trapez_integral_all)
 tbol_interpol, lbol_interpol=calculate_tbol_lbol(freq_interpol,fluxfreq_interpol,integral_interpol)
 #tbol_interpol_all, lbol_interpol_all=calculate_tbol_lbol(freq_allpoints_interpol,fluxfreq_interpol_allpoints,allpoints_integral)
 
-print(lbol_trapez, tbol_trapez)
+print(lbol_interpol, tbol_interpol)
 
 
 
@@ -226,17 +226,20 @@ print(lbol_trapez, tbol_trapez)
 fluxfreq_watts_log = list_in_log_scale(fluxfreq_watts)
 
 
-fig=plt.figure()
-plt.title('SMM12')
-plt.ylabel(r'log(F$\cdot \nu$) [W $\cdot$ m$^{-2}$]')
-#plt.ylabel(r'log(F) [W $\cdot$ m$^{-2}$ $\cdot$ Hz${-1}$')
+fig, ax = plt.subplots()
+plt.title('SMM2')
+#plt.ylabel(r'log(F$\cdot \nu$) [W $\cdot$ m$^{-2}$]')
+plt.ylabel(r'log(F) [W $\cdot$ m$^{-2}$ $\cdot$ Hz${-1}$')
 plt.xlabel(r'log($\nu$) [Hz]')
-plt.plot(freq_log, fluxfreq_watts_log, 'ro', linewidth=1)
-#plt.plot(freq_log, fluxes_log, 'ro', linewidth=1)
-#plt.plot(freq_interpol_log, flux_interpol_log, 'k-', linewidth=0.6)
+#plt.plot(freq_log, fluxfreq_watts_log, 'ro', linewidth=1)
+plt.plot(freq_log, fluxes_log, 'ro', linewidth=1)
+plt.plot(freq_interpol_log, flux_interpol_log, 'k-', linewidth=0.6)
+props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
+ax.text(0.05, 0.15, r'T$_{bol}$ = '+"%.2f" % round(tbol_interpol,2)+' K', transform=ax.transAxes, fontsize=12, verticalalignment='bottom', bbox=props)
+ax.text(0.05, 0.05, r'L$_{bol}$ = '+"%.2f" % round(lbol_interpol,2)+r' L$_{Sun}$', transform=ax.transAxes, fontsize=12, verticalalignment='bottom', bbox=props)
 #plt.plot(newpoints_freq_log, newpoints_flux_div_freq_log, 'bo', linewidth=1)
 
-plt.savefig('sed_smm12.png')
+plt.savefig('sed_smm2_fit.png')
 plt.close()
 
 '''
