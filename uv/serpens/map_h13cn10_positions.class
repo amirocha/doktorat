@@ -1,8 +1,8 @@
 
 define double sigma
-let sigma 1.9
+let sigma 0.25
 define double up
-let up 50
+let up 2.7
 set unit v
 greg\pen /weight 1.75
 set font duplex
@@ -22,17 +22,17 @@ greg\set coord user
 greg\set character 0.5
 greg\pen /def
 
-	 greg\column x 2 y 3 z 4 /file serpens_co65_cut.txt
+	 greg\column x 2 y 3 z 4 /file serpens_h13cn10_int.txt
     greg2\rgdata x y z /blank '3*sigma'
     greg\limits /rgdata /reverse x
     greg\level sigma to up by sigma
 
     greg\plot /scaling lin '3*sigma' up /blanking '3*sigma' 0
 
- 	 greg\column x 2 y 3 z 4 /file serpens_co65_cut.txt
+ 	 greg\column x 2 y 3 z 4 /file serpens_h13cn10_int.txt
     greg2\rgdata x y z /blank sigma
     greg\limits /rgdata /reverse x 
-    greg\level '5*sigma' to up by '5*sigma'
+    greg\level '3*sigma' to up by '3*sigma'
 
     greg\pen /colour 0
     greg\rgmap /abs
@@ -281,8 +281,7 @@ greg\set character 0.4
 greg\label "\GD\Gd (Arcsec) " /y
 greg\label "\GD\Ga (Arcsec) " /x
     greg\set character 0.5
-	greg\draw text 80 220 "Serpens CO J=6-5"
-
+	greg\draw text 80 220 "Serpens H13CN J=1-0"
 
 !set viewport 0.05 0.3 0.06 0.4
 !!file in l483_12co65_5x5.apex
@@ -308,5 +307,5 @@ greg\label "\GD\Ga (Arcsec) " /x
  
 
 
-sys "rm -f serpens_co65_positions.eps"
-hardcopy "serpens_co65_positions.eps"
+sys "rm -f serpens_h13cn10.eps"
+hardcopy "serpens_h13cn10.eps"

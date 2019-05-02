@@ -4,36 +4,47 @@ file in  "../spectraOdp.30m"
 
 find /all
 set source SERSMM1 
-set line HC13N(1-0)
-!set frequency 88580 88680
+set line C34S(3-2)
+!set frequency 146916 147022
 find /all
 
-file out serpens_h13cn10_red.30m single /overwrite
+file out serpens_c34s32_red.30m single /overwrite
 
 for i 1 to found
     get n
     set window -50 50
-    modify beam_eff 0.81
-    draw kill 464
+    modify beam_eff 0.73
+    draw kill 457
+    draw kill 458
+    draw kill 459
     draw kill 461
-    draw kill 462
-    draw kill 463
+    draw kill 464
+    draw kill 465
+    draw kill 466
+    draw kill 467
+    draw kill 477
+    draw kill 478
     draw kill 1373
-    draw kill 1374
-    draw kill 1375
-    draw kill 1376
     draw kill 2285
-
-    draw fill 464
+    draw kill 2447
+    draw kill 2448
+    draw kill 2452
+    
+    draw fill 457
+    draw fill 458
+    draw fill 459
     draw fill 461
-    draw fill 462
-    draw fill 463
+    draw fill 464
+    draw fill 465
+    draw fill 466
+    draw fill 467
+    draw fill 477
+    draw fill 478
     draw fill 1373
-    draw fill 1374
-    draw fill 1375
-    draw fill 1376
     draw fill 2285
-
+    draw fill 2447
+    draw fill 2448
+    draw fill 2452
     base 0
     write
 next
@@ -43,34 +54,45 @@ let b_new beta*180/pi
 
 find /all
 set source SERSMM34 
-set line H13CN(1-0)
+set line C34S(3-2)
 !set frequency 146916 147022
 find /all
 
 for i 1 to found
     get n
     set window -50 50
-    modify beam_eff 0.81
-    draw kill 464
+    modify beam_eff 0.73
+    draw kill 457
+    draw kill 458
+    draw kill 459
     draw kill 461
-    draw kill 462
-    draw kill 463
+    draw kill 464
+    draw kill 465
+    draw kill 466
+    draw kill 467
+    draw kill 477
+    draw kill 478
     draw kill 1373
-    draw kill 1374
-    draw kill 1375
-    draw kill 1376
     draw kill 2285
-
-    draw fill 464
+    draw kill 2447
+    draw kill 2448
+    draw kill 2452
+    
+    draw fill 457
+    draw fill 458
+    draw fill 459
     draw fill 461
-    draw fill 462
-    draw fill 463
+    draw fill 464
+    draw fill 465
+    draw fill 466
+    draw fill 467
+    draw fill 477
+    draw fill 478
     draw fill 1373
-    draw fill 1374
-    draw fill 1375
-    draw fill 1376
     draw fill 2285
-
+    draw fill 2447
+    draw fill 2448
+    draw fill 2452
     base 0
     modify source SERSMM1
     modify position l_new b_new
@@ -79,11 +101,11 @@ next
 
 delete /var l_new b_new
 
-!file in serpens_h13cn10
+!file in serpens_cs32
 !find /all
 
-!table serpens_h13cn10 new
-!xy_map serpens_h13cn10
+!table serpens_cs32 new
+!xy_map serpens_cs32
 
 ! IRAM BEAM EFICIENCIES
 ! -------------------------------------------

@@ -157,7 +157,7 @@ uśrednianie widma
 /po konwolucji CLASS pogubił trochę informacji i nie chciał uśredniać profili przy użyciu AVERAGE /NOCHECK. Okazuje się, że CLASS uśrednia dane na kilka sposobów i domyślnie jest TIME. Po konwolucji działa tylko EQUAL.
 >p
 
-Jeśli widać spiki, zawęzić obszar komendą 'set mode x'
+Jeśli widać spiki, zawęzić obszar komendą 'set mode x' (najpierw set unit v)
 > zawęzić okno komendą 'set window -50 50' (lub inny zakres w zależności, gdzie mamy emisję)
 
 >base 0 - dopasowanie continuum (linia prosta) /można tez wyższego rzędu base 1, itp.

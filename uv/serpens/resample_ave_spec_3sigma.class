@@ -14,7 +14,7 @@ define integer NX Xref 	! NX: the number of channels desired
 define real vel vel_inc	! vel: the value at the reference channel
 						! vel_inc: the new channel separation
 
-file in serpens_hcn10_conv
+file in serpens_h13cn10_red
 
 find /all
 
@@ -51,7 +51,7 @@ set unit v
 					!	Sigma isn't recommended unless you just made a baseline fit before
 					!	Equal weight behaves differently in AVERAGE and ACCUMULATE 
 					!	(which produces the sum)
-average /nocheck  /res ! for CO6-5, 13CO6-5, C18O6-5: /res
+average /nocheck /weight equal! for CO6-5, 13CO6-5, C18O6-5: /res
 
 
 let NX 720		! For CN 1-0 is 560; HCN 1-0/H13CN 1-0 is 720;
@@ -75,4 +75,4 @@ draw window
 
 base 0 /plot  !for C18O6-5: base 2
 
-print area 12 19.6 /output smm1_hcn10_v2_red.txt
+print area 8.5 21.2 /output serpens_h13cn10_int.txt
