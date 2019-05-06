@@ -4,6 +4,7 @@ env/
 # Raw data files
 *.30m
 *.apex
+*.tgz
 
 #lmv maps
 *.tab
