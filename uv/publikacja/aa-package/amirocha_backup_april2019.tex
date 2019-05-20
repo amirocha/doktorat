@@ -13,7 +13,7 @@
 
 %
 \documentclass{aa}  
-\usepackage{float}
+
 %
 \usepackage{multirow}
 \usepackage{graphicx}
@@ -107,35 +107,12 @@ Data reduction was carried out with the CLASS package within GILDAS\footnote{See
 
 \section{Results}
 
-\subsection{Properties of embedded protostars}
-Ten Class 0/I protostars are present in the observed region. Spectral Energy Disribution (SED) was obtain for each of observed protostars in order to determine its properites. 
+\subsection{Molecular emission maps}
 
-Most of the protostars in our sample have not been investigated for their properties after \textit{Herschel} observations. Only SMM1, SMM3 and SMM4 were covered by PACS spectroscopy as part of the WISH and DIGIT team surveys (Karska et al. 2013). Based on literature sapmles the data from the Herschel Gould Belt survey (HGBS) project (André et al. 2010) we re-calculated SEDs for those sources (Fig.~\ref{seds}).
+The line maps in the targeted molecules show variety of structures that can be associated with YSOs and a large-scale cloud emission. In the following section we present the large-scale maps of CS $J=3-2$, HCN $J=1-0$ and CN $J=1-0$. Similar maps are shown in the Appendix A.
 
-The linear interpolation was performed while calculating the protostars parameters. The bolometric luminosity was determined by integrating the SEDs over frequency:
-\begin{equation} \label{eq1}
-L_{bol} = \pi \, d^2 \, \int F_\nu d\nu
-\end{equation}
-where $d$ is the cloud distance of 429 pc (
-The bolometric temperature was calculating as describe in Myers and Ladd 1993:
-\begin{equation} \label{eq2}
-T_{bol} = 1.25 \, 10^{-11} \, \bar{\nu}
-\end{equation}
-where $\bar{\nu}$ is the mean frequency given by:
-\begin{equation} \label{eq3}
-\bar{\nu} = \frac{\int \nu F_\nu d\nu}{ \int F_\nu d\nu}
-\end{equation}
-
-Table~\ref{table:2} contains the observed protostars parameters as well as the Class clasification. The clasification was adopted from Enoch et al. 2009 where four types of protostars with envelopes were distinguished. Early Class 0 was defined as a protostar of bolometric temperature lesser than 50K. Prostostars characterised by bolometric temperature between 50K and 100K were clasified as Late Class 0 protostars. Class I protostars were divided for Early and Late sub-type by the bolometric temperature of 300K.
-
-Most of the observed protostars in the Serpens Main region are very young, embedded sources of Early Class 0. SMM5 and SMM12 were clasified as Early Class I YSOs. The SMM6 protostar is the most evolved object in our sample. 
-
-\begin{figure}
-   \includegraphics[width=8cm]{serpens_seds.eps}
-      \caption{Serpens Main protostars' spectral energy distribution. There is an offset between plots of 3.0 $W m^{-2} s^{-1}$.}
-         \label{seds}
-   \end{figure}
-
+The integrated line intensity map of HCN $J=1-0$ is shown in Fig.~\ref{hcn10}. 
+Thirteen low-mass protostars can be distinguished in the field of view. Their positions and properties are shown in Table~\ref{table:2} \footnote{The outflows associated with low-mass protostars were obtained based on CO $J=6-5$ and CO $J=3-2$ observations (Y{\i}ld{\i}z et al. 2015)}. We have chosen six off-source positions where HCN $J=1-0$ or CN $J=1-0$ have the maximum of emission at the location of outflows. Their coordinates and short descriptions is presented in Table~\ref{table:3}.
 
 \begin{table*}
 \caption{Catalogue of protostars properties}             % title of Table
@@ -144,44 +121,36 @@ Most of the observed protostars in the Serpens Main region are very young, embed
 \begin{tabular}{c c c c c c c} 
 \hline\hline 
 R.A. & Decl. & Sbmm source & Other names & $T_\mathrm{bol}$ &  $L_\mathrm{bol}$  & Class\\
- (J2000.0) & (J2000.0) & & & (K) & (L$_\odot$) & \\
+ (J200) & (J200) & & & (K) & (L$_\odot$) & \\
 \hline  
+18 29 48.12 & +01 16 44.9 & S68N  & Ser-emb8, Bolo22 & 30$^a$ & 1.73$^a$ & 0$^a$\\
 
-18 29 48.3 & +01 16 42.7 & SMM9 & ISO241, WMW23& 46.14 & 11.69 & Early Class 0\\
+18 29 48.3 & +01 16 42.7 & SMM9 & ISO241, WMW23& & 1.73$^c$ & 0$^b$\\
 
-18 29 50.0 & +01 15 20.3 & SMM1 & FIRS1, Ser-emb6, Bolo23, EC41 & 40.35 & 108.72 & Early Class 0\\
+18 29 50.0 & +01 15 20.3 & SMM1 & FIRS1, Ser-emb6, Bolo23, EC41, ISO258a, WMW114 & 13$^a$ & 69$^a$ & 0$^a$\\
 
-18 29 51.4 & +01 16 38.3 & SMM5 & EC53, WMW24, Ser p3 & 148.24 & 4.49 & Early Class I\\
+18 29 51.4 & +01 16 38.3 & SMM5 & EC53, WMW24, Ser p3 & & 1.62$^c$ & 0/I$^b$\\
 
-18 29 52.3 & +01 15 48.8 & SMM10 & WMW21 & 85.09 & 5.13 & Late Class 0\\
+18 29 52.3 & +01 15 48.8 & SMM10 & WMW21 & 110$^d$ & 4$^d$ & 0/I$^e$\\
 
-18 29 57.0 & +01 13 11.3 & SMM4 & & 29.54 & 13.6 & Early Class 0\\
+18 29 57.0 & +01 13 11.3 & SMM4 & & 28$^f$ & 13.6$^f$ & 0$^f$\\
 
-18 29 57.8 & +01 14 05.3 & SMM6 & EC90, WMW35, SVS20S & 526.44 & 43.39 & Late Class I\\
+18 29 57.8 & +01 14 05.3 & SMM6 & EC90, WMW35, SVS20S & & 13.54$^c$ & 0/I$^e$\\
 
-18 29 59.1 & +01 13 14.3 & SMM12 & & 100.87 & 6.68 & Early Class I\\
+18 29 59.1 & +01 13 14.3 & SMM12 & & &  & \\
 
-18 29 59.6 & +01 13 59.2 & SMM3 & & 42.39 & 27.49 & Early Class 0\\
+18 29 59.6 & +01 13 59.2 & SMM3 & & 37$^f$ & 27.5$^f$ & 0$^f$\\
 
-18 30 00.5 & +01 12 57.8 & SMM2 & Ser-emb4, Bolo28 & 41.6 & 5.1 & Early Class 0\\
+18 30 00.5 & +01 12 57.8 & SMM2 & Ser-emb4, Bolo28 & 54$^g$ & 3.1$^g$ & 0/I$^e$\\
 
-18 30 01.9 & +01 15 09.2 & SMM8 & & & 0.068$^a$ & \\
+18 30 01.9 & +01 15 09.2 & SMM8 & & & 0.068$^c$ & \\
 \hline
 \end{tabular}
 \begin{flushleft}
 Coordinates taken from Suresh et al. 2016, except S68N (Enoch et al. 2007) and SMM8 (Lee et al. 2014).\\
-References: $a$ Dionatos et al. 2010
+References: $a$ Francis et al. 2019. $b$ Enoch et al. 2007, $c$ Dionatos et al. 2010, $d$ Scaife et al. 2012, $e$ Winston et al. 2007, $f$ Karska et al. 2018, $g$ Enoch et al. 2011. \\
 \end{flushleft}
 \end{table*}
-
-\subsection{Molecular emission maps}
-
-The line maps in the targeted molecules show variety of structures that can be associated with YSOs and a large-scale cloud emission. In the following section we present the large-scale maps of CS $J=3-2$, HCN $J=1-0$ and CN $J=1-0$. Similar maps are shown in the Appendix A.
-
-The integrated line intensity map of HCN $J=1-0$ is shown in Fig.~\ref{hcn10}. 
-Thirteen low-mass protostars can be distinguished in the field of view. Their positions and properties are shown in Table~\ref{table:2} \footnote{The outflows associated with low-mass protostars were obtained based on CO $J=6-5$ and CO $J=3-2$ observations (Y{\i}ld{\i}z et al. 2015)}. We have chosen six off-source positions where HCN $J=1-0$ or CN $J=1-0$ have the maximum of emission at the location of outflows. Their coordinates and short descriptions is presented in Table~\ref{table:3}.
-
-
 
 \begin{table}
 \caption{Properties of the selected off-source positions}             % title of Table

@@ -15,6 +15,8 @@ import matplotlib.pyplot as plt
 import math as m
 import numpy as np
 from scipy.interpolate import interp1d
+from scipy.interpolate import splrep
+from scipy.interpolate import splev
 import scipy.integrate as integrate
 
 
@@ -62,7 +64,17 @@ def interpolate(freq, fluxes, interpolation_type='cubic', factor=1.):
 	interpolation = interp1d(freq, fluxes, kind=interpolation_type, fill_value="extrapolate")
 	freq_interpol = np.arange(freq[-1],freq[0],(freq[0]+freq[-1])/(factor*len(freq)))
 	fluxes_interpol = interpolation(freq_interpol)
+	print(interpolation)
 	return interpolation, freq_interpol, fluxes_interpol  #function, x_axis, y_axis
+
+def interpolate_new(freq, fluxes, interpolation_type=3, factor=100.):
+
+	freq_sorted, fluxes_sorted = sort_points(freq, fluxes)
+	freq_interpol = np.arange(freq[-1],freq[0],(freq[0]+freq[-1])/(factor*len(freq)))
+	interpolation = splrep(freq_sorted, fluxes_sorted, k=3, task=0, s=1, t=None)
+	fluxes_interpol = splev(freq_interpol, interpolation)
+	print(fluxes_interpol)
+	return freq_interpol, fluxes_interpol  #function, x_axis, y_axis
 
 def integrate_function(function, start, end, steps=10000):
 	sum_=0.
@@ -189,12 +201,21 @@ fluxes_log=list_in_log_scale(fluxes_watts)
 #all_points_freq_log = list_in_log_scale(all_points_freq)
 #all_points_fluxes_log = list_in_log_scale(all_points_fluxes_watts)
 
+
+#####________new_method__________########
+
+freq_interpol, flux_interpol = interpolate_new(freq, fluxes_watts)
+
+freq_interpol_log, flux_interpol_log = interpolate_new(freq_log, fluxes_log)
+
+'''
 l='linear'
 c='cubic'
+q='quadratic'
 
-interpolation, freq_interpol, flux_interpol = interpolate(freq, fluxes_watts, l , 100.)
+interpolation, freq_interpol, flux_interpol = interpolate(freq, fluxes_watts, l, factor=100)
 
-interpolation_log, freq_interpol_log, flux_interpol_log = interpolate(freq_log, fluxes_log, l, 100.)
+interpolation_log, freq_interpol_log, flux_interpol_log = interpolate(freq_log, fluxes_log, l, factor=100)
 
 #interpolation_allpoints, freq_allpoints_interpol, flux_allpoints_interpol = interpolate(all_points_freq, all_points_fluxes_watts, l, 100.)
 
@@ -224,7 +245,13 @@ print(lbol_interpol, tbol_interpol)
 #newpoints_freq_log = [m.log10(freq) for freq in newpoints_freq]
 #newpoints_flux_div_freq_log = [m.log10(1e-26*newpoints_fluxes[i]*newpoints_freq[i]) for i in range(len(newpoints_fluxes))] 
 fluxfreq_watts_log = list_in_log_scale(fluxfreq_watts)
-
+#fluxfreq_watts_allpoints_log = list_in_log_scale(fluxfreq_watts_all)
+'''
+#writting to file
+#file2=open('sed_smm12.txt','w')
+#for i in range(len(freq_log)): 
+#	file2.write("%f %f\n" % (freq_log[i], fluxes_log[i]))
+#file2.close()
 
 fig, ax = plt.subplots()
 plt.title('SMM2')
@@ -235,11 +262,11 @@ plt.xlabel(r'log($\nu$) [Hz]')
 plt.plot(freq_log, fluxes_log, 'ro', linewidth=1)
 plt.plot(freq_interpol_log, flux_interpol_log, 'k-', linewidth=0.6)
 props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
-ax.text(0.05, 0.15, r'T$_{bol}$ = '+"%.2f" % round(tbol_interpol,2)+' K', transform=ax.transAxes, fontsize=12, verticalalignment='bottom', bbox=props)
-ax.text(0.05, 0.05, r'L$_{bol}$ = '+"%.2f" % round(lbol_interpol,2)+r' L$_{Sun}$', transform=ax.transAxes, fontsize=12, verticalalignment='bottom', bbox=props)
+#ax.text(0.05, 0.15, r'T$_{bol}$ = '+"%.2f" % round(tbol_interpol,2)+' K', transform=ax.transAxes, fontsize=12, verticalalignment='bottom', bbox=props)
+#ax.text(0.05, 0.05, r'L$_{bol}$ = '+"%.2f" % round(lbol_interpol,2)+r' L$_{Sun}$', transform=ax.transAxes, fontsize=12, verticalalignment='bottom', bbox=props)
 #plt.plot(newpoints_freq_log, newpoints_flux_div_freq_log, 'bo', linewidth=1)
 
-plt.savefig('sed_smm2_fit.png')
+plt.savefig('test.png')
 plt.close()
 
 '''
