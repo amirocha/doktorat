@@ -51,7 +51,7 @@ def read_columns(data):
 
 	return wave_lenghts, fluxes
   
-def wavelenght2freq(wavelenght_list):
+def wavelenght2freq(wavelenght_list):  #or freq2wavelenght
 	freq_list = [(c/wave) for wave in wavelenght_list]
 	return freq_list
 
@@ -64,16 +64,14 @@ def interpolate(freq, fluxes, interpolation_type='cubic', factor=1.):
 	interpolation = interp1d(freq, fluxes, kind=interpolation_type, fill_value="extrapolate")
 	freq_interpol = np.arange(freq[-1],freq[0],(freq[0]+freq[-1])/(factor*len(freq)))
 	fluxes_interpol = interpolation(freq_interpol)
-	print(interpolation)
 	return interpolation, freq_interpol, fluxes_interpol  #function, x_axis, y_axis
 
 def interpolate_new(freq, fluxes, interpolation_type=3, factor=100.):
 
 	freq_sorted, fluxes_sorted = sort_points(freq, fluxes)
 	freq_interpol = np.arange(freq[-1],freq[0],(freq[0]+freq[-1])/(factor*len(freq)))
-	interpolation = splrep(freq_sorted, fluxes_sorted, k=3, task=0, s=1, t=None)
+	interpolation = splrep(freq_sorted, fluxes_sorted, k=3, task=0, s=0, t=None)
 	fluxes_interpol = splev(freq_interpol, interpolation)
-	print(fluxes_interpol)
 	return freq_interpol, fluxes_interpol  #function, x_axis, y_axis
 
 def integrate_function(function, start, end, steps=10000):
@@ -112,11 +110,10 @@ def calculate_tbol_lbol(freq_list, flux_list, integral):
 	return tbol, lbol
 
 
-file_name='smm2.inp'   
-file_name_newpoints='smm4_newpoints.txt'
+file_name='smm1_photo.inp'   
   
   
-dist=429. 
+dist=436. #Ortiz-Leon 2017
 
 c=2.9979e14 #in microns
 L_sun = 3.86e26 #W  
@@ -132,58 +129,12 @@ mini=1.0
 #-------------------------------------------------------
 
 
-file1=read_data(file_name)   #wczytuje plik smm1 [dl. fali [mikrony] i flux [Jy]
-#file2=read_data(file_name_newpoints)   #wczytuje pliki z nowymi punktami
+file1=read_data(file_name)   #wczytuje plik smm [dl. fali [mikrony] i flux [Jy]
+
   
-wave_lenghts = read_columns(file1)[0]
+wavelenghts = read_columns(file1)[0]
 fluxes = read_columns(file1)[1]
-freq = wavelenght2freq(wave_lenghts)
-
-#newpoints_wavelenghts=read_columns(file2)[0]
-#newpoints_fluxes=read_columns(file2)[1]
-#newpoints_freq=wavelenght2freq(newpoints_wavelenghts)
-
-#all_points_wavelenghts=wave_lenghts+newpoints_wavelenghts
-#all_points_fluxes=fluxes+newpoints_fluxes
-
-#all_points_wavelenghts, all_points_fluxes = sort_points(all_points_wavelenghts, all_points_fluxes)
-#all_points_freq=wavelenght2freq(all_points_wavelenghts)
-
-
-'''
-w_submm=[]
-s_submm=[]
-integral=0.
-tbol=0.
-for i in range(num-1):
-	integral+=1e-26*s[i]*(abs((c/w[i+1])-(c/w[i]))) # calka pod wykresem 
-	if w[i] > 349.:
-		w_submm.append(w[i])
-		s_submm.append(s[i])
-
-w2=[c/i for i in w]
-w_submm2=[c/i for i in w_submm]
-s2=[i*1e-26 for i in s]
-s_submm2=[i*1e-26 for i in s_submm]
-integral2=np.trapz(w2,s2)
-
-s3=[s[i]*1e-26*w2[i] for i in range(len(s))]
-
-tbol=1.25e-11*np.trapz(w2,s3)/integral
-
-lum=(integral2*4.0*m.pi*(dist*3.0857e16)**2)/L_sun
-
-integral_submm=0.
-for i in range(len(w_submm)-1):
-	integral_submm+=1e-26*s_submm[i]*(abs((c/w_submm[i+1])-(c/w_submm[i]))) # calka pod wykresem 
-#integral_submm=np.trapz(w_submm2,s_submm2)
-# q=where(wl gt 349) gdzie lista dlugosci jest wieksza od 350 mikronow = L_bol_submm
-
-lum_submm=((integral_submm)*4.0*m.pi*(dist*3.0857e16)**2)/L_sun
-
-lum_submm_vel_lum=100.*(lum_submm/lum)
-'''
-
+freq = wavelenght2freq(wavelenghts)
  
 
 #------interpolation-----------------------------------
@@ -192,14 +143,11 @@ lum_submm_vel_lum=100.*(lum_submm/lum)
 #----------------------fluxes in Watts
 
 fluxes_watts=flux_in_watts(fluxes)
-#all_points_fluxes_watts=flux_in_watts(all_points_fluxes)
 
 #-----------------------logaritmic scale
 
 freq_log=list_in_log_scale(freq)
 fluxes_log=list_in_log_scale(fluxes_watts)
-#all_points_freq_log = list_in_log_scale(all_points_freq)
-#all_points_fluxes_log = list_in_log_scale(all_points_fluxes_watts)
 
 
 #####________new_method__________########
@@ -208,6 +156,32 @@ freq_interpol, flux_interpol = interpolate_new(freq, fluxes_watts)
 
 freq_interpol_log, flux_interpol_log = interpolate_new(freq_log, fluxes_log)
 
+flux_interpol = log_list_in_linear_scale(flux_interpol_log)
+freq_interpol = log_list_in_linear_scale(freq_interpol_log)
+
+integral = integrate(freq_interpol, flux_interpol)
+fluxfreq_interpol=calculate_flux_nu(flux_interpol, freq_interpol)   
+tbol_interpol, lbol_interpol=calculate_tbol_lbol(freq_interpol,fluxfreq_interpol,integral)
+
+print(lbol_interpol, tbol_interpol)
+
+#####________L/T sbmm__________########
+wavelenght_interpol=wavelenght2freq(freq_interpol)
+sbmm_wavelenghts=[]
+sbmm_fluxes=[]
+for i in range(len(wavelenght_interpol)):
+	if wavelenght_interpol[i] > 350: #Enoch2009
+		sbmm_wavelenghts.append(wavelenght_interpol[i])
+		sbmm_fluxes.append(wavelenght_interpol[i])
+sbmm_freq=wavelenght2freq(sbmm_wavelenghts)
+sbmm_integral = integrate(sbmm_freq, sbmm_fluxes)
+sbmm_fluxfreq=calculate_flux_nu(sbmm_fluxes, sbmm_freq)   
+sbmm_tbol, sbmm_lbol = calculate_tbol_lbol(sbmm_freq,sbmm_fluxfreq,sbmm_integral)
+
+print(sbmm_tbol, sbmm_lbol)
+
+
+#####________old_method__________########
 '''
 l='linear'
 c='cubic'
@@ -248,25 +222,26 @@ fluxfreq_watts_log = list_in_log_scale(fluxfreq_watts)
 #fluxfreq_watts_allpoints_log = list_in_log_scale(fluxfreq_watts_all)
 '''
 #writting to file
-#file2=open('sed_smm12.txt','w')
-#for i in range(len(freq_log)): 
-#	file2.write("%f %f\n" % (freq_log[i], fluxes_log[i]))
+#file2=open('test.txt','w')
+#for i in range(len(freq_interpol)): 
+#	file2.write("%f %f \n" % (10**freq_interpol_log[i], 10**flux_interpol_log[i]))
 #file2.close()
 
 fig, ax = plt.subplots()
-plt.title('SMM2')
+plt.title('SMM1')
 #plt.ylabel(r'log(F$\cdot \nu$) [W $\cdot$ m$^{-2}$]')
-plt.ylabel(r'log(F) [W $\cdot$ m$^{-2}$ $\cdot$ Hz${-1}$')
+plt.ylabel(r'log(F) [W $\cdot$ m$^{-2}$ $\cdot$ Hz$^{-1}$]')
 plt.xlabel(r'log($\nu$) [Hz]')
-#plt.plot(freq_log, fluxfreq_watts_log, 'ro', linewidth=1)
 plt.plot(freq_log, fluxes_log, 'ro', linewidth=1)
+#plt.plot(freq, fluxes_watts, 'ro', linewidth=1)
 plt.plot(freq_interpol_log, flux_interpol_log, 'k-', linewidth=0.6)
+#plt.plot(freq_interpol, flux_interpol, 'k-', linewidth=0.6)
 props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
-#ax.text(0.05, 0.15, r'T$_{bol}$ = '+"%.2f" % round(tbol_interpol,2)+' K', transform=ax.transAxes, fontsize=12, verticalalignment='bottom', bbox=props)
-#ax.text(0.05, 0.05, r'L$_{bol}$ = '+"%.2f" % round(lbol_interpol,2)+r' L$_{Sun}$', transform=ax.transAxes, fontsize=12, verticalalignment='bottom', bbox=props)
+ax.text(0.05, 0.15, r'T$_{bol}$ = '+"%.2f" % round(tbol_interpol,2)+' K', transform=ax.transAxes, fontsize=12, verticalalignment='bottom', bbox=props)
+ax.text(0.05, 0.05, r'L$_{bol}$ = '+"%.2f" % round(lbol_interpol,2)+r' L$_{Sun}$', transform=ax.transAxes, fontsize=12, verticalalignment='bottom', bbox=props)
 #plt.plot(newpoints_freq_log, newpoints_flux_div_freq_log, 'bo', linewidth=1)
 
-plt.savefig('test.png')
+plt.savefig('SED_SMM1_cubic_interpolation_photo.png')
 plt.close()
 
 '''
