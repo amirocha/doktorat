@@ -18,10 +18,9 @@ def remove_D(lists):
 
 	for old_list in lists:
 		
-		for i in range(len(old_list)-124):
-			if old_list[i] == 'D':
-				old_list.pop(i)
-				old_list[i] = 'E'
+		for n, i in enumerate(old_list):
+			if i == 'D':
+				old_list[n] = 'E'
 		new_list = []
 
 		if old_list[0] == 'C':
@@ -48,7 +47,7 @@ def make_log_lists(lists):
 		new_list=[]
 		for elem in old_list:
 			if elem != 0:
-				new_list.append(m.log(elem))
+				new_list.append(m.log10(elem))
 			else:
 				new_list.append(elem)				
 		log_lists.append(new_list)	
@@ -66,12 +65,12 @@ def make_picture(new_lists):
 	plt.plot(new_lists[0], new_lists[3], 'b-')
 	plt.legend(('CS', 'CN', 'HCN'), loc='upper right')
 
-	plt.savefig('concentrations_dark_cloud', format='png')
+	plt.savefig('concentrations_DC', format='png')
 	plt.close()
 
 def main():
 
-	data = read_data('plot.dat')
+	data = read_data('plot_DC.dat')
 
 	time_raw = list(data[3])
 	CS_raw = list(data[19])

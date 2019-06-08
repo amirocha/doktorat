@@ -18,10 +18,9 @@ def remove_D(lists):
 
 	for old_list in lists:
 		
-		for i in range(len(old_list)-124):
-			if old_list[i] == 'D':
-				old_list.pop(i)
-				old_list[i] = 'E'
+		for n, i in enumerate(old_list):
+			if i == 'D':
+				old_list[n] = 'E'
 		new_list = []
 
 		if old_list[0] == 'C':
@@ -48,7 +47,7 @@ def make_log_lists(lists):
 		new_list=[]
 		for elem in old_list:
 			if elem != 0:
-				new_list.append(m.log(elem))
+				new_list.append(m.log10(elem))
 			else:
 				new_list.append(elem)				
 		log_lists.append(new_list)	
