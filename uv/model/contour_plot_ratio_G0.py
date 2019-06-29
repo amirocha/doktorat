@@ -8,8 +8,7 @@ rc('font',**{'family':'serif','serif':['Helvetica']})
 
 
 
-#AV = [1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0]
-AV = [1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.75, 1.9, 2.0]
+AV = [1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1]
 time = ['1e4', '5.3e4', '1.08e5','last']
 time_positions = [11, 27, 34, 124] 
 molecules = ['CN', 'HCN']
@@ -77,7 +76,7 @@ def make_picture(X, Y, Z):
 	ax.text(0.80, 0.1, 'T = 50K', transform=ax.transAxes, fontsize=14,
         verticalalignment='bottom', bbox=props)
 
-	plt.savefig('contour_plot_CN_HCN_G0.png')
+	plt.savefig('contour_plot_CN_HCN_G0.eps')
 	plt.close()
 
 

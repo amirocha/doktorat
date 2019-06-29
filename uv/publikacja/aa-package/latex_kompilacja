@@ -1,0 +1,7 @@
+latex amirocha.tex
+
+
+dvips amirocha.dvi -o amirocha.ps
+
+
+ps2pdf amirocha.ps

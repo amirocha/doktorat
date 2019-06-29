@@ -54,18 +54,26 @@ def make_log_lists(lists):
 
 	return log_lists
 
+def remove_first_step(lists):
+	
+	for one_list in lists:
+		one_list.pop(0)
+	
+	return lists
+
+
 def make_picture(new_lists):
 
 	plt.figure()
-	plt.title(u"Molecular concentrations time evolution")
-	plt.ylabel(u"Log(Molecule's concentration)")
+	plt.title(u"Molecular abudances time evolution")
+	plt.ylabel(u"Log(Molecule's abudance)")
 	plt.xlabel(u"Log(Time) [yr]")
 	plt.plot(new_lists[0], new_lists[1], 'k-')
 	plt.plot(new_lists[0], new_lists[2], 'r-')
 	plt.plot(new_lists[0], new_lists[3], 'b-')
 	plt.legend(('CS', 'CN', 'HCN'), loc='upper right')
 
-	plt.savefig('concentrations_DC', format='png')
+	plt.savefig('concentrations_DC', format='eps')
 	plt.close()
 
 def main():
@@ -76,11 +84,13 @@ def main():
 	CS_raw = list(data[19])
 	CN_raw = list(data[30])
 	HCN_raw = list(data[52])
+
 	lists = [time_raw, CS_raw, CN_raw, HCN_raw]
 
 	new_lists  = remove_D(lists)
 	log_lists = make_log_lists(new_lists) 
-	make_picture(log_lists)
+	shorter_log_lists = remove_first_step(log_lists)
+	make_picture(shorter_log_lists)
 
 if __name__ == '__main__':
 	main()
