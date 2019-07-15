@@ -1,8 +1,8 @@
 
 define double sigma
-let sigma 0.5
+let sigma 4.5
 define double up
-let up 2.5
+let up 35
 set unit v
 greg\pen /weight 1.75
 set font duplex
@@ -22,14 +22,14 @@ greg\set coord user
 greg\set character 0.5
 greg\pen /def
 
-	 greg\column x 2 y 3 z 4 /file serpens_c18o65_int.txt
+	 greg\column x 2 y 3 z 4 /file serpens_co65_cut.txt
     greg2\rgdata x y z /blank '1*sigma'
     greg\limits /rgdata /reverse x
     greg\level sigma to up by sigma
 
     greg\plot /scaling lin '1*sigma' up /blanking '1*sigma' 0
 
- 	 greg\column x 2 y 3 z 4 /file serpens_c18o65_int.txt
+ 	 greg\column x 2 y 3 z 4 /file serpens_co65_cut.txt
     greg2\rgdata x y z /blank sigma
     greg\limits /rgdata /reverse x 
     greg\level '1*sigma' to up by '1*sigma'
@@ -306,5 +306,5 @@ greg\label "\GD\Ga (Arcsec) " /x
  
 
 
-sys "rm -f serpens_c18o65_positions.eps"
-hardcopy "serpens_c18o65_positions.eps"
+sys "rm -f serpens_co65_positions.eps"
+hardcopy "serpens_co65_positions.eps"

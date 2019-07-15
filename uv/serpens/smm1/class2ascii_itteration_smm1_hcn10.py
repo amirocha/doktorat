@@ -2,7 +2,7 @@
 
 starting_position=(-14.5, 13.3, -12.5, 15.3)
 
-class2ascii_content="file in ../serpens_hcn10_conv \nset range {} {} {} {}\nfind /all\naverage /nocheck /weight equal\nsic output ./spectra/{}.txt\nfor i 1 to channels\n\tsay 'rx[i]' 'ry[i]' /format g16.8 g16.8\nnext\nsic output"
+class2ascii_content="file in ../../serpens_hcn10_conv \nset range {} {} {} {}\nfind /all\naverage /nocheck /weight equal\nsic output ../spectra/{}.txt\nfor i 1 to channels\n\tsay 'rx[i]' 'ry[i]' /format g16.8 g16.8\nnext\nsic output"
 
 def generate_script(i):
 	positions=calculate_positions(i)

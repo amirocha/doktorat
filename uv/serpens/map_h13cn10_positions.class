@@ -34,7 +34,7 @@ greg\pen /def
     greg\limits /rgdata /reverse x 
     greg\level '3*sigma' to up by '3*sigma'
 
-    greg\pen /colour 0
+    greg\pen /colour 7
     greg\rgmap /abs
 
 !axes
@@ -48,36 +48,6 @@ greg\pen /def
 
     wedge top /scaling lin sigma up
 
-    greg\set character 0.5   !S68Nb
-    greg\pen /colour 0 /weight 3
-    greg1\set marker 3 3 .2 0
-    set coord user
-    greg1\draw marker -3 109.9
-    greg\pen /colour 0 /weight 1
-    set font duplex
-    set character 0.20
-    greg1\draw text -3 119.9 "S68Nb" 
-
-    greg\set character 0.5   !S68Nc
-    greg\pen /colour 0 /weight 3
-    greg1\set marker 3 3 .2 0
-    set coord user
-    greg1\draw marker -13.5 99.4
-    greg\pen /colour 0 /weight 1
-    set font duplex
-    set character 0.20
-    greg1\draw text -23.5 109.4 "S68Nc" 
-
-    greg\set character 0.5   !S68Nd
-    greg\pen /colour 0 /weight 3
-    greg1\set marker 3 3 .2 0
-    set coord user
-    greg1\draw marker -9 60.7
-    greg\pen /colour 0 /weight 1
-    set font duplex
-    set character 0.20
-    greg1\draw text -9 70.7 "S68Nd" 
-
     greg\set character 0.5   !SMM8
     greg\pen /colour 0 /weight 3
     greg1\set marker 3 3 .2 0
@@ -85,7 +55,7 @@ greg\pen /def
     greg1\draw marker 184.5 -11.3
     greg\pen /colour 0 /weight 1
     set font duplex
-    set character 0.20
+    set character 0.250
     greg1\draw text 184.5 -1.3 "SMM8" 
 
 !positions
@@ -105,9 +75,9 @@ greg\pen /def
     greg1\set marker 4 1 .2 0
     set coord user
     greg1\draw marker -11. 33
-    greg\pen /colour 7 /weight 1
+    greg\pen /colour 0 /weight 1
     set font duplex
-    set character 0.20
+    set character 0.250
     greg1\draw text -11. 43 "1" 
 
     greg\set character 0.5   !position 2
@@ -115,9 +85,9 @@ greg\pen /def
     greg1\set marker 4 1 .2 0
     set coord user
     greg1\draw marker 121. -121
-    greg\pen /colour 7 /weight 1
+    greg\pen /colour 0 /weight 1
     set font duplex
-    set character 0.20
+    set character 0.250
     greg1\draw text 121. -111 "2" 
 
     greg\set character 0.5   !position 3
@@ -125,9 +95,9 @@ greg\pen /def
     greg1\set marker 4 1 .2 0
     set coord user
     greg1\draw marker 56 -112
-    greg\pen /colour 7 /weight 1
+    greg\pen /colour 0 /weight 1
     set font duplex
-    set character 0.20
+    set character 0.250
     greg1\draw text 56 -102 "3" 
 
     greg\set character 0.5   !position 4
@@ -135,9 +105,9 @@ greg\pen /def
     greg1\set marker 4 1 .2 0
     set coord user
     greg1\draw marker -54. 81
-    greg\pen /colour 7 /weight 1
+    greg\pen /colour 0 /weight 1
     set font duplex
-    set character 0.20
+    set character 0.250
     greg1\draw text -54. 91 "4" 
 
     greg\set character 0.5   !position 5
@@ -145,9 +115,9 @@ greg\pen /def
     greg1\set marker 4 1 .2 0
     set coord user
     greg1\draw marker 143. -66
-    greg\pen /colour 7 /weight 1
+    greg\pen /colour 0 /weight 1
     set font duplex
-    set character 0.20
+    set character 0.250
     greg1\draw text 143. -56 "5" 
 
 
@@ -192,7 +162,7 @@ greg\pen /def
     greg1\draw marker -0.6 1.4
     greg\pen /colour 0 /weight 1
     set font duplex
-    set character 0.20
+    set character 0.250
     greg1\draw text -0.6 11.4 "SMM1" !location of the text (+10arc to dec)
 
     greg\set character 0.5 !SMM4
@@ -202,7 +172,7 @@ greg\pen /def
     greg1\draw marker 106.5 -123.3
     greg\pen /colour 0 /weight 1
     set font duplex
-    set character 0.20
+    set character 0.250
     greg1\draw text 106.5 -113.3 "SMM4"
 
     greg\set character 0.5 !SMM3
@@ -212,7 +182,7 @@ greg\pen /def
     greg1\draw marker 145.5 -78.8
     greg\pen /colour 0 /weight 1
     set font duplex
-    set character 0.20
+    set character 0.250
     greg1\draw text 145.5 -68.8 "SMM3"
 
     greg\set character 0.5 !SMM9
@@ -222,7 +192,7 @@ greg\pen /def
     greg1\draw marker -22.95 81
     greg\pen /colour 0 /weight 1
     set font duplex
-    set character 0.20
+    set character 0.250
     greg1\draw text -22.95 91 "SMM9"
 
     greg\set character 0.5   !SMM5
@@ -232,7 +202,7 @@ greg\pen /def
     greg1\draw marker 27 77.8
     greg\pen /colour 0 /weight 1
     set font duplex
-    set character 0.20
+    set character 0.250
     greg1\draw text 27 87.8 "SMM5" 
 
     greg\pen /colour 0 /weight 3
@@ -242,7 +212,7 @@ greg\pen /def
     greg1\draw marker 123 -75.2
     greg\pen /colour 0 /weight 1
     set font duplex
-    set character 0.20
+    set character 0.250
     greg1\draw text 113 -65.2 "SMM6" 
 
     greg\set character 0.5   !SMM12
@@ -252,7 +222,7 @@ greg\pen /def
     greg1\draw marker 142.5 -126.2
     greg\pen /colour 0 /weight 1
     set font duplex
-    set character 0.20
+    set character 0.250
     greg1\draw text 142.5 -116.2 "SMM12" 
 
     greg\set character 0.5   !SMM2
@@ -262,7 +232,7 @@ greg\pen /def
     greg1\draw marker 163.5 -142.7
     greg\pen /colour 0 /weight 1
     set font duplex
-    set character 0.20
+    set character 0.250
     greg1\draw text 163.5 -132.7 "SMM2" 
 
     greg\set character 0.5   !SMM10
@@ -272,7 +242,7 @@ greg\pen /def
     greg1\draw marker 37.5 28.5
     greg\pen /colour 0 /weight 1
     set font duplex
-    set character 0.20
+    set character 0.250
     greg1\draw text 37.5 38.5 "SMM10" 
 
 
@@ -281,7 +251,7 @@ greg\set character 0.4
 greg\label "\GD\Gd (Arcsec) " /y
 greg\label "\GD\Ga (Arcsec) " /x
     greg\set character 0.5
-	greg\draw text 80 220 "Serpens H13CN J=1-0"
+	greg\draw text 80 240 "Serpens H\U1\U3CN J=1-0"
 
 !set viewport 0.05 0.3 0.06 0.4
 !!file in l483_12co65_5x5.apex

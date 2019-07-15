@@ -15,11 +15,11 @@ fig = plt.figure(figsize = (5,8), dpi = 400)
 #plt.rcParams["font.family"] = "Times New Roman"
 rc('font', **{'family':'serif', 'serif':['Times New Roman']})
 params = {'backend': 'pdf',
-          #'axes.labelsize': 12,
+          'axes.labelsize': 12,
           #'text.fontsize': 12,
           #'legend.fontsize': 12,
-          #'xtick.labelsize': 7,
-          #'ytick.labelsize': 7,
+          'xtick.labelsize': 20,
+          'ytick.labelsize': 12,
           # The comm. below determines whether you use LaTeX 
           # for all text in matplotlib (you probably don't want 
           # to turn this on, but may)
@@ -103,7 +103,7 @@ fig.subplots_adjust(wspace=0.15) # width spaces
 FIRST PANEL - CREATE A PLOT
 """
 ax1.set_xlabel(r'$\mathrm{log(\nu)\;[Hz]}$', fontsize = 14)
-ax1.set_ylabel(r'$\mathrm{Log(F)\;[W\,m^{-2}\,Hz^{-1}]\;\,+\,Offset\,(3.0)}$', fontsize = 14)
+ax1.set_ylabel(r'$\mathrm{Log(F)\;[W\,m^{-2}\,Hz^{-1}]\;\,+\,Offset}$', fontsize = 14)
 
 
 # major x ticks every 20, minor ticks every 10
@@ -111,8 +111,8 @@ ax1.set_ylabel(r'$\mathrm{Log(F)\;[W\,m^{-2}\,Hz^{-1}]\;\,+\,Offset\,(3.0)}$', f
 major_ticks_x = np.arange(10, 15, 1)                                              
 minor_ticks_x = np.arange(10, 15, 0.1) 
 
-major_ticks_y = np.arange(-28, 5, 1.0)                                              
-minor_ticks_y = np.arange(-28, 5, 0.1) 
+major_ticks_y = np.arange(-28, 5, 2.0)                                              
+minor_ticks_y = np.arange(-28, 5, 0.5) 
 
 ax1.set_xticks(major_ticks_x)                                                       
 ax1.set_xticks(minor_ticks_x, minor=True)
@@ -123,7 +123,7 @@ ax1.set_yticks(minor_ticks_y, minor=True)
 # Set the tick labels font
 for label in (ax1.get_xticklabels() + ax1.get_yticklabels()):
 #    label.set_fontname('Arial')
-    label.set_fontsize(7)
+    label.set_fontsize(10)
 
 
 

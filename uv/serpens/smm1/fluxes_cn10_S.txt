@@ -1,0 +1,9 @@
+Protostar   Molecule   Pixel number  Flux
+smm1   cn10   0   0.650803
+smm1   cn10   1   0.584536
+smm1   cn10   2   0.485766
+smm1   cn10   3   0.404619
+smm1   cn10   4   0.391890
+smm1   cn10   5   0.380565
+smm1   cn10   6   0.374216
+smm1   cn10   7   0.410722

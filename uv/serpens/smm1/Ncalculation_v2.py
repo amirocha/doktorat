@@ -41,7 +41,7 @@ def calculate_mass(data, mol, reg, D, M_outflow):
 	El={'co65': 57.6704, 'hcn10': 0.} #[cm^-1]
 	pixel_size={'co65': 4.5, 'hcn10': 14.65} #in arcsec
 	relative_abundance={'co65': 1.2*(10**(4)), 'hcn10': 10**(9)} #H_2/mol relative abudances: CO6-5 (Yildiz et al. 2012), HCN1-0 (Hirota et al. 1998)
-	Eup=El[mol]+freq[mol]*1000000./c #from Agata's code
+	Eup=El[mol]+(freq[mol]*1000000)/c #from Agata's code
 	#A=(10**(-2.9588))*(freq[mol]**2)*(partition_function_v2(mol, T_ex[mol])*(1/g[mol])*(((m.exp(-(0.*h*c)/(k*T_ex[mol])))-(m.exp(-(Eup*h*c)/(k*T_ex[mol]))))**(-1))*2.7964e-16)  #from Agata's code
 	#A=(10.**(logI[mol]))*(freq[mol]**2)*(partition_function(mol, T_ex)/g[mol])*((8*m.pi)/(c**2*m.exp(-El[mol]*h*c/(k*T_ex))-m.exp(-Eup*h*c/(k*T_ex))))
 	A={'co65':6.126e-06, 'hcn10':2.407E-05} #from LAMDA database 
@@ -55,7 +55,7 @@ def calculate_mass(data, mol, reg, D, M_outflow):
 	
 	# Total column density for all lines (eq. 2)
 	N_tot = N_g * partition_function_v2(mol, T_ex[mol]) * m.exp((Eu[mol]*h*c)/(k*T_ex[mol]))  
-
+	print(N_tot)
 	### Walker-Smith 2014 eq.1
 	eps0 = 8.8541878e-12 #in F/m = [A^2*s^4/kg*m^3]
 	mi_e = {'hcn10': 2.98, 'co65': 0.112}  # in D (debye) = [3.333564*10e-30 A*s*m] from (https://physics.nist.gov/PhysRefData/MolSpec/Triatomic/Html/Tables/HCN.html) or Walker-Smith 2014

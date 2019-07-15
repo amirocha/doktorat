@@ -1,8 +1,37 @@
-#!/usr/bin/env python
-#-*- coding: utf-8 -*-
-import math as m
-import matplotlib.pyplot as plt
+#!/usr/bin/python3.3
 
+# name the output file
+psname = 'serpens_seds.eps'
+
+# import packages
+from numpy import *
+from pylab import *
+import matplotlib.pyplot as plt
+from matplotlib import *
+import math as m
+
+#fig = plt.figure(figsize = (5,8), dpi = 400)
+
+
+rc('font', **{'family':'serif', 'serif':['Times New Roman']})
+params = {'backend': 'pdf',
+          'axes.labelsize': 12,
+          #'text.fontsize': 12,
+          #'legend.fontsize': 12,
+          'xtick.labelsize': 10,
+          'ytick.labelsize': 10,
+          # The comm. below determines whether you use LaTeX 
+          # for all text in matplotlib (you probably don't want 
+          # to turn this on, but may)
+          'text.usetex': False,
+          # four comm. below (math) determines what is used for math rendering 
+          'mathtext.rm': 'serif',
+          'mathtext.it': 'serif:italic',
+          'mathtext.bf': 'serif:bold',
+          'mathtext.fontset': 'custom',
+          #'figure.figsize': fig_size,
+          'axes.unicode_minus': True}
+matplotlib.rcParams.update(params)
 
 def read_data(filename):
 
@@ -65,9 +94,9 @@ def remove_first_step(lists):
 def make_picture(new_lists):
 
 	plt.figure()
-	plt.title(u"Molecular abudances time evolution")
-	plt.ylabel(u"Log(Molecule's abudance)")
-	plt.xlabel(u"Log(Time) [yr]")
+	#plt.title(u"Molecular abudances time evolution")
+	plt.ylabel(r"$\log(\frac{N(X)}{N(H_2)})$")
+	plt.xlabel(r"$\log(t)$ [yr]")
 	plt.plot(new_lists[0], new_lists[1], 'k-')
 	plt.plot(new_lists[0], new_lists[2], 'r-')
 	plt.plot(new_lists[0], new_lists[3], 'b-')

@@ -4,7 +4,7 @@ file in  "../spectraOdp.30m"
 
 find /all
 set source SERSMM1 
-set line HC13N(1-0)
+set line H13CN(1-0)
 !set frequency 88580 88680
 find /all
 
@@ -12,26 +12,14 @@ file out serpens_h13cn10_red.30m single /overwrite
 
 for i 1 to found
     get n
+    modify beam_eff 0.81 
     set window -50 50
-    modify beam_eff 0.81
-    draw kill 464
     draw kill 461
-    draw kill 462
-    draw kill 463
     draw kill 1373
-    draw kill 1374
-    draw kill 1375
-    draw kill 1376
     draw kill 2285
 
-    draw fill 464
     draw fill 461
-    draw fill 462
-    draw fill 463
     draw fill 1373
-    draw fill 1374
-    draw fill 1375
-    draw fill 1376
     draw fill 2285
 
     base 0
@@ -41,34 +29,20 @@ next
 let l_new lambda*12/pi
 let b_new beta*180/pi
 
-find /all
-set source SERSMM34 
-set line H13CN(1-0)
-!set frequency 146916 147022
-find /all
+find /source SERSMM34 /line H13CN(1-0)
+!set frequency 88580 88680
 
 for i 1 to found
     get n
-    set window -50 50
     modify beam_eff 0.81
-    draw kill 464
+    set window -50 50
+
     draw kill 461
-    draw kill 462
-    draw kill 463
     draw kill 1373
-    draw kill 1374
-    draw kill 1375
-    draw kill 1376
     draw kill 2285
 
-    draw fill 464
     draw fill 461
-    draw fill 462
-    draw fill 463
     draw fill 1373
-    draw fill 1374
-    draw fill 1375
-    draw fill 1376
     draw fill 2285
 
     base 0
@@ -79,11 +53,9 @@ next
 
 delete /var l_new b_new
 
-!file in serpens_h13cn10
-!find /all
 
-!table serpens_h13cn10 new
-!xy_map serpens_h13cn10
+!table serpens_hcn10 new
+!xy_map serpens_hcn10
 
 ! IRAM BEAM EFICIENCIES
 ! -------------------------------------------
@@ -98,4 +70,8 @@ delete /var l_new b_new
 ! -------------------------------------------! between Beff for 210 and 145 GHz,
                                              ! which gives 0.05 more than is for 
                                              ! 210 GHz (0.63 + 0.05), but centre
-                                             ! is for 177.5 not ~173 GHz
+                                             ! is for 177.5 not ~173 GHz 
+
+
+
+

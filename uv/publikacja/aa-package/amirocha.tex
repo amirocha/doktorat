@@ -17,6 +17,7 @@
 %
 \usepackage{multirow}
 \usepackage{graphicx}
+\usepackage{arydshln}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{txfonts}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -111,15 +112,25 @@ Data reduction was carried out with the CLASS package within GILDAS\footnote{See
 \section{Results}
 
 \subsection{Physical properties of embedded protostars}
-Ten Class 0/I protostars are present in the observed region. Spectral Energy Disribution (SED) was obtain for each of observed protostars in order to determine its properties. 
 
-Most of the protostars in our sample have not been investigated for their properties after \textit{Herschel} observations. Only SMM1, SMM3 and SMM4 were covered by PACS spectroscopy as part of the WISH and DIGIT team surveys (Karska et al. 2013). Based on literature samples the data from the Herschel Gould Belt survey (HGBS) project (André et al. 2010) we re-calculated SEDs for those sources (Fig.~\ref{seds}).
+\begin{figure}
+   \includegraphics[width=8cm]{serpens_hcn10_on_dust.eps}
+      \caption{Dust emission + HCN.}
+         \label{seds}
+   \end{figure}
+
+Ten Class 0/I protostars are present in the observed region. There are deeply embedded sources so the radiation coming from theirs neighbourhood is highly absorbed in the envelopes, than re-emited in the IR range. Envelopes become thinner with time, thus Spectral Energy Distributions (SEDs) allow to estimate the evolutional stage of an object (André et al. 2000). 
+
+A broad-band observations are needed in order to determine physical properties od protostar. Based on SEDs the bolometric temperature and luminosity can be calculated for each of observed protostars. Most of the protostars in our sample have not been investigated for their physical properties. Only SMM1, SMM3 and SMM4 were covered by PACS spectroscopy (Karska et al. 2013) as part of the 'Water in star-forming regions with Herschel' (WISH\footnote{WISH observes about 80 protostars at different evolutionary stages and masses with HIFI and PACS instruments on-board the Herschel Space Observatory.}) key program (van Dishoeck et al. 2011). 
+
+The SED plots (Fig.~\ref{seds}) were prepared based on literature samples (Dunham et al. 2015, Karska et al. 2013) and the data from the Herschel Gould Belt survey project (André et al. 2010). Some of the protostars in our sample can be associated with Ser-emb sources observed with the c2d and Bolocam project (Enoch et al. 2007, Enoch et al. 2009). The additional Herschel data cover the SED peak, therefore provide a
+more detailed information allowing to calculate the bolometric temperatures and luminosities of the protostar more precisely.
 
 The linear interpolation was performed while calculating the protostars parameters. The bolometric luminosity was determined by integrating the SEDs over frequency:
 \begin{equation} \label{eq1}
 L_{bol} = \pi \, d^2 \, \int F_\nu d\nu
 \end{equation}
-where $d$ is the cloud distance of 436 \pm 9.2 pc (Ortiz-León et al. 2017).
+where $d$ is the cloud distance of $436 \pm 9.2$ pc (Ortiz-León et al. 2017).
 The bolometric temperature was calculating as described in Myers and Ladd 1993:
 \begin{equation} \label{eq2}
 T_{bol} = 1.25 \, 10^{-11} \, \bar{\nu}
@@ -135,7 +146,7 @@ Most of the observed protostars in the Serpens Main region are very young, embed
 
 \begin{figure}
    \includegraphics[width=8cm]{serpens_seds.eps}
-      \caption{Serpens Main protostars' spectral energy distribution. There is an offset between plots of 3.0 $W m^{-2} s^{-1}$.}
+      \caption{Spectral Energy Distributions of protostars in the Serpens Main region.}
          \label{seds}
    \end{figure}
 
@@ -146,45 +157,44 @@ Most of the observed protostars in the Serpens Main region are very young, embed
 \centering                          % used for centering table
 \begin{tabular}{c c c c c c c} 
 \hline\hline 
-R.A. & Decl. & Sbmm source & Other names & $T_\mathrm{bol}$ &  $L_\mathrm{bol}$  & Class\\
- (J2000.0) & (J2000.0) & & & (K) & (L$_\odot$) & \\
+R.A. & Decl. & Source & $T_\mathrm{bol}$ &  $L_\mathrm{bol}$  & Class & Other names\\
+ (J2000.0) & (J2000.0) & & (K) & (L$_\odot$) & &\\
 \hline  
 
-18 29 48.3 & +01 16 42.7 & SMM9 & ISO241, WMW23& 46.14 & 11.69 & Early Class 0\\
+18 29 48.3 & +01 16 42.7 & SMM9 & 46.1 & 11.7 & Early Class 0 & ISO241, WMW23\\
 
-18 29 50.0 & +01 15 20.3 & SMM1 & FIRS1, Ser-emb6, Bolo23, EC41 & 40.35 & 108.72 & Early Class 0\\
+18 29 50.0 & +01 15 20.3 & SMM1 & 40.4 & 108.7 & Early Class 0 & FIRS1, Ser-emb6, Bolo23, EC41\\
 
-18 29 51.4 & +01 16 38.3 & SMM5 & EC53, WMW24, Ser p3 & 148.24 & 4.49 & Early Class I\\
+18 29 51.4 & +01 16 38.3 & SMM5 & 148.2 & 4.5 & Early Class I & EC53, WMW24, Ser p3 \\
 
-18 29 52.3 & +01 15 48.8 & SMM10 & WMW21 & 85.09 & 5.13 & Late Class 0\\
+18 29 52.3 & +01 15 48.8 & SMM10 & 85.0 & 5.1 & Late Class 0 & WMW21\\
 
-18 29 57.0 & +01 13 11.3 & SMM4 & & 29.54 & 13.6 & Early Class 0\\
+18 29 57.0 & +01 13 11.3 & SMM4 & 29.5 & 13.6 & Early Class 0 &\\
 
-18 29 57.8 & +01 14 05.3 & SMM6 & EC90, WMW35, SVS20S & 526.44 & 43.39 & Late Class I\\
+18 29 57.8 & +01 14 05.3 & SMM6 & 526.4 & 43.4 & Late Class I & EC90, WMW35, SVS20S \\
 
-18 29 59.1 & +01 13 14.3 & SMM12 & & 100.87 & 6.68 & Early Class I\\
+18 29 59.1 & +01 13 14.3 & SMM12 & 100.9 & 6.7 & Early Class I &\\
 
-18 29 59.6 & +01 13 59.2 & SMM3 & & 42.39 & 27.49 & Early Class 0\\
+18 29 59.6 & +01 13 59.2 & SMM3 & 42.4 & 27.5 & Early Class 0 & \\
 
-18 30 00.5 & +01 12 57.8 & SMM2 & Ser-emb4, Bolo28 & 41.6 & 5.1 & Early Class 0\\
+18 30 00.5 & +01 12 57.8 & SMM2 & 41.6 & 5.1 & Early Class 0 & Ser-emb4, Bolo28\\
 
-18 30 01.9 & +01 15 09.2 & SMM8 & & & 0.068$^a$ & \\
+18 30 01.9 & +01 15 09.2 & SMM8 & & 0.068$^a$ & &\\
 \hline
 \end{tabular}
 \begin{flushleft}
 Coordinates taken from Suresh et al. 2016, except S68N (Enoch et al. 2007) and SMM8 (Lee et al. 2014).\\
-References: $a$ Dionatos et al. 2010
+References: $^a$Dionatos et al. 2010
 \end{flushleft}
 \end{table*}
 
 \subsection{Molecular emission maps}
 
-The line maps in the targeted molecules show variety of structures that can be associated with YSOs and a large-scale cloud emission. In the following section we present the large-scale maps of CS $J=3-2$, HCN $J=1-0$ and CN $J=1-0$. Similar maps are shown in the Appendix A.
+The line maps in the targeted molecules show variety of structures that can be associated with YSOs and a large-scale cloud emission. Different spatial extend in molecules radiation is connected with various physical conditions around protostars. Here, we present the large-scale maps of CS $J=3-2$, HCN $J=1-0$ and CN $J=1-0$. Maps of their isotopologues are shown in the Appendix A. 
 
-The integrated line intensity map of HCN $J=1-0$ is shown in Fig.~\ref{hcn10}. 
-Thirteen low-mass protostars can be distinguished in the field of view. Their positions and properties are shown in Table~\ref{table:2} \footnote{The outflows associated with low-mass protostars were obtained based on CO $J=6-5$ and CO $J=3-2$ observations (Y{\i}ld{\i}z et al. 2015)}. We have chosen six off-source positions where HCN $J=1-0$ or CN $J=1-0$ have the maximum of emission at the location of outflows. Their coordinates and short descriptions is presented in Table~\ref{table:3}.
+Outflows associated with low-mass protostars (Table~\ref{table:2}) are observed in certain molecules emission. Blue- and redshifted molecular outflows around Ser-SMM1, Ser-SMM3 and Ser-SMM4 were pointed based on CO $J=6-5$ and CO $J=3-2$ observations (Y{\i}ld{\i}z et al. 2015). Additionally, five outflows positions were selected to more detailed studies (Table~\ref{table:3}).  
 
-
+The integrated line intensity map of HCN $J=1-0$ (Fig.~\ref{hcn10}) shows extended emission along outflow directions. The HCN $J=1-0$ line was detected at all positions, although it is weak at the positions of Ser-SMM5 and Ser-SMM10. On the other hand, the HCN $J=1-0$ emission is particularly strong around Ser-SMM4 and Ser-SMM9 sources. The emission maxima are detected among the known outflows of Ser-SMM1 and Ser-SMM4 (Y{\i}ld{\i}z et al. 2015). Especially, at the end of Ser-SMM4 blue outflow (position no. 4) we have significantly strong maximum of the HCN $J=1-0$. There is no intensively elongated outflow structure from Ser-SMM3 source.
 
 \begin{table}
 \caption{Properties of the selected off-source positions}             % title of Table
@@ -217,25 +227,37 @@ Pos. & R.A. & Decl. & Remarks\\
 %\end{flushleft}
 \end{table}
 
-There is no intensively elongated outflow structure from Ser-SMM3 source. The HCN $J=1-0$ map shows extended emission along outflow directions. The HCN $J=1-0$ line was detected at all positions, although it is weak at the positions of Ser-SMM5 and Ser-SMM10. On the other hand, the HCN $J=1-0$ emission is particularly strong around Ser-SMM4 and Ser-SMM9 sources. The emission maxima are detected among the known outflows of Ser-SMM1 and Ser-SMM4 (Y{\i}ld{\i}z et al. 2015). Especially, at the end of Ser-SMM4 blue outflow (position no. 4) we have significantly strong maximum of the HCN $J=1-0$ radiation. 
+
 
 \begin{figure}
    \centering
-   \includegraphics[width=8cm]{serpens_hcn10.eps}
+   \includegraphics[width=9cm]{serpens_hcn10.eps}
       \caption{Emission of the HCN $J=1-0$ in the Serpens Main region. Black triangles show the positions of the protostars (Suresh et al. 2016), whereas the black lines show the associated outflow directions (Y{\i}ld{\i}z et al. 2015). Outflow positions were displayed as pulrple crosses.}
          \label{hcn10}
    \end{figure}
 
-CS $J=3-2$ line emission map shows similar spatial distribution to HCN $J=1-0$ (Fig.~\ref{cs32}). The most significant elongated structure can be associated with Ser-SMM4 blue-shifted outflow. It is situated at the same place in both maps, extending over 80$^{\prime\prime}$. A similar large-scale structure is detected along Ser-SMM1 outflows, although it is much more distinctive in the HCN $J=1-0$ map. A strong emission around Ser-SMM9 have a circular shape in HCN $J=1-0$ map, however, it has more elongated structure in CS $J=3-2$ line emission which overlaps with the S68N outflows (Kristensen et al. 2010). The peaks of emissions are situated in the different places. HCN $J=1-0$ has relatively strong emission around Ser-SMM4 protostar, but in CS $J=3-2$ line a significant emission towards position no. 3 can be noticed that indicates CN $J=1-0$ local maximum. 
+CS $J=3-2$ line emission map (Fig.~\ref{cs32}) shows similar spatial distribution to HCN $J=1-0$. The most significant elongated structure can be associated with Ser-SMM4 blue-shifted outflow. It is situated at the same place in both maps, extending over 80$^{\prime\prime}$. A similar large-scale structure is detected along Ser-SMM1 outflows, although it is much more distinctive in the HCN $J=1-0$ map. A strong emission around Ser-SMM9 have a circular shape in HCN $J=1-0$ map, however, it has more elongated structure in CS $J=3-2$ line emission which overlaps with the S68N outflows (Kristensen et al. 2010). The peaks of emissions are situated in the different places. HCN $J=1-0$ has relatively strong emission around Ser-SMM4 protostar, but in CS $J=3-2$ line a significant emission towards position no. 3 can be noticed that indicates CN $J=1-0$ local maximum. 
+
+\begin{figure}
+\includegraphics[width=9cm]{serpens_cs32.eps}
+\caption{Similar to Fig.~\ref{hcn10} but the emission of the CS $J=3-2$ line.}
+\label{cs32}
+\end{figure}
 
 CN $J=1-0$ line emission is focused mostly around the positions of protostars (Fig.~\ref{cn10}). 
 The highest local peaks are associated with Class 0 low-mass protostars: Ser-SMM1 (8.2~K~km/s), Ser-SMM3 (15.9~K~km/s), Ser-SMM4 (14.1~K~km/s) and Ser-SMM6 (15.3~K~km/s). The spatial distribution is qualitatively different compared to the HCN $J=1-0$ map. The strongest emission characterises the dense surroundings of Ser-SMM3, Ser-SMM6 and Ser-SMM4 sources while the northern part of this region does not show such a distinct emission in the HCN $J=1-0$ line. On the other hand, dense emissive region of the Ser-SMM9 source is significantly weaker in CN $J=1-0$ line. CN $J=1-0$ map can be characterised by compact, condensed emission without any strongly elongated structures. The H$^{13}$CN $J=1-0$ line exhibits similar morphological distribution as CN(1-0) and \mbox{C$^{34}$S(3-2)}. 
+
+\begin{figure}
+\includegraphics[width=9cm]{serpens_cn10.eps}
+\caption{Similar to Fig.~\ref{hcn10} but the emission of the CN $J=1-0$ line.}
+\label{cn10}
+\end{figure}
 
 In the presence of the UV radiation, HCN molecule photodissociates into CN molecule and H atom (Stäuber et al. 2005). Thus, combined map of these molecules can indicate regions with stronger UV radiation. We present a large-scale map of CN $J=1-0$ to HCN $J=1-0$ flux ratio (Fig.~\ref{cn10_div_hcn10}). The image of CN emission has been resampled to beam size of HCN in order to compare the same emitting regions. CN/HCN ratio is relatively low around the brightest submillimetre source Ser-SMM1. Similarly, at the dense area of Ser-SMM9 surrounding a significantly weaker CN/HCN emission can be noticed. On the other hand, it peaks at the Northern part of the map around rather faint Ser-SMM5 source. At the Southern part high CN/HCN ratio emission is more extended than in the Northen part. It expands from Ser-SMM3 and Ser-SMM6 area to the North. High CN/HCN ratio can also be found on the edges of the image but it is probably caused by different size of the CN and the HCN maps.
 
 \begin{figure}
    \centering
-   \includegraphics[width=8cm]{serpens_cn10_divided_hcn10.eps}
+   \includegraphics[width=9cm]{serpens_cn10_divided_hcn10.eps}
       \caption{Emission of the divided fluxes CN $J=1-0$/HCN $J=1-0$ in the Serpens Main region. Black triangles show the positions of the protostars (Suresh et al. 2016), whereas the black lines show the associated outflow directions (Y{\i}ld{\i}z et al. 2015). Outflow positions were displayed as pulrple crosses.}
          \label{cn10_div_hcn10}
    \end{figure}
@@ -244,75 +266,75 @@ The low energy level of HCN ($E_\mathrm{u}$ = 4.25 K) traces cold, high-density 
 
 To summarise, spatial distribution of different lines emission varies depending on the observed molecule. The most distinct differences can be noticed between HCN and CN map. Most of the sources show high flux values in both molecules (Table~\ref{table:4}). However, they present unequal levels which indicates regions of different properties. In order to better understand this issue we analyse the molecular line profiles in the Section 3.2. 
 
-\begin{table}
-\caption{Integrated fluxes of the detected protostars}             % title of Table
+\begin{table*}
+\caption{Integrated fluxes of the observed line at the positions of protostars}             % title of Table
 \label{table:4}      % is used to refer this table in the text
 \centering                          % used for centering table
-\begin{tabular}{c c c c c} 
+\begin{tabular}{c l c c c} 
 \hline\hline 
-Source & Line & Line freq.$^a$ & Flux$^b$ & Column dens. \\
- &  & (MHz) & (K) & (cm$^{-2}$) \\
+Source & Line & Flux & Column dens. \\
+ &  & (K) & (cm$^{-2}$) \\
 \hline  
-\multirow{6}{*}{SMM1} & CN 1-0 & 113487.66 & 6.53 & 1.3$\times$10$^{15}$\\
-{} & HCN 1-0 & 88629.53 & 6.78 & 1.9$\times$10$^{14}$ \\ 
-{} & CS 3-2 & 146964.15 & 6.93 & 7.9$\times$10$^{13}$\\  
-{} & C$^{34}$S 3-2 & 144612.88 & 1.39 & 1.7$\times$10$^{13}$\\ 
-{} & H$^{13}$CN 1-0 & 86337.74 & 1.28 & no data\\ 
-{} & H$^{13}$CN 2-1 & 172708.89 & 0.03 & no data\\  \hline
-\multirow{6}{*}{SMM2} & CN 1-0 & 113488.17 & 10.58 & 2.2$\times$10$^{15}$ \\
-{} & HCN 1-0 & 88629.77 & 13.98 & 4.0$\times$10$^{14}$\\ 
-{} & CS 3-2 & 146965.22 & 8.03 & 9.1$\times$10$^{13}$\\  
-{} & C$^{34}$S 3-2 & 144613.51 & 1.15 & 1.4$\times$10$^{13}$\\
-{} & H$^{13}$CN 1-0 & 86337.94 & 2.46 & no data\\ 
-{} & H$^{13}$CN 2-1 & \multicolumn{3}{c}{not detected}  \\  \hline
-\multirow{6}{*}{SMM3} & CN 1-0 & 113488.19 & 13.26 & 2.7$\times$10$^{15}$\\
-{} & HCN 1-0 & 88629.61 & 12.48 & 3.6$\times$10$^{14}$\\ 
-{} & CS 3-2 & 146966.10 & 10.04 & 1.1$\times$10$^{14}$\\  
-{} & C$^{34}$S 3-2 & 144613.41 & 0.37 & 4.4$\times$10$^{12}$\\
-{} & H$^{13}$CN 1-0 & 86337.92 & 0.98 & no data\\ 
-{} & H$^{13}$CN 2-1 & \multicolumn{3}{c}{not detected}  \\  \hline
-\multirow{6}{*}{SMM4} & CN 1-0 & 113488.05 & 13.06 & 2.7$\times$10$^{15}$\\
-{} & HCN 1-0 & 88629.61 & 20.20 & 5.7$\times$10$^{14}$ \\ 
-{} & CS 3-2 & 146965.44 & 19.81 & 2.2$\times$10$^{14}$\\  
-{} & C$^{34}$S 3-2 & 144613.74 & 0.02 & 1.9$\times$10$^{11}$\\ 
-{} & H$^{13}$CN 1-0 & 86337.80 & 2.10 & no data\\ 
-{} & H$^{13}$CN 2-1 & 172673.09 & 0.26 & no data\\  \hline
-\multirow{6}{*}{SMM5} & CN 1-0 & 1113488.05 & 2.57 & no data\\
-{} & HCN 1-0 & 88629.53 & 3.71 & 1.1$\times$10$^{14}$\\ 
-{} & CS 3-2 & 146965.03 & 2.33 & no data\\  
-{} & C$^{34}$S 3-2 & 144613.14 & 0.07 & 7.9$\times$10$^{11}$\\ 
-{} & H$^{13}$CN 1-0 & 86337.76 & 0.70 & no data\\ 
-{} & H$^{13}$CN 2-1 & \multicolumn{3}{c}{not detected}  \\  \hline
-\multirow{6}{*}{SMM6} & CN 1-0 & 113487.76 & 11.48 & 2.4$\times$10$^{15}$\\
-{} & HCN 1-0 & 88629.61 & 11.85 & 3.4$\times$10$^{14}$ \\ 
-{} & CS 3-2 & 146965.03 & 9.37 & 1.1$\times$10$^{14}$ \\  
-{} & C$^{34}$S 3-2 & 144613.25 & 0.54 & 6.4$\times$10$^{12}$ \\ 
-{} & H$^{13}$CN 1-0 & 86336.53 & 0.16 & no data\\
-{} & H$^{13}$CN 2-1 & 172673.69 & 0.02 & no data \\  \hline
-\multirow{6}{*}{SMM9} & CN 1-0 & 113487.64 & 4.82 & 9.9$\times$10$^{14}$\\
-{} & HCN 1-0 & 88628.98 & 12.55 & no data \\ 
-{} & CS 3-2 & 146963.87 & 13.75 & no data\\ 
-{} & C$^{34}$S 3-2 & 144612.96 & 1.17 & 1.4$\times$10$^{13}$ \\ 
-{} & H$^{13}$CN 1-0 & 86337.65 & 1.61 & no data\\ 
-{} & H$^{13}$CN 2-1 & 172673.14 & 0.04 & no data\\  \hline
-\multirow{6}{*}{SMM10} & CN 1-0 & 113487.58 & 2.89 & 5.9$\times$10$^{14}$\\
-{} & HCN 1-0 & 88629.53 & 4.40 & 1.3$\times$10$^{14}$\\ 
-{} & CS 3-2 & 146965.06 & 4.47 & 5.1$\times$10$^{13}$ \\  
-{} & C$^{34}$S 3-2 & 1144613.19 & 0.35 & 4.2$\times$10$^{12}$\\ 
-{} & H$^{13}$CN 1-0 & 86337.72 & 0.98 & no data\\ 
-{} & H$^{13}$CN 2-1 & \multicolumn{3}{c}{not detected}  \\  \hline
-\multirow{6}{*}{SMM12} & CN 1-0 & 113488.17 & 10.58 & 2.2$\times$10$^{15}$\\
-{} & HCN 1-0 & 88629.77 & 13.98 & 4.0$\times$10$^{14}$\\ 
-{} & CS 3-2 & 146965.06 & 10.30 & 1.2$\times$10$^{14}$\\  
-{} & C$^{34}$S 3-2 & 144613.39 & 0.93 & 1.1$\times$10$^{13}$\\ 
-{} & H$^{13}$CN 1-0 & 86337.94 & 2.46 & no data\\ 
-{} & H$^{13}$CN 2-1 & \multicolumn{3}{c}{not detected}  \\  \hline
+\multirow{6}{*}{SMM1} & CN 1-0 & 6.53 & 1.3$\times$10$^{15}$\\
+{} & HCN 1-0 & 6.78 & 1.9$\times$10$^{14}$ \\ 
+{} & CS 3-2 & 6.93 & 7.9$\times$10$^{13}$\\  
+{} & C$^{34}$S 3-2 & 1.39 & 1.7$\times$10$^{13}$\\ 
+{} & H$^{13}$CN 1-0 & 1.28 & no data\\ 
+{} & H$^{13}$CN 2-1 & 0.03 & no data\\  \hline
+\multirow{6}{*}{SMM2} & CN 1-0 & 10.58 & 2.2$\times$10$^{15}$ \\
+{} & HCN 1-0 & 13.98 & 4.0$\times$10$^{14}$\\ 
+{} & CS 3-2 & 8.03 & 9.1$\times$10$^{13}$\\  
+{} & C$^{34}$S 3-2 & 1.15 & 1.4$\times$10$^{13}$\\
+{} & H$^{13}$CN 1-0 & 2.46 & no data\\ 
+{} & H$^{13}$CN 2-1 & \multicolumn{2}{c}{not detected}  \\  \hline
+\multirow{6}{*}{SMM3} & CN 1-0 & 13.26 & 2.7$\times$10$^{15}$\\
+{} & HCN 1-0 & 12.48 & 3.6$\times$10$^{14}$\\ 
+{} & CS 3-2 & 10.04 & 1.1$\times$10$^{14}$\\  
+{} & C$^{34}$S 3-2 & 0.37 & 4.4$\times$10$^{12}$\\
+{} & H$^{13}$CN 1-0 & 0.98 & no data\\ 
+{} & H$^{13}$CN 2-1 & \multicolumn{2}{c}{not detected}  \\  \hline
+\multirow{6}{*}{SMM4} & CN 1-0 & 13.06 & 2.7$\times$10$^{15}$\\
+{} & HCN 1-0 & 20.20 & 5.7$\times$10$^{14}$ \\ 
+{} & CS 3-2 & 19.81 & 2.2$\times$10$^{14}$\\  
+{} & C$^{34}$S 3-2 & 0.02 & 1.9$\times$10$^{11}$\\ 
+{} & H$^{13}$CN 1-0 & 2.10 & no data\\ 
+{} & H$^{13}$CN 2-1 & 0.26 & no data\\  \hline
+\multirow{6}{*}{SMM5} & CN 1-0 & 2.57 & 3.2$\times$10$^{14}$\\
+{} & HCN 1-0 & 3.71 & 1.1$\times$10$^{14}$\\ 
+{} & CS 3-2 & 2.33 & 5.2$\times$10$^{13}$\\  
+{} & C$^{34}$S 3-2 & 0.07 & 7.9$\times$10$^{11}$\\ 
+{} & H$^{13}$CN 1-0 & 0.70 & no data\\ 
+{} & H$^{13}$CN 2-1 & \multicolumn{2}{c}{not detected}  \\  \hline
+\multirow{6}{*}{SMM6} & CN 1-0 & 11.48 & 2.4$\times$10$^{15}$\\
+{} & HCN 1-0 & 11.85 & 3.4$\times$10$^{14}$ \\ 
+{} & CS 3-2 & 9.37 & 1.1$\times$10$^{14}$ \\  
+{} & C$^{34}$S 3-2 & 0.54 & 6.4$\times$10$^{12}$ \\ 
+{} & H$^{13}$CN 1-0 & 0.16 & no data\\
+{} & H$^{13}$CN 2-1 & 0.02 & no data \\  \hline
+\multirow{6}{*}{SMM9} & CN 1-0 & 4.82 & 9.9$\times$10$^{14}$\\
+{} & HCN 1-0 & 12.55 & 3.1$\times$10$^{14}$ \\ 
+{} & CS 3-2 & 13.75 & 1.7$\times$10$^{14}$\\ 
+{} & C$^{34}$S 3-2 & 1.17 & 1.4$\times$10$^{13}$ \\ 
+{} & H$^{13}$CN 1-0 & 1.61 & no data\\ 
+{} & H$^{13}$CN 2-1 & 0.04 & no data\\  \hline
+\multirow{6}{*}{SMM10} & CN 1-0 & 2.89 & 5.9$\times$10$^{14}$\\
+{} & HCN 1-0 & 4.40 & 1.3$\times$10$^{14}$\\ 
+{} & CS 3-2 & 4.47 & 5.1$\times$10$^{13}$ \\  
+{} & C$^{34}$S 3-2 & 0.35 & 4.2$\times$10$^{12}$\\ 
+{} & H$^{13}$CN 1-0 & 0.98 & no data\\ 
+{} & H$^{13}$CN 2-1 & \multicolumn{2}{c}{not detected}  \\  \hline
+\multirow{6}{*}{SMM12} & CN 1-0 & 10.58 & 2.2$\times$10$^{15}$\\
+{} & HCN 1-0 & 13.98 & 4.0$\times$10$^{14}$\\ 
+{} & CS 3-2 & 10.30 & 1.2$\times$10$^{14}$\\  
+{} & C$^{34}$S 3-2 & 0.93 & 1.1$\times$10$^{13}$\\ 
+{} & H$^{13}$CN 1-0 & 2.46 & no data\\ 
+{} & H$^{13}$CN 2-1 & \multicolumn{2}{c}{not detected}  \\  \hline
 \end{tabular}
 \begin{flushleft}
 $a$ Line frequency at the main peak position. \\
 $b$ Integrated flux above 3$\sigma$.\\
 \end{flushleft}
-\end{table}
+\end{table*}
 
 \subsection{Line profiles}
 
@@ -368,7 +390,7 @@ Fig.~\ref{1e5_75K} presents one exemplary set of models of CN/HCN column density
 The modelled line intensities are compared with the observations. The observed line intensity ratio covers a range of \mbox{0.0-1.0} of the column density ratio in the logarithmic scale. That corresponds to a few times higher CN column density than the same parameter of HCN. This result slightly depends on hydrogen densities and kinetic temperature of the gas (see Table~\ref{table:5}).
 
 \begin{table}
-\caption{CN and HCN column density ratio}             % title of Table
+\caption{RADEX calculations of CN/HCN column density ratio}             % title of Table
 \label{table:5}      % is used to refer this table in the text
 \centering                          % used for centering table
 \begin{tabular}{c c c} 
@@ -378,10 +400,10 @@ $[$cm$^{-3}]$ & [K] & \\
 \hline
 10$^{3}$ & 30 & 0.03-0.88\\
 10$^{3}$ & 75 & 0.06-0.84\\
-10$^{3}$ & 200 & 0.00-0.78\\ 
+10$^{3}$ & 200 & 0.00-0.78\\ \hdashline
 10$^{4}$ & 30 & 0.16-0.94\\
 10$^{4}$ & 75 & 0.08-0.86\\
-10$^{4}$ & 200 & 0.04-0.82\\ 
+10$^{4}$ & 200 & 0.04-0.82\\ \hdashline
 10$^{5}$ & 30 & 0.20-0.98\\
 10$^{5}$ & 75 & 0.18-0.86\\
 10$^{5}$ & 200 & 0.22-1.00\\ \hline
@@ -426,12 +448,21 @@ In the next models the closest neighbourhood of low-mass protostars was simulate
          \label{G0}
    \end{figure}
 
+\begin{figure}
+   \centering
+   \includegraphics[width=10cm]{G0+.eps}
+      \caption{Contour plot of Nahoon sets of models of CN/HCN abudances ratio with fixed temperature $T = 50$ K at the time of $1.063\times 10^{7}$ yrs after star formation began in the cloud. The other parameters remained defaulted: cosmic-ray ionization rate of $1.3\times 10^{17}$ s$^{-1}$, dust to gas mass ratio of 0.01, dust grain radius of $10^{-5}$ cm, grain density of 3 g cm$^{-3}$. The observational column density ratio is marked with blue colour.}
+         \label{G0}
+   \end{figure}
+
 This results justify assumptions for the next set of models. The fixed gas temperature of 50 K was set. The models were run for the range of visual extinction between $1^{\mathrm{m}}$ and $2.1^{\mathrm{m}}$ what corresponds to the UV radiation field of 0.044 to 0.001 $G_0$. The computed CN/HCN abundances ratio is presented in Fig.~\ref{G0}. The additional UV radiation of the strength of few thousandth of the average interstellar UV radiation field is enough to cover the observations in wide range of total hydrogen densities. 
 
 An additional source of the UV radiation was needed to reproduce the observational CN/HCN abundances what leads to conclusion that there is non-zero UV radiation field around low-mass protostars. 
 
 \begin{acknowledgements}
 AM, AK and MG are supported by the Polish National Science Center grants 2013/11/N/ST9/00400 and 2016/21/D/ST9/01098. 
+
+This research has made use of data from the Herschel Gould Belt survey (HGBS) project (http://gouldbelt-herschel.cea.fr). The HGBS is a Herschel Key Programme jointly carried out by SPIRE Specialist Astronomy Group 3 (SAG 3), scientists of several institutes in the PACS Consortium (CEA Saclay, INAF-IFSI Rome and INAF-Arcetri, KU Leuven, MPIA Heidelberg), and scientists of the Herschel Science Center (HSC).
 \end{acknowledgements}
 
 % WARNING
@@ -448,27 +479,17 @@ AM, AK and MG are supported by the Polish National Science Center grants 2013/11
 
 \begin{appendix} %First appendix
 \section{Molecular emission maps}
-\begin{figure}
-\includegraphics[width=8cm]{serpens_cn10.eps}
-\caption{Emission of the CN $J=1-0$ in the Serpens Main region. White crosses show the positions of the protostars \citep{Sur16}, whereas the white lines show the associated outflow directions (Y{\i}ld{\i}z et al. 2015). Outflow positions were displayed as purple crosses and the protostars not proceeded in the analysis are marked with yellow crosses (Dionatos et al. 2010).}
-\label{cn10}
-\end{figure}
 
 \begin{figure}
 \includegraphics[width=8cm]{serpens_h13cn10.eps}
-\caption{Similar to Fig.~\ref{cn10} but the emission of the H$^{13}$CN $J=1-0$ line.}
+\caption{Similar to Fig.~\ref{hcn10} but the emission of the H$^{13}$CN $J=1-0$ line.}
 \label{h13cn10}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=8cm]{serpens_cs32.eps}
-\caption{Similar to Fig.~\ref{cn10} but the emission of the CS $J=3-2$ line.}
-\label{cs32}
-\end{figure}
 
 \begin{figure}
 \includegraphics[width=8cm]{serpens_c34s32.eps}
-\caption{Similar to Fig.~\ref{cn10} but the emission of the C$^{34}$S $J=3-2$ line.}
+\caption{Similar to Fig.~\ref{hcn10} but the emission of the C$^{34}$S $J=3-2$ line.}
 \label{c34s32}
 \end{figure}
 

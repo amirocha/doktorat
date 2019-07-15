@@ -45,7 +45,7 @@ def remove_D_from_elem(elem):
 
 def AV2G0(AV_list):
 
-	G0_list = [m.exp(-3.12*av) for av in AV_list]	#gamma coefficient taken from KIDA database for HCN + UVph -> CN + H (the newes calculations [2018-05-11] from Leiden)
+	G0_list = [m.exp(-3.12*av) for av in AV_list]	#gamma coefficient taken from KIDA database for HCN + UVph -> CN + H (the newest calculations [2018-05-11] from Leiden)
 
 	return G0_list
 

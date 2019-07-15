@@ -3,10 +3,10 @@
 import math as m
 from decimal import Decimal
 
-regions=['N','S']
+regions=['N']
 molecules=['co65']
-itteration_per_region={'S': 8, 'N': 5} #CO6-5: S-74, N-27 //HCN1-0 S-8, N-5
-radius = {'N':22.36, 'S': 82.46} #ouflow size in arcsec  CO6-5 SMM1 North: 22.36'' //CO6-5 SMM1 South: 82.46'' //HCN1-0 SMM1 North: 31.62'' //HCN1-0 SMM1 South: 60.83''
+itteration_per_region={'S': 8, 'N': 23} #CO6-5: S-74, N-27 //HCN1-0 S-8, N-5
+radius = {'N':22.36, 'S': 60.83} #ouflow size in arcsec  CO6-5 SMM1 North: 22.36'' //CO6-5 SMM1 South: 82.46'' //HCN1-0 SMM1 North: 31.62'' //HCN1-0 SMM1 South: 60.83''
 
 k=1.38065*10**(-23) #Boltzmann's constant in J/K
 m_H = 1.008*1.660538921*(10**(-27)) #mass of hydrogen atom [kg]
@@ -25,20 +25,22 @@ def readdata(mol,region):
 
 def calculate_mass(data, mol, D, M_outflow, T_ex=100):
 	     
-	freq={'co65': 691473.0763, 'hcn10': 88630.416} # line frequency [MHz]
-	Eu={'co65': 33.18543390620297, 'hcn10': 4.25358399778}  # Energy of the upper level per kB [K]
+	freq={'co65': 691473.0763, 'hcn10': 88631.6022} # line frequency [MHz]
+	Eu={'co65': 116.16, 'hcn10': 4.25358399778}  # Energy of the upper level per kB [K]
 	lamda={'co65': 433.5562269526936, 'hcn10': 3382.50085614} #line wavelenght [mikrons]
 	g={'co65': 13.0, 'hcn10': 3.0} # g_up statistical weight []
-	A={'co65': 1.3653727183397027e-05, 'hcn10': 5.34650660346e-07} #Einstein coefficient	[s^-1]
+	A={'co65': 2.137e-05, 'hcn10': 2.407E-05} #Einstein coefficient	[s^-1]
 
 	pixel_size={'co65': 4.5, 'hcn10': 14.65} 
 	relative_abudance={'co65': 1.2*(10**(4)), 'hcn10': 10**(9)} #H_2/mol relative abudances: CO6-5 (Yildiz et al. 2012), HCN1-0 (Hirota et al. 1998)
 
-	N=(1937*((freq[mol]/1000.)**2)*float(data[3]))/(A[mol])  #freq in GHz (Yildiz et al. 2015, eq. (1))
-		
+	N=(1937*((freq[mol]/1000.)**2)*float(data[3]))/(A[mol])  #freq in GHz (Yildiz et al. 2015, eq. (1)) #N_up
+	print('%.2E' % Decimal(N))
 	N_g=N/g[mol] #column density devided by g (eq.1)
 	# Total column density for all lines (eq. 2)
-	N_tot = N_g * partition_function(mol, T_ex) * m.exp(Eu[mol]/T_ex)  
+	
+	N_tot = N_g * partition_function(mol, T_ex) * m.exp(Eu[mol]/(T_ex))  
+	
 	print('%.2E' % Decimal(N_tot))
 	M_out = 2.8*m_H*(pixel_size[mol]**2)*relative_abudance[mol]*N_tot #outflow mass [kg*arcsec^2*cm^-2] (eq.3)
 	pixel_size_in_radians = pixel_size[mol]*((2*m.pi)/(360*60*60)) # arcsec -> rad
@@ -46,6 +48,8 @@ def calculate_mass(data, mol, D, M_outflow, T_ex=100):
 	pixel_size_in_AU = pixel_size_in_cms/14959787070000.
 	S_in_cms = pixel_size_in_cms**2
 	result=(1./M_sun)*2.8*m_H*S_in_cms*relative_abudance[mol]*N_tot #outflow mass [M_sun]
+	print(result)
+	
 	return M_outflow+result #sum of all itterations
 				
 def partition_function(mol, T_ex):  #based on Rossi, Maciel, Benevides-Soares 1985
@@ -60,6 +64,7 @@ def partition_function(mol, T_ex):  #based on Rossi, Maciel, Benevides-Soares 19
 	Z=T_ex/1000. #eq. 9
 	lnQ = a0[mol]*m.log(Z)+(a1[mol]/2.)*Z+(a2[mol]/6.)*(Z**2)+(a3[mol]/12.)*(Z**3)+(a4[mol]/20.)*(Z**4)-(a5[mol]/Z)+a6[mol] #eq. 11
 	Q=m.exp(lnQ)
+	Q = 27.455  #106.807 JPL catalogue for HCN
 	return Q
 
 def calculate_force(R, M_outflow, V_max):
@@ -94,7 +99,8 @@ def main():  #activate the rest of functions
 			for i in range(itteration_per_region[reg]):
 			
 				M_outflow=calculate_mass(data[i], mol, D, M_outflow, T_ex)
-				
+			
+			print(M_outflow)
 			t_dyn_s=R/V_max #dynamic time in sec
 			t_dyn=t_dyn_s/(60*60*24*365.25) #dynamic time in yr 
 				
