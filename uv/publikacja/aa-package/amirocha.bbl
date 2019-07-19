@@ -1,4 +1,4 @@
-\begin{thebibliography}{42}
+\begin{thebibliography}{44}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Andr{\'e}} {et~al.}(2010){Andr{\'e}}, {Men'shchikov}, {Bontemps},
@@ -95,6 +95,9 @@
 {Hogerheijde}, M.~R., {van Dishoeck}, E.~F., {Salverda}, J.~M., \& {Blake},
   G.~A. 1999, \apj, 513, 350
 
+\bibitem[{{J{\o}rgensen}(2004)}]{Jor04}
+{J{\o}rgensen}, J.~K. 2004, \aap, 424, 589
+
 \bibitem[{{Karska} {et~al.}(2013){Karska}, {Herczeg}, {van Dishoeck},
   {Wampfler}, {Kristensen}, {Goicoechea}, {Visser}, {Nisini}, {San
   Jos{\'e}-Garc{\'\i}a}, {Bruderer}, {{\'S}niady}, {Doty}, {Fedele},
@@ -188,6 +191,11 @@
 \bibitem[{{Suresh} {et~al.}(2016){Suresh}, {Dunham}, {Arce}, {Evans}, {Bourke},
   {Merello}, \& {Wu}}]{Sur16}
 {Suresh}, A., {Dunham}, M.~M., {Arce}, H.~G., {et~al.} 2016, \aj, 152, 36
+
+\bibitem[{{van der Tak} {et~al.}(2007){van der Tak}, {Black}, {Sch{\"o}ier},
+  {Jansen}, \& {van Dishoeck}}]{vdT07}
+{van der Tak}, F.~F.~S., {Black}, J.~H., {Sch{\"o}ier}, F.~L., {Jansen}, D.~J.,
+  \& {van Dishoeck}, E.~F. 2007, \aap, 468, 627
 
 \bibitem[{{van Kempen} {et~al.}(2009){van Kempen}, {van Dishoeck},
   {G{\"u}sten}, {Kristensen}, {Schilke}, {Hogerheijde}, {Boland }, {Menten}, \&

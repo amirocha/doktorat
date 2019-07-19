@@ -39,6 +39,7 @@ greg\pen /def
 
 !axes
     greg\set character 0.3
+    greg\pen /weight 0.75
     greg\pen /colour 0
     greg\box n o i
 
@@ -251,7 +252,7 @@ greg\set character 0.4
 greg\label "\GD\Gd (Arcsec) " /y
 greg\label "\GD\Ga (Arcsec) " /x
     greg\set character 0.5
-	greg\draw text 80 220 "Serpens C\U3\U4S J=3-2"
+	greg\draw text 80 160 "C\U3\U4S J=3-2"
 
 !set viewport 0.05 0.3 0.06 0.4
 !!file in l483_12co65_5x5.apex

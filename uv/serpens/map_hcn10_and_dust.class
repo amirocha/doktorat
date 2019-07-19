@@ -47,7 +47,7 @@ set plot histogram
 	 greg\rgmap /abs
 
 
-let sigma 0.01
+let sigma 0.01  !final setting for colorbar plotting
 let up 0.2
 
 !axes
