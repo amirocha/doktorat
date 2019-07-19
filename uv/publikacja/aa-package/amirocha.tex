@@ -45,6 +45,8 @@
 	  Marcin Gładkowski\inst{2}$^,$\inst{6}
 	  \and
 	  Michał Żółtowski\inst{2}
+	  \and
+	  Łukasz Tychoniec\inst{7}
           }
 
    \institute{Astronomical Observatory of the Jagiellonian University, ul. Orla 171, 30-244 Kraków, Poland\\
@@ -53,7 +55,8 @@
          \and Centre for Star and Planet Formation, Niels Bohr Institute and Natural History Museum of Denmark, University of Copenhagen, Øster Voldgade 5-7, DK-1350 Copenhagen K, Denmark 
 	 \and Faculty of Physics, University of Warsaw, ul. Pasteura 5, 02-093 Warszawa, Poland
 	 \and National Centre for Nuclear Research, ul. Pasteura 7, 02-093 Warszawa, Poland
-	 \and Nicolaus Copernicus Astronomical Center, ul. Rabiańska 8, 87-100 Toruń, Poland \\
+	 \and Nicolaus Copernicus Astronomical Center, ul. Rabiańska 8, 87-100 Toruń, Poland 
+         \and Leiden Observatory, Leiden University, P.O. Box 9513, NL-2300RA Leiden, The Netherlands\\
          }
 
    \date{Received [Month] [Day], 2019; accepted [Month] [Day], 2019}
@@ -66,13 +69,13 @@
   % {} leave it empty if necessary  
    {The Serpens Main is one of the most studied star forming region containing low-mass protostars. Observations at submillimetre range allow to determine physical and chemical processes around young stellar objects.} %especially HCN and CN have been shown to be good tracers of photon dominated regions (PDR}.
   % aims heading (mandatory)
-   {We aim to characterise the UV radiation in the surroundings of the low-mass protostars. We analyse the exitation and spatial extend of HCN, CN, CS and their isotopologues to identify the underlying processes. We can investigate the feedback from protostars and the excitation mechanism of molecules. }
+   {We aim to characterise the UV radiation in the surroundings of the low-mass protostars. We analyse the exitation and spatial extent of HCN, CN, CS and their isotopologues to identify the underlying processes. We can investigate the feedback from protostars and the excitation mechanisms of molecules. }
   % methods heading (mandatory)
-   {We present ~30 arcmin$^2$ IRAM 30m maps of CN $J=1-0$, HCN $J=1-0$, and CS $J=3-2$ encompassing 10 low-mass protostars. We calculated HCN $J=1-0$ and CN $J=1-0$ column densities around low-mass protostars and selected outflows positions using the RADEX radiative transfer code.  The obtained column densities were compared with the astrochemical model of molecules abundaces in order to characterise UV radiation field.}
+   {We present ~30 arcmin$^2$ IRAM 30m maps of CN $J=1-0$, HCN $J=1-0$, and CS $J=3-2$ encompassing 10 Class 0/I protostars. We calculate HCN and CN column densities toward protostars and selected outflows positions. The column densities are compared with the Nahoon astrochemical model of molecules abundaces in order to characterise UV radiation field.}
   % results heading (mandatory)
-   {Emission of HCN $J=1-0$ and CS $J=3-2$ is co-spatial with outflows, CN emission peaks at the positions of protostars. CN $J=1-0$ and HCN $J=1-0$ column densities were estimated as 10$^{13}$-10$^{14}$cm$^{-2}$. Regardless of gas parameters CN/HCN column density ratio was modeled in range of 1-10. This result can be reproduced by providing an additional UV radiation source of 0.044 to 0.001 $G_0$.}
+   {Emission of HCN $J=1-0$ and CS $J=3-2$ is co-spatial with outflows, whereas CN emission peaks at the positions of protostars. CN and HCN column densities are of the order of 10$^{13}$-10$^{14}$cm$^{-2}$. Regardless of gas parameters, CN/HCN column density ratio is 1-10. This result can be reproduced by providing an additional UV radiation source of 0.001 to 0.044 $G_0$.}
   % conclusions heading (optional), leave it empty if necessary 
-   {As a product of HCN photodissociation CN molecules indicate bow shocks around young stellar objects. The astrochemical model obtained with the Nahoon code shows that an additional source of UV radiation is needed to cover the abundances range indicated by observations.}
+   {The UV radiation field is significantly higher in the closest distances from protostars. The astrochemical model shows that an additional source of UV radiation is needed to cover the abundances range indicated by observations.}
 
    \keywords{astrochemistry -- stars: formation -- ISM: molecules -- ISM: individual objects: Sepens Main -- Submillimeter: ISM}
 
@@ -81,74 +84,70 @@
 %-------------------------------------------------------------------
 
 \section{Introduction}
+Low-mass stars are the most numerous objects among stellar population in galaxies (\cite{Kro02}). At first stages of star formation protostars are formed inside molecular cloud, surrounded by massive envelopes exceeding for $10^4$ AU in diameter (\cite{Lad87}; \cite{Lar03}; \cite{Ber07}). The embedded phases of low-mass star formation (Class 0/I YSOs, \cite{And93}) is characterised by gas and dust accretion from an envelope and bipolar, collimated outflows which carry out molecular gas from the dense core (\cite{Zuc76}, \cite{Arc06}). 
 
+Molecular outflows properties are typically traced by low-J CO transitions (\cite{Bon96}, \cite{Dun14}). Herschel-PACS observations of the high-J CO emission around low-mass protostars showed the presence of a warm component about $T_\mathrm{rot} ~ 300$  K, hot component of $T_\mathrm{rot} ~ 600-800$  K (\cite{Kar13}, \cite{Gre13}) and very hot component exceeding 1000 K for some sources (\cite{Man13}). The high-temperature CO emission can be explained as shocked-heated gas created by UV-irradiated shocks (\cite{Kri17}). Shock waves are created in the inner part of accretion disk where the gas is heated by the 10,000 K radiation filed (\cite{Spa95}). UV photons propagate in low-density outflow cavities for large distances, modifying the chemical composition of low-mass neighbourhood. 
+
+Previous studies of energetic processes around low-mass protostars showed observational premises of the influence of UV radiation on molecules. At protostars positions was observed higher emission of [C I] than in off-source positions what brought to conclusion of photodissociation CO (\cite{vKe09}). The fluxes of [OI] and [CII] are significantly higher than fully-shielded C-shock models (\cite{Kar18}). The other photodissociation tracer H$_2$O/OH showed a few order of magnitude disagreement with shock models (\cite{Kar14}). Therefore, ultraviolet radiation may play an important role in low-mass protostars surroundings. 
+
+The relative abundance of CN and HCN molecules is widely used a tracer of UV radiation in different astronomical context (e.g. \cite{Fue95}, \cite{Cha12}, \cite{Ria18}). CN is a product of photodissociation of HCN with the photodissociation rate of $1.64\times10^{-9}$. CN has smaller photodissociation rate of $5.19\times10^{-10}$ (\cite{Hea17}), thus is not that sensitive for photodissociation as HCN. Since CN and HCN can be photodissociated selectively, therefore the CN/HCN ratio probes regions affected by UV radiation. The ratio is the highest near the source of the UV emission, and decreases with the distance from the source (\cite{Fue93}). 
+Tracing the physical and chemical processes dominated by UV radiation lead to better understanding of the protostellar evolution. Ultraviolet radiation can propagate in large scales of 1000 AU (\cite{Kri17}), changing the properties of the surrounding matter. Since the UV radiation around low-mass protostars was studied only in the source position (\cite{Sta07}, \cite{Ria18}) or in the source closest neighbourhood (\cite{Hog99}, \cite{Bac01}, \cite{Jor04}), the spatial extend of UV fields in larger scales is the matter of question. We address the following questions in our paper: How does the UV radiation affect the low-mass surrounding? Where the molecules are dissociated? What is the spatial extend of the UV fields? What is the typical UV radiation around Class 0/I protostars?  
+
+We present the CN, HCN, CS and their isotolopologues molecular data observed in the Serpens Main star forming region. Section 2 contains the overview of the observations and the targeted sample. The results derived from the observations are shown in the Section 3, while further analysis of the data in Section 4. In the section 5 we refer to the previous studies of the topic and provide the discussion of the results. The summarising Section 6 is closed with our conclusions. 
 
 \section{Observations}
+
+\subsection{IRAM data and reduction process}
 The Serpens Main star forming region was observed with IRAM 30 between 14 and 17 July 2009 (project no. xxx, PI: L. Kristensen). We used the Eight MIxer Receiver (EMIR) as the frontend. The observations were performed in the EMIR bands E090 (molecule HCN $J=1-0$) covering the range 73-117 GHz and E150 (molecules CN $J=1-0$ and CS $J=3-2$) covering the frequencies between 125 and 184 GHz. Due to the EMIR receiver wide bands additional molecular lines of C$^{34}$S $J=3-2$, H$^{13}$CN $J=1-0$ and H$^{13}$CN $J=2-1$ were also observed. The backend was the Versatile SPectrometer Array (VESPA) autocorrelator and the 1 MHz filterbank reaching the spectral resolution of 39 kHz (E150 band) and 78 kHz (E090 band). The telescope beam size varies from 14$^{\prime\prime}$ at 172.68 GHz to 29$^{\prime\prime}$ at 86.34 GHz (Table 1). The antenna temperatures were converted to main-beam brightness temperature \textit{T$_\mathrm{MB}$} using the main beam efficiency according to the expresion: T$_\mathrm{MB}$ = T$_\mathrm{A}$/$\eta_\mathrm{MB}$. The exact upper levels enegies, line frequencies, beam sizes and beam efficiencies are given in Table~\ref{table:1}. Observations included scans of the Ser-SMM1 (centered at $\alpha_\mathrm{J2000}$ = 18$^h$29$^m$49.6$^s$, $\delta_\mathrm{J2000}$ = +01$^{\circ}$15$^{\prime}$20.5$^{\prime\prime}$ with V$_\mathrm{LSR}$ = +8.5 km/s) and the Ser-SMM3/Ser-SMM4 (centered at $\alpha_\mathrm{J2000}$ = 18$^h$29$^m$56.6$^s$, $\delta_\mathrm{J2000}$ = +01$^{\circ}$14$^{\prime}$00.3$^{\prime\prime}$ with V$_\mathrm{LSR}$ = +7.6 km/s) regions, both 1$^{\prime}\times$3$^{\prime}$ OTF maps. The size of the maps is about 300$^{\prime\prime}\times350^{\prime\prime}$, covering both Ser-SMM1 and Ser-SMM3/Ser-SMM4 regions. The regions are referenced in the article as 'the Northen part' and 'the Southern part' respectively. 
 
-\begin{table}
+\begin{table*}
 \caption{Overview of the observations}             % title of Table
 \label{table:1}      % is used to refer this table in the text
 \centering                          % used for centering table
-\begin{tabular}{c c c c c c}        % centered columns (4 columns)
+\begin{tabular}{c c c c c c c c c}        % centered columns (4 columns)
 \hline\hline                 % inserts double horizontal lines
-Mol. & Trans. & $E_\mathrm{u}$ & Freq. &  Beam size & Beam eff.\\
- & & (K) & (GHz) & ($^{\prime\prime}$) & $\eta_\mathrm{MB}$\\
+Mol. & Trans. & $\nu$ $^a$ & $E_\mathrm{u}/k_\mathrm{B}$ $^a$&  $A_\mathrm{ul}$ & g & $n_\mathrm{crit}$ &Beam size & Beam eff.\\
+ & & [K] & [GHz] & [$s^{-1}$] & & [$cm^{-3}$] & ($^{\prime\prime}$) & $\eta_\mathrm{MB}$\\
 \hline                        % inserts single horizontal line
-HCN & 1-0 & 4.25 & 88.631602 & 28 & 0.81\\
-CN & 1-0 & 5.45 & 113.494921 & 22 & 0.78\\
-CS & 3-2 & 14.1 & 146.969029 & 16 & 0.74\\
-C$^{34}$S & 3-2 & 13.9 & 144.617109 & 16 & 0.74\\
-H$^{13}$CN & 1-0 & 4.14 & 86.342274 & 29 & 0.81\\
-H$^{13}$CN & 2-1 & 12.43 & 172.677881 & 14 & 0.68\\
+HCN & 1-0 & 88.631602 & 4.25 & $2.407 \times 10^{-5}$ $^b$ & 3 & $5.0 \times 10^{6}$ $^d$ & 28 & 0.81\\
+CN & 1-0 & 113.494921 & 5.45 & $1.182 \times 10^{-5}$ $^b$& 3 & $1.1 \times 10^{5}$ $^e$& 22 & 0.78\\
+CS & 3-2 & 146.969029 & 14.1 & $6.071 \times 10^{-5}$ $^b$& 7 &$2.6 \times 10^{5}$ $^e$ & 16 & 0.74\\
+C$^{34}$S & 3-2 & 144.617109 & 13.9 & $5.77 \times 10^{-5}$ $^c$ & 7 & no data & 16 & 0.74\\
+H$^{13}$CN & 1-0 & 86.342274 & 4.14 & \multirow{2}{*}{no data} & 3 & $9.7 \times 10^{6}$ $^d$ & 29 & 0.81\\
+H$^{13}$CN & 2-1 & 172.677881 & 12.43 & & 5 & $1.2 \times 10^{6}$ $^e$ & 14 & 0.68\\
 \hline                                   
 \end{tabular}
+\begin{flushleft}
+References: 
+$^a$JPL database; 
+$^b$LAMDA database;
+$^c$Chandra et al. 1995;
+$^d$Jim\'enez-Donaire et al. 2016, assuming optically thin transition lines for an excitation temperature of 20K;
+$^e$Shirley 2015, assuming optically thin transition lines for an excitation temperature of 50K.
+
+\end{flushleft}
 \tablefoot{Beam sizes and efficiencies are taken from \url{http://www.iram.es/IRAMES/mainWiki/Iram30mEfficiencies}}
-\end{table}
+\end{table*}
 
 Data reduction was carried out with the CLASS package within GILDAS\footnote{See http://www.iram.fr/IRAMFR/GILDAS}. Each spectrum was corrected for the baseline shape, the spike channels were removed and the velocity was resampled to a resolution of 0.5 km/s. The baseline fitting of the order of 0 was sufficient for our observations. The rms of extracted spectra values vary from 0.024 K to 0.125 K. Both OTF maps were merged in one map covering 300$\times$350 arcsec. The spectra obtained were exported from the CLASS package and analysed with Python scripts. 
 
+\subsection{Continuum emission}
+\begin{figure}
+   \includegraphics[width=8cm]{serpens_hcn10_on_dust.eps}
+      \caption{Molecular emission of HCN J=1-0 (contours) overplot on continuum emission \textit{Herschel}/SPIRE (Griffin et al. 2010) 250 $\mu$m (colours). Countours the lowest level is set on 0.4~K~km/s (30 $\sigma$), step size of 4~K~km/s.}
+         \label{seds}
+   \end{figure}
 
-\section{Results}
 
 \subsection{Physical properties of embedded protostars}
 
-\begin{figure}
-   \includegraphics[width=8cm]{serpens_hcn10_on_dust.eps}
-      \caption{Dust emission + HCN.}
-         \label{seds}
-   \end{figure}
+Ten Class 0/I protostars are present in the observed region. There are deeply embedded sources so the radiation coming from theirs neighbourhood is highly absorbed in the envelopes, then re-emitted in the IR range. Envelopes become thinner with time due to outflow-envelope interactions (\cite{Arc06}). Class I sources SEDs are dominated by the emission in shorter wavelengths in respect to Class 0 objects. Thus Spectral Energy Distributions (SEDs) allow to estimate the evolutional stage of an object (\cite{And93}). 
 
-Ten Class 0/I protostars are present in the observed region. There are deeply embedded sources so the radiation coming from theirs neighbourhood is highly absorbed in the envelopes, than re-emited in the IR range. Envelopes become thinner with time, thus Spectral Energy Distributions (SEDs) allow to estimate the evolutional stage of an object (André et al. 2000). 
+Figure ~\ref{seds} shows spectral energy distributions for all Class 0/1 protostars in the region (Table~\ref{table:2}). The SED plots include the selected literature samples (\cite{Dun15}) combined with the data from the Herschel Gould Belt survey project (\cite{And10}). The additional Herschel data cover the SED peak, therefore provide a more detailed information allowing to calculate the bolometric temperatures and luminosities of the protostar more precisely.
 
-A broad-band observations are needed in order to determine physical properties od protostar. Based on SEDs the bolometric temperature and luminosity can be calculated for each of observed protostars. Most of the protostars in our sample have not been investigated for their physical properties. Only SMM1, SMM3 and SMM4 were covered by PACS spectroscopy (Karska et al. 2013) as part of the 'Water in star-forming regions with Herschel' (WISH\footnote{WISH observes about 80 protostars at different evolutionary stages and masses with HIFI and PACS instruments on-board the Herschel Space Observatory.}) key program (van Dishoeck et al. 2011). 
+Table~\ref{table:2} contains the observed protostars parameters as well as the classification from \cite{Eno09}. Early Class 0 was defined as a protostar of bolometric temperature lesser than 50 K. Prostostars characterised by bolometric temperature between 50 K and 100 K were classified as Late Class 0 protostars. Class I protostars were divided for Early and Late sub-type by the bolometric temperature of 300 K.
 
-The SED plots (Fig.~\ref{seds}) were prepared based on literature samples (Dunham et al. 2015, Karska et al. 2013) and the data from the Herschel Gould Belt survey project (André et al. 2010). Some of the protostars in our sample can be associated with Ser-emb sources observed with the c2d and Bolocam project (Enoch et al. 2007, Enoch et al. 2009). The additional Herschel data cover the SED peak, therefore provide a
-more detailed information allowing to calculate the bolometric temperatures and luminosities of the protostar more precisely.
-
-The linear interpolation was performed while calculating the protostars parameters. The bolometric luminosity was determined by integrating the SEDs over frequency:
-\begin{equation} \label{eq1}
-L_{bol} = \pi \, d^2 \, \int F_\nu d\nu
-\end{equation}
-where $d$ is the cloud distance of $436 \pm 9.2$ pc (Ortiz-León et al. 2017).
-The bolometric temperature was calculating as described in Myers and Ladd 1993:
-\begin{equation} \label{eq2}
-T_{bol} = 1.25 \, 10^{-11} \, \bar{\nu}
-\end{equation}
-where $\bar{\nu}$ is the mean frequency given by:
-\begin{equation} \label{eq3}
-\bar{\nu} = \frac{\int \nu F_\nu d\nu}{ \int F_\nu d\nu}
-\end{equation}
-
-Table~\ref{table:2} contains the observed protostars parameters as well as the Class classification. The classification was adopted from Enoch et al. 2009 where four types of protostars with envelopes were distinguished. Early Class 0 was defined as a protostar of bolometric temperature lesser than 50 K. Prostostars characterised by bolometric temperature between 50 K and 100 K were classified as Late Class 0 protostars. Class I protostars were divided for Early and Late sub-type by the bolometric temperature of 300 K.
-
-Most of the observed protostars in the Serpens Main region are very young, embedded sources of Early Class 0. SMM5 and SMM12 were classified as Early Class I YSOs. The SMM6 protostar is the most evolved object in our sample. 
-
-\begin{figure}
-   \includegraphics[width=8cm]{serpens_seds.eps}
-      \caption{Spectral Energy Distributions of protostars in the Serpens Main region.}
-         \label{seds}
-   \end{figure}
+Most of the observed protostars in the Serpens Main region are very young, embedded sources of Early Class 0. SMM4, SMM10 and SMM12 are classified as Late Class 0 YSOs. The SMM5 and SMM6 protostars are the most evolved objects in our sample (Class I). 
 
 
 \begin{table*}
@@ -157,44 +156,44 @@ Most of the observed protostars in the Serpens Main region are very young, embed
 \centering                          % used for centering table
 \begin{tabular}{c c c c c c c} 
 \hline\hline 
-R.A. & Decl. & Source & $T_\mathrm{bol}$ &  $L_\mathrm{bol}$  & Class & Other names\\
+Source & R.A. & Decl. & $T_\mathrm{bol}$ &  $L_\mathrm{bol}$  & Class & Other names\\
  (J2000.0) & (J2000.0) & & (K) & (L$_\odot$) & &\\
 \hline  
 
-18 29 48.3 & +01 16 42.7 & SMM9 & 46.1 & 11.7 & Early Class 0 & ISO241, WMW23\\
+SMM9 & 18 29 48.3 & +01 16 42.7 &  34.9 & 10.3 & Early Class 0 & ISO241, WMW23\\
 
-18 29 50.0 & +01 15 20.3 & SMM1 & 40.4 & 108.7 & Early Class 0 & FIRS1, Ser-emb6, Bolo23, EC41\\
+SMM1 & 18 29 50.0 & +01 15 20.3 & 35.4 & 78.7 & Early Class 0 & FIRS1, Ser-emb6, Bolo23, EC41\\
 
-18 29 51.4 & +01 16 38.3 & SMM5 & 148.2 & 4.5 & Early Class I & EC53, WMW24, Ser p3 \\
+SMM5 & 18 29 51.4 & +01 16 38.3 & 150.5 & 3.7 & Early Class I & EC53, WMW24, Ser p3 \\
 
-18 29 52.3 & +01 15 48.8 & SMM10 & 85.0 & 5.1 & Late Class 0 & WMW21\\
+SMM10 & 18 29 52.3 & +01 15 48.8 & 82.6 & 6.2 & Late Class 0 & WMW21\\
 
-18 29 57.0 & +01 13 11.3 & SMM4 & 29.5 & 13.6 & Early Class 0 &\\
+SMM4 & 18 29 57.0 & +01 13 11.3 & 76.9 & 4.4 & Late Class 0 &\\
 
-18 29 57.8 & +01 14 05.3 & SMM6 & 526.4 & 43.4 & Late Class I & EC90, WMW35, SVS20S \\
+SMM6 & 18 29 57.8 & +01 14 05.3 & 532.3 & 43.1 & Late Class I & EC90, WMW35, SVS20S \\
 
-18 29 59.1 & +01 13 14.3 & SMM12 & 100.9 & 6.7 & Early Class I &\\
+SMM12 & 18 29 59.1 & +01 13 14.3 & 96.9 & 5.7 & Late Class 0 &\\
 
-18 29 59.6 & +01 13 59.2 & SMM3 & 42.4 & 27.5 & Early Class 0 & \\
+SMM3 & 18 29 59.6 & +01 13 59.2 & 35.0 & 6.9 & Early Class 0 & \\
 
-18 30 00.5 & +01 12 57.8 & SMM2 & 41.6 & 5.1 & Early Class 0 & Ser-emb4, Bolo28\\
+SMM2 & 18 30 00.5 & +01 12 57.8 & 30.5 & 4.07 & Early Class 0 & Ser-emb4, Bolo28\\
 
-18 30 01.9 & +01 15 09.2 & SMM8 & & 0.068$^a$ & &\\
+SMM8 & 18 30 01.9 & +01 15 09.2 & 15.3 & 0.2 & Early Class 0 &\\
 \hline
 \end{tabular}
 \begin{flushleft}
-Coordinates taken from Suresh et al. 2016, except S68N (Enoch et al. 2007) and SMM8 (Lee et al. 2014).\\
-References: $^a$Dionatos et al. 2010
+Coordinates taken from Suresh et al. 2016, except SMM8 (Lee et al. 2014).\\
 \end{flushleft}
 \end{table*}
 
+\section{Results}
 \subsection{Molecular emission maps}
 
 The line maps in the targeted molecules show variety of structures that can be associated with YSOs and a large-scale cloud emission. Different spatial extend in molecules radiation is connected with various physical conditions around protostars. Here, we present the large-scale maps of CS $J=3-2$, HCN $J=1-0$ and CN $J=1-0$. Maps of their isotopologues are shown in the Appendix A. 
 
-Outflows associated with low-mass protostars (Table~\ref{table:2}) are observed in certain molecules emission. Blue- and redshifted molecular outflows around Ser-SMM1, Ser-SMM3 and Ser-SMM4 were pointed based on CO $J=6-5$ and CO $J=3-2$ observations (Y{\i}ld{\i}z et al. 2015). Additionally, five outflows positions were selected to more detailed studies (Table~\ref{table:3}).  
+Outflows associated with low-mass protostars (Table~\ref{table:2}) are observed in certain molecules emission. Blue- and redshifted molecular outflows around Ser-SMM1, Ser-SMM3 and Ser-SMM4 were pointed based on CO $J=6-5$ and CO $J=3-2$ observations (\cite{Yil15}). Additionally, five outflows positions were selected to more detailed studies (Table~\ref{table:3}).  
 
-The integrated line intensity map of HCN $J=1-0$ (Fig.~\ref{hcn10}) shows extended emission along outflow directions. The HCN $J=1-0$ line was detected at all positions, although it is weak at the positions of Ser-SMM5 and Ser-SMM10. On the other hand, the HCN $J=1-0$ emission is particularly strong around Ser-SMM4 and Ser-SMM9 sources. The emission maxima are detected among the known outflows of Ser-SMM1 and Ser-SMM4 (Y{\i}ld{\i}z et al. 2015). Especially, at the end of Ser-SMM4 blue outflow (position no. 4) we have significantly strong maximum of the HCN $J=1-0$. There is no intensively elongated outflow structure from Ser-SMM3 source.
+The integrated line intensity map of HCN $J=1-0$ (Fig.~\ref{hcn10}) shows extended emission along outflow directions. The HCN $J=1-0$ line was detected at all positions, although it is weak at the positions of Ser-SMM5 and Ser-SMM10. On the other hand, the HCN $J=1-0$ emission is particularly strong around Ser-SMM4 and Ser-SMM9 sources. The emission maxima are detected among the known outflows of Ser-SMM1 and Ser-SMM4 (\cite{Yil15}). Especially, at the end of Ser-SMM4 blue outflow (position no. 4) we have significantly strong maximum of the HCN $J=1-0$. There is no intensively elongated outflow structure from Ser-SMM3 source.
 
 \begin{table}
 \caption{Properties of the selected off-source positions}             % title of Table
@@ -232,11 +231,11 @@ Pos. & R.A. & Decl. & Remarks\\
 \begin{figure}
    \centering
    \includegraphics[width=9cm]{serpens_hcn10.eps}
-      \caption{Emission of the HCN $J=1-0$ in the Serpens Main region. Black triangles show the positions of the protostars (Suresh et al. 2016), whereas the black lines show the associated outflow directions (Y{\i}ld{\i}z et al. 2015). Outflow positions were displayed as pulrple crosses.}
+      \caption{Emission of the HCN $J=1-0$ in the Serpens Main region. Black triangles show the positions of the protostars (\cite{Sur16}), whereas the black lines show the associated outflow directions (\cite{Yil15}). Outflow positions were displayed as pulrple crosses.}
          \label{hcn10}
    \end{figure}
 
-CS $J=3-2$ line emission map (Fig.~\ref{cs32}) shows similar spatial distribution to HCN $J=1-0$. The most significant elongated structure can be associated with Ser-SMM4 blue-shifted outflow. It is situated at the same place in both maps, extending over 80$^{\prime\prime}$. A similar large-scale structure is detected along Ser-SMM1 outflows, although it is much more distinctive in the HCN $J=1-0$ map. A strong emission around Ser-SMM9 have a circular shape in HCN $J=1-0$ map, however, it has more elongated structure in CS $J=3-2$ line emission which overlaps with the S68N outflows (Kristensen et al. 2010). The peaks of emissions are situated in the different places. HCN $J=1-0$ has relatively strong emission around Ser-SMM4 protostar, but in CS $J=3-2$ line a significant emission towards position no. 3 can be noticed that indicates CN $J=1-0$ local maximum. 
+CS $J=3-2$ line emission map (Fig.~\ref{cs32}) shows similar spatial distribution to HCN $J=1-0$. The most significant elongated structure can be associated with Ser-SMM4 blue-shifted outflow. It is situated at the same place in both maps, extending over 80$^{\prime\prime}$. A similar large-scale structure is detected along Ser-SMM1 outflows, although it is much more distinctive in the HCN $J=1-0$ map. A strong emission around Ser-SMM9 have a circular shape in HCN $J=1-0$ map, however, it has more elongated structure in CS $J=3-2$ line emission which overlaps with the S68N outflows (\cite{Kri10}). The peaks of emissions are situated in the different places. HCN $J=1-0$ has relatively strong emission around Ser-SMM4 protostar, but in CS $J=3-2$ line a significant emission towards position no. 3 can be noticed that indicates CN $J=1-0$ local maximum. 
 
 \begin{figure}
 \includegraphics[width=9cm]{serpens_cs32.eps}
@@ -253,7 +252,7 @@ The highest local peaks are associated with Class 0 low-mass protostars: Ser-SMM
 \label{cn10}
 \end{figure}
 
-In the presence of the UV radiation, HCN molecule photodissociates into CN molecule and H atom (Stäuber et al. 2005). Thus, combined map of these molecules can indicate regions with stronger UV radiation. We present a large-scale map of CN $J=1-0$ to HCN $J=1-0$ flux ratio (Fig.~\ref{cn10_div_hcn10}). The image of CN emission has been resampled to beam size of HCN in order to compare the same emitting regions. CN/HCN ratio is relatively low around the brightest submillimetre source Ser-SMM1. Similarly, at the dense area of Ser-SMM9 surrounding a significantly weaker CN/HCN emission can be noticed. On the other hand, it peaks at the Northern part of the map around rather faint Ser-SMM5 source. At the Southern part high CN/HCN ratio emission is more extended than in the Northen part. It expands from Ser-SMM3 and Ser-SMM6 area to the North. High CN/HCN ratio can also be found on the edges of the image but it is probably caused by different size of the CN and the HCN maps.
+In the presence of the UV radiation, HCN molecule photodissociates into CN molecule and H atom (\cite{Sta05}). Thus, combined map of these molecules can indicate regions with stronger UV radiation. We present a large-scale map of CN $J=1-0$ to HCN $J=1-0$ flux ratio (Fig.~\ref{cn10_div_hcn10}). The image of CN emission has been resampled to beam size of HCN in order to compare the same emitting regions. CN/HCN ratio is relatively low around the brightest submillimetre source Ser-SMM1. Similarly, at the dense area of Ser-SMM9 surrounding a significantly weaker CN/HCN emission can be noticed. On the other hand, it peaks at the Northern part of the map around rather faint Ser-SMM5 source. At the Southern part high CN/HCN ratio emission is more extended than in the Northen part. It expands from Ser-SMM3 and Ser-SMM6 area to the North. High CN/HCN ratio can also be found on the edges of the image but it is probably caused by different size of the CN and the HCN maps.
 
 \begin{figure}
    \centering
@@ -262,7 +261,7 @@ In the presence of the UV radiation, HCN molecule photodissociates into CN molec
          \label{cn10_div_hcn10}
    \end{figure}
 
-The low energy level of HCN ($E_\mathrm{u}$ = 4.25 K) traces cold, high-density gas. HCN has previously been shown to be a good tracer of molecular outflows activity (Walker-Smith et al. 2014). Similar spatial distribution is presented in the CS map. It means that both species trace the gas of the same properties. The CN line is similarly low-energetic, however it peaks in different areas than HCN and CS. CN as a product of HCN photodissotiation indicates other properties of low-mass protostars surroundings (Section 4).
+The low energy level of HCN ($E_\mathrm{u}$ = 4.25 K) traces cold, high-density gas. HCN has previously been shown to be a good tracer of molecular outflows activity (\cite{Wal14}). Similar spatial distribution is presented in the CS map. It means that both species trace the gas of the same properties. The CN line is similarly low-energetic, however it peaks in different areas than HCN and CS. CN as a product of HCN photodissotiation indicates other properties of low-mass protostars surroundings (Section 4).
 
 To summarise, spatial distribution of different lines emission varies depending on the observed molecule. The most distinct differences can be noticed between HCN and CN map. Most of the sources show high flux values in both molecules (Table~\ref{table:4}). However, they present unequal levels which indicates regions of different properties. In order to better understand this issue we analyse the molecular line profiles in the Section 3.2. 
 
@@ -383,7 +382,7 @@ The column densities of the upper level of CN $J=1-0$ and HCN $J=1-0$ transition
 
 Molecules column densities can be independently determined using molecular excitation models. Line ratio can provide additional information concerning physical properties of the observed gas. 
 
-The non-LTE radiative transfer code RADEX (van der Tak et al. 2007) was run in order to prepare sets of molecular excitation models. The CN and HCN molecules column density ratio was the only free parameter. HCN column density was chosen as 10$^8$ cm$^{-2}$ in order to ensure optically thin emission. CN column density parameter varies from 10$^6$ cm$^{-2}$ to 10$^{10}$ cm$^{-2}$ what translates into $N_\mathrm{CN}$/$N_\mathrm{HCN}$ in following limits: 10$^{-2}$-10$^{2}$. The sets of models were developed assuming a line width of 1.0 km s$^{-1}$, hydrogen densities of $n_\mathrm{H_2} = 10^3$ cm$^{-3}$, $n_\mathrm{H_2} = 10^4$ cm$^{-3}$ and $n_\mathrm{H_2} = 10^5$ cm$^{-3}$ and kinetic temperatures of $T_\mathrm{kin} = 30$ K, $T_\mathrm{kin} = 75$ K and $T_\mathrm{kin} =200$ K. The molecular data files used during modelling were procured from the Leiden Atomic and Molecular Database (LAMDA, Schöier et al. 2005).
+The non-LTE radiative transfer code RADEX (\cite{vdT07}) was run in order to prepare sets of molecular excitation models. The CN and HCN molecules column density ratio was the only free parameter. HCN column density was chosen as 10$^8$ cm$^{-2}$ in order to ensure optically thin emission. CN column density parameter varies from 10$^6$ cm$^{-2}$ to 10$^{10}$ cm$^{-2}$ what translates into $N_\mathrm{CN}$/$N_\mathrm{HCN}$ in following limits: 10$^{-2}$-10$^{2}$. The sets of models were developed assuming a line width of 1.0 km s$^{-1}$, hydrogen densities of $n_\mathrm{H_2} = 10^3$ cm$^{-3}$, $n_\mathrm{H_2} = 10^4$ cm$^{-3}$ and $n_\mathrm{H_2} = 10^5$ cm$^{-3}$ and kinetic temperatures of $T_\mathrm{kin} = 30$ K, $T_\mathrm{kin} = 75$ K and $T_\mathrm{kin} =200$ K. The molecular data files used during modelling were procured from the Leiden Atomic and Molecular Database (LAMDA, \cite{Sch05}).
 
 Fig.~\ref{1e5_75K} presents one exemplary set of models of CN/HCN column density ratio versus the modelled line intensities ratio for hydrogen densities of $n_\mathrm{H_2} = 10^5$ cm$^{-3}$ and kinetic temperatures of $T_\mathrm{kin} = 200$ K. The rest of the models are shown in the Appendix B. CN/HCN column density ratio weakly depends on hydrogen density and kinetic temperature in the low limit of those parameters. All presented models show similar properties.
 
@@ -417,11 +416,11 @@ In Section 4.2 we have raised a question about influence of the UV radiation on 
 
 HCN easily photodissotiates into CN molecule and H atom. On the other hand, CN needs more energetic photon for disintegration. In the presence of the UV photons HCN can be dissociated, while CN cannot. This leads to higher abundance of CN molecules and increases CN/HCN column density ratio.
 
-We used Nahoon code (Wakelam et al. 2012) that model the time evolution of 474 species involving gas-phase and gas-grain reactions with fixed temperature, density, UV, and cosmic ray fluxes. The evolution of CN, HCN and CS abundances was started at the time of a dense cloud formation. The UV radiation is described in the code by $A_\mathrm{V}$ parameter through the relation between visual extinction and the photodissociation rate coefficient:
+We used Nahoon code (\cite{Wak12}) that model the time evolution of 474 species involving gas-phase and gas-grain reactions with fixed temperature, density, UV, and cosmic ray fluxes. The evolution of CN, HCN and CS abundances was started at the time of a dense cloud formation. The UV radiation is described in the code by $A_\mathrm{V}$ parameter through the relation between visual extinction and the photodissociation rate coefficient:
 \begin{equation} \label{eq1}
 k =  \alpha e^{-\gamma A_\mathrm{V}}
 \end{equation}
-where $\mathrm{\alpha}$ and $\mathrm{\gamma}$ are coefficients of the photodissociation process. In case of photodissociation HCN the coefficients equal $1.64\times10^{-9}$ and $3.12$ respectively (Heays et al. 2017). 
+where $\mathrm{\alpha}$ and $\mathrm{\gamma}$ are coefficients of the photodissociation process. In case of photodissociation HCN the coefficients equal $1.64\times10^{-9}$ and $3.12$ respectively (\cite{Hea17}). 
 
 \begin{figure}
    \centering
@@ -478,6 +477,36 @@ This research has made use of data from the Herschel Gould Belt survey (HGBS) pr
 %-------------------------------------------------------------------
 
 \begin{appendix} %First appendix
+\section{Spectral Energy Distributions}
+
+Broad-band observations are needed in order to determine physical properties of a protostar. Dunham et al. 2015 studied properties of protostars in the Serpens molecular cloud using 2MASS (\cite{Skr06}) and Spitzer IRAC/MIPS (\cite{Eva09}), observations covering the range of 1.25–70 $\mu$m, photometry from Wide-field Infrared Survey Explorer 12 and 22 $\mu$m (WISE; \cite{Wri10}), SHARC-II 350 $\mu$m (\cite{Sur16}), the SCUBA Legacy Catalog 450 and 850 $\mu$m (\cite{dFr08}) and 1.1 mm observations from Bolocam dust survey (\cite{Eno07}). The Serpens Main region was also observed during the Herschel Gould Belt survey project (\cite{And10}). SPIRE/PACS photometry in the Serpens molecular cloud is discussed in Fiorellino et al. (in prep.). 
+
+Based on SEDs the bolometric temperature and luminosity can be calculated for each of the observed protostars. The bolometric luminosity was determined by integrating the SEDs over frequency:
+\begin{equation} \label{eq1}
+L_{bol} = \pi \, d^2 \, \int F_\nu d\nu
+\end{equation}
+where $d$ is the cloud distance of $436 \pm 9.2$ pc (\cite{Ort17}).
+The bolometric temperature was calculating as described in \cite{Mye93}:
+\begin{equation} \label{eq2}
+T_{bol} = 1.25 \, 10^{-11} \, \bar{\nu}
+\end{equation}
+where $\bar{\nu}$ is the mean frequency given by:
+\begin{equation} \label{eq3}
+\bar{\nu} = \frac{\int \nu F_\nu d\nu}{ \int F_\nu d\nu}
+\end{equation}
+
+Using Scipy \textit{splrep} and \textit{splev} functions cubic smooth spline interpolation of the photometric data was performed while calculating the protostars parameters. Integration along the resulting axis was obtain with the composite trapezoidal rule (\textit{Scipy} package). The photometric data allows us to perform the integration along wide range of wavelength with exception of SMM8. Here we have only 4 photometric points from the Herschel Gould Belt so the calculeted bolometric luminosity and temperature can be underestimated.
+
+
+\begin{figure}
+   \includegraphics[width=8cm]{serpens_seds.eps}
+      \caption{Spectral Energy Distributions of protostars in the Serpens Main region.}
+         \label{seds}
+   \end{figure}
+
+\end{appendix}
+
+\begin{appendix} %Second appendix
 \section{Molecular emission maps}
 
 \begin{figure}

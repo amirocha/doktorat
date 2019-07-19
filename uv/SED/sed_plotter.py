@@ -38,7 +38,7 @@ matplotlib.rcParams.update(params)
 """ FIRST PANEL - READ INPUT DATA
 ########## SERPENS, SMM1 ##########
 """
-v_smm1, f_smm1 = loadtxt('./sed_smm1.txt', usecols=(0, 1), unpack=True, skiprows=1) #frequency / flux (log scale)
+v_smm1, f_smm1 = loadtxt('./sed_smm1_photo.txt', usecols=(0, 1), unpack=True, skiprows=1) #frequency / flux (log scale)
 
 
 """
@@ -50,13 +50,13 @@ v_smm2, f_smm2 = loadtxt('./sed_smm2.txt', usecols=(0, 1), unpack=True, skiprows
 """
 ########## SERPENS, SMM3 ##########
 """
-v_smm3, f_smm3 = loadtxt('./sed_smm3.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_smm3, f_smm3 = loadtxt('./sed_smm3_photo.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 """
 ########## SERPENS, SMM4 ##########
 """
-v_smm4, f_smm4 = loadtxt('./sed_smm4.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_smm4, f_smm4 = loadtxt('./sed_smm4_photo.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 """

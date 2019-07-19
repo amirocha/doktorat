@@ -1,7 +1,8 @@
 from PIL import Image
+import math as m
 
 
-LIMITS = {'x_min': 2195, 'x_max': 2306, 'y_min': 4861-3476, 'y_max': 4861-3394}
+LIMITS = {'x_min': 2167, 'x_max': 2318, 'y_min': 4861-3485, 'y_max': 4861-3389}
 BLUR = 1
 
 def read_image(file_name):
@@ -40,6 +41,13 @@ class Pixel:
     def write_me_to_file(self, row):
         self.file.add(self, row)
 
+class Rotator:
+    def __init__(self, pixels):
+        self.pixels = pixels
+
+    def rotate(angle):
+        pass
+	
 
 class Picture:
     def __init__(self, image, file):
@@ -65,7 +73,10 @@ def main():
     image = read_image(file_name)
     picture = Picture(image, output)
     picture.create_array()
-    output.save()
 
+    rotator = Rotator(output.pixels)
+    #rotator.rotate(angle=(m.pi/2))
+    output.save()
+    
 if __name__ == '__main__':
 	main()

@@ -5,6 +5,7 @@ env/
 *.30m
 *.apex
 *.tgz
+*.fits
 
 #lmv maps
 *.tab

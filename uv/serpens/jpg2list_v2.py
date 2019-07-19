@@ -43,6 +43,7 @@ class Picture:
 			row_pixels = []
 			for column in range(LIMITS['x_min'], LIMITS['x_max']):
 				pixel = Pixel(self.picture, column, row, self.file_end_name)
+				print(self.picture)
 				row_pixels.append(pixel)
 				pixel.write_me_to_file(row)
 			pixels.append(row_pixels)

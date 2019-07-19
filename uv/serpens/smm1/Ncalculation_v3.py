@@ -9,6 +9,8 @@ molecules = ['hcn10', 'co65', 'cn10']
 k=1.38065*10**(-23) #Boltzmann's constant in J/K
 m_H = 1.008*1.660538921*(10**(-27)) #mass of hydrogen atom [kg]
 M_sun = 1.9884*(10**30) #Sun mass [kg]
+beta = 1937 #[(GHz^2 K km)^-1]
+mi_H2 = 2.8
 
 def readdata(mol):
 	data=[]
@@ -36,7 +38,7 @@ def calculate_mass(flux, mol, D, M_outflow, T_ex=100):
 	S_in_cms = pixel_size_in_cms**2
 	
 
-	N=(1937*pow(freq[mol],2)*float(flux))/(A[mol])  #freq in GHz (Yildiz et al. 2015, eq. (1)) #N_up
+	N=(beta*pow(freq[mol],2)*float(flux))/(A[mol])  #freq in GHz (Yildiz et al. 2015, eq. (1)) #N_up
 	N_g=N/g[mol] #column density devided by g (eq.1)
 	
 # Total column density for all lines (eq. 2)
@@ -44,7 +46,7 @@ def calculate_mass(flux, mol, D, M_outflow, T_ex=100):
 	N_tot = N_g * partition_function(mol, T_ex) * m.exp(Eu[mol]/(T_ex))  
 	
 	
-	M_outflow_pixel = (1./M_sun)*2.8*m_H*S_in_cms*relative_abudance[mol]*N_tot #outflow mass [M_sun]
+	M_outflow_pixel = (1./M_sun)*mi_H2*m_H*S_in_cms*relative_abudance[mol]*N_tot #outflow mass [M_sun]
 	M_outflow += M_outflow_pixel
 
 	return M_outflow 

@@ -110,7 +110,7 @@ def calculate_tbol_lbol(freq_list, flux_list, integral):
 	return tbol, lbol
 
 
-file_name='smm1_photo.inp'   
+file_name='smm8.inp'   
   
   
 dist=436. #Ortiz-Leon 2017
@@ -221,14 +221,17 @@ print(lbol_interpol, tbol_interpol)
 fluxfreq_watts_log = list_in_log_scale(fluxfreq_watts)
 #fluxfreq_watts_allpoints_log = list_in_log_scale(fluxfreq_watts_all)
 '''
+
 #writting to file
-#file2=open('test.txt','w')
-#for i in range(len(freq_interpol)): 
-#	file2.write("%f %f \n" % (10**freq_interpol_log[i], 10**flux_interpol_log[i]))
-#file2.close()
+file2=open('sed_smm8.txt','w')
+for i in range(len(freq_log)): 
+	file2.write("%f %f \n" % (freq_log[i], fluxes_log[i]))
+file2.close()
+
+
 
 fig, ax = plt.subplots()
-plt.title('SMM1')
+plt.title('SMM8')
 #plt.ylabel(r'log(F$\cdot \nu$) [W $\cdot$ m$^{-2}$]')
 plt.ylabel(r'log(F) [W $\cdot$ m$^{-2}$ $\cdot$ Hz$^{-1}$]')
 plt.xlabel(r'log($\nu$) [Hz]')
@@ -241,7 +244,7 @@ ax.text(0.05, 0.15, r'T$_{bol}$ = '+"%.2f" % round(tbol_interpol,2)+' K', transf
 ax.text(0.05, 0.05, r'L$_{bol}$ = '+"%.2f" % round(lbol_interpol,2)+r' L$_{Sun}$', transform=ax.transAxes, fontsize=12, verticalalignment='bottom', bbox=props)
 #plt.plot(newpoints_freq_log, newpoints_flux_div_freq_log, 'bo', linewidth=1)
 
-plt.savefig('SED_SMM1_cubic_interpolation_photo.png')
+plt.savefig('SED_SMM8_cubic_interpolation_photo.png')
 plt.close()
 
 '''

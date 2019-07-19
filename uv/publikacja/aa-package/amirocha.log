@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2019.5.16)  4 JUL 2019 08:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2019.5.16)  18 JUL 2019 21:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -898,16 +898,19 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 ))
 (./amirocha.aux
 
-LaTeX Warning: Label `seds' multiply defined.
-
-
-LaTeX Warning: Label `eq1' multiply defined.
-
-
 LaTeX Warning: Label `Spectra_1' multiply defined.
 
 
 LaTeX Warning: Label `eq1' multiply defined.
+
+
+LaTeX Warning: Label `G0' multiply defined.
+
+
+LaTeX Warning: Label `eq1' multiply defined.
+
+
+LaTeX Warning: Label `seds' multiply defined.
 
 )
 \openout1 = `amirocha.aux'.
@@ -1016,109 +1019,116 @@ LaTeX Info: Redefining \nameref on input line 28.
 \@outlinefile=\write3
 \openout3 = `amirocha.out'.
 
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 82.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 85.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 82.
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 82.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 85.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 85.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsya on input line 82.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 85.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 82.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 85.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txmia on input line 82.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 85.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 82.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 85.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for T1+txss on input line 82.
+LaTeX Font Info:    Try loading font information for T1+txss on input line 85.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txss.fd
 File: t1txss.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 16.41594pt on input line 82.
+(Font)              scaled to size 16.41594pt on input line 85.
 LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
-(Font)              scaled to size 16.41594pt on input line 82.
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 82.
+(Font)              scaled to size 16.41594pt on input line 85.
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 85.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 )
-Underfull \hbox (badness 10000) in paragraph at lines 82--82
+Underfull \hbox (badness 10000) in paragraph at lines 85--85
   
  []
 
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 8.54997pt on input line 82.
+(Font)              scaled to size 8.54997pt on input line 85.
 LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
-(Font)              scaled to size 8.54997pt on input line 82.
+(Font)              scaled to size 8.54997pt on input line 85.
 LaTeX Font Info:    Font shape `T1/txss/m/it' in size <9> not available
-(Font)              Font shape `T1/txss/m/sl' tried instead on input line 82.
+(Font)              Font shape `T1/txss/m/sl' tried instead on input line 85.
 LaTeX Font Info:    Font shape `T1/txss/m/sl' will be
-(Font)              scaled to size 8.54997pt on input line 82.
+(Font)              scaled to size 8.54997pt on input line 85.
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 10.40245pt on input line 83.
+(Font)              scaled to size 10.40245pt on input line 86.
 LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
-(Font)              scaled to size 10.40245pt on input line 83.
+(Font)              scaled to size 10.40245pt on input line 86.
 
-Underfull \vbox (badness 4673) has occurred while \output is active []
-
-
-Overfull \hbox (19.60521pt too wide) in paragraph at lines 93--106
- [][] 
+Underfull \hbox (badness 1910) in paragraph at lines 91--92
+\T1/txr/m/n/10 served higher emis-sion of [C I] than in off-source po-si-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--106
-[]\T1/txr/bx/n/9 Notes. \T1/txr/m/n/9 Beam sizes and ef-fi-cien-cies are taken 
-from
+Underfull \hbox (badness 1297) in paragraph at lines 91--92
+\T1/txr/m/n/10 tions what brought to con-clu-sion of pho-todis-so-ci-a-tion CO
  []
 
 
-Package hyperref Warning: Suppressing link with empty target on input line 110.
+Underfull \hbox (badness 2617) in paragraph at lines 91--92
+\T1/txr/m/n/10 ([] ([])). The fluxes of [OI] and [CII]
+ []
 
+
+Underfull \hbox (badness 2591) in paragraph at lines 91--92
+\T1/txr/m/n/10 are sig-nif-i-cantly higher than fully-shielded C-shock mod-
+ []
+
+
+Package natbib Warning: Citation `Jor04' on page 1 undefined on input line 94.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 95.
 
 [1
 
 
 ]
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 9.49997pt on input line 114.
+(Font)              scaled to size 9.49997pt on input line 100.
 LaTeX Font Info:    Font shape `T1/txss/m/it' in size <10> not available
-(Font)              Font shape `T1/txss/m/sl' tried instead on input line 114.
+(Font)              Font shape `T1/txss/m/sl' tried instead on input line 100.
 LaTeX Font Info:    Font shape `T1/txss/m/sl' will be
-(Font)              scaled to size 9.49997pt on input line 114.
+(Font)              scaled to size 9.49997pt on input line 100.
 File: serpens_hcn10_on_dust.eps Graphic file (type eps)
  <serpens_hcn10_on_dust.eps>
-Underfull \vbox (badness 7397) has occurred while \output is active []
 
-File: serpens_seds.eps Graphic file (type eps)
-
-<serpens_seds.eps>
-
-Package hyperref Warning: Suppressing link with empty target on input line 198.
+Package hyperref Warning: Suppressing link with empty target on input line 151.
 
 
 [2]
-Overfull \hbox (3.96489pt too wide) in paragraph at lines 203--228
+Overfull \hbox (3.96489pt too wide) in paragraph at lines 202--227
  [][] 
  []
 
@@ -1126,83 +1136,96 @@ File: serpens_hcn10.eps Graphic file (type eps)
 <serpens_hcn10.eps>
 File: serpens_cs32.eps Graphic file (type eps)
  <serpens_cs32.eps>
-File: serpens_cn10.eps Graphic file (type eps)
- <serpens_cn10.eps>
 
-Package hyperref Warning: Suppressing link with empty target on input line 257.
+Package hyperref Warning: Suppressing link with empty target on input line 248.
 
 
 [3]
+File: serpens_cn10.eps Graphic file (type eps)
+ <serpens_cn10.eps>
+Underfull \hbox (badness 1173) in paragraph at lines 255--256
+\T1/txr/m/n/10 todis-so-ci-ates into CN molecule and H atom ([]
+ []
+
 File: serpens_cn10_divided_hcn10.eps Graphic file (type eps)
- <serpens_cn10_divided_hcn10.eps>
+<serpens_cn10_divided_hcn10.eps>
 
-Package hyperref Warning: Suppressing link with empty target on input line 266.
-
-
-[4]
-
-LaTeX Warning: Float too large for page by 8.94582pt on input line 337.
+LaTeX Warning: Float too large for page by 8.94582pt on input line 336.
 
 File: serpens_spectra_1.eps Graphic file (type eps)
 <serpens_spectra_1.eps>
 File: serpens_spectra_2.eps Graphic file (type eps)
  <serpens_spectra_2.eps>
-File: Nratios_plot_nH2-1e5_200K.eps Graphic file (type eps)
 
-<Nratios_plot_nH2-1e5_200K.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 379--380
- [][] 
- []
+Package hyperref Warning: Suppressing link with empty target on input line 356.
 
 
-Package hyperref Warning: Suppressing link with empty target on input line 420.
+[4]
+
+Package hyperref Warning: Suppressing link with empty target on input line 356.
 
 
 [5]
-
-Package hyperref Warning: Suppressing link with empty target on input line 420.
-
-
-[6]
-File: starless.eps Graphic file (type eps)
- <starless.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 428--429
+File: Nratios_plot_nH2-1e5_200K.eps Graphic file (type eps)
+ <Nratios_plot_nH2-1e5_200K.eps>
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 378--379
  [][] 
  []
 
 
-Package hyperref Warning: Suppressing link with empty target on input line 434.
+Package hyperref Warning: Suppressing link with empty target on input line 388.
+
+
+[6]
+Underfull \vbox (badness 2229) has occurred while \output is active []
+
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 416.
 
 
 [7]
+File: starless.eps Graphic file (type eps)
+ <starless.eps>
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 427--428
+ [][] 
+ []
+
 File: AV5.eps Graphic file (type eps)
- <AV5.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 437--438
+<AV5.eps>
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 436--437
  [][] 
  []
 
 File: G0.eps Graphic file (type eps)
 <G0.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 446--447
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 445--446
  [][] 
  []
 
 File: G0+.eps Graphic file (type eps)
 <G0+.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 453--454
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 452--453
  [][] 
  []
 
 
-Package hyperref Warning: Suppressing link with empty target on input line 459.
+Package hyperref Warning: Suppressing link with empty target on input line 458.
 
 
 [8] (./amirocha.bbl)
 
-Package hyperref Warning: Suppressing link with empty target on input line 480.
+Package hyperref Warning: Suppressing link with empty target on input line 479.
 
 
-[9
+[9]
+File: serpens_seds.eps Graphic file (type eps)
+ <serpens_seds.eps>
+
+Package hyperref Warning: Suppressing link with empty target on input line 509.
+
+
+[10
 
 ]
 File: serpens_h13cn10.eps Graphic file (type eps)
@@ -1210,32 +1233,35 @@ File: serpens_h13cn10.eps Graphic file (type eps)
 File: serpens_c34s32.eps Graphic file (type eps)
  <serpens_c34s32.eps>
 
-Package hyperref Warning: Suppressing link with empty target on input line 498.
+Package natbib Warning: There were undefined citations.
 
 
-[10
+Package hyperref Warning: Suppressing link with empty target on input line 527.
+
+
+[11
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 498.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 498.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 527.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 527.
  (./amirocha.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 498.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 498.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 527.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 527.
 Package rerunfilecheck Info: File `amirocha.out' has not changed.
-(rerunfilecheck)             Checksum: 83830FAF02093F0ABA960312E1134FEB;668.
+(rerunfilecheck)             Checksum: E5F960FA273BB9F72513208A29A5C990;883.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 9684 strings out of 494924
- 133262 string characters out of 6180768
- 258425 words of memory out of 5000000
- 12804 multiletter control sequences out of 15000+600000
- 63583 words of font info for 107 fonts, out of 8000000 for 9000
+ 9812 strings out of 494924
+ 134927 string characters out of 6180768
+ 270352 words of memory out of 5000000
+ 12932 multiletter control sequences out of 15000+600000
+ 66997 words of font info for 109 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 39i,14n,45p,1893b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,13n,45p,1893b,459s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on amirocha.dvi (10 pages, 71156 bytes).
+Output written on amirocha.dvi (11 pages, 112824 bytes).

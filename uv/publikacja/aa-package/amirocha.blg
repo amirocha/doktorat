@@ -1,47 +1,49 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: amirocha.aux
 The style file: aa.bst
 Database file #1: amirocha.bib
+Warning--I didn't find a database entry for "Jor04"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 1 entry,
+You've used 42 entries,
             3039 wiz_defined-function locations,
-            672 strings with 4901 characters,
-and the built_in function-call counts, 638 in all, are:
-= -- 49
-> -- 65
-< -- 0
-+ -- 22
-- -- 21
-* -- 58
-:= -- 125
-add.period$ -- 1
-call.type$ -- 1
-change.case$ -- 11
-chr.to.int$ -- 1
-cite$ -- 1
-duplicate$ -- 18
-empty$ -- 26
-format.name$ -- 23
-if$ -- 120
+            995 strings with 19218 characters,
+and the built_in function-call counts, 34228 in all, are:
+= -- 2581
+> -- 4242
+< -- 7
++ -- 1415
+- -- 1373
+* -- 3233
+:= -- 6444
+add.period$ -- 42
+call.type$ -- 42
+change.case$ -- 625
+chr.to.int$ -- 42
+cite$ -- 42
+duplicate$ -- 778
+empty$ -- 1106
+format.name$ -- 1480
+if$ -- 6651
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 1
-newline$ -- 7
-num.names$ -- 4
-pop$ -- 10
+missing$ -- 41
+newline$ -- 130
+num.names$ -- 169
+pop$ -- 625
 preamble$ -- 1
-purify$ -- 11
+purify$ -- 625
 quote$ -- 0
-skip$ -- 16
+skip$ -- 668
 stack$ -- 0
-substring$ -- 18
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 889
+swap$ -- 4
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 9
+type$ -- 378
 warning$ -- 0
-while$ -- 4
+while$ -- 169
 width$ -- 0
-write$ -- 13
+write$ -- 423
+(There was 1 warning)
