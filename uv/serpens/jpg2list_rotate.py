@@ -5,13 +5,13 @@ import math as m
 # LIMITS = {'x_min': 1667, 'x_max': 2518, 'y_min': 4861-3485, 'y_max': 4861-3389}
 LIMITS = {'x_min': 1467, 'x_max': 2718, 'y_min': 4861-3785, 'y_max': 4861-3089}
 BLUR = 1
-CENTER_X = 2275
-CENTER_Y = 4861-3432
+CENTER_X = 2260
+CENTER_Y = 4861-3434
 
-WIDTH = 100
+WIDTH = 54
 # WIDTH = 850
 # HEIGHT = 90
-HEIGHT = 100
+HEIGHT = 68
 
 FACTOR = 0.001874609
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2019.5.16)  19 JUL 2019 23:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2019.5.16)  20 JUL 2019 00:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -921,6 +921,24 @@ LaTeX Warning: Label `h13cn10' multiply defined.
 
 LaTeX Warning: Label `h13cn10' multiply defined.
 
+
+LaTeX Warning: Label `h13cn10' multiply defined.
+
+
+LaTeX Warning: Label `h13cn10' multiply defined.
+
+
+LaTeX Warning: Label `h13cn10' multiply defined.
+
+
+LaTeX Warning: Label `h13cn10' multiply defined.
+
+
+LaTeX Warning: Label `h13cn10' multiply defined.
+
+
+LaTeX Warning: Label `h13cn10' multiply defined.
+
 )
 \openout1 = `amirocha.aux'.
 
@@ -1264,18 +1282,6 @@ Package hyperref Warning: Suppressing link with empty target on input line 555.
 ]
 File: CN_HCN_flux_correlation.eps Graphic file (type eps)
  <CN_HCN_flux_correlation.eps>
-! Missing $ inserted.
-<inserted text> 
-                $
-l.560 ...on correlation coefficient equals 0.99. }
-                                                  
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.560 ...on correlation coefficient equals 0.99. }
-                                                  
-? 
 
 Package hyperref Warning: Suppressing link with empty target on input line 566.
 
@@ -1286,45 +1292,53 @@ Package hyperref Warning: Suppressing link with empty target on input line 566.
 ]
 File: line_ratios_O_H2O.eps Graphic file (type eps)
  <line_ratios_O_H2O.eps>
-! Missing $ inserted.
-<inserted text> 
-                $
-l.571 ...son correlation coefficient equals 0.99.}
-                                                  
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.571 ...son correlation coefficient equals 0.99.}
-                                                  
-? 
+File: line_ratios_O_OH.eps Graphic file (type eps)
+ <line_ratios_O_OH.eps>
+File: line_ratios_OH_H2O.eps Graphic file (type eps)
+ <line_ratios_OH_H2O.eps>
 
-Package hyperref Warning: Suppressing link with empty target on input line 577.
+Package hyperref Warning: Suppressing link with empty target on input line 589.
 
 
 [13
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 577.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 577.
+File: smm1_cn10_outflows.eps Graphic file (type eps)
+ <smm1_cn10_outflows.eps>
+File: smm1_hcn10_outflows.eps Graphic file (type eps)
+ <smm1_hcn10_outflows.eps>
+File: smm34_cn10_outflows.eps Graphic file (type eps)
+
+<smm34_cn10_outflows.eps>
+File: smm34_hcn10_outflows.eps Graphic file (type eps)
+ <smm34_hcn10_outflows.eps>
+
+Package hyperref Warning: Suppressing link with empty target on input line 618.
+
+
+[14
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 618.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 618.
  (./amirocha.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 577.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 577.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 618.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 618.
 Package rerunfilecheck Info: File `amirocha.out' has not changed.
-(rerunfilecheck)             Checksum: 849DA17117EB694B6BC809B93778A2F6;991.
+(rerunfilecheck)             Checksum: 832493AE59DEE32BCBDDAA49450B5100;1045.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 9822 strings out of 494924
- 135142 string characters out of 6180768
- 274331 words of memory out of 5000000
- 12940 multiletter control sequences out of 15000+600000
+ 9840 strings out of 494924
+ 135622 string characters out of 6180768
+ 274215 words of memory out of 5000000
+ 12952 multiletter control sequences out of 15000+600000
  65298 words of font info for 108 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,13n,45p,1893b,459s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on amirocha.dvi (13 pages, 119616 bytes).
+Output written on amirocha.dvi (14 pages, 122468 bytes).
