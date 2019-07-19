@@ -2,37 +2,51 @@ from PIL import Image
 import math as m
 
 
-LIMITS = {'x_min': 2167, 'x_max': 2318, 'y_min': 4861-3485, 'y_max': 4861-3389}
+# LIMITS = {'x_min': 1667, 'x_max': 2518, 'y_min': 4861-3485, 'y_max': 4861-3389}
+LIMITS = {'x_min': 1467, 'x_max': 2718, 'y_min': 4861-3785, 'y_max': 4861-3089}
 BLUR = 1
 CENTER_X = 2275
 CENTER_Y = 4861-3432
+
+WIDTH = 100
+# WIDTH = 850
+# HEIGHT = 90
+HEIGHT = 100
+
 FACTOR = 0.001874609
+
 
 def read_image(file_name):
 	image = Image.open(file_name)
 	return image
 
+
 class File:
     pixels = None
     counter = None
-    pixels_array = None
 
     def __init__(self, filename):
         self.filename = filename
         self.pixels = []
         self.counter = 0
-        self.pixels_array = []
 
     def add(self, pixel, row):
-        self.pixels.append(f'{self.counter}    {repr(pixel)}')
-        self.pixels_array.append(pixel)
+        self.pixels.append(pixel)
         self.counter += 1
+
+    def sort_and_round_pixels(self):
+        for pixel in self.pixels:
+            pixel.x = round(pixel.x)
+            pixel.y = round(pixel.y)
+        self.pixels = sorted(self.pixels, key=lambda pixel: pixel.x)
+        self.pixels = sorted(self.pixels, key=lambda pixel: -pixel.y)
 
     def save(self):
         file_end=open(self.filename, 'w')
-        for i, pixel in enumerate(self.pixels_array):
-            file_end.write(f'{i} {repr(pixel)}')
+        for i, pixel in enumerate(self.pixels):
+            file_end.write(f'{i:<7}{repr(pixel)}')
         file_end.close()
+
 
 class Pixel:
     def __init__(self, picture, column, row, file):
@@ -42,10 +56,22 @@ class Pixel:
         self.file = file
 
     def __repr__(self):
-        return f"{2902-self.x}    {4861-self.y}    {self.value} \n"
+        return f"{(2902-self.x):<7}{(4861-self.y):<7}{(self.value):<5.5}\n"
 
     def write_me_to_file(self, row):
         self.file.add(self, row)
+
+    def within_boundaries(self):
+        left_boundary = CENTER_X - WIDTH / 2
+        right_boundary = CENTER_X + WIDTH / 2
+        upper_boundary = CENTER_Y + HEIGHT / 2
+        lower_boundary = CENTER_Y - HEIGHT / 2
+
+        return (
+            left_boundary < self.x < right_boundary and
+            lower_boundary < self.y < upper_boundary
+        )
+
 
 class Rotator:
     def __init__(self, pixels):
@@ -53,10 +79,39 @@ class Rotator:
 
     def rotate(self, angle):
         for pixel in self.pixels:
-            new_x = pixel.x*m.cos(angle) - pixel.y*m.sin(angle)
-            new_y = pixel.x*m.sin(angle) + pixel.y*m.cos(angle)
-            pixel.x = new_x
-            pixel.y = new_y
+            shift_x = pixel.x - CENTER_X
+            shift_y = pixel.y - CENTER_Y
+
+            new_x = shift_x*m.cos(angle) - shift_y*m.sin(angle)
+            pixel.x = new_x + CENTER_X
+
+            new_y = shift_x*m.sin(angle) + shift_y*m.cos(angle)
+            pixel.y = new_y + CENTER_Y
+
+
+class Cutter:
+    def __init__(self, pixels):
+        self.pixels = pixels
+
+    def crop(self):
+        cropped_image = [pixel for pixel in self.pixels if pixel.within_boundaries()]
+        self.pixels = cropped_image
+
+
+class Solver:
+    def __init__(self, pixels):
+        self.pixels = pixels
+
+    def make_unique(self):
+        unique = []
+        coords = []
+        for pixel in self.pixels:
+            if (pixel.x, pixel.y) not in coords:
+                unique.append(pixel)
+                coords.append((pixel.x, pixel.y))
+
+        self.pixels = unique
+
 
 class Picture:
     def __init__(self, image, file):
@@ -74,18 +129,28 @@ class Picture:
     def get_pixels(self):
         return [pixel for row in self.pixels for pixel in row]
 
-def main():
-    file_name = 'serpens_bw2.jpeg'
-    file_end_name = 'serpens_dust.txt'
 
-    output = File(file_end_name)
-    image = read_image(file_name)
+def main():
+    image = read_image('serpens_bw2.jpeg')
+    output = File('serpens_dust.txt')
+
     picture = Picture(image, output)
     picture.create_array()
 
-    rotator = Rotator(output.pixels_array)
+    rotator = Rotator(output.pixels)
     rotator.rotate(angle=m.radians(-30))
+    output.sort_and_round_pixels()
+
+    cutter = Cutter(output.pixels)
+    cutter.crop()
+
+    solver = Solver(cutter.pixels)
+    solver.make_unique()
+
+    output.pixels = solver.pixels
     output.save()
-    
+
+
+
 if __name__ == '__main__':
 	main()
