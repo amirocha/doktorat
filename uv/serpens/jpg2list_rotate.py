@@ -43,8 +43,34 @@ class File:
 
     def save(self):
         file_end=open(self.filename, 'w')
-        for i, pixel in enumerate(self.pixels):
-            file_end.write(f'{i:<7}{repr(pixel)}')
+
+        previous_x = self.pixels[0].x - 1
+        previous_y = self.pixels[0].y
+        previous_value = self.pixels[0].value
+        counter = 0
+
+        for i in range(len(self.pixels)):
+            if (
+                self.pixels[i].x == previous_x + 1 and
+                self.pixels[i].y == previous_y
+            ) or (
+                self.pixels[i].y != previous_y
+            ):
+                file_end.write(f'{counter:<7}{repr(self.pixels[i])}')
+                previous_x = self.pixels[i].x
+                previous_y = self.pixels[i].y
+                previous_value = self.pixels[i].value
+            else:
+                previous_x += 1
+                file_end.write(f'{counter:<7}{(2902-previous_x):<7}{(4861-previous_y):<7}'
+                               f'{(previous_value):<5.5}\n')
+                counter += 1
+                file_end.write(f'{counter:<7}{repr(self.pixels[i])}')
+                previous_x = self.pixels[i].x
+                previous_y = self.pixels[i].y
+                previous_value = self.pixels[i].value
+            counter += 1
+
         file_end.close()
 
 
