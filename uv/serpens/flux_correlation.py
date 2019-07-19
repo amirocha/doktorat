@@ -51,13 +51,14 @@ def plot_correlation(x, y, a, b):
 
 def calculate_pearson(x, y):
 	pearson = stat.pearsonr(x, y)
+	print(pearson)
 
 	return pearson
 
 def fit_linear_regression(x, y):
-	a, b, _, _, _ = stat.linregress(x,y)
-
-	return a, b
+	slope, intercept, r_value, p_value, stderr = stat.linregress(x,y)
+	print(slope, intercept, r_value, p_value, stderr)
+	return slope, intercept
 
 
 def main():

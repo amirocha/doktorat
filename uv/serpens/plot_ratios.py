@@ -22,10 +22,10 @@ CN_HCN = [0.6088705915755743, 0.7606213294180459, 0.8879391869265287, 0.71030457
 
 plt.figure(1)
 plt.title(u"Line fluxes corelation")
-plt.ylabel(u"[0I] 63 / OH 84")
+plt.ylabel(u"OH 84 / H2O 179")
 plt.xlabel(u"CN / HCN")
-plt.plot(CN_HCN,O_OH, 'k.', ms=2)
-plt.errorbar(CN_HCN,O_OH, yerr=O_OH, linestyle="None")
+plt.plot(CN_HCN,OH_H2O, 'k.', ms=2)
+plt.errorbar(CN_HCN,OH_H2O, yerr=OH_H2O, linestyle="None")
 
-plt.savefig('line_ratios_O_OH', format='png')
+plt.savefig('line_ratios_OH_H2O.eps', format='eps')
 plt.close()

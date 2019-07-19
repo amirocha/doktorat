@@ -22,7 +22,7 @@ greg\set coord user
 greg\set character 0.5
 greg\pen /def
 
-    greg\column x 2 y 3 z 4 /file smm1_cn10_red_map.txt
+    greg\column x 2 y 3 z 4 /file smm1_hcn10_red_map.txt
     greg2\rgdata x y z /blank sigma
     greg\limits /rgdata /reverse x 
     greg\level '1*sigma' to up by '1*sigma'
@@ -30,7 +30,7 @@ greg\pen /def
     greg\pen /colour 1 !red outflows
     greg\rgmap /abs
 
-    greg\column x 2 y 3 z 4 /file smm1_cn10_blue_map.txt
+    greg\column x 2 y 3 z 4 /file smm1_hcn10_blue_map.txt
     greg2\rgdata x y z /blank sigma
     greg\limits /rgdata /reverse x 
     greg\level '1*sigma' to up by '1*sigma'
@@ -102,10 +102,10 @@ greg\label "\GD\Gd (Arcsec) " /y
 greg\label "\GD\Ga (Arcsec) " /x
     greg\set character 0.5
     greg\pen /colour 0 /weight 1
-	greg\draw text 0 90 "Serpens CN J=1-0"
+	greg\draw text 0 90 "Serpens HCN J=1-0"
 
  
 
 
-sys "rm -f smm1_cn10_outflows.eps"
-hardcopy "smm1_cn10_outflows.eps"
+sys "rm -f smm1_hcn10_outflows.eps"
+hardcopy "smm1_hcn10_outflows.eps"
