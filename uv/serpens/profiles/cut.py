@@ -16,7 +16,7 @@ def cut_data(lines):
 		elem2=elem[0]
 		elem3=float(elem2)
 		elem4=float(elem[1])
-		if elem3<13 and elem3>5:
+		if elem3<20 and elem3>13:
 			x1.append(elem3)
 			y1.append(elem4)
 
@@ -24,7 +24,7 @@ def cut_data(lines):
 
 def write_file(filename, x1, y1):
 
-	file2=open(str(filename)+'_cut.txt','w')
+	file2=open(str(filename)+'_comp2.txt','w')
 	b=[]
 	for i in range(len(x1)):
 		a=str(x1[i]) 
@@ -37,7 +37,7 @@ def write_file(filename, x1, y1):
 	file2.close()
 
 def main():
-	for i in [1,2,3,4,5,6,9,10,12]: #SMM
+	for i in [1,2,3,4,5,6,8,9,10,12]: #SMM
 		filename = 'serpens_cn10_smm'+str(i)
 		lines = read_file(filename)
 		x, y = cut_data(lines)

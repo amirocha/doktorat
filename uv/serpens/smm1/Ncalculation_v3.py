@@ -31,7 +31,7 @@ def calculate_mass(flux, mol, D, M_outflow, T_ex=100):
 	A={'co65': 2.137e-05, 'hcn10': 2.407E-05, 'cn10': 1.182E-05} #Einstein coefficient	[s^-1]
 
 	pixel_size={'co65': 4.5, 'hcn10': 14.65, 'cn10': 14.65} 
-	relative_abudance={'co65': 1.2*(10**(4)), 'hcn10': 10**(9), 'cn10': 6.1*10**10} #H_2/mol relative abudances: CO6-5 (Yildiz et al. 2012), HCN1-0 (Hirota et al. 1998), CN1-0 (Hily-Blant et al. 2013)
+	relative_abudance={'co65': 1.2*(10**(4)), 'hcn10': 10**(7), 'cn10': 1*10**7} #H_2/mol relative abudances: CO6-5 (Yildiz et al. 2012), HCN1-0 (Hirota et al. 1998), CN1-0 (Hily-Blant et al. 2013)
 
 	pixel_size_in_radians = m.radians(pixel_size[mol]/(3600)) # arcsec -> rad
 	pixel_size_in_cms = pixel_size_in_radians*D #rad -> cm
@@ -45,7 +45,6 @@ def calculate_mass(flux, mol, D, M_outflow, T_ex=100):
 	
 	N_tot = N_g * partition_function(mol, T_ex) * m.exp(Eu[mol]/(T_ex))  
 	
-	
 	M_outflow_pixel = (1./M_sun)*mi_H2*m_H*S_in_cms*relative_abudance[mol]*N_tot #outflow mass [M_sun]
 	M_outflow += M_outflow_pixel
 
@@ -53,16 +52,18 @@ def calculate_mass(flux, mol, D, M_outflow, T_ex=100):
 				
 def partition_function(mol, T_ex):  #linear approximation from JPL data
 	if mol == 'hcn10': 
-		return {9.375: 14.272, 37.5: 53.914, 75: 106.807}[T_ex]
+		return 1.4109992334108785*T_ex+1.008107178464627 
 	if mol == 'co65': 
-		return {37.5: 13.897, 75: 27.455, 150: 54.581}[T_ex]
+		return 0.36171900299102694*T_ex+0.33641974077767145 
 	if mol == 'cn10': 
-		return {37.5: 84.7308, 75: 167.4335, 150: 332.9077}[T_ex]
+		return 2.206633355045973*T_ex+2.004509970089714
+	if mol == 'cs32': 
+		return 0.8507128038107898*T_ex+0.34633848454636507
 
 def main():  #activate the rest of functions
 
-	D = 260*3.086*pow(10,18) #distance to the source [cm]
-	T_ex=75 #exitation temperature in Kelvins (Yildiz et al. 2015)
+	D = 436*3.086*pow(10,18) #distance to the source [cm]
+	T_ex=7. #exitation temperature in Kelvins: 75K for CO (Yildiz et al. 2015), 7K for HCN, CS (Tafalla+2010)
 	
 	for mol in molecules:
 		fluxes = readdata(mol)

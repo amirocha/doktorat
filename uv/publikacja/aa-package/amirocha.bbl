@@ -1,4 +1,4 @@
-\begin{thebibliography}{44}
+\begin{thebibliography}{49}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Andr{\'e}} {et~al.}(2010){Andr{\'e}}, {Men'shchikov}, {Bontemps},
@@ -19,6 +19,10 @@
 
 \bibitem[{{Arce} \& {Sargent}(2006)}]{Arc06}
 {Arce}, H.~G. \& {Sargent}, A.~I. 2006, \apj, 646, 1070
+
+\bibitem[{{Aso} {et~al.}(2018){Aso}, {Hirano}, {Aikawa}, {Machida}, {Takakuwa},
+  {Yen}, \& {Williams}}]{Aso18}
+{Aso}, Y., {Hirano}, N., {Aikawa}, Y., {et~al.} 2018, \apj, 863, 19
 
 \bibitem[{{Bachiller} {et~al.}(2001){Bachiller}, {P{\'e}rez Guti{\'e}rrez},
   {Kumar}, \& {Tafalla}}]{Bac01}
@@ -42,6 +46,11 @@
   {MacKenzie}, \& {Ledwosinska}}]{dFr08}
 {Di Francesco}, J., {Johnstone}, D., {Kirk}, H., {MacKenzie}, T., \&
   {Ledwosinska}, E. 2008, \apjs, 175, 277
+
+\bibitem[{{Dionatos} {et~al.}(2010){Dionatos}, {Nisini}, {Codella}, \&
+  {Giannini}}]{Dio10}
+{Dionatos}, O., {Nisini}, B., {Codella}, C., \& {Giannini}, T. 2010, \aap, 523,
+  A29
 
 \bibitem[{{Dunham} {et~al.}(2015){Dunham}, {Allen}, {Evans},
   {Broekhoven-Fiene}, {Cieza}, {Di Francesco}, {Gutermuth}, {Harvey},
@@ -71,6 +80,11 @@
 {Evans}, Neal~J., I., {Dunham}, M.~M., {J{\o}rgensen}, J.~K., {et~al.} 2009,
   \apjs, 181, 321
 
+\bibitem[{{Francis} {et~al.}(2019){Francis}, {Johnstone}, {Dunham}, {Hunter},
+  \& {Mairs}}]{Fra19}
+{Francis}, L., {Johnstone}, D., {Dunham}, M.~M., {Hunter}, T.~R., \& {Mairs},
+  S. 2019, \apj, 871, 149
+
 \bibitem[{{Fuente} {et~al.}(1993){Fuente}, {Martin-Pintado}, {Cernicharo}, \&
   {Bachiller}}]{Fue93}
 {Fuente}, A., {Martin-Pintado}, J., {Cernicharo}, J., \& {Bachiller}, R. 1993,
@@ -94,6 +108,12 @@
   {Salverda}, \& {Blake}}]{Hog99}
 {Hogerheijde}, M.~R., {van Dishoeck}, E.~F., {Salverda}, J.~M., \& {Blake},
   G.~A. 1999, \apj, 513, 350
+
+\bibitem[{{Hull} {et~al.}(2017){Hull}, {Girart}, {Tychoniec}, {Rao},
+  {Cort{\'e}s}, {Pokhrel}, {Zhang}, {Houde}, {Dunham}, {Kristensen}, {Lai},
+  {Li}, \& {Plambeck}}]{Hul17}
+{Hull}, C. L.~H., {Girart}, J.~M., {Tychoniec}, {\L}., {et~al.} 2017, \apj,
+  847, 92
 
 \bibitem[{{J{\o}rgensen}(2004)}]{Jor04}
 {J{\o}rgensen}, J.~K. 2004, \aap, 424, 589
@@ -142,6 +162,14 @@
 \bibitem[{{Larson}(2003)}]{Lar03}
 {Larson}, R.~B. 2003, Reports on Progress in Physics, 66, 1651
 
+\bibitem[{{Lee} {et~al.}(2014){Lee}, {Fern{\'a}ndez-L{\'o}pez}, {Storm},
+  {Looney}, {Mundy}, {Segura-Cox}, {Teuben}, {Rosolowsky}, {Arce}, {Ostriker},
+  {Shirley}, {Kwon}, {Kauffmann}, {Tobin}, {Plunkett}, {Pound}, {Salter},
+  {Volgenau}, {Chen}, {Tassis}, {Isella}, {Crutcher}, {Gammie}, \&
+  {Testi}}]{Lee14}
+{Lee}, K.~I., {Fern{\'a}ndez-L{\'o}pez}, M., {Storm}, S., {et~al.} 2014, \apj,
+  797, 76
+
 \bibitem[{{Manoj} {et~al.}(2013){Manoj}, {Watson}, {Neufeld}, {Megeath},
   {Vavrek}, {Yu}, {Visser}, {Bergin}, {Fischer}, {Tobin}, {Stutz}, {Ali},
   {Wilson}, {Di Francesco}, {Osorio}, {Maret}, \& {Poteet}}]{Man13}
@@ -182,11 +210,6 @@
   {van Dishoeck}, {Doty}, \& {van der Tak}}]{Sta07}
 {St{\"a}uber}, P., {Benz}, A.~O., {J{\o}rgensen}, J.~K., {et~al.} 2007, \aap,
   466, 977
-
-\bibitem[{{St{\"a}uber} {et~al.}(2005){St{\"a}uber}, {Doty}, {van Dishoeck}, \&
-  {Benz}}]{Sta05}
-{St{\"a}uber}, P., {Doty}, S.~D., {van Dishoeck}, E.~F., \& {Benz}, A.~O. 2005,
-  \aap, 440, 949
 
 \bibitem[{{Suresh} {et~al.}(2016){Suresh}, {Dunham}, {Arce}, {Evans}, {Bourke},
   {Merello}, \& {Wu}}]{Sur16}
@@ -232,6 +255,10 @@
   {Risacher}, {van der Marel}, {van Weeren}, \& {Wyrowski}}]{Yil15}
 {Y{\i}ld{\i}z}, U.~A., {Kristensen}, L.~E., {van Dishoeck}, E.~F., {et~al.}
   2015, \aap, 576, A109
+
+\bibitem[{{Yoo} {et~al.}(2017){Yoo}, {Lee}, {Mairs}, {Johnstone}, {Herczeg},
+  {Kang}, {Kang}, {Cho}, \& {The JCMT Transient Team}}]{Yoo17}
+{Yoo}, H., {Lee}, J.-E., {Mairs}, S., {et~al.} 2017, \apj, 849, 69
 
 \bibitem[{{Zuckerman} {et~al.}(1976){Zuckerman}, {Kuiper}, \& {Rodriguez
   Kuiper}}]{Zuc76}

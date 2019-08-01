@@ -1,0 +1,157 @@
+define double sigma
+define double up
+
+let sigma 0.1
+let up 3
+set unit v
+greg\pen /weight 1.75
+set font duplex
+set character 0.5
+set plot histogram 
+
+
+lut color
+!LET LUT%HUE[I] = 16*INT((256-2*I)|16)
+LET LUT%HUE[I] = 256*(1-(I/LUT%SIZE))
+lut lut
+
+
+greg1\set plot landscape
+set viewport 0.05 0.3 0.42 0.75
+greg\set coord user
+greg\set character 0.5
+greg\pen /def
+
+	 greg\column x 2 y 3 z 4 /file smm1_cn10_red_map.txt
+    greg2\rgdata x y z /blank '3*sigma'
+    greg\limits /rgdata /reverse x
+    greg\level sigma to up by sigma
+
+    greg\plot /scaling lin '3*sigma' up /blanking '3*sigma' 0
+
+!CN
+
+let sigma 5.2*5.491E-02
+let up 5
+set unit v
+greg\pen /weight 2.75
+set font duplex
+set character 0.5
+
+
+	 greg\column x 2 y 3 z 4 /file smm1_cn10_red_map.txt
+    greg2\rgdata x y z /blank '3*sigma'
+    greg\limits /rgdata /reverse x
+    greg\level '3*sigma' to up by 'sigma'
+	greg\pen /colour 1
+	greg\rgmap /abs
+
+let sigma 6*5.491E-02
+let up 5
+set unit v
+greg\pen /weight 1
+set font duplex
+set character 0.5
+
+
+	greg\column x 2 y 3 z 4 /file smm1_cn10_blue_map.txt
+    greg2\rgdata x y z /blank '3*sigma'
+    greg\limits /rgdata /reverse x
+    greg\level '3*sigma' to up by 'sigma'
+	greg\pen /colour 3
+	greg\rgmap /abs
+
+
+
+!axes
+    greg\set character 0.3
+    greg\pen /weight 0.75
+    greg\pen /colour 0
+    greg\box n o i
+
+    greg\set character 0.3
+    greg\pen /colour 0
+    greg\box p o i
+
+    greg1\column /close
+
+ 
+
+!positions
+
+
+    greg\set character 0.5   !position 1
+    greg\pen /colour 6 /weight 3
+    greg1\set marker 4 1 .2 0
+    set coord user
+    greg1\draw marker -11. 33
+    greg\pen /colour 0 /weight 1
+    set font duplex
+    set character 0.250
+    greg1\draw text -11. 35 "1" 
+
+
+
+!outflows
+!smm1
+    greg\pen /def
+    greg\pen /colour 0 /weight 1   !----- to jest kolor i grubosc lini
+    !greg\draw line -0.6 1.4 /user /clip   !------ tutaj ta pozioma
+    greg\draw relocate 7.48 -28.14 /user  !----- te dwie kolejne liniki sa do ukosnej
+    greg\draw line -8.68 30.94 /user /clip
+    greg\pen /def
+
+
+!-----------------Dionatos+2010----------------
+!smm1 -0.6 1.4
+    greg\pen /def
+    greg\pen /colour 0 /weight 1    !----- to jest kolor i grubosc lini
+    greg\draw relocate 14.72 -11.45 /user  !----- te dwie kolejne liniki sa do ukosnej
+    greg\draw line -15.92 14.25 /user /clip
+    greg\pen /def
+
+
+
+!protostars
+    greg1\column /close
+    greg\pen /colour 0 /weight 3 !SMM1
+    greg\set character 0.5   !font size
+    greg1\set marker 3 3 .2 0
+    set coord user
+    greg1\draw marker -0.6 1.4
+    greg\pen /colour 0 /weight 1
+    set font duplex
+    set character 0.250
+    greg1\draw text -0.6 4.4 "SMM1" !location of the text (+10arc to dec)
+
+
+
+    greg\set character 0.5   !SMM10
+    greg\pen /colour 0 /weight 3
+    greg1\set marker 3 3 .2 0
+    set coord user
+    greg1\draw marker 37.5 28.5
+    greg\pen /colour 0 /weight 1
+    set font duplex
+    set character 0.250
+    greg1\draw text 37.5 31.5 "SMM10" 
+
+
+greg\pen /colour 0 /weight 0.5
+greg\set character 0.4
+greg\label "\GD\Gd (Arcsec) " /y
+greg\label "\GD\Ga (Arcsec) " /x
+    greg\set character 0.4
+	
+	greg\draw text 10 80 "SMM1 CN J=1-0"
+    greg\set character 0.3
+        !greg\draw text 30 50 "HCN J=1-0 (dotted)"
+        !greg\draw text -30 50 "CN J=1-0 (solid)"
+
+
+
+ 
+
+
+sys "rm -f smm1_cn10_blue_red.eps"
+hardcopy "smm1_cn10_blue_red.eps"

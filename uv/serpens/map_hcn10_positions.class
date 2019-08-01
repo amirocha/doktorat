@@ -157,7 +157,7 @@ greg\pen /weight 2.75
 !outflows
 !smm1
     greg\pen /def
-    greg\pen /colour 0 /weight 1   !----- to jest kolor i grubosc lini
+    greg\pen /colour 6 /weight 1   !----- to jest kolor i grubosc lini
     !greg\draw line -0.6 1.4 /user /clip   !------ tutaj ta pozioma
     greg\draw relocate 7.48 -28.14 /user  !----- te dwie kolejne liniki sa do ukosnej
     greg\draw line -8.68 30.94 /user /clip
@@ -165,14 +165,14 @@ greg\pen /weight 2.75
 
 !smm4
     greg\pen /def
-    greg\pen /colour 0 /weight 1    
+    greg\pen /colour 6 /weight 1    
     !greg\draw line 104.625 -138.18 /user /clip   !center
     greg\draw relocate 102.75 -153.06 /user  ! -difference
     greg\draw line 106.5 -123.3 /user /clip !+ diference
     greg\pen /def
 
     greg\pen /def
-    greg\pen /colour 0 /weight 1    
+    greg\pen /colour 6 /weight 1    
     !greg\draw line 89.625 -110.44 /user /clip   !center
     greg\draw relocate 72.75 -118.06 /user  ! -difference
     greg\draw line 106.5 -123.3 /user /clip !+ diference
@@ -180,10 +180,48 @@ greg\pen /weight 2.75
 
 !smm3
     greg\pen /def
-    greg\pen /colour 0 /weight 1    !----- to jest kolor i grubosc lini
+    greg\pen /colour 6 /weight 1    !----- to jest kolor i grubosc lini
     !greg\draw line 145.5 -78.8 /user /clip   !------ tutaj ta pozioma
     greg\draw relocate 115.91 -83.69 /user  !----- te dwie kolejne liniki sa do ukosnej
     greg\draw line 175.09 -73.91 /user /clip
+    greg\pen /def
+
+!-----------------Dionatos+2010----------------
+!smm1 -0.6 1.4
+    greg\pen /def
+    greg\pen /colour 0 /weight 1    !----- to jest kolor i grubosc lini
+    greg\draw relocate 14.72 -11.45 /user  !----- te dwie kolejne liniki sa do ukosnej
+    greg\draw line -15.92 14.25 /user /clip
+    greg\pen /def
+!smm3  145.5 -78.8
+    greg\pen /def
+    greg\pen /colour 0 /weight 1   
+    greg\draw relocate 165.5 -96.92 /user  !one end
+    greg\draw line 125.5 -60.68 /user /clip !the second end
+    greg\pen /def
+!smm4  106.5 -123.3
+    greg\pen /def
+    greg\pen /colour 0 /weight 1   
+    greg\draw relocate 109.98 -143 /user  !one end
+    greg\draw line 103.02 -103.6 /user /clip !the second end
+    greg\pen /def
+!smm5  27 77.8
+    greg\pen /def
+    greg\pen /colour 0 /weight 1   
+    greg\draw relocate 41.14 76.39 /user  !one end
+    greg\draw line 12.86 79.21 /user /clip !the second end
+    greg\pen /def
+!smm6  123 -75.2
+    greg\pen /def
+    greg\pen /colour 0 /weight 1   
+    greg\draw relocate 123 -75.2 /user  !one end  //one direction only!!
+    greg\draw line 112.85 -91.58 /user /clip !the second end
+    greg\pen /def
+!smm9  -22.95 81
+    greg\pen /def
+    greg\pen /colour 0 /weight 1   
+    greg\draw relocate -12.95 63.68 /user  !one end  
+    greg\draw line -32.55 98.32 /user /clip !the second end
     greg\pen /def
 
 !protostars
@@ -206,7 +244,7 @@ greg\pen /weight 2.75
     greg\pen /colour 0 /weight 1
     !set font duplex
     set character 0.250
-    greg1\draw text 106.5 -113.3 "SMM4"
+    greg1\draw text 101.5 -113.3 "SMM4"
 
     greg\set character 0.5 !SMM3
     greg\pen /colour 0 /weight 3
@@ -216,7 +254,7 @@ greg\pen /weight 2.75
     greg\pen /colour 0 /weight 1
     !set font duplex
     set character 0.250
-    greg1\draw text 145.5 -68.8 "SMM3"
+    greg1\draw text 160.5 -68.8 "SMM3"
 
     greg\set character 0.5 !SMM9
     greg\pen /colour 0 /weight 3
@@ -256,7 +294,7 @@ greg\pen /weight 2.75
     greg\pen /colour 0 /weight 1
     set font duplex
     set character 0.250
-    greg1\draw text 142.5 -116.2 "SMM12" 
+    greg1\draw text 145.5 -116.2 "SMM12" 
 
     greg\set character 0.5   !SMM2
     greg\pen /colour 0 /weight 3

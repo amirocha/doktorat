@@ -1,0 +1,135 @@
+SMM3 cn10 12comp
+ 		1Gauss: 2.53 Err: 68.8
+ 		2Gauss: 5.18 Err: 3.04
+ 		3Gauss: 5.44 Err: 2.83
+ 		4Gauss: 5.25 Err: 2.64 
+SMM3 cn10 12comp
+ 		1Gauss: 2.53 Err: 68.8
+ 		2Gauss: 5.18 Err: 3.04
+ 		3Gauss: 5.44 Err: 2.83
+ 		4Gauss: 5.25 Err: 2.64 
+SMM3 cn10 12comp
+ 		1Gauss: 9.24 Err:1.26e+02
+ 		2Gauss: 5.68 Err: 40.4
+ 		3Gauss:8.54e+03 Err: 29.5
+ 		4Gauss: 5.61 Err: 32.3 
+SMM5 cn10 12comp
+ 		1Gauss:0.501 Err: 28.9
+ 		2Gauss:0.787 Err:  8.2
+ 		3Gauss:0.602 Err: 6.96
+ 		4Gauss: 0.83 Err: 6.81 
+SMM5 cn10 12comp
+ 		1Gauss:0.441 Err: 37.3
+ 		2Gauss:  1.1 Err: 23.7
+ 		3Gauss: 1.01 Err: 22.8
+ 		4Gauss:0.848 Err: 17.4 
+SMM1 cn10 1comp
+ 		1Gauss:-17.1 Err: 13.6
+ 		2Gauss:-1.68 Err: 13.0
+ 		3Gauss: 2.72 Err: 13.0
+ 		4Gauss: 4.81 Err: 13.6 
+SMM2 cn10 1comp
+ 		1Gauss:-1.31e+02 Err: 25.1
+ 		2Gauss: 4.86 Err: 18.9
+ 		3Gauss: 2.01 Err: 25.1
+ 		4Gauss: 5.21 Err: 25.1 
+SMM3 cn10 1comp
+ 		1Gauss:-79.3 Err: 36.0
+ 		2Gauss: 6.72 Err: 31.7
+ 		3Gauss: 2.36 Err: 36.0
+ 		4Gauss: 6.42 Err: 36.0 
+SMM4 cn10 1comp
+ 		1Gauss:-1.44 Err: 17.1
+ 		2Gauss: 2.01 Err: 15.6
+ 		3Gauss:-6.24 Err: 17.1
+ 		4Gauss: 5.23 Err: 17.1 
+SMM5 cn10 1comp
+ 		1Gauss:-3.83 Err: 11.1
+ 		2Gauss:  8.3 Err:  6.7
+ 		3Gauss:-0.19 Err:  3.3
+ 		4Gauss: 4.12 Err: 11.1 
+SMM6 cn10 1comp
+ 		1Gauss:1.35e+06 Err: 33.9
+ 		2Gauss: 2.98 Err: 33.9
+ 		3Gauss:-4.45 Err: 33.9
+ 		4Gauss: 6.23 Err: 33.9 
+SMM8 cn10 1comp
+ 		1Gauss:-35.6 Err: 11.3
+ 		2Gauss: 1.28 Err: 10.2
+ 		3Gauss:0.794 Err: 11.3
+ 		4Gauss:  4.0 Err: 11.3 
+SMM9 cn10 1comp
+ 		1Gauss:-0.97 Err: 10.5
+ 		2Gauss: 1.07 Err:  9.1
+ 		3Gauss: 1.09 Err: 10.5
+ 		4Gauss: 4.29 Err: 10.5 
+SMM10 cn10 1comp
+ 		1Gauss:-0.971 Err: 11.1
+ 		2Gauss:0.936 Err: 10.1
+ 		3Gauss:0.942 Err: 11.1
+ 		4Gauss: 5.46 Err: 10.5 
+SMM12 cn10 1comp
+ 		1Gauss:-2.42 Err: 22.7
+ 		2Gauss: 2.15 Err: 21.1
+ 		3Gauss: 2.14 Err: 22.7
+ 		4Gauss: 5.34 Err: 22.7 
+SMM1 cn10 1comp
+ 		1Gauss: -1.2 Err: 5.73
+ 		2Gauss: 1.45 Err: 5.09
+ 		3Gauss:-2.51 Err: 2.21
+ 		4Gauss: 1.45 Err: 2.53 
+SMM2 cn10 1comp
+ 		1Gauss: 7.42 Err: 5.46
+ 		2Gauss: 1.78 Err: 5.06
+ 		3Gauss: 1.83 Err: 2.92
+ 		4Gauss: 1.81 Err:  3.0 
+SMM3 cn10 1comp
+ 		1Gauss: 7.73 Err: 3.28
+ 		2Gauss: 2.56 Err: 2.68
+ 		3Gauss: 2.58 Err: 2.23
+ 		4Gauss: 2.55 Err: 2.57 
+SMM4 cn10 1comp
+ 		1Gauss: 4.07 Err: 3.76
+ 		2Gauss: 2.17 Err: 3.25
+ 		3Gauss: 1.12 Err:  3.2
+ 		4Gauss: 2.15 Err: 2.67 
+SMM5 cn10 1comp
+ 		1Gauss: 4.02 Err: 3.29
+ 		2Gauss: 0.68 Err: 3.21
+ 		3Gauss:-0.0077 Err: 3.23
+ 		4Gauss:0.661 Err: 2.28 
+SMM6 cn10 1comp
+ 		1Gauss: 5.27 Err: 4.14
+ 		2Gauss: 2.37 Err: 2.93
+ 		3Gauss: 1.89 Err: 2.93
+ 		4Gauss: 2.46 Err: 2.37 
+SMM8 cn10 1comp
+ 		1Gauss:  1.7 Err: 6.47
+ 		2Gauss:0.979 Err: 6.47
+ 		3Gauss: 1.18 Err: 6.29
+ 		4Gauss:0.993 Err: 5.66 
+SMM9 cn10 1comp
+ 		1Gauss:-4.72 Err: 3.05
+ 		2Gauss: 1.22 Err: 2.74
+ 		3Gauss: 2.73 Err: 2.73
+ 		4Gauss: 1.24 Err: 2.68 
+SMM10 cn10 1comp
+ 		1Gauss: 2.83 Err: 4.43
+ 		2Gauss:0.719 Err: 3.27
+ 		3Gauss:-0.302 Err: 3.14
+ 		4Gauss:0.747 Err: 2.76 
+SMM12 cn10 1comp
+ 		1Gauss: 6.13 Err: 7.07
+ 		2Gauss: 2.25 Err: 3.61
+ 		3Gauss: 1.14 Err:  3.6
+ 		4Gauss: 2.25 Err: 2.92 
+SMM5 cn10 1comp
+ 		1Gauss: 4.02 Err: 3.29
+ 		2Gauss: 0.68 Err: 3.21
+ 		3Gauss:-0.169 Err: 2.78
+ 		4Gauss:0.666 Err:  2.4 
+SMM8 cn10 1comp
+ 		1Gauss: 2.78 Err: 6.47
+ 		2Gauss: 0.92 Err: 5.76
+ 		3Gauss:0.629 Err: 5.71
+ 		4Gauss:0.997 Err: 5.57 

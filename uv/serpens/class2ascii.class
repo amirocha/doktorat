@@ -6,14 +6,14 @@ define real vel vel_inc	! vel: the value at the reference channel
 						! vel_inc: the new channel separation
 
 
-file in serpens_cn10_conv
+file in serpens_c34s32_conv
 find /all
 
-set range 127.85 157.15 -140.85 -111.55
+set range 134.7 151.3 -74.3 -57.7
 find /all
 
 average /nocheck  /weight equal   ! for _red files: /res   !for _conv files: /weight equal
-!smooth !for h13cn21 only!!
+smooth !for h13cn21 only!!
 
 !plot
 
@@ -21,7 +21,7 @@ set mode x tot
 
 set unit v
 
-sic output ./profiles/serpens_cn10_smm12.txt
+sic output ./profiles/serpens_c34s32_pos5.txt
 
 for i 1 to channels
 	say 'rx[i]' 'ry[i]' /format g16.8 g16.8 
@@ -45,6 +45,7 @@ sic output
 !SMM5 18.7 35.3 69.5 86.1
 !SMM6 114.7 131.3 -83.5 -66.9
 !SMM9 -31.25 -14.65 69.5 86.1
+!SMM8 176.2 192.8 -19.6 -3
 !SMM10 29.2 45.8 20.2 36.8
 !SMM12 132.2 150.8 -134.5 -117.9
 !!!!pos1 -30.3 -13.7 79.7 96.3
@@ -62,6 +63,7 @@ sic output
 !SMM4 91.85 121.15 -137.95 -108.65
 !SMM5 12.35 41.65 63.15 92.45
 !SMM6 108.35 137.65 -89.85 -60.55
+!SMM8 169.85 199.15 -25.95 3.35
 !SMM9 -37.6 -8.3 66.35 95.65
 !SMM10 22.85 52.15 13.85 43.15
 !SMM12 127.85 157.15 -140.85 -111.55
@@ -80,10 +82,15 @@ sic output
 !SMM4 92 121 -137.8 -108.8
 !SMM5 12.5 41.5 63.3 92.3
 !SMM6 108.5 137.5 -89.7 -60.7
+!SMM8 170 199 -25.8 3.2
 !SMM9 -37.45 -8.45 66.5 95.5
 !SMM10 23 52 14 43
 !SMM12 128 157 -140.7 -111.7
-
+!pos1 -22.5 3.5 18.5 47.5
+!pos2 106.5 135.5 -135.5 -106.5
+!pos3 41.5 70.5 -126.5 -97.5
+!pos4 -68.5 -39.5 66.5 95.5
+!pos5 128.5 157.5 -80.5 -51.5
 
 !protostars position +- 7'' (0.5 of HBWM) for H13CN 2-1
 !SMM1 -7.6 6.4 -5.6 8.4
@@ -92,6 +99,7 @@ sic output
 !SMM4 99.5 113.5 -130.3 -116.3
 !SMM5 20 34 70.8 84.8
 !SMM6 116 130 -82.2 -68.2
+!SMM8 184.5 -11.3
 !SMM9 -29.95 -15.95 74 88
 !SMM10 30.5 44.5 21.5 35.5
 !SMM12 135.5 149.5 -133.2 -119.2

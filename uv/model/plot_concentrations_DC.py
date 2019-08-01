@@ -1,7 +1,5 @@
 #!/usr/bin/python3.3
 
-# name the output file
-psname = 'serpens_seds.eps'
 
 # import packages
 from numpy import *
@@ -95,12 +93,15 @@ def make_picture(new_lists):
 
 	plt.figure()
 	#plt.title(u"Molecular abudances time evolution")
-	plt.ylabel(r"$\log(\frac{N(X)}{N(H_2)})$")
-	plt.xlabel(r"$\log(t)$ [yr]")
+	plt.ylabel(r"$\log(\frac{N(X)}{N(H_2)})$", fontsize=14)
+	plt.xlabel(r"$\log(t/yr)$]", fontsize=14)
 	plt.plot(new_lists[0], new_lists[1], 'k-')
 	plt.plot(new_lists[0], new_lists[2], 'r-')
 	plt.plot(new_lists[0], new_lists[3], 'b-')
-	plt.legend(('CS', 'CN', 'HCN'), loc='upper right')
+	#plt.legend(('CS', 'CN', 'HCN'), loc='upper right')
+	plt.text(7.5, -6.5, 'HCN', fontsize=14, color='b')
+	plt.text(7.5, -6.8, 'CN', fontsize=14, color='r')
+	plt.text(7.5, -7.1, 'CS', fontsize=14, color='k')
 
 	plt.savefig('concentrations_DC', format='eps')
 	plt.close()

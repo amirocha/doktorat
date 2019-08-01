@@ -60,11 +60,11 @@ def make_picture(X, Y, Z, t):
 	fig, ax = plt.subplots()
 	CS = ax.contour(X, Y, Z, levels =[0.001, 0.005, 0.01, 0.015, 0.025, 0.05, 0.075, 0.1, 0.15])
 	ax.clabel(CS, inline=1, fontsize=10)
-	ax.set_title(r'Chemical model parameters - CN/HCN ratio')
-	plt.ylabel(r'$\log$(H$_2$ density [cm$^{-3}$])')
-	plt.xlabel(u"$\log$(Temperature [K])")
-	props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
-	ax.text(0.65, 0.805, 'AV = 5.00', transform=ax.transAxes, fontsize=14,
+	#ax.set_title(r'Chemical model parameters - CN/HCN ratio')
+	plt.ylabel(r'$\log$(n$_{\mathrm{H_2}}$/cm$^{-3}$)', fontsize=14)
+	plt.xlabel(u"$\log$(T/K)", fontsize=14)
+	props = dict(boxstyle='round', facecolor='white', alpha=0.5)
+	ax.text(0.65, 0.805, r'$AV$ = 5.00', transform=ax.transAxes, fontsize=14,
         verticalalignment='bottom', bbox=props)
 
 	plt.savefig('contour_plot_CN_HCN_time='+time[t]+'.eps')

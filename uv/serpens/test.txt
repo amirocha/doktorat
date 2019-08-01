@@ -1,0 +1,5 @@
+!
+! 01-AUG-2019 14:55:02
+! Input file  : serpens_hcn10_conv.30m
+! Input command: ANALYSE\PRINT area /OUTPUT test.txt
+!

@@ -11,7 +11,7 @@ because it's the biggest for this molecule. We used the same beam size for other
 #!/usr/bin/python3.5
 
 # name the output file
-psname = 'serpens_cn10_3s_smm4_component5.eps'
+psname = 'serpens_cn10_3s_15s_main_component.eps'
 
 # import packages
 from numpy import *
@@ -27,14 +27,15 @@ import pandas as pd
 
 rms = 2.139E-02 # rms taken from CLASS
 rms_3 = 3*rms
+rms_15 = 15*rms
 
 # read the spectrum
-spec_df = pd.read_table('serpens_cn10_smm4.txt', delim_whitespace=True, header=None)
+spec_df = pd.read_table('./serpens_cn10_ave_spec.txt', delim_whitespace=True, header=None)
 
 ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ###
 # left (x1) and right (x2) ranges in which we are looking for minima 
-x1_ran_df = spec_df[(spec_df[0] > 12.) & (spec_df[0] < 15.)]    #change ranges!! 
-x2_ran_df = spec_df[(spec_df[0] > 15.) & (spec_df[0] < 18)]
+x1_ran_df = spec_df[(spec_df[0] > 3.) & (spec_df[0] < 4.)]    #change ranges!! 
+x2_ran_df = spec_df[(spec_df[0] > 9.) & (spec_df[0] < 12)]
 
 #change ranges!!
 # SERPENS HCN10: -5.0 - -0.0  and 10. - 20.
@@ -67,10 +68,10 @@ print ('X2 (3s) =', final2_df[1].ix[min2].round(1))
 # ------------------------------------------------
 # ------------------------------------------------
 
-### 1 SIGMA ### 1 SIGMA ### 1 SIGMA ### 1 SIGMA ### 1 SIGMA ###
+### 15 SIGMA ### 15 SIGMA ### 15 SIGMA ### 15 SIGMA ### 15 SIGMA ###
 # left (x3) and right (x4) ranges in which we are looking for minima 
-x3_ran_df = spec_df[(spec_df[0] > 12) & (spec_df[0] < 15)]  #change ranges!!
-x4_ran_df = spec_df[(spec_df[0] > 15) & (spec_df[0] < 18)]
+x3_ran_df = spec_df[(spec_df[0] > 5.5) & (spec_df[0] < 8)]  #change ranges!!
+x4_ran_df = spec_df[(spec_df[0] > 8) & (spec_df[0] < 9.5)]
 
 #change ranges!!
 # NGC1333 HCN10: -30.0 - -20.0  and -5. - -1.
@@ -78,16 +79,16 @@ x4_ran_df = spec_df[(spec_df[0] > 15) & (spec_df[0] < 18)]
 # SERPENS CN10:  // smm1: -75 - -70.0  and -70. - -67
 
 # for both X ranges take the column with flux and calculate abs(yi - 3rms)
-y3_i_rms = (x3_ran_df[1]-rms).abs()
-y4_i_rms = (x4_ran_df[1]-rms).abs()
+y3_i_rms_15 = (x3_ran_df[1]-rms_15).abs()
+y4_i_rms_15 = (x4_ran_df[1]-rms_15).abs()
 
 # join two dataframes, reset and drop old index
 
 # then change the names of column indexes from 011 to 123
-final3_df = pd.concat([x3_ran_df, y3_i_rms], axis = 1).reset_index(drop=True)
+final3_df = pd.concat([x3_ran_df, y3_i_rms_15], axis = 1).reset_index(drop=True)
 final3_df.columns = [1,2,3]
 
-final4_df = pd.concat([x4_ran_df, y4_i_rms], axis = 1).reset_index(drop=True)
+final4_df = pd.concat([x4_ran_df, y4_i_rms_15], axis = 1).reset_index(drop=True)
 final4_df.columns = [1,2,3]
 
 # find the index of item which contains row with the minimum
@@ -136,7 +137,7 @@ matplotlib.rcParams.update(params)
 """ READ INPUT DATA
 ########## SERPENS, HCN 1-0, center of ave.: 163.5 -142.7, range: 149.6 177.4 -156.6 -128.8 ##########
 """
-v_hcn10, Tmb_hcn10 = loadtxt('serpens_cn10_smm1.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_hcn10, Tmb_hcn10 = loadtxt('./serpens_cn10_ave_spec.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 ax = fig.add_subplot(111)
@@ -151,11 +152,11 @@ ax.set_ylabel(r'$\mathrm{T_{MB}\;[K]}$', fontsize = 9)
 
 # major x ticks every 20, minor ticks every 10
 # major y ticks every 1, minor ticks every 0.5 
-major_ticks_x = np.arange(-100, 50, 5)                                              
-minor_ticks_x = np.arange(-100, 50, 1) 
+major_ticks_x = np.arange(-5, 15, 1)                                              
+minor_ticks_x = np.arange(-5, 15, 1) 
 
-major_ticks_y = np.arange(0.0, 1.2, 0.2)                                              
-minor_ticks_y = np.arange(0.0, 1.2, 0.1) 
+major_ticks_y = np.arange(0.0, 4, 0.1)                                              
+minor_ticks_y = np.arange(0.0, 4, 0.1) 
 
 ax.set_xticks(major_ticks_x)                                                       
 ax.set_xticks(minor_ticks_x, minor=True)
@@ -173,8 +174,8 @@ for label in (ax.get_xticklabels() + ax.get_yticklabels()):
 ########## SERPENS, HCN 1-0, center of ave.: 163.5 -142.7, range: 149.6 177.4 -156.6 -128.8 ##########
 """
 ax.plot(v_hcn10, Tmb_hcn10, color = 'black', linewidth=1.0, linestyle = '-')
-plt.axhline(y=rms_3, xmin = -60.0, xmax = 40.0, color = 'red', linewidth=1.5, linestyle = '-')
-plt.axhline(y=rms, xmin = -60.0, xmax = 40.0, color = 'green', linewidth=1.5, linestyle = '-')
+#plt.axhline(y=rms_3, xmin = -60.0, xmax = 40.0, color = 'red', linewidth=1.5, linestyle = '-')
+plt.axhline(y=rms, xmin = -60.0, xmax = 40.0, color = 'black', linewidth=1.5, linestyle = '-')
 
 # THE ANNOTATIONS ON A GRAPH
 #---------------------------
@@ -190,18 +191,18 @@ plt.axhline(y=rms, xmin = -60.0, xmax = 40.0, color = 'green', linewidth=1.5, li
 
 
 # plot the vertical lines for x = min1 and x = min2
-plt.axvline(x=final1_df[1].ix[min1].round(1), color='red', linestyle='--')
+plt.axvline(x=final1_df[1].ix[min1].round(1), color='blue', linestyle='--')
 plt.axvline(x=final2_df[1].ix[min2].round(1), color='red', linestyle='--')
 
 # plot the vertical lines for x = min3 and x = min4
-plt.axvline(x=final3_df[1].ix[min3].round(1), color='green', linestyle='--')
-plt.axvline(x=final4_df[1].ix[min4].round(1), color='green', linestyle='--')
+plt.axvline(x=final3_df[1].ix[min3].round(1), color='blue', linestyle='--')
+plt.axvline(x=final4_df[1].ix[min4].round(1), color='red', linestyle='--')
 
 
 
 # the upper and lower axis limits on a LEFT GRAPH
-ax.set_xlim([-100.0, 50.0])
-ax.set_ylim([-0.1, 1.2])
+ax.set_xlim([-5.0, 15.0])
+ax.set_ylim([-0.1, 0.8])
 
 
 # close and save file

@@ -14,12 +14,12 @@ define integer NX Xref 	! NX: the number of channels desired
 define real vel vel_inc	! vel: the value at the reference channel
 						! vel_inc: the new channel separation
 
-file in serpens_h13cn10_red
+file in serpens_cn10_conv
 
 find /all
 
 
-!set range 149.6 177.4 -156.6 -128.8	! position offsets: west east south north
+!set range -15.25 14.05 -13.25 16.05	! position offsets: west east south north
 									! -----
 									! Range is consistent with the HPBW and
 									! the same should be used the same for 
@@ -75,4 +75,4 @@ draw window
 
 base 0 /plot  !for C18O6-5: base 2
 
-print area 8.5 21.2 /output serpens_h13cn10_int.txt
+print area 10.0 11.9 /output smm1_hcn10_blue_comp1.txt

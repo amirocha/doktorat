@@ -1,0 +1,79 @@
+! Script for CLASS spectra reduction and merging 2 sets of data
+
+define double l_new b_new  
+
+file in  "../spectraOdp.30m"   !raw data
+
+find /all
+set source SERSMM1 
+set line HCN(1-0)
+set frequency 88580 88680  !frequency should be given if 'index is inconsistent' error is raised
+find /all
+
+file out serpens_hcn10_red.30m single /overwrite    !output file
+
+for i 1 to found
+    get n
+    modify beam_eff 0.81     !beam efficiency is different at different frequencies. See the Table below.
+    set window -50 50
+    draw kill 461      ! bad channels can be found with 'set mode x [channels range]'/'set mode x tot'
+    draw kill 1373
+    draw kill 2285
+
+    draw fill 461
+    draw fill 1373
+    draw fill 2285
+
+    base 0
+    write
+next
+
+let l_new lambda*12/pi  !merging procedure
+let b_new beta*180/pi
+
+find /source SERSMM34 /line HCN(1-0)
+set frequency 88580 88680
+
+for i 1 to found
+    get n
+    modify beam_eff 0.81
+    set window -50 50
+
+    draw kill 461
+    draw kill 1373
+    draw kill 2285
+
+    draw fill 461
+    draw fill 1373
+    draw fill 2285
+
+    base 0
+    modify source SERSMM1
+    modify position l_new b_new
+    write
+next
+
+delete /var l_new b_new
+
+
+!table serpens_hcn10 new
+!xy_map serpens_hcn10
+
+! IRAM BEAM EFICIENCIES
+! -------------------------------------------
+! Name	|	Trans.	|	Freq. (GHz)	|	Beff 
+! -------------------------------------------
+! HCN	|	1-0		|	88.6		|	0.81
+! CN(F1)|	1-0		|	113.1		|	0.78
+! CS	|	3-2		|	146.97		|	0.73
+! C34S  |   3-2     |   144.62		|   0.73
+! H13CN |	1-0     |   86.34       |   0.81
+! H13CN |	2-1		|	172.68		|	0.68 (estimated by me, linear diff.)	
+! -------------------------------------------! between Beff for 210 and 145 GHz,
+                                             ! which gives 0.05 more than is for 
+                                             ! 210 GHz (0.63 + 0.05), but centre
+                                             ! is for 177.5 not ~173 GHz 
+
+
+
+

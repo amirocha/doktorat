@@ -66,15 +66,15 @@ def make_log_lists(lists):
 def make_picture(X, Y, Z):
 
 	fig, ax = plt.subplots()
-	CS = ax.contour(X, Y, Z, levels = [0.01, 0.1, 1, 10, 100, 1000, 10000])
+	CS = ax.contour(X, Y, Z, levels = [0.01, 0.1, 0.5, 1, 5, 10, 25, 50, 75, 100, 125, 200, 300, 400, 500, 1000, 10000])
 	ax.clabel(CS, inline=1, fontsize=10)
 	observations = ax.contourf(X, Y, Z, levels = [1,10])
-	ax.set_title(r'Chemical model parameters - CN/HCN ratio')
-	plt.ylabel(r'$\log$(H$_2$ density [cm$^{-3}$])')
-	plt.xlabel(u"G$_0$")
-	props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
-	ax.text(0.80, 0.1, 'T = 50K', transform=ax.transAxes, fontsize=14,
-        verticalalignment='bottom', bbox=props)
+	#ax.set_title(r'Chemical model parameters - CN/HCN ratio')
+	plt.ylabel(r'$\log$(n$_{\mathrm{H_2}}$/cm$^{-3}$)', fontsize=14)
+	plt.xlabel(u"G$_0$", fontsize=14)
+	props = dict(boxstyle='round', facecolor='white', alpha=0.5)
+	ax.text(0.035, 4.25, '$T$ = 50K', fontsize=14, verticalalignment='bottom', bbox=props)
+	ax.text(0.035, 5.6, r'$\frac{X(CN)}{X(HCN)}$', fontsize=18, color='k', bbox=props)
 
 	plt.savefig('contour_plot_CN_HCN_G0.eps')
 	plt.close()
