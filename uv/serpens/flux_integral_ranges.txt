@@ -149,7 +149,62 @@ CO (Yildiz+2015)
 blue: 10.5 6
 red: 10.5 31
 
+!!!SMM9!!!
 
+CN
+comp2 (main):
+blue:  5.9 7.7
+red: 9.4 10.8
+comp1: 
+blue: 14.3 15.7 
+red: 16.3 17.5
+comp3:
+blue: -15.8 -14.9
+red: -13.9 -12.9
+comp4:
+blue: -40.1 -39.4 
+red: -38.4 -37.6
+comp5:
+blue: -69.7 -69.5
+red: -69.2 -68.9
+
+blue x: 5
+red x: 4,7
+
+HCN
+comp1:
+blue:  10.3 11.1
+red: 13.5 24.8
+comp2:
+blue: 3.0 6.5
+red: 8.7 10.3
+comp3:
+blue: -2.1 -0.3
+red: 1.7 2.2
+
+blue x: 6,1
+red x: 13,4
+
+!!!SMM3!!!
+
+CN:
+comp2
+X1 (3s) = 13.7
+X2 (3s) = 17.4
+X3 (1s) = 15.0
+X4 (1s) = 16.1
+
+comp3
+X1 (3s) = -16.9
+X2 (3s) = -13.3
+X3 (1s) = -15.5
+X4 (1s) = -15.0
+
+comp1:
+X1 (3s) = 4.6
+X2 (3s) = 9.1
+X3 (1s) = 7.2
+X4 (1s) = 7.8
 
 
 

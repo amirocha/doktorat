@@ -56,7 +56,7 @@
        CHARACTER*10 SPEC,REACTANT 
        DIMENSION SN(NS,nx),Y(NS,nx),AB(NS,nx),PLOTAB(NTIME,NPLOT,nx),&
      &              A(NRTOT),B(NRTOT),C(NRTOT),TD(NX),ABBIS(NS),XK1(NX),&
-     &              TAU(NX),NH2TOT(NX),TIMERES(NTIME),SPEC(NS+1),ITEST(6),&
+     &              TAU(NX),NH2TOT(NX),TIMERES(NTIME),SPEC(NS+1),ITEST(NTIME-1),&
      &              ELEMENT(NELEM,NS+1),REACTANT(3,NRTOT),ITYPE(NRTOT),   &
      &              NCO(52),NH2_2(105),Tmin(NRTOT),Tmax(NRTOT),       &
      &              T_H2_2(105),T_CO(52),NH2_1(43),T_H2_1(43),AV(43),       &
@@ -289,13 +289,15 @@
 !                                                                       
                                                                         
 !       definition of the times at which the rates of formation/destruct
-!       are writen in verif.dat                                         
-       ITEST(1) = 2 
-       ITEST(2) = 11 
-       ITEST(3) = 34 
-       ITEST(4) = 56 
-       ITEST(5) = 79 
-       ITEST(6) = 101 
+!       are writen in verif.dat 
+       DO I=2,NTIME                                         
+       ITEST(I-1) = I
+       ENDDO 
+!       ITEST(2) = 11 
+!       ITEST(3) = 34 
+!       ITEST(4) = 56 
+!       ITEST(5) = 79 
+!       ITEST(6) = 101 
        ITEST2=1 
                                                                                
                                                                         
@@ -377,7 +379,7 @@
                                                                         
                                                                         
 !       write the verif.dat file, the output.dat file                   
-       if (itest2.ne.7) then
+       if (itest2.ne.NTIME) then
           IF (JSTEP.EQ.ITEST(ITEST2)) THEN 
               WRITE(*,*) 'T(YR)=',TYR 
               WRITE(11,*) 'T(YR)=',TYR 
@@ -1047,8 +1049,9 @@
                                                                         
        WRITE (11,*) SPEC(M) 
        WRITE (11,*) 'REACTIONS OF PRODUTION    Total flux (cm-3s-1) =',FORMTOT(M) 
-       DO I=1,5 
-              IF (X(I).NE.0D0) WRITE(11,*)  IY(I), X(I) 
+       DO I=1,10 
+!              IF (X(I).NE.0D0) WRITE(11,*)  IY(I), X(I)
+               WRITE(11,*)  IY(I), X(I) 
        ENDDO 
                                                                         
        DO I=1,NRTOT 
@@ -1059,8 +1062,9 @@
        CALL SSORT (X, IY, NRTOT) 
                                                                         
        WRITE (11,*) 'REACTIONS OF DESTRUCTION    Total flux (cm-3s-1) =',DESTOT(M) 
-       DO I=1,5 
-              IF (X(I).NE.0D0) WRITE(11,*)  IY(I), -X(I) 
+       DO I=1,10 
+!              IF (X(I).NE.0D0) WRITE(11,*)  IY(I), -X(I) 
+               WRITE(11,*)  IY(I), X(I)
        ENDDO 
                                                                         
        ENDDO 

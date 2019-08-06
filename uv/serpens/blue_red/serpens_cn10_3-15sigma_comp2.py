@@ -11,7 +11,7 @@ because it's the biggest for this molecule. We used the same beam size for other
 #!/usr/bin/python3.5
 
 # name the output file
-psname = 'serpens_cn10_smm1_3s_15s_comp2.eps'
+psname = 'serpens_cn10_smm3_3s_15s_smm9_comp2.eps'
 
 # import packages
 from numpy import *
@@ -25,12 +25,12 @@ import pandas as pd
 # find the x ranges (in km/s), which are above 3RMS
 # level - for flux integration of line
 
-rms = 5.491E-02 # rms taken from CLASS
+rms = 7.092E-02 # rms taken from CLASS
 rms_3 = 3*rms
 rms_15 = 45*rms
 
 # read the spectrum
-spec_df = pd.read_table('./serpens_cn10_smm1.txt', delim_whitespace=True, header=None)
+spec_df = pd.read_table('./serpens_cn10_smm3.txt', delim_whitespace=True, header=None)
 
 ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ###
 # left (x1) and right (x2) ranges in which we are looking for minima 
@@ -70,7 +70,7 @@ print ('X2 (3s) =', final2_df[1].ix[min2].round(1))
 
 ### 15 SIGMA ### 15 SIGMA ### 15 SIGMA ### 15 SIGMA ### 15 SIGMA ###
 # left (x3) and right (x4) ranges in which we are looking for minima 
-x3_ran_df = spec_df[(spec_df[0] > 15) & (spec_df[0] < 16)]  #change ranges!!
+x3_ran_df = spec_df[(spec_df[0] > 14) & (spec_df[0] < 15.)]  #change ranges!!
 x4_ran_df = spec_df[(spec_df[0] > 16) & (spec_df[0] < 17)]
 
 #change ranges!!
@@ -137,7 +137,7 @@ matplotlib.rcParams.update(params)
 """ READ INPUT DATA
 ########## SERPENS, HCN 1-0, center of ave.: 163.5 -142.7, range: 149.6 177.4 -156.6 -128.8 ##########
 """
-v_hcn10, Tmb_hcn10 = loadtxt('./serpens_cn10_smm1.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_hcn10, Tmb_hcn10 = loadtxt('./serpens_cn10_smm3.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 ax = fig.add_subplot(111)
@@ -201,8 +201,8 @@ plt.axvline(x=final4_df[1].ix[min4].round(1), color='red', linestyle='--')
 
 
 # the upper and lower axis limits on a LEFT GRAPH
-ax.set_xlim([13, 19.0])
-ax.set_ylim([-0.1, 1])
+ax.set_xlim([11, 19.0])
+ax.set_ylim([-0.1, 2])
 
 
 # close and save file

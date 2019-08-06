@@ -11,7 +11,7 @@ because it's the biggest for this molecule. We used the same beam size for other
 #!/usr/bin/python3.5
 
 # name the output file
-psname = 'serpens_cn10_smm1_3s_15s_comp5.eps'
+psname = 'serpens_cn10_smm9_3s_15s_comp5.eps'
 
 # import packages
 from numpy import *
@@ -30,7 +30,7 @@ rms_3 = 3*rms
 rms_15 = 45*rms
 
 # read the spectrum
-spec_df = pd.read_table('./serpens_cn10_smm1.txt', delim_whitespace=True, header=None)
+spec_df = pd.read_table('./serpens_cn10_smm9.txt', delim_whitespace=True, header=None)
 
 ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ###
 # left (x1) and right (x2) ranges in which we are looking for minima 
@@ -137,7 +137,7 @@ matplotlib.rcParams.update(params)
 """ READ INPUT DATA
 ########## SERPENS, HCN 1-0, center of ave.: 163.5 -142.7, range: 149.6 177.4 -156.6 -128.8 ##########
 """
-v_hcn10, Tmb_hcn10 = loadtxt('./serpens_cn10_smm1.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_hcn10, Tmb_hcn10 = loadtxt('./serpens_cn10_smm9.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 ax = fig.add_subplot(111)
