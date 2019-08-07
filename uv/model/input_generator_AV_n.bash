@@ -2,7 +2,7 @@
 
 for i in 1.000D+04 5.000D+04 1.000D+05 5.000D+05 1.000D+06
 do
-  for j in 3.000D+00 2.00D+00 1.000D+00 0.000D+00 -1.00D+00 -2.00D+00 -3.00D+00
+  for j in -4.50D+00 -3.50D+00 2.500D+00 1.500D+00 0.500D+00 -0.50D+00 -1.50D+00 -2.50D+00
   do
     echo "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 c	input_parameter.dat
