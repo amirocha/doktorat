@@ -1,0 +1,11 @@
+! Spectral line catalog for project O-0103.F-9309A-2019
+!
+# TCfA, 21 January 2019
+##################################################################
+#NAME           FREQ        UNIT  SIDEBAND
+##################################################################
+CO(2-1)         230.538000   GHz   USB
+CN(2-1)         226.7        GHz   USB     !several lines; LSB in on-line catalog
+CO_CN           226.7        GHz   USB    ! cover both CN and CO in USB
+CO_CN_CS        230.538      GHz   LSB    ! cover both CN and CO in LSB and CS in USB
+H13CO+(3-2)     260.255339   GHz   LSB    !USB in on-line catalog

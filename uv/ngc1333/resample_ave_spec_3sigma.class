@@ -14,7 +14,7 @@ define integer NX Xref 	! NX: the number of channels desired
 define real vel vel_inc	! vel: the value at the reference channel
 						! vel_inc: the new channel separation
 
-file in ngc1333_c34s32_conv
+file in ngc1333_cn10_conv
 
 find /all
 
@@ -86,9 +86,8 @@ resample NX XREF vel vel_inc velocity	! RESAMPLE NX Xref Xval Xinc Unit
 										! Xref: the new reference channel 
 										! Xval (vel): the value at the reference channel
 										! Xinc (vel_inc): the new channel separation
-										! Unit: velocity or frequency
-
-set window -30 40
+										! Unit: velocity or frequenc
+set window -30 30
 
 plot
 
@@ -96,4 +95,4 @@ draw window
 
 base 0 /plot
 
-print area -17.1 -7.9 /output ngc1333_c34s32_int.txt
+print area -88.7 -86.9 /output ngc1333_cn10_int_5.txt

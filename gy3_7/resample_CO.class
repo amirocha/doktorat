@@ -1,0 +1,38 @@
+! Resamples noisy averaged spectrum in velocity (after reduction) by Marcin & Agata
+
+file in gy3_7_CO_conv.apex
+
+find /all
+
+set match 0		! take a tolerance of search ranges (in arcsec), 0 = exact ranges
+find /all		! If the tolerance is absent, the default value is 2 arcsec.
+
+set unit v
+
+\set weight equal	!	Weighting to be used for summations - it is needed after convolution
+					!	weighting type: TIME (default), EQUAL, or SIGMA (1/sigma**2)
+					!	Sigma isn't recommended unless you just made a baseline fit before
+					!	Equal weight behaves differently in AVERAGE and ACCUMULATE 
+					!	(which produces the sum)
+average /nocheck /weight equal! for CO6-5, 13CO6-5, C18O6-5: /res
+
+resample 300 150 16.5 0.5 velocity tbox ! 0.5 km/s or 0.2 km/s
+
+!resample NX XREF vel vel_inc velocity  ! RESAMPLE NX Xref Xval Xinc Unit
+										! NX: the number of channels desired
+										! Xref: the new reference channel 
+										! Xval (vel): the value at the reference channel
+										! Xinc (vel_inc): the new channel separation
+										! Unit: velocity or frequency
+
+set window -50 50
+
+plot
+
+draw window
+
+base 1 /plot  !
+
+!print area 3.5 6.8 /output serpens_cn10_blue_int.txt
+! print area 0 40 /output gy3_7_CO_int.txt
+print area -10 50 /output gy3_7_CO_int_v2.txt

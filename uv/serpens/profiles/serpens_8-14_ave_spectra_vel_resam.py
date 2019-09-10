@@ -298,7 +298,7 @@ ax2.annotate(r'$\mathrm{CS\;\;3-2}$', fontsize=12, xy=(-85.0, 14.4), textcoords=
 ax2.annotate(r'$\mathrm{H^{13}CN\;\;1-0\;(\times5)}$', fontsize=12, xy=(-85.0, 12.0), textcoords='data')
 ax2.annotate(r'$\mathrm{HCN\;\;1-0}$', fontsize=12, xy=(-85.0, 4.5), textcoords='data'
 )
-ax2.annotate(r'$\mathrm{CN(F1)\;\;1-0}$', fontsize=12, xy=(-85.0, 1.7), textcoords='data'
+ax2.annotate(r'$\mathrm{CN\;\;1-0}$', fontsize=12, xy=(-85.0, 1.7), textcoords='data'
 )
 ax2.annotate(r'$\mathrm{SMM12}$', color='blue', fontsize=18, xy=(-50.0, 21.5), textcoords='data'
 )
@@ -432,7 +432,7 @@ ax3.annotate(r'$\mathrm{CS\;\;3-2}$', fontsize=12, xy=(-85.0, 14.4), textcoords=
 ax3.annotate(r'$\mathrm{H^{13}CN\;\;1-0\;(\times5)}$', fontsize=12, xy=(-85.0, 12.0), textcoords='data')
 ax3.annotate(r'$\mathrm{HCN\;\;1-0}$', fontsize=12, xy=(-85.0, 4.5), textcoords='data'
 )
-ax3.annotate(r'$\mathrm{CN(F1)\;\;1-0}$', fontsize=12, xy=(-85.0, 1.7), textcoords='data'
+ax3.annotate(r'$\mathrm{CN\;\;1-0}$', fontsize=12, xy=(-85.0, 1.7), textcoords='data'
 )
 ax3.annotate(r'$\mathrm{Outflow1}$', color='blue', fontsize=18, xy=(-50.0, 21.5), textcoords='data'
 )
@@ -565,7 +565,7 @@ ax4.annotate(r'$\mathrm{CS\;\;3-2}$', fontsize=12, xy=(-85.0, 14.4), textcoords=
 ax4.annotate(r'$\mathrm{H^{13}CN\;\;1-0\;(\times5)}$', fontsize=12, xy=(-85.0, 12.0), textcoords='data')
 ax4.annotate(r'$\mathrm{HCN\;\;1-0}$', fontsize=12, xy=(-85.0, 4.5), textcoords='data'
 )
-ax4.annotate(r'$\mathrm{CN(F1)\;\;1-0}$', fontsize=12, xy=(-85.0, 1.7), textcoords='data'
+ax4.annotate(r'$\mathrm{CN\;\;1-0}$', fontsize=12, xy=(-85.0, 1.7), textcoords='data'
 )
 ax4.annotate(r'$\mathrm{Outflow2}$', color='blue', fontsize=18, xy=(-50.0, 21.5), textcoords='data'
 )
@@ -697,7 +697,7 @@ ax5.annotate(r'$\mathrm{CS\;\;3-2}$', fontsize=12, xy=(-85.0, 14.4), textcoords=
 #ax5.annotate(r'$\mathrm{H^{13}CN\;\;2-1}$', fontsize=12, xy=(-85.0, 12.5), textcoords='data')
 ax5.annotate(r'$\mathrm{H^{13}CN\;\;1-0\;(\times5)}$', fontsize=12, xy=(-85.0, 12.0), textcoords='data')
 ax5.annotate(r'$\mathrm{HCN\;\;1-0}$', fontsize=12, xy=(-85.0, 4.5), textcoords='data')
-ax5.annotate(r'$\mathrm{CN(F1)\;\;1-0}$', fontsize=12, xy=(-85.0, 1.7), textcoords='data')
+ax5.annotate(r'$\mathrm{CN\;\;1-0}$', fontsize=12, xy=(-85.0, 1.7), textcoords='data')
 ax5.annotate(r'$\mathrm{Outflow3}$', color='blue', fontsize=18, xy=(-50.0, 21.5), textcoords='data')
 
 
@@ -828,7 +828,7 @@ ax6.annotate(r'$\mathrm{CS\;\;3-2}$', fontsize=12, xy=(-85.0, 14.4), textcoords=
 ax6.annotate(r'$\mathrm{H^{13}CN\;\;1-0\;(\times5)}$', fontsize=12, xy=(-85.0, 12.0), textcoords='data')
 ax6.annotate(r'$\mathrm{HCN\;\;1-0}$', fontsize=12, xy=(-85.0, 4.5), textcoords='data'
 )
-ax6.annotate(r'$\mathrm{CN(F1)\;\;1-0}$', fontsize=12, xy=(-85.0, 1.7), textcoords='data'
+ax6.annotate(r'$\mathrm{CN\;\;1-0}$', fontsize=12, xy=(-85.0, 1.7), textcoords='data'
 )
 ax6.annotate(r'$\mathrm{Outflow4}$', color='blue', fontsize=18, xy=(-50.0, 21.5), textcoords='data'
 )
@@ -960,7 +960,7 @@ ax7.annotate(r'$\mathrm{CS\;\;3-2}$', fontsize=12, xy=(-85.0, 14.4), textcoords=
 #ax7.annotate(r'$\mathrm{H^{13}CN\;\;2-1}$', fontsize=12, xy=(-85.0, 12.5), textcoords='data')
 ax7.annotate(r'$\mathrm{H^{13}CN\;\;1-0\;(\times5)}$', fontsize=12, xy=(-85.0, 12.0), textcoords='data')
 ax7.annotate(r'$\mathrm{HCN\;\;1-0}$', fontsize=12, xy=(-85.0, 4.5), textcoords='data')
-ax7.annotate(r'$\mathrm{CN(F1)\;\;1-0}$', fontsize=12, xy=(-85.0, 1.7), textcoords='data')
+ax7.annotate(r'$\mathrm{CN\;\;1-0}$', fontsize=12, xy=(-85.0, 1.7), textcoords='data')
 ax7.annotate(r'$\mathrm{Outflow5}$', color='blue', fontsize=18, xy=(-50.0, 21.5), textcoords='data')
 
 

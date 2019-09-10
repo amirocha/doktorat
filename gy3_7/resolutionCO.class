@@ -1,0 +1,14 @@
+!how to find spatial resolution resolution from Aga
+
+!first step: fins the spatial resolution
+
+file in gy3_7_CO.apex
+find /all
+let map%reso 0
+table gy3_7_CO_conv_tab new
+xy_map gy3_7_CO_conv_tab new
+say "DONE!"
+
+!Comment from Aga: last comment gives you 'spatial resolution'. You can delete .lmv, .tab, .wei files and start the right convolution:
+
+

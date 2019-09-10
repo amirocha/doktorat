@@ -3,7 +3,7 @@
 #!/usr/bin/python3.5
 
 # name the output file
-psname = 'test2.eps'
+psname = 'testcn.eps'
 
 # import packages
 from numpy import *
@@ -20,7 +20,7 @@ import pandas as pd
 rms = 2.139E-02 # rms taken from CLASS
 rms_3 = 3*rms
 
-input_file='serpens_cn10_smm2_test.txt'
+input_file='serpens_hcn10_smm1.txt'
 # read the spectrum
 spec_df = pd.read_table(input_file, delim_whitespace=True, header=None)
 
@@ -143,7 +143,7 @@ plt.axvline(x=final2_df[1].ix[min2].round(1), color='red', linestyle='--')
 
 
 # the upper and lower axis limits on a LEFT GRAPH
-ax.set_xlim([-100.0, 50.0])
+ax.set_xlim([-10.0, 20.0])
 ax.set_ylim([-0.1, 1.2])
 
 

@@ -2,7 +2,7 @@ Projekt o UV - redukcja danych
 /źródła: Serpens SMM1 i SMM34, B1b, NGC1333 I2A i I4AB
 /linie: HCN(1-0), CN(F1)(1-0), CS(3-2), C34S(3-2), H13CN(1-0), H13CN(2-1)
 /surowe dane = spectraOdp.30m
-/środek: RA = 18:29:49.6 DEC = 01:15:20.5
+/środek: Serpens RA = 18:29:49.6 DEC = 01:15:20.5       NGC1333 RA = 03:28:55.6 DEC = 31:14:37.1
 
 
 ### REDUKCJA ###

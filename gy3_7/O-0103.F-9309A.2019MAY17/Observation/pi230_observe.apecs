@@ -1,0 +1,36 @@
+# PI230 Observe File for project O-0103.F-9309A-2019
+
+size=78
+
+# Total power mode. Reference position:
+use_ref('on')
+#reference(x=60, y=60, time=0.0, on2off=2, unit='arcsec', mode='rel', system='eq', epoch=2000.0)
+# Remarks concerning the reference position:
+# Please, double-check whether the off-position is clean.
+# This is clearer according to Planck 350
+reference(x='07:08:13',y='-11:30:30',time=0.0, on2off=2, unit='hdms', mode='abs', system='eq', epoch=2000.0)
+
+# Offsets
+offset(x=0.0, y=0.0, unit='arcsec', system='EQ', epoch=2000.0)
+
+# Observing mode: On-The-Fly mapping (with a reference)
+# PI comment: 
+
+for i in xrange(3): # adjust to observing needs...
+    print ' '; print 'Loop #:',i+1,'starting...'; print ' '
+    tp()
+    repeat(1) # adjust to observing needs...
+    calibrate('cold')
+    otf(xlen=size, ylen=size, xstep=9, ystep=9, time=1.0, direction='x', zigzag=1, angle=0.0, size_unit='arcsec', angle_unit='deg', system='eq', on2cal=0, epoch=2000.0)
+    otf(xlen=size, ylen=size, xstep=9, ystep=9, time=1.0, direction='y', zigzag=1, angle=0.0, size_unit='arcsec', angle_unit='deg', system='eq', on2cal=0, epoch=2000.0)
+    otf(xlen=size, ylen=size, xstep=9, ystep=9, time=1.0, direction='x', zigzag=1, angle=0.0, size_unit='arcsec', angle_unit='deg', system='eq', on2cal=0, epoch=2000.0)
+    otf(xlen=size, ylen=size, xstep=9, ystep=9, time=1.0, direction='y', zigzag=1, angle=0.0, size_unit='arcsec', angle_unit='deg', system='eq', on2cal=0, epoch=2000.0)
+
+tp()
+
+# Further instructions for the observer:
+# We propose to observe the embedded cluster Gy 3-7 using PI230 on APEX to quantify
+# its gas kinematics in CO 2-1 and the corresponding total energy injection by the outflows. 
+# We aim to spatially and spectrally resolve CO 2-1 line to detect outflow motions across
+# the cluster. We hope for a 5 sigma detection of line wings of CO 2-1 and simultaneous detection of CN 2-1 and H13CO+ 3-2, which will provide complementary information on the UV radiation and cosmic-ray ionization rate.
+

@@ -1,0 +1,23 @@
+file in gy3_7_1705.apex
+set sou GY_3-7  
+find
+
+file out gy3_7_CO.apex single /overwrite  
+
+set unit v f
+stitch /nocheck
+smo bo 20
+plot
+modify freq 230538
+modify line CO
+set mode x 'velocity'-200 'velocity'+200
+plo
+!modify beam_eff 0.81 # not sure 
+set win -20 20
+base 1 /pl
+!draw win
+plot
+write	
+!vis
+!plot
+say "DONE!"

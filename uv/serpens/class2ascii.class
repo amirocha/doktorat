@@ -6,10 +6,10 @@ define real vel vel_inc	! vel: the value at the reference channel
 						! vel_inc: the new channel separation
 
 
-file in serpens_c34s32_conv
+file in SMM1_C18O_6-5.apex
 find /all
 
-set range 134.7 151.3 -74.3 -57.7
+!set range 134.7 151.3 -74.3 -57.7
 find /all
 
 average /nocheck  /weight equal   ! for _red files: /res   !for _conv files: /weight equal
@@ -21,7 +21,7 @@ set mode x tot
 
 set unit v
 
-sic output ./profiles/serpens_c34s32_pos5.txt
+sic output ./profiles/serpens_c18o65_ave_spec.txt
 
 for i 1 to channels
 	say 'rx[i]' 'ry[i]' /format g16.8 g16.8 

@@ -3,7 +3,7 @@
 #!/usr/bin/python3.5
 
 # name the output file
-psname = 'test.eps'
+psname = 'c18o_ave.eps'
 
 # import packages
 from numpy import *
@@ -20,14 +20,14 @@ import pandas as pd
 rms = 2.139E-02 # rms taken from CLASS
 rms_3 = 3*rms
 
-input_file='serpens_smm10_hcn10.txt'
+input_file='serpens_c18o65_ave_spec.txt'
 # read the spectrum
 spec_df = pd.read_table(input_file, delim_whitespace=True, header=None)
 
 ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ###
 # left (x1) and right (x2) ranges in which we are looking for minima 
-x1_ran_df = spec_df[(spec_df[0] > -45) & (spec_df[0] < -40.)]    #change ranges!! 
-x2_ran_df = spec_df[(spec_df[0] > -40) & (spec_df[0] < -35)]
+x1_ran_df = spec_df[(spec_df[0] > 5) & (spec_df[0] < 8.)]    #change ranges!! 
+x2_ran_df = spec_df[(spec_df[0] > 10) & (spec_df[0] < 11)]
 
 
 # for both X ranges take the column with flux and calculate abs(yi - 3rms)
@@ -143,7 +143,7 @@ plt.axvline(x=final2_df[1].ix[min2].round(1), color='red', linestyle='--')
 
 
 # the upper and lower axis limits on a LEFT GRAPH
-ax.set_xlim([-100.0, 50.0])
+ax.set_xlim([0, 20.0])
 ax.set_ylim([-0.1, 1.2])
 
 

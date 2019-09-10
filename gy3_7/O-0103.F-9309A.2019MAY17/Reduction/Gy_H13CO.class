@@ -1,0 +1,139 @@
+! Version 2.0 2018-05-15 
+! OTF macro created Sat Jun  2 15:48:10 2018
+! Musca2_CO21.class
+
+set def
+set var base
+set unit v
+set format long
+
+file out Gy_3-7_CO_CN_CS.apex single /overwrite
+
+set win 5 30
+set mode x -50 85
+
+file in "/homes/o-0103.f-9309a-2019/scidata/O-0103.F-9309A-2019-2019-05-15.apex"
+find /source Gy_3-7 /frequency 260255.339
+sic message class a-i
+say "Processing "'found'" subscans, wait..."
+for i 1 to found
+  get n
+  mod frequency 260255.339
+  if (tsys.ne.0) then
+    base 1
+    resample 300 150 16.5 0.2 velocity tbox
+    write
+  endif
+  next
+
+file in "/homes/o-0103.f-9309a-2019/scidata/O-0103.F-9309A-2019-2019-05-16.apex"
+find /source Gy_3-7 /frequency 260255.339
+sic message class a-i
+say "Processing "'found'" subscans, wait..."
+for i 1 to found
+  get n
+  mod frequency 260255.339
+  if (tsys.ne.0) then
+    base 1
+    resample 300 150 16.5 0.2 velocity tbox
+    write
+  endif
+  next
+
+
+! Plot section
+file in Gy_3-7_CO_CN_CS.apex
+find
+table Gy_37_CO_CN_CS new !/range -50 85 vel /nocheck
+let map%beam 27
+xy_map Gy_37_CO_CN_CS
+
+let name Gy_37_CO_CN_CS
+let type lmv
+lut rainbow3
+go view
+say " "
+say " - go view : show map again"
+say " - go noise : show map noise (let first/last to specify channels)"
+pause "(c)ontinue for rms"
+
+file out Gy_37_CO_CN_CS_speccube.apex single /overwrite
+lmv Gy_37_CO_CN_CS.lmv
+
+
+! RMS estimate section
+file in Gy_37_CO_CN_CS_speccube.apex
+
+find
+def int obs[found] k
+def real rms[found] temp_rms[found]
+def real radius[found] temp_radius[found]
+def real med
+def real max_radius center_area
+set mode x t
+
+sic message class a-i
+sic out Gy_37_CO_CN_CS_rms.csv
+
+say "obs,off_lambda,off_beta,r,rms"
+for i 1 to found
+  get n
+  base 1
+  let obs[i] i
+  let rms[i] sigfi*1e3
+  let radius[i] 'sqrt(off_lambda^2 + off_beta^2)'
+  say 'i','off_lambda','off_beta','radius[i]','rms[i]'
+  next
+sic out
+sic message class a+i
+
+set box default
+pl
+draw win
+pause "showing one position, (c)ontinue for rms distribution"
+clear
+title
+g\limit /var radius rms
+g\box
+g\set marker 4 3 0.15
+g\point radius rms
+g\label "radial offset from map center (0, 0) [asec]" /X
+g\label "rms per grid point (beam) [mK]" /Y
+
+
+compute max_radius max radius
+
+let center_area 'max_radius/2'
+
+for i 1 to found  
+if radius[i].le.center_area
+let k k+1         
+let temp_rms[k] 'rms[i]'
+let temp_radius[k] 'radius[i]' 
+!say 'k' 'rms[i]' 'radius[i]'
+endif
+next
+
+def real center_rms[k]
+def real center_radius[k]
+
+for i 1 to k
+let center_rms[i] 'temp_rms[i]'
+let center_radius[i] 'temp_radius[i]'
+next
+
+
+compute med median rms
+g\draw relocate 0 med /user
+g\draw line max_radius med /user
+
+pause "rms variables will be deleted (c)ontinue"
+del /var obs
+del /var rms
+del /var radius
+del /var temp_rms
+del /var temp_radius
+del /var center_rms
+del /var center_radius
+! python plot_rms_hist.py Gy_37_CO_CN_CS_rms.csv
+

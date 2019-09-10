@@ -1,8 +1,8 @@
 
 define double sigma
-let sigma 4.5
+let sigma 3
 define double up
-let up 35
+let up 55
 set unit v
 greg\pen /weight 1.75
 set font duplex
@@ -23,16 +23,16 @@ greg\set character 0.5
 greg\pen /def
 
 	 greg\column x 2 y 3 z 4 /file serpens_co65_cut.txt
-    greg2\rgdata x y z /blank '1*sigma'
+    greg2\rgdata x y z /blank '3*sigma'
     greg\limits /rgdata /reverse x
     greg\level sigma to up by sigma
 
     greg\plot /scaling lin '1*sigma' up /blanking '1*sigma' 0
 
  	 greg\column x 2 y 3 z 4 /file serpens_co65_cut.txt
-    greg2\rgdata x y z /blank sigma
+    greg2\rgdata x y z /blank '3*sigma'
     greg\limits /rgdata /reverse x 
-    greg\level '1*sigma' to up by '1*sigma'
+    greg\level '3*sigma' to up by '1*sigma'
 
     greg\pen /colour 0
     greg\rgmap /abs
@@ -48,45 +48,7 @@ greg\pen /def
 
     wedge top /scaling lin sigma up
 
-    greg\set character 0.5   !S68Nb
-    greg\pen /colour 5 /weight 3
-    greg1\set marker 4 1 .4 0
-    set coord user
-    greg1\draw marker -3 109.9
-    greg\pen /colour 7 /weight 1
-    set font duplex
-    set character 0.25
-    greg1\draw text -3 119.9 "S68Nb" 
-
-    greg\set character 0.5   !S68Nc
-    greg\pen /colour 5 /weight 3
-    greg1\set marker 4 1 .4 0
-    set coord user
-    greg1\draw marker -13.5 99.4
-    greg\pen /colour 7 /weight 1
-    set font duplex
-    set character 0.25
-    greg1\draw text -13.5 109.4 "S68Nc" 
-
-    greg\set character 0.5   !S68Nd
-    greg\pen /colour 5 /weight 3
-    greg1\set marker 4 1 .4 0
-    set coord user
-    greg1\draw marker -9 60.7
-    greg\pen /colour 7 /weight 1
-    set font duplex
-    set character 0.25
-    greg1\draw text -9 70.7 "S68Nd" 
-
-    greg\set character 0.5   !SMM8
-    greg\pen /colour 5 /weight 3
-    greg1\set marker 4 1 .4 0
-    set coord user
-    greg1\draw marker 184.5 -11.3
-    greg\pen /colour 7 /weight 1
-    set font duplex
-    set character 0.25
-    greg1\draw text 174.5 -1.3 "SMM8" 
+ 
 
 !positions
 
@@ -280,7 +242,7 @@ greg\set character 0.4
 greg\label "\GD\Gd (Arcsec) " /y
 greg\label "\GD\Ga (Arcsec) " /x
     greg\set character 0.5
-	greg\draw text 60 200 "Serpens C180 J=6-5"
+	greg\draw text 60 200 "Serpens C0 J=6-5"
 
 !set viewport 0.05 0.3 0.06 0.4
 !!file in l483_12co65_5x5.apex

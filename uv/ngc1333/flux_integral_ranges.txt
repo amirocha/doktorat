@@ -1,0 +1,17 @@
+averaged spectrum:
+
+12CO6-5 (3sigma):  
+
+CN1-0 (1sigma): -3.7 -1, -11.6 -8.3, -34.1 -31.4, -58.5 -55.7, -88.7 -86.9
+
+HCN1-0 (3sigma): -27.0 -3.0
+
+C34S32 (3sigma): 
+
+C34S32 (1sigma): 
+
+H13CN10 (3sigma): 
+
+H13CN10 (1sigma): 
+
+

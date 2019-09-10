@@ -1,0 +1,16 @@
+!file out gy3_7_1705.apex s /o
+file out test.apex s /o
+file in O-0103.F-9309A.2019MAY15/O-0103.F-9309A-2019-2019-05-15.apex
+find /scan 19779 19837
+copy
+file in O-0103.F-9309A.2019MAY17/O-0103.F-9309A-2019-2019-05-17.apex
+find /all
+copy
+
+!file out gy3_7_1605.apex s /o
+!file in O-0103.F-9309A.2019MAY15/O-0103.F-9309A-2019-2019-05-15.apex
+!find /scan 19838 19841 
+!copy
+!file in O-0103.F-9309A.2019MAY16/O-0103.F-9309A-2019-2019-05-16.apex
+!find /all
+!copy

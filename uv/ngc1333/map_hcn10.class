@@ -50,87 +50,102 @@ greg\pen /def
 
     greg1\column /close
 
-    greg\set character 0.5   !SVS13B
-    greg\pen /colour 1 /weight 3
-    greg1\set marker 4 1 .4 0
-    set coord user
-    greg1\draw marker 8.125 -152.71
-    greg\pen /colour 1 /weight 1
-    set font duplex
-    set character 0.25
-    greg1\draw text 8.125 -162.71 "SVS13B" 
-
-    greg\set character 0.5   !IRAS4A1
+    greg\set character 0.5   !SVS13
     greg\pen /colour 7 /weight 3
     greg1\set marker 4 1 .4 0
     set coord user
-    greg1\draw marker 10.035 -11.96
+    greg1\draw marker 121.95 85.9
     greg\pen /colour 7 /weight 1
-    set font duplex
     set character 0.25
-    greg1\draw text 0.035 -21.96 "IRAS4A1" 
+    greg1\draw text 121.95 95.9 "SVS13" 
 
-    greg\set character 0.5   !IRAS4A2
+!    greg\set character 0.5   !IRAS4A1
+!    greg\pen /colour 7 /weight 3
+!    greg1\set marker 4 1 .4 0
+!    set coord user
+!    greg1\draw marker 10.035 -11.96
+!    greg\pen /colour 7 /weight 1
+!    set font duplex
+!    set character 0.25
+!    greg1\draw text 0.035 -21.96 "IRAS4A1" 
+
+!    greg\set character 0.5   !IRAS4A2
+!    greg\pen /colour 7 /weight 3
+!    greg1\set marker 4 1 .4 0
+!    set coord user
+!    greg1\draw marker 11.565 -13.1
+!    greg\pen /colour 7 /weight 1
+!    set font duplex
+!    set character 0.25
+!    greg1\draw text 21.565 -23.1 "IRAS4A2" 
+
+    greg\set character 0.5   !IRAS4A
     greg\pen /colour 7 /weight 3
     greg1\set marker 4 1 .4 0
     set coord user
-    greg1\draw marker 11.565 -13.1
+    greg1\draw marker 223.5 -65.4
     greg\pen /colour 7 /weight 1
-    set font duplex
     set character 0.25
-    greg1\draw text 21.565 -23.1 "IRAS4A2" 
+    greg1\draw text 223.5 -55.4 "IRAS4A" 
 
-    greg\set character 0.5   !IRAS4B1
+!    greg\set character 0.5   !IRAS4B1
+!    greg\pen /colour 7 /weight 3
+!    greg1\set marker 4 1 .4 0
+!    set coord user
+!    greg1\draw marker -12.18 10.93
+!    greg\pen /colour 7 /weight 1
+!    set font duplex
+!    set character 0.25
+!    greg1\draw text -2.18 0.93 "IRAS4B1" 
+
+!    greg\set character 0.5   !IRAS4B2
+!    greg\pen /colour 7 /weight 3
+!    greg1\set marker 4 1 .4 0
+!    set coord user
+!    greg1\draw marker -24.6 12.02
+!    greg\pen /colour 7 /weight 1
+!    set font duplex
+!    set character 0.25
+!    greg1\draw text -34.6 2.02 "IRAS4B2" 
+
+!    greg\set character 0.5   !IRAS2A1
+!    greg\pen /colour 7 /weight 3
+!    greg1\set marker 4 1 .4 0
+!    set coord user
+!    greg1\draw marker 231.645 -78.05
+!    greg\pen /colour 7 /weight 1
+!    set font duplex
+!    set character 0.25
+!    greg1\draw text 241.645 -88.05 "IRAS2A1" 
+
+    greg\set character 0.5   !IRAS2A
     greg\pen /colour 7 /weight 3
     greg1\set marker 4 1 .4 0
     set coord user
-    greg1\draw marker -12.18 10.93
+    greg1\draw marker 0.15 -0.2
     greg\pen /colour 7 /weight 1
-    set font duplex
     set character 0.25
-    greg1\draw text -2.18 0.93 "IRAS4B1" 
+    greg1\draw text 0.15 9.8 "IRAS2A" 
 
-    greg\set character 0.5   !IRAS4B2
-    greg\pen /colour 7 /weight 3
-    greg1\set marker 4 1 .4 0
-    set coord user
-    greg1\draw marker -24.6 12.02
-    greg\pen /colour 7 /weight 1
-    set font duplex
-    set character 0.25
-    greg1\draw text -34.6 2.02 "IRAS4B2" 
+!    greg\set character 0.5   !IRAS2A3
+!    greg\pen /colour 7 /weight 3
+!    greg1\set marker 4 1 .4 0
+!    set coord user
+!    greg1\draw marker 230.4 -75.84
+!    greg\pen /colour 7 /weight 1
+!    set font duplex
+!    set character 0.25
+!    greg1\draw text 220.4 -85.84 "IRAS2A3" 
 
-    greg\set character 0.5   !IRAS2A1
-    greg\pen /colour 7 /weight 3
-    greg1\set marker 4 1 .4 0
-    set coord user
-    greg1\draw marker 231.645 -78.05
-    greg\pen /colour 7 /weight 1
-    set font duplex
-    set character 0.25
-    greg1\draw text 241.645 -88.05 "IRAS2A1" 
-
-    greg\set character 0.5   !IRAS2A2
-    greg\pen /colour 7 /weight 3
-    greg1\set marker 4 1 .4 0
-    set coord user
-    greg1\draw marker 232.845 -76.56
-    greg\pen /colour 7 /weight 1
-    set font duplex
-    set character 0.25
-    greg1\draw text 232.845 -96.56 "IRAS2A2" 
-
-    greg\set character 0.5   !IRAS2A3
-    greg\pen /colour 7 /weight 3
-    greg1\set marker 4 1 .4 0
-    set coord user
-    greg1\draw marker 230.4 -75.84
-    greg\pen /colour 7 /weight 1
-    set font duplex
-    set character 0.25
-    greg1\draw text 220.4 -85.84 "IRAS2A3" 
-
-    
+!    greg\set character 0.5   !IRAS2A2
+!    greg\pen /colour 7 /weight 3
+!    greg1\set marker 4 1 .4 0
+!    set coord user
+!    greg1\draw marker 232.845 -76.56
+!    greg\pen /colour 7 /weight 1
+!    set font duplex
+!    set character 0.25
+!    greg1\draw text 232.845 -96.56 "IRAS2A2"     
 
 greg\pen /colour 0 /weight 1
 greg\set character 0.4
@@ -140,28 +155,6 @@ greg\label "\GD\Ga (Arcsec) " /x
     greg\pen /colour 0 /weight 1
 	greg\draw text 80 200 "NGC1333 HCN J=1-0"
 
-!set viewport 0.05 0.3 0.06 0.4
-!!file in l483_12co65_5x5.apex
-!file in I4ab_hcn10_grid_10x10.30m
-!find /all
-!!set unit v
-!greg\set character 0.5
-!set plot histo
-
-!get first
-!set mode x -30 -2
-!set mode y -1 5
-
-!set mode x -40 40
-!set mode y -40 40
-
-!    greg\pen /colour 0
-!    greg\box p o  i 
-!    greg\label "\GD\Ga (Arcsec) " /x
-!    greg\label "\GD\Gd (Arcsec) " /y
-!map /grid /nolabel
-
- 
 
 
 sys "rm -f ngc1333_hcn10.eps"

@@ -14,7 +14,7 @@ define integer NX Xref 	! NX: the number of channels desired
 define real vel vel_inc	! vel: the value at the reference channel
 						! vel_inc: the new channel separation
 
-file in b1b_hcn10_conv
+file in b1b_cn10_conv
 
 find /all
 
@@ -96,4 +96,4 @@ draw window
 
 base 0 /plot
 
-print area -20.2 -5.7 /output b1b_hcn10_int.txt
+print area -89.9 -87.4 /output b1b_cn10_int_5.txt

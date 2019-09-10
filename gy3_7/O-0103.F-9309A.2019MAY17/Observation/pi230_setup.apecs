@@ -1,0 +1,35 @@
+# PI230 Setup File for project O-0103.F-9309A-2019
+
+# Load special PI230 commands
+exec_apecs_script('pi230_commands')
+
+# Load PI230 observing functions:
+execfile('/homes/software/apecs/start_pi230.apecs')
+
+# User line catalog for PI230
+linecats('o-0103.f-9309a-2019.lin')
+
+# Setup for PI230 (frontend, backend, lines)
+# Uncomment the setup for the line to observe, or enter manually!
+### setup_pi230(linename='CO(2-1)', sideband='', mode='spec', sbwidth=8, cats='user')
+### setup_pi230(linename='CN(2-1)', sideband='', mode='spec', sbwidth=8, cats='user')
+setup_pi230(linename='CO_CN_CS', sideband='', mode='spec', sbwidth=8, cats='user')
+#setup_pi230(linename='H13CO+(3-2)', sideband='', mode='spec', sbwidth=8, cats='user')
+
+# User source catalog
+sourcecats(['o-0103.f-9309a-2019.cat'])
+
+# Target source
+source('Gy_3-7', cats='user')
+
+# Reference position (just for safety in this macro as well...)
+use_ref('on')
+# reference(x=60, y=60, time=0.0, on2off=1, unit='arcsec', mode='rel', system='eq', epoch=2000.0)
+reference(x='07:08:13',y='-11:30:30',time=0.0, on2off=1, unit='hdms', mode='abs', system='eq', epoch=2000.0)
+# reference(x='07:10:13',y='-09:55:00',time=0.0, on2off=1, unit='hdms', mode='abs', system='eq', epoch=2000.0)
+
+
+# Improved metrology settings:
+use_linear_sensors('on')
+use_tiltmeters('on')
+

@@ -8,7 +8,8 @@ rc('font',**{'family':'serif','serif':['Helvetica']})
 
 
 
-AV = [-3.0, -2.5, -1.0, 0.0, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1]
+AV = [-3.0, -2.5, -1.0, 0.0, 1.0, 1.5, 2.0]
+AV_new = ['-4.50D+00', '-3.50D+00', '2.500D+00', '1.500D+00', '-2.50D+00']
 time = ['1e4', '5.3e4', '1.08e5','last']
 time_positions = [11, 27, 34, 124] 
 molecules = ['CN', 'HCN']
@@ -69,12 +70,12 @@ def make_picture(X, Y, Z):
 	CS = ax.contour(X, Y, Z, levels = [0.01, 0.1, 1, 10, 100, 1000, 10000])
 	ax.clabel(CS, inline=1, fontsize=10)
 	observations = ax.contourf(X, Y, Z, levels = [1,10])
-	ax.set_title(r'Chemical model parameters - CN/HCN ratio')
+	#ax.set_title(r'Chemical model parameters - CN/HCN ratio')
 	plt.ylabel(r'$\log$(H$_2$ density [cm$^{-3}$])')
 	plt.xlabel(r'$\log$(G$_0$)')
 	props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
-	ax.text(0.80, 0.1, 'T = 50K', transform=ax.transAxes, fontsize=14,
-        verticalalignment='bottom', bbox=props)
+	ax.text(4.25, 4.15, '$T$ = 50K', fontsize=14, verticalalignment='bottom', bbox=props)
+	ax.text(4.5, 5.75, r'$\frac{X(CN)}{X(HCN)}$', fontsize=18, color='k', bbox=props)
 
 	plt.savefig('contour_plot_CN_HCN_G0_wider.eps')
 	plt.close()
@@ -83,20 +84,41 @@ def make_picture(X, Y, Z):
 def main():
 	
 	Z = []
+	AV_new_E = []
+	for av_new in AV_new:
+		av_new_E = av_new.replace('D','E')
+		AV_new_E.append(float(av_new_E))
+
+	AV_tot = AV + AV_new_E
+	AV_tot.sort()
+
 	for dens in N:
 		Z_rows = []
-		for av in AV:
-			data = read_data('./AV='+str(av)+'/plot'+dens+'-5.000D+01.dat')
-			time_position = 124  
-			CN_abudance = data[30].split()[time_position]  
-			CN_abudance = remove_D_from_elem(CN_abudance)
-			HCN_abudance = data[52].split()[time_position] 
-			HCN_abudance = remove_D_from_elem(HCN_abudance)
-			abudance_ratio = float(CN_abudance)/float(HCN_abudance)
-			Z_rows.append(abudance_ratio)
+		i = 0
+		for av in AV_tot:
+			if av in AV:
+				data = read_data('./AV='+str(av)+'/plot'+dens+'-5.000D+01.dat')
+				time_position = 124  
+				CN_abudance = data[30].split()[time_position]  
+				CN_abudance = remove_D_from_elem(CN_abudance)
+				HCN_abudance = data[52].split()[time_position] 
+				HCN_abudance = remove_D_from_elem(HCN_abudance)
+				abudance_ratio = float(CN_abudance)/float(HCN_abudance)
+				Z_rows.append(abudance_ratio)
+			elif av not in AV:
+				av_new = AV_new[i]
+				data_new = read_data('./plot'+dens+'-'+av_new+'.dat')
+				time_position = 124  
+				CN_abudance_new = data_new[30].split()[time_position]  
+				CN_abudance_new = remove_D_from_elem(CN_abudance_new)
+				HCN_abudance_new = data_new[52].split()[time_position] 
+				HCN_abudance_new = remove_D_from_elem(HCN_abudance_new)
+				abudance_ratio_new = float(CN_abudance_new)/float(HCN_abudance_new)
+				Z_rows.append(abudance_ratio_new)
+				i += 1
 		Z.append(Z_rows)
 	x0, y = remove_D((T, N))
-	x = AV2G0(AV)
+	x = AV2G0(AV_tot)
 	x, y = make_log_lists((x, y))
 	X, Y = np.meshgrid(x, y)
 	make_picture(X, Y, Z)

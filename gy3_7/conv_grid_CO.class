@@ -1,0 +1,75 @@
+! how to convolve data from Aga
+
+file in gy3_7_CO.apex
+find /all
+let map%reso 28.7
+table gy3_7_CO_conv_tab new
+xy_map gy3_7_CO_conv_tab new
+file out gy3_7_CO_conv.apex s /overwrite
+lmv gy3_7_CO_conv_tab
+
+say "Done with convolution process! (^_^)"
+
+! how to produce grid map from Marcin Gladkowski
+
+file in gy3_7_CO_conv.apex	!	read a file
+find /all	!	find it
+
+clear	!	clear the window with plot
+
+greg1\set plot landscape	!	Sets the physical size of plot page: 'landscape' (default) 
+							!	and 'portrait' have A4 format (30x21 cm), whereas 'square' 
+							!	gives 30x30 cm plot page.
+
+set viewport 0.065 0.9 0.1 0.925!	Defines the position of the box in terms of fraction 
+								!	of the plot page size in X (Px1, Px2) and Y (Py1, Py2).
+								!	The full command is: set viewport Px1 Px2 Py1 Py2
+								!	Default is 0.150 0.925 0.125 0.925
+
+greg\set coord user	!	Sets the coordinate system for DRAW ('box', 'character' or 'user')
+					!	Default is: box 0
+
+greg\set character 0.6	!	Set the character size (font size of x/y labels and tick-marks). 
+						!	Default is 0.6
+ 
+greg\pen /colour 0	!	Modify the current pen colour
+					!	0: foreground -> resolves as black on white devices and reversely
+					!	1: red
+					!	2: green
+					!	3: blue
+					!	:
+					!	7: background -> resolves as white on white devices (and black on black)
+					!	The full comm. is: greg/pencil [N] [/color C] [/dashed D] [/weight W] [/defaut]
+					!	N: it means pen number N
+					!	C: colour (look above)
+					!	D: pattern of line (1-7, 1: solid, 2 short dashed, 3: dotted, etc.)
+					!	W: thickening factor of line (1-5)
+					!	/DEFAULT: this option resets the default setting of the attributes, which
+					!	are not specified
+
+greg\box p o  i		!	Put axes around the plot region, labelling the lower and left ones.
+					!	The full command is: greg\box Arg1 Arg2 Arg 2
+					!	Arguments (Arg1-3) can be used to customize the ticks and labels:
+					!	Arg1, Arg2: modify the labelling of the lower and left axes respectively
+					!	The may take the P values for parallel (default for X axis), O for 
+					!	orthogonal labels (default for Y axis) or N for no labels (preserving 
+					!	the ticks)
+					!	Arg3: indicates that the ticks are to be IN or OUT of the box or not 
+					!	drawn at all (NONE). Disabling ticks also disable labels.
+					!	BOX N N N: makes a rectangle with the current pen.
+
+greg\label "\GD\Ga (Arcsec) " /x	!	Name of X label (RA)
+greg\label "\GD\Gd (Arcsec) " /y	!	Name of Y labels (Dec)
+
+set unit v ! I added this after making a convolution, because without this the grid map was empty!
+!set mode x -18 25	!	Zoom in X axis (velocity)       
+set mode x -5 30  
+!set mode y -1 6.0	!	Zoom in Y axis
+set mode y -1 10.0
+
+map /grid /nolabel	!	Plot a grid map, but without labels (they have been created already)
+
+sys "rm -f gy3_7_CO_grid_conv.eps"	!	Remove the old .eps file
+hardcopy "gy3_7_CO_grid_conv.eps"		!	Save the new plot as .eps file
+
+say "Done with gridding! (^_^)"
