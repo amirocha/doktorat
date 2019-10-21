@@ -1,0 +1,11 @@
+HCN
+
+SMM4
+! species	Ntot	Tex  source_size v_off	width
+! 		(cm-2)	(K)	('')	 (km/s)	(km/s)	
+HCN  	1e14	35	29	 7.6  3.2
+
+
+pos3
+
+

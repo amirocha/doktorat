@@ -76,7 +76,7 @@ def make_picture(X, Y, Z):
 	ax.text(3.25, 270, r'$n = 10^5$ [cm$^{-3}$])', fontsize=14, verticalalignment='bottom', bbox=props)
 	ax.text(4.5, 80, r'$\frac{X(CN)}{X(HCN)}$', fontsize=18, color='k', bbox=props)
 
-	plt.savefig('contour_plot_CN_HCN_n10e5.eps')
+	plt.savefig('contour_plot_CN_HCN_n10e5_new.eps')
 	plt.close()
 
 

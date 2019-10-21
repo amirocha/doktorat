@@ -3,7 +3,7 @@
 import math as m
 from decimal import Decimal
 
-molecules = ['hcn10', 'cn10', 'cs32']
+molecules = ['hcn10', 'cn10', 'cs32', 'c34s32', 'h13cn10']
 
 
 k=1.38065*10**(-23) #Boltzmann's constant in J/K
@@ -27,13 +27,12 @@ def readdata(mol):
 def calculate_mass(line, mol, D, T_ex=100):
 	
 	flux = line[2]
-	freq={'co65': 691.4730763, 'hcn10': 88.6316022, 'cn10': 113.1686723, 'cs32': 146.9690287} # line frequency [GHz]
-	Eu={'co65': 116.16, 'hcn10': 4.25, 'cn10': 5.43, 'cs32': 14.1}  # Energy of the upper level per kB [K]
-	g={'co65': 13.0, 'hcn10': 3.0, 'cn10': 3.0, 'cs32': 7.0} # g_up statistical weight []
-	A={'co65': 2.137e-05, 'hcn10': 2.407E-05, 'cn10': 1.182E-05, 'cs32': 6.071e-5} #Einstein coefficient	[s^-1]
-
-	pixel_size={'co65': 4.5, 'hcn10': 14.65, 'cn10': 14.65, 'cs32': 8.3} 
-	relative_abudance={'co65': 1.2*(10**(4)), 'hcn10': 10**(9), 'cn10': 6.1*10**10, 'cs32': 2*10**8} #H_2/mol relative abudances: CO6-5 (Yildiz et al. 2012), HCN1-0 (Hirota et al. 1998), CN1-0 (Hily-Blant et al. 2013), CS3-2 (Bergin&Langer 1997)
+	freq={'co65': 691.4730763, 'hcn10': 88.6316022, 'cn10': 113.1686723, 'cs32': 146.9690287, 'c34s32': 144.617109, 'h13cn10': 86.340184} # line frequency [GHz]
+	Eu={'co65': 116.16, 'hcn10': 4.25, 'cn10': 5.43, 'cs32': 14.1, 'c34s32': 13.9, 'h13cn10': 4.14}  # Energy of the upper level per kB [K]
+	g={'co65': 13.0, 'hcn10': 3.0, 'cn10': 3.0, 'cs32': 7.0, 'c34s32': 7, 'h13cn10': 3} # g_up statistical weight []
+	A={'co65': 2.137e-05, 'hcn10': 2.407E-05, 'cn10': 1.182E-05, 'cs32': 6.071e-5, 'c34s32': 7.251E-5, 'h13cn10': 6.90E-5} #Einstein coefficient	[s^-1]
+	pixel_size={'co65': 4.5, 'hcn10': 14.65, 'cn10': 14.65, 'cs32': 8.3, 'c34s32': 8.3, 'h13cn10': 14.5} 
+	relative_abudance={'co65': 1.2*(10**(4)), 'hcn10': 10**(9), 'cn10': 6.1*10**10, 'cs32': 2*10**8, 'c34s32': (2*10**8)/22, 'h13cn10': (10**9)/70} #H_2/mol relative abudances: CO6-5 (Yildiz et al. 2012), HCN1-0 (Hirota et al. 1998), CN1-0 (Hily-Blant et al. 2013), CS3-2 (Bergin&Langer 1997) //isotopologues estimated based on 32S/34S = 22 Chin et al. (1996) and 12C/13C = 70 Wilson & Rood (1994) [in Jorgensen+2004]
 
 	pixel_size_in_radians = m.radians(pixel_size[mol]/(3600)) # arcsec -> rad
 	pixel_size_in_cms = pixel_size_in_radians*D #rad -> cm
@@ -62,6 +61,10 @@ def partition_function(mol, T_ex):  #linear approximation from JPL data
 		return {37.5: 13.897, 75: 27.455, 150: 54.581}[T_ex]
 	if mol == 'cn10': 
 		return {37.5: 84.7308, 75: 167.4335, 150: 332.9077}[T_ex]
+	if mol == 'c34s32': 
+		return {9.375: 8.447, 37.5: 32.757, 75: 65.178}[T_ex]
+	if mol == 'h13cn10': 
+		return {9.375: 14.622, 37.5: 55.310, 75: 109.623}[T_ex]
 
 def main():  #activate the rest of functions
 

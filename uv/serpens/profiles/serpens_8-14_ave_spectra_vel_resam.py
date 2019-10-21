@@ -332,7 +332,7 @@ v_c34s32_p10, Tmb_c34s32_p10 = loadtxt('./serpens_c34s32_pos1.txt', usecols=(0, 
 """
 ########## SERPENS, CS 3-2, center: -0.6 1.4, range: -14.5 13.3 -12.5 15.3 ##########
 """
-v_cs32_p10, Tmb_cs32_p10 = loadtxt('./serpens_pos1_cs32.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_cs32_p10, Tmb_cs32_p10 = loadtxt('./serpens_cs32_pos1.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 """
@@ -344,19 +344,19 @@ v_cs32_p10, Tmb_cs32_p10 = loadtxt('./serpens_pos1_cs32.txt', usecols=(0, 1), un
 """
 ########## SERPENS, H13CN 1-0, center: -0.6 1.4, range: -14.5 13.3 -12.5 15.3 ##########
 """
-v_h13cn10_p10, Tmb_h13cn10_p10 = loadtxt('./serpens_pos1_h13cn10.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_h13cn10_p10, Tmb_h13cn10_p10 = loadtxt('./serpens_h13cn10_pos1.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 """
 ########## SERPENS, HCN 1-0, center: -0.6 1.4, range: -14.5 13.3 -12.5 15.3 ##########
 """
-v_hcn10_p10, Tmb_hcn10_p10 = loadtxt('./serpens_pos1_hcn10.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_hcn10_p10, Tmb_hcn10_p10 = loadtxt('./serpens_hcn10_pos1.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 """
 ########## SERPENS, CN 1-0, center: -0.6 1.4, range: -14.5 13.3 -12.5 15.3 ##########
 """
-v_cn10_p10, Tmb_cn10_p10 = loadtxt('./serpens_pos1_cn10.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_cn10_p10, Tmb_cn10_p10 = loadtxt('./serpens_cn10_pos1.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 
@@ -465,7 +465,7 @@ v_c34s32_p11, Tmb_c34s32_p11 = loadtxt('./serpens_c34s32_pos2.txt', usecols=(0, 
 """
 ########## SERPENS, CS 3-2, center: 37.5 28.5, range: 23.6 51.4 14.6 42.4 ##########
 """
-v_cs32_p11, Tmb_cs32_p11 = loadtxt('./serpens_pos2_cs32.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_cs32_p11, Tmb_cs32_p11 = loadtxt('./serpens_cs32_pos2.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 """
@@ -477,19 +477,19 @@ v_cs32_p11, Tmb_cs32_p11 = loadtxt('./serpens_pos2_cs32.txt', usecols=(0, 1), un
 """
 ########## SERPENS, H13CN 1-0, center: 37.5 28.5, range: 23.6 51.4 14.6 42.4 ##########
 """
-v_h13cn10_p11, Tmb_h13cn10_p11 = loadtxt('./serpens_pos2_h13cn10.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_h13cn10_p11, Tmb_h13cn10_p11 = loadtxt('./serpens_h13cn10_pos2.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 """
 ########## SERPENS, HCN 1-0, center: 37.5 28.5, range: 23.6 51.4 14.6 42.4 ##########
 """
-v_hcn10_p11, Tmb_hcn10_p11 = loadtxt('./serpens_pos2_hcn10.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_hcn10_p11, Tmb_hcn10_p11 = loadtxt('./serpens_hcn10_pos2.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 """
 ########## SERPENS, CN 1-0, center: 37.5 28.5, range: 23.6 51.4 14.6 42.4 ##########
 """
-v_cn10_p11, Tmb_cn10_p11 = loadtxt('./serpens_pos2_cn10.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_cn10_p11, Tmb_cn10_p11 = loadtxt('./serpens_cn10_pos2.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 
@@ -598,7 +598,7 @@ v_c34s32_p12, Tmb_c34s32_p12 = loadtxt('./serpens_c34s32_pos3.txt', usecols=(0, 
 """
 ########## SERPENS, CS 3-2, center: 27 77.8, range: 13.1 40.9 63.9 91.7 ##########
 """
-v_cs32_p12, Tmb_cs32_p12 = loadtxt('./serpens_pos3_cs32.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_cs32_p12, Tmb_cs32_p12 = loadtxt('./serpens_cs32_pos3.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 """
@@ -610,19 +610,19 @@ v_cs32_p12, Tmb_cs32_p12 = loadtxt('./serpens_pos3_cs32.txt', usecols=(0, 1), un
 """
 ########## SERPENS, H13CN 1-0, center: 27 77.8, range: 13.1 40.9 63.9 91.7 ##########
 """
-v_h13cn10_p12, Tmb_h13cn10_p12 = loadtxt('./serpens_pos3_h13cn10.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_h13cn10_p12, Tmb_h13cn10_p12 = loadtxt('./serpens_h13cn10_pos3.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 """
 ########## SERPENS, HCN 1-0, center: 27 77.8, range: 13.1 40.9 63.9 91.7 ##########
 """
-v_hcn10_p12, Tmb_hcn10_p12 = loadtxt('./serpens_pos3_hcn10.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_hcn10_p12, Tmb_hcn10_p12 = loadtxt('./serpens_hcn10_pos3.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 """
 ########## SERPENS, CN 1-0, center: 27 77.8, range: 13.1 40.9 63.9 91.7 ##########
 """
-v_cn10_p12, Tmb_cn10_p12 = loadtxt('./serpens_pos3_cn10.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_cn10_p12, Tmb_cn10_p12 = loadtxt('./serpens_cn10_pos3.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 
@@ -728,7 +728,7 @@ v_c34s32_p13, Tmb_c34s32_p13 = loadtxt('./serpens_c34s32_pos4.txt', usecols=(0, 
 """
 ########## SERPENS, CS 3-2, center: -22.95 81, range: -36.85 -9.05 67.1 94.9 ##########
 """
-v_cs32_p13, Tmb_cs32_p13 = loadtxt('./serpens_pos4_cs32.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_cs32_p13, Tmb_cs32_p13 = loadtxt('./serpens_cs32_pos4.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 """
@@ -740,19 +740,19 @@ v_cs32_p13, Tmb_cs32_p13 = loadtxt('./serpens_pos4_cs32.txt', usecols=(0, 1), un
 """
 ########## SERPENS, H13CN 1-0, center: -22.95 81, range: -36.85 -9.05 67.1 94.9 ##########
 """
-v_h13cn10_p13, Tmb_h13cn10_p13 = loadtxt('./serpens_pos4_h13cn10.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_h13cn10_p13, Tmb_h13cn10_p13 = loadtxt('./serpens_h13cn10_pos4.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 """
 ########## SERPENS, HCN 1-0, center: -22.95 81, range: -36.85 -9.05 67.1 94.9 ##########
 """
-v_hcn10_p13, Tmb_hcn10_p13 = loadtxt('./serpens_pos4_hcn10.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_hcn10_p13, Tmb_hcn10_p13 = loadtxt('./serpens_hcn10_pos4.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 """
 ########## SERPENS, CN 1-0, center: -22.95 81, range: -36.85 -9.05 67.1 94.9 ##########
 """
-v_cn10_p13, Tmb_cn10_p13 = loadtxt('./serpens_pos4_cn10.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_cn10_p13, Tmb_cn10_p13 = loadtxt('./serpens_cn10_pos4.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 
@@ -861,7 +861,7 @@ v_c34s32_p14, Tmb_c34s32_p14 = loadtxt('./serpens_c34s32_pos5.txt', usecols=(0, 
 """
 ########## SERPENS, CS 3-2, center: -25.314 95.8, range: -39.214 -11.414 81.9 109.7 ##########
 """
-v_cs32_p14, Tmb_cs32_p14 = loadtxt('./serpens_pos5_cs32.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_cs32_p14, Tmb_cs32_p14 = loadtxt('./serpens_cs32_pos5.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 """
@@ -873,19 +873,18 @@ v_cs32_p14, Tmb_cs32_p14 = loadtxt('./serpens_pos5_cs32.txt', usecols=(0, 1), un
 """
 ########## SERPENS, H13CN 1-0, center: -25.314 95.8, range: -39.214 -11.414 81.9 109.7 ##########
 """
-v_h13cn10_p14, Tmb_h13cn10_p14 = loadtxt('./serpens_pos5_h13cn10.txt', usecols=(0, 1), unpack=True, skiprows=1)
-
+v_h13cn10_p14, Tmb_h13cn10_p14 = loadtxt('./serpens_h13cn10_pos5.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 """
 ########## SERPENS, HCN 1-0, center: -25.314 95.8, range: -39.214 -11.414 81.9 109.7 ##########
 """
-v_hcn10_p14, Tmb_hcn10_p14 = loadtxt('./serpens_pos5_hcn10.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_hcn10_p14, Tmb_hcn10_p14 = loadtxt('./serpens_hcn10_pos5.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 """
 ########## SERPENS, CN 1-0, center: -25.314 95.8, range: -39.214 -11.414 81.9 109.7 ##########
 """
-v_cn10_p14, Tmb_cn10_p14 = loadtxt('./serpens_pos5_cn10.txt', usecols=(0, 1), unpack=True, skiprows=1)
+v_cn10_p14, Tmb_cn10_p14 = loadtxt('./serpens_cn10_pos5.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 

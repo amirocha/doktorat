@@ -1,0 +1,6 @@
+Protostar   Molecule  Flux
+outflow2   hcn10   14.613091
+outflow2   cn10   8.701007
+Protostar   Molecule  Flux
+outflow5   hcn10   11.535540
+outflow5   cn10   12.510237

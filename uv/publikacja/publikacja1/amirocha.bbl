@@ -20,14 +20,17 @@
 \bibitem[{{Arce} \& {Sargent}(2006)}]{Arc06}
 {Arce}, H.~G. \& {Sargent}, A.~I. 2006, \apj, 646, 1070
 
-\bibitem[{{Aso} {et~al.}(2018){Aso}, {Hirano}, {Aikawa}, {Machida}, {Takakuwa},
-  {Yen}, \& {Williams}}]{Aso18}
-{Aso}, Y., {Hirano}, N., {Aikawa}, Y., {et~al.} 2018, \apj, 863, 19
-
 \bibitem[{{Bachiller} {et~al.}(2001){Bachiller}, {P{\'e}rez Guti{\'e}rrez},
   {Kumar}, \& {Tafalla}}]{Bac01}
 {Bachiller}, R., {P{\'e}rez Guti{\'e}rrez}, M., {Kumar}, M.~S.~N., \&
   {Tafalla}, M. 2001, \aap, 372, 899
+
+\bibitem[{{Benz} {et~al.}(2016){Benz}, {Bruderer}, {van Dishoeck}, {Melchior},
+  {Wampfler}, {van der Tak}, {Goicoechea}, {Indriolo}, {Kristensen}, {Lis},
+  {Mottram}, {Bergin}, {Caselli}, {Herpin}, {Hogerheijde}, {Johnstone},
+  {Liseau}, {Nisini}, {Tafalla}, {Visser}, \& {Wyrowski}}]{Ben16}
+{Benz}, A.~O., {Bruderer}, S., {van Dishoeck}, E.~F., {et~al.} 2016, \aap, 590,
+  A105
 
 \bibitem[{{Bergin} \& {Tafalla}(2007)}]{Ber07}
 {Bergin}, E.~A. \& {Tafalla}, M. 2007, \araa, 45, 339
@@ -39,6 +42,11 @@
   {Pi{\'e}tu}, \& {Gu{\'e}lin}}]{Cha12}
 {Chapillon}, E., {Guilloteau}, S., {Dutrey}, A., {Pi{\'e}tu}, V., \&
   {Gu{\'e}lin}, M. 2012, \aap, 537, A60
+
+\bibitem[{{Daniel} {et~al.}(2013){Daniel}, {G{\'e}rin}, {Roueff}, {Cernicharo},
+  {Marcelino}, {Lique}, {Lis}, {Teyssier}, {Biver}, \&
+  {Bockel{\'e}e-Morvan}}]{Dan13}
+{Daniel}, F., {G{\'e}rin}, M., {Roueff}, E., {et~al.} 2013, \aap, 560, A3
 
 \bibitem[{{Davis} {et~al.}(1999){Davis}, {Matthews}, {Ray}, {Dent}, \&
   {Richer}}]{Dav99}
@@ -86,11 +94,6 @@
 {Evans}, Neal~J., I., {Dunham}, M.~M., {J{\o}rgensen}, J.~K., {et~al.} 2009,
   \apjs, 181, 321
 
-\bibitem[{{Francis} {et~al.}(2019){Francis}, {Johnstone}, {Dunham}, {Hunter},
-  \& {Mairs}}]{Fra19}
-{Francis}, L., {Johnstone}, D., {Dunham}, M.~M., {Hunter}, T.~R., \& {Mairs},
-  S. 2019, \apj, 871, 149
-
 \bibitem[{{Fuente} {et~al.}(1993){Fuente}, {Martin-Pintado}, {Cernicharo}, \&
   {Bachiller}}]{Fue93}
 {Fuente}, A., {Martin-Pintado}, J., {Cernicharo}, J., \& {Bachiller}, R. 1993,
@@ -99,6 +102,11 @@
 \bibitem[{{Fuente} {et~al.}(1995){Fuente}, {Martin-Pintado}, \&
   {Gaume}}]{Fue95}
 {Fuente}, A., {Martin-Pintado}, J., \& {Gaume}, R. 1995, \apjl, 442, L33
+
+\bibitem[{{Goldsmith} {et~al.}(1984){Goldsmith}, {Snell}, {Hemeon-Heyer}, \&
+  {Langer}}]{Gol84}
+{Goldsmith}, P.~F., {Snell}, R.~L., {Hemeon-Heyer}, M., \& {Langer}, W.~D.
+  1984, \apj, 286, 599
 
 \bibitem[{{Green} {et~al.}(2013){Green}, {Evans}, {J{\o}rgensen}, {Herczeg},
   {Kristensen}, {Lee}, {Dionatos}, {Yildiz}, {Salyk}, {Meeus}, {Bouwman},
@@ -123,12 +131,6 @@
   {Salverda}, \& {Blake}}]{Hog99}
 {Hogerheijde}, M.~R., {van Dishoeck}, E.~F., {Salverda}, J.~M., \& {Blake},
   G.~A. 1999, \apj, 513, 350
-
-\bibitem[{{Hull} {et~al.}(2017){Hull}, {Girart}, {Tychoniec}, {Rao},
-  {Cort{\'e}s}, {Pokhrel}, {Zhang}, {Houde}, {Dunham}, {Kristensen}, {Lai},
-  {Li}, \& {Plambeck}}]{Hul17}
-{Hull}, C. L.~H., {Girart}, J.~M., {Tychoniec}, {\L}., {et~al.} 2017, \apj,
-  847, 92
 
 \bibitem[{{Hurt} \& {Barsony}(1996)}]{Hur96}
 {Hurt}, R.~L. \& {Barsony}, M. 1996, \apjl, 460, L45
@@ -157,6 +159,11 @@
   {Nisini}, {Santangelo}, {Tafalla}, \& {Wampfler}}]{Kar14}
 {Karska}, A., {Kristensen}, L.~E., {van Dishoeck}, E.~F., {et~al.} 2014, \aap,
   572, A9
+
+\bibitem[{{Kristensen} {et~al.}(2013){Kristensen}, {van Dishoeck}, {Benz},
+  {Bruderer}, {Visser}, \& {Wampfler}}]{Kri13}
+{Kristensen}, L.~E., {van Dishoeck}, E.~F., {Benz}, A.~O., {et~al.} 2013, \aap,
+  557, A23
 
 \bibitem[{{Kristensen} {et~al.}(2017){Kristensen}, {van Dishoeck}, {Mottram},
   {Karska}, {Y{\i}ld{\i}z}, {Bergin}, {Bjerkeli}, {Cabrit}, {Doty}, {Evans},
@@ -188,15 +195,15 @@
 {Lee}, K.~I., {Fern{\'a}ndez-L{\'o}pez}, M., {Storm}, S., {et~al.} 2014, \apj,
   797, 76
 
-\bibitem[{{Manoj} {et~al.}(2013){Manoj}, {Watson}, {Neufeld}, {Megeath},
-  {Vavrek}, {Yu}, {Visser}, {Bergin}, {Fischer}, {Tobin}, {Stutz}, {Ali},
-  {Wilson}, {Di Francesco}, {Osorio}, {Maret}, \& {Poteet}}]{Man13}
-{Manoj}, P., {Watson}, D.~M., {Neufeld}, D.~A., {et~al.} 2013, \apj, 763, 83
+\bibitem[{{Melnick} \& {Kaufman}(2015)}]{Mel15}
+{Melnick}, G.~J. \& {Kaufman}, M.~J. 2015, \apj, 806, 227
 
-\bibitem[{{McMullin} {et~al.}(2000){McMullin}, {Mundy}, {Blake}, {Wilking},
-  {Mangum}, \& {Latter}}]{MMu00}
-{McMullin}, J.~P., {Mundy}, L.~G., {Blake}, G.~A., {et~al.} 2000, \apj, 536,
-  845
+\bibitem[{{Mottram} {et~al.}(2014){Mottram}, {Kristensen}, {van Dishoeck},
+  {Bruderer}, {San Jos{\'e}-Garc{\'\i}a}, {Karska}, {Visser}, {Santangelo},
+  {Benz}, {Bergin}, {Caselli}, {Herpin}, {Hogerheijde}, {Johnstone}, {van
+  Kempen}, {Liseau}, {Nisini}, {Tafalla}, {van der Tak}, \& {Wyrowski}}]{Mot14}
+{Mottram}, J.~C., {Kristensen}, L.~E., {van Dishoeck}, E.~F., {et~al.} 2014,
+  \aap, 572, A21
 
 \bibitem[{{Myers} \& {Ladd}(1993)}]{Mye93}
 {Myers}, P.~C. \& {Ladd}, E.~F. 1993, \apjl, 413, L47
@@ -286,11 +293,6 @@
   {Wiesenfeld}}]{Wak12}
 {Wakelam}, V., {Herbst}, E., {Loison}, J.~C., {et~al.} 2012, \apjs, 199, 21
 
-\bibitem[{{Walker-Smith} {et~al.}(2014){Walker-Smith}, {Richer}, {Buckle},
-  {Hatchell}, \& {Drabek-Maunder}}]{Wal14}
-{Walker-Smith}, S.~L., {Richer}, J.~S., {Buckle}, J.~V., {Hatchell}, J., \&
-  {Drabek-Maunder}, E. 2014, \mnras, 440, 3568
-
 \bibitem[{{Wright} {et~al.}(2010){Wright}, {Eisenhardt}, {Mainzer}, {Ressler},
   {Cutri}, {Jarrett}, {Kirkpatrick}, {Padgett}, {McMillan}, {Skrutskie},
   {Stanford}, {Cohen}, {Walker}, {Mather}, {Leisawitz}, {Gautier}, {McLean},
@@ -307,9 +309,10 @@
 {Y{\i}ld{\i}z}, U.~A., {Kristensen}, L.~E., {van Dishoeck}, E.~F., {et~al.}
   2015, \aap, 576, A109
 
-\bibitem[{{Yoo} {et~al.}(2017){Yoo}, {Lee}, {Mairs}, {Johnstone}, {Herczeg},
-  {Kang}, {Kang}, {Cho}, \& {The JCMT Transient Team}}]{Yoo17}
-{Yoo}, H., {Lee}, J.-E., {Mairs}, S., {et~al.} 2017, \apj, 849, 69
+\bibitem[{{Yvart} {et~al.}(2016){Yvart}, {Cabrit}, {Pineau des For{\^e}ts}, \&
+  {Ferreira}}]{Yva16}
+{Yvart}, W., {Cabrit}, S., {Pineau des For{\^e}ts}, G., \& {Ferreira}, J. 2016,
+  \aap, 585, A74
 
 \bibitem[{{Zuckerman} {et~al.}(1976){Zuckerman}, {Kuiper}, \& {Rodriguez
   Kuiper}}]{Zuc76}

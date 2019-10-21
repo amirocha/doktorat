@@ -15,7 +15,7 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 N			/ Do you want to run in the uncertainty mode ? Y or N
 "$i"		/ H tot Density (cm-3) = n(H)+2*n(H2)
-2.000D+02		/ Temperature (K)
+5.000D+01		/ Temperature (K)
 "$j"		/ Visual extinction
 1.063D+07		/ Time (in timeres.dat) when you want the output.dat to be written
 1.300D-17		/ Cosmic-ray ionization rate (s-1)

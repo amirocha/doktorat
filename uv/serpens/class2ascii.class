@@ -6,22 +6,25 @@ define real vel vel_inc	! vel: the value at the reference channel
 						! vel_inc: the new channel separation
 
 
-file in SMM1_C18O_6-5.apex
+file in serpens_c34s32_red
 find /all
 
-!set range 134.7 151.3 -74.3 -57.7
+
+set range 125.764 142.364 -60.5 -43.9
 find /all
 
-average /nocheck  /weight equal   ! for _red files: /res   !for _conv files: /weight equal
+average /nocheck    ! for _red files: /res   !for _conv files: /weight equal
 smooth !for h13cn21 only!!
 
+!modify freq 88631.847      !hcn
+!modify freq 86340.1840   ! h13cn
 !plot
 
 set mode x tot
 
 set unit v
 
-sic output ./profiles/serpens_c18o65_ave_spec.txt
+sic output ./profiles/serpens_c34s32_pos5.txt
 
 for i 1 to channels
 	say 'rx[i]' 'ry[i]' /format g16.8 g16.8 
@@ -50,10 +53,12 @@ sic output
 !SMM12 132.2 150.8 -134.5 -117.9
 !!!!pos1 -30.3 -13.7 79.7 96.3
 !pos1 -19.3 -2.7 24.7 41.3
-!pos2 112.7 129.3 -129.3 -112.7
+!!!!pos2 112.7 129.3 -129.3 -112.7
+!pos2 106.564 123.164 -161.3 -144.7
 !pos3 47.7 64.3 -120.3 -103.7
 !pos4 -62.3 -45.7 72.7 89.3
-!pos5 134.7 151.3 -74.3 -57.7
+!!!!pos5 134.7 151.3 -74.3 -57.7
+!pos5 125.764 142.364 -60.5 -43.9
 
 !protostars position +- 14.65'' (0.5 of HBWM) for HCN 1-0 +convolved CN 1-0
 
@@ -69,11 +74,12 @@ sic output
 !SMM12 127.85 157.15 -140.85 -111.55
 !!!!pos1 -36.65 -7.35 73.35 102.65
 !pos1 -22.65 3.65 18.35 47.65
-!pos2 106.35 135.65 -135.65 -106.35
+!!!!pos2 106.35 135.65 -135.65 -106.35
+!pos2 100.214 129.514 -167.65 -138.35
 !pos3 41.35 70.65 -126.65 -97.35
 !pos4 -68.65 -39.35 66.35 95.65
-!pos5 128.35 157.65 -80.65 -51.35
-
+!!!!pos5 128.35 157.65 -80.65 -51.35
+!pos5 119.414 148.714 -66.85 -37.55
 
 !protostars position +- 14.5'' (0.5 of HBWM) for H13CN 1-0
 !SMM1 -15.1 13.9 -13.1 15.9
@@ -87,10 +93,12 @@ sic output
 !SMM10 23 52 14 43
 !SMM12 128 157 -140.7 -111.7
 !pos1 -22.5 3.5 18.5 47.5
-!pos2 106.5 135.5 -135.5 -106.5
+!!!!pos2 106.5 135.5 -135.5 -106.5
+!pos2 100.364 129.364 -167.5 -138.5
 !pos3 41.5 70.5 -126.5 -97.5
 !pos4 -68.5 -39.5 66.5 95.5
-!pos5 128.5 157.5 -80.5 -51.5
+!!!!pos5 128.5 157.5 -80.5 -51.5
+!pos5 119.564 148.564 -66.7 -37.7
 
 !protostars position +- 7'' (0.5 of HBWM) for H13CN 2-1
 !SMM1 -7.6 6.4 -5.6 8.4

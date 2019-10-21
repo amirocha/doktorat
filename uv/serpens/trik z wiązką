@@ -1,0 +1,2 @@
+kopiowanie procedury go beam z katalogu gildasa do bieżącego. Gildas najpierw spradza bieżący katalog, później swoje. Procedury zapisane w katalogu roboczym będą wykonywane najpierw:
+sic copy gag_pro:p_beam.greg p_beam.greg  
