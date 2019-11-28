@@ -1,6 +1,6 @@
 """Cuts out area of a map"""
 
-file1=open('serpens_cs32_int.txt','r')
+file1=open('serpens_co65_int.txt','r')
 lines=file1.readlines()
 file1.close()
 
@@ -10,10 +10,10 @@ for i in range(5,len(lines)):  #skip header
    dec=float(line.split()[2])
    ra=float(line.split()[1])
    #if dec > -50 and dec < 50 and ra > -50 and ra < 50: 
-   if ra > -100 and ra < 220: 
+   if ra > -100 and ra < 220 and dec > -220 and dec < 136: 
    	cut.append(line)
 
-fileend=open('serpens_cs32_cut.txt','w')
+fileend=open('serpens_co65_cut.txt','w')
 fileend.writelines(cut)
 fileend.close()
 

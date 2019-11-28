@@ -1,0 +1,9 @@
+!
+! 14-NOV-2019 21:00:24
+! Input file  : serpens_hcn10_conv.30m
+! Input command: ANALYSE\PRINT area -1.3 16 /OUTPUT ./wings/hcn_smm5_tot.txt
+!
+ 380     33.286     66.500   4.1636    
+ 381     18.636     66.500   6.6174    
+ 396     18.636     81.150   7.3206    
+ 397     33.286     81.150   4.1134    

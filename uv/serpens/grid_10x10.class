@@ -1,0 +1,20 @@
+file in "./serpens_co65_red_cut.30m"
+find /all
+set unit v
+!set line CO(6-5)
+!find /all
+
+greg\pen /def
+
+file out serpens_co65_grid.30m single /overwrite
+
+for i -30 to 20
+  for j -20 to 20
+      find /range '(i-1/2)*14.65' '(i+1/2)*14.65' '(j-1/2)*14.65' '(j+1/2)*14.65'
+      if found.ne.0 then 
+      		average /nocheck
+      		modify offset i*14.65 j*14.65
+      		write
+      endif 
+  next
+next

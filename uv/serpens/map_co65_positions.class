@@ -2,7 +2,7 @@
 define double sigma
 let sigma 0.2
 define double up
-let up 70
+let up 65
 set unit v
 greg\pen /weight 1.75
 set font duplex
@@ -125,11 +125,11 @@ dele /var h
     greg\pen /colour 6 /weight 3
     greg1\set marker 4 1 .2 0
     set coord user
-    greg1\draw marker 134.064 -52.2
+    greg1\draw marker 138.864 -162.600
     greg\pen /colour 0 /weight 1
     set font duplex
     set character 0.250
-    greg1\draw text 134.064 -42.2 "5" 
+    greg1\draw text 138.864 -152.600 "5" 
 
 
 !outflows

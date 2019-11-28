@@ -6,11 +6,11 @@ define real vel vel_inc	! vel: the value at the reference channel
 						! vel_inc: the new channel separation
 
 
-file in serpens_c34s32_red
+file in serpens_h13cn21_red.30m
 find /all
 
 
-set range 125.764 142.364 -60.5 -43.9
+set range 131.864 145.864 -169.60 -155.60
 find /all
 
 average /nocheck    ! for _red files: /res   !for _conv files: /weight equal
@@ -18,13 +18,14 @@ smooth !for h13cn21 only!!
 
 !modify freq 88631.847      !hcn
 !modify freq 86340.1840   ! h13cn
+!modify freq 691473.0763   ! co65
 !plot
 
 set mode x tot
 
 set unit v
 
-sic output ./profiles/serpens_c34s32_pos5.txt
+sic output ./profiles/serpens_h13cn21_pos5.txt
 
 for i 1 to channels
 	say 'rx[i]' 'ry[i]' /format g16.8 g16.8 
@@ -36,7 +37,7 @@ let XREF NX/2 	! NX/2 defines how many channels do you want at the both sides
 let vel velocity
 let vel_inc 0.5 ! a new sampling with 0.5 km/s
 
-resample NX XREF vel vel_inc velocity	! RESAMPLE NX Xref Xval Xinc Unit
+!resample NX XREF vel vel_inc velocity	! RESAMPLE NX Xref Xval Xinc Unit
 
 sic output
 
@@ -57,8 +58,9 @@ sic output
 !pos2 106.564 123.164 -161.3 -144.7
 !pos3 47.7 64.3 -120.3 -103.7
 !pos4 -62.3 -45.7 72.7 89.3
-!!!!pos5 134.7 151.3 -74.3 -57.7
-!pos5 125.764 142.364 -60.5 -43.9
+!!!!!!pos5 134.7 151.3 -74.3 -57.7
+!!!!pos5 125.764 142.364 -60.5 -43.9
+!pos5 130.564 147.164 -170.9 -154.3
 
 !protostars position +- 14.65'' (0.5 of HBWM) for HCN 1-0 +convolved CN 1-0
 
@@ -78,8 +80,9 @@ sic output
 !pos2 100.214 129.514 -167.65 -138.35
 !pos3 41.35 70.65 -126.65 -97.35
 !pos4 -68.65 -39.35 66.35 95.65
-!!!!pos5 128.35 157.65 -80.65 -51.35
-!pos5 119.414 148.714 -66.85 -37.55
+!!!!!!pos5 128.35 157.65 -80.65 -51.35
+!!!!pos5 119.414 148.714 -66.85 -37.55
+!pos5 124.214 153.514 -177.25 -147.95
 
 !protostars position +- 14.5'' (0.5 of HBWM) for H13CN 1-0
 !SMM1 -15.1 13.9 -13.1 15.9
@@ -97,8 +100,32 @@ sic output
 !pos2 100.364 129.364 -167.5 -138.5
 !pos3 41.5 70.5 -126.5 -97.5
 !pos4 -68.5 -39.5 66.5 95.5
-!!!!pos5 128.5 157.5 -80.5 -51.5
-!pos5 119.564 148.564 -66.7 -37.7
+!!!!!!pos5 128.5 157.5 -80.5 -51.5
+!!!pos5 119.564 148.564 -66.7 -37.7
+!pos5 124.364 153.364 -177.1 -148.1
+
+!protostars position +- 2.25'' (0.5 of HBWM) for CO 6-5
+!SMM1 -2.85 1.65 -0.85 3.65
+!SMM2 161.25 165.75 -144.95 -140.45
+!SMM3 143.25 147.75 -81.05 -76.55
+!SMM4 104.25 108.75 -125.55 -121.05
+!SMM5 24.75 29.25 75.55 80.05
+!SMM6 120.75 125.25 -77.45 -72.95 
+!SMM8 182.25 186.75 -13.55 -9.05
+!SMM9 -25.2 -20.7 78.75 83.25
+!SMM10 35.25 39.75 26.25 30.75
+!SMM12 140.25 144.75 -128.45 -123.95
+!pos1 -13.25 -8.75 30.5 35
+!!!!pos2 
+!pos2 112.614 117.114 -155.25 -150.75
+!pos3 53.75 58.25 -114.25 -109.75
+!pos4 -56.25 -51.75 78.75 83.25
+!!!!!!pos5 
+!!!pos5 
+!pos5 136.614 141.114 -164.85 -160.35 
+
+!protostars position +- 5.05'' (0.5 of HBWM) for C18O 6-5
+!SMM1 -5.65 4.45 -3.65 6.45
 
 !protostars position +- 7'' (0.5 of HBWM) for H13CN 2-1
 !SMM1 -7.6 6.4 -5.6 8.4
@@ -111,12 +138,15 @@ sic output
 !SMM9 -29.95 -15.95 74 88
 !SMM10 30.5 44.5 21.5 35.5
 !SMM12 135.5 149.5 -133.2 -119.2
-!pos1 -29. -15. 81 95
-!pos2 -18. -4 26 40
-!pos3 114. 128 -128 -114
-!pos4 49 63 -119 -105
-!pos5 -61. -47 74 88
-!pos6 136. 140 -73 -59
+!!!!pos1 -29. -15. 81 95
+!pos1 -18 -4 26 40
+!!!!pos2 -18. -4 26 40
+!pos2 107.864 121.864 -160 -146
+!!!!pos3 114. 128 -128 -114
+!pos3 49 63 -119 -105
+!pos4 -61. -47 74 88
+!pos5 131.864 145.864 -169.60 -155.60
+!!!!pos6 136. 140 -73 -59
 
 !outflows
 

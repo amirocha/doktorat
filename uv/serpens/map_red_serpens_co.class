@@ -3,12 +3,13 @@ file in  "SMM1_12CO_6-5.apex"
 
 find /all
 
+set unit v
 
 file out serpens_co65_red.30m single /overwrite
 
 for i 1 to found
     get n
-    set window -50 50
+    set window -30 30
     base 0    !change for C18O for "2" 
     write
 next

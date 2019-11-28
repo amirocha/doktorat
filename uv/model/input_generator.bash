@@ -22,7 +22,7 @@ N			/ Do you want to run in the uncertainty mode ? Y or N
 1.000D-02       	/ Dust to gas mass ratio (usually 0.01)
 1.000D-05     		/ Dust grain radius (in cm)
 3.000D+00		/ grain density (in g cm-3)" > input_parameter.dat
-    gfortran opkd*.f nahoon_1d.f90 -o nahoon_1d
+    gfortran opkd*.f nahoon_1dx.f90 -o nahoon_1d
     chmod a+x nahoon_1d
     ./nahoon_1d 
     #python3 plot_concentrations.py

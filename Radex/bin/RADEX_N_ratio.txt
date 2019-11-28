@@ -1,0 +1,72 @@
+Temperature   H2_density   SMM_limits    Outflow_limits 
+30   1e5  0.282609  0.831827  0.016336  0.665833 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+75   1e5  0.266456  0.815670  0.000185  0.649677 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e6  0.500659  1.049867  0.234391  0.883876 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+75   1e6  0.431013  0.980221  0.164745  0.814230 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+30   1e6  0.370869  0.920077  0.104601  0.754086 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+30   1e4  0.243285  0.792499  -0.022986  0.626507 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+75   1e4  0.164812  0.714020  -0.101456  0.548029 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e4  0.122711  0.671919  -0.143557  0.505928 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 
+Temperature   H2_density   SMM_limits    Outflow_limits 
+200   1e5  0.303315  0.852523  0.037047  0.686532 

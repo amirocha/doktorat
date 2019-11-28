@@ -189,7 +189,6 @@ plt.axhline(y=rms, xmin = -60.0, xmax = 40.0, color = 'black', linewidth=1.5, li
 #ax.annotate(r'$\mathrm{X_{3}\;(1s)\;=%.1f \;km/s}$'%(final3_df[1].ix[min3].round(1)), fontsize=10, xy=(-38.0, 1.01), textcoords='data')
 #ax.annotate(r'$\mathrm{X_{4}\;(1s)\;=%.1f \;km/s}$'%(final4_df[1].ix[min4].round(1)), fontsize=10, xy=(-38.0, 0.98), textcoords='data')
 
-
 # plot the vertical lines for x = min1 and x = min2
 plt.axvline(x=final1_df[1].ix[min1].round(1), color='blue', linestyle='--')
 plt.axvline(x=final2_df[1].ix[min2].round(1), color='red', linestyle='--')

@@ -1,0 +1,9 @@
+!
+! 14-NOV-2019 21:07:21
+! Input file  : ../serpens_hcn10_conv.30m
+! Input command: ANALYSE\PRINT area 10.1 10.5 /OUTPUT hcn_red_1_smm1.txt
+!
+ 292    -10.664     -6.750  0.19142    
+ 293      3.986     -6.750  0.28173    
+ 325      3.986      7.900  0.30036    
+ 326    -10.664      7.900  0.25281    

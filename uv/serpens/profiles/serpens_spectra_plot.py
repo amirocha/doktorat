@@ -84,6 +84,10 @@ v_hcn10_p1, Tmb_hcn10_p1 = loadtxt('./serpens_hcn10_smm4.txt', usecols=(0, 1), u
 """
 v_cn10_p1, Tmb_cn10_p1 = loadtxt('./serpens_cn10_smm4.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
+"""
+########## SERPENS, CO 6-5, center: 163.5 -142.7, range: 149.6 177.4 -156.6 -128.8 ##########
+"""
+v_co65_p1, Tmb_co65_p1 = loadtxt('./serpens_co65_smm4.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 ax1 = plt.subplot(1, 2, 1)
@@ -108,8 +112,8 @@ ax1.set_ylabel(r'$T_\mathrm{MB}$ [K] + Offset', fontsize = 14)
 major_ticks_x = np.arange(-80, 35, 20)                                              
 minor_ticks_x = np.arange(-80, 35, 10) 
 
-major_ticks_y = np.arange(0.0, 23, 4.0)                                              
-minor_ticks_y = np.arange(0.0, 22, 0.5) 
+major_ticks_y = np.arange(0.0, 32, 4.0)                                              
+minor_ticks_y = np.arange(0.0, 32, 0.5) 
 
 ax1.set_xticks(major_ticks_x)                                                       
 ax1.set_xticks(minor_ticks_x, minor=True)
@@ -162,7 +166,14 @@ ax1.axhline(y=4, xmin = -90.0, xmax = 40.0, color = 'green', linewidth=1, linest
 ax1.plot(v_cn10_p1, 2*Tmb_cn10_p1, color = 'black', linewidth=1.0, linestyle = '-')
 ax1.axhline(y=0, xmin = -90.0, xmax = 40.0, color = 'green', linewidth=1, linestyle = '-')
 
+"""
+########## SERPENS, CO ,- center: 163.5 -142.7, range: 149.6 177.4 -156.6 -128.8 ##########
+"""
+ax1.plot(v_co65_p1, Tmb_co65_p1/2 + 22, color = 'black', linewidth=1.0, linestyle = '-')
+ax1.axhline(y=22, xmin = -90.0, xmax = 40.0, color = 'green', linewidth=1, linestyle = '-')
 
+
+ax1.annotate(r'$\mathrm{CO\;\;6-5\;(\div2)}$', fontsize=14, xy=(-85.0, 25), textcoords='data')
 ax1.annotate(r'$\mathrm{C^{34}S\;\;3-2\;(\times3)}$', fontsize=14, xy=(-85.0, 20.0), textcoords='data')
 ax1.annotate(r'$\mathrm{CS\;\;3-2}$', fontsize=14, xy=(-85.0, 14.4), textcoords='data')
 #ax1.annotate(r'$\mathrm{H^{13}CN\;\;2-1}$', fontsize=12, xy=(-85.0, 12.5), textcoords='data'
@@ -170,13 +181,13 @@ ax1.annotate(r'$\mathrm{CS\;\;3-2}$', fontsize=14, xy=(-85.0, 14.4), textcoords=
 ax1.annotate(r'$\mathrm{H^{13}CN\;\;1-0\;(\times5)}$', fontsize=14, xy=(-85.0, 12.0), textcoords='data')
 ax1.annotate(r'$\mathrm{HCN\;\;1-0}$', fontsize=14, xy=(-85.0, 4.5), textcoords='data')
 ax1.annotate(r'$\mathrm{CN\;\;1-0\;(\times2)}$', fontsize=14, xy=(-85.0, 1.7), textcoords='data')
-ax1.annotate(r'$\mathrm{SMM4}$', color='blue', fontsize=18, xy=(-35.0, 21.5), textcoords='data')
+ax1.annotate(r'$\mathrm{SMM4\;\;Protostar}$', color='blue', fontsize=18, xy=(-80.0, 30.5), textcoords='data')
 
 
 
 # the upper and lower axis limits on a LEFT GRAPH
 ax1.set_xlim([-90.0, 40.0])
-ax1.set_ylim([-0.5, 22.5])
+ax1.set_ylim([-0.5, 32])
 
 
 
@@ -228,6 +239,10 @@ v_hcn10_p2, Tmb_hcn10_p2 = loadtxt('./serpens_hcn10_pos3.txt', usecols=(0, 1), u
 v_cn10_p2, Tmb_cn10_p2 = loadtxt('./serpens_cn10_pos3.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
+"""
+########## SERPENS, CO 6-5, center: 163.5 -142.7, range: 149.6 177.4 -156.6 -128.8 ##########
+"""
+v_co65_p2, Tmb_co65_p2 = loadtxt('./serpens_co65_pos3.txt', usecols=(0, 1), unpack=True, skiprows=1)
 
 
 
@@ -299,7 +314,14 @@ ax2.axhline(y=4, xmin = -90.0, xmax = 40.0, color = 'green', linewidth=1.0, line
 ax2.plot(v_cn10_p2, 2*Tmb_cn10_p2, color = 'black', linewidth=1.0, linestyle = '-')
 ax2.axhline(y=0, xmin = -90.0, xmax = 40.0, color = 'green', linewidth=1.0, linestyle = '-')
 
+"""
+########## SERPENS, CO ,- center: 163.5 -142.7, range: 149.6 177.4 -156.6 -128.8 ##########
+"""
+ax2.plot(v_co65_p2, Tmb_co65_p2 + 22, color = 'black', linewidth=1.0, linestyle = '-')
+ax2.axhline(y=22, xmin = -90.0, xmax = 40.0, color = 'green', linewidth=1, linestyle = '-')
 
+
+ax2.annotate(r'$\mathrm{CO\;\;6-5}$', fontsize=14, xy=(-85.0, 25), textcoords='data')
 ax2.annotate(r'$\mathrm{C^{34}S\;\;3-2\;(\times3)}$', fontsize=14, xy=(-85.0, 20.0), textcoords='data')
 ax2.annotate(r'$\mathrm{CS\;\;3-2}$', fontsize=14, xy=(-85.0, 14.4), textcoords='data')
 #ax2.annotate(r'$\mathrm{H^{13}CN\;\;2-1}$', fontsize=12, xy=(-85.0, 12.5), textcoords='data'
@@ -307,13 +329,13 @@ ax2.annotate(r'$\mathrm{CS\;\;3-2}$', fontsize=14, xy=(-85.0, 14.4), textcoords=
 ax2.annotate(r'$\mathrm{H^{13}CN\;\;1-0\;(\times5)}$', fontsize=14, xy=(-85.0, 12.0), textcoords='data')
 ax2.annotate(r'$\mathrm{HCN\;\;1-0}$', fontsize=14, xy=(-85.0, 4.5), textcoords='data')
 ax2.annotate(r'$\mathrm{CN\;\;1-0\;(\times2)}$', fontsize=14, xy=(-85.0, 1.7), textcoords='data')
-ax2.annotate(r'$\mathrm{Outflow\;3}$', color='blue', fontsize=18, xy=(-40.0, 21.5), textcoords='data')
+ax2.annotate(r'$\mathrm{SMM4\;\;Outflow\;3}$', color='blue', fontsize=18, xy=(-80.0, 30.5), textcoords='data')
 
 
 
 # the upper and lower axis limits on a RIGHT GRAPH
 ax2.set_xlim([-90.0, 40.0])
-ax2.set_ylim([-0.5, 22.5])
+ax2.set_ylim([-0.5, 32])
 
 
 

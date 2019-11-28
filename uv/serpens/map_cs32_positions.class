@@ -124,11 +124,11 @@ dele /var h
     greg\pen /colour 6 /weight 3
     greg1\set marker 4 1 .2 0
     set coord user
-    greg1\draw marker 134.064 -52.2
+    greg1\draw marker 138.864 -162.60
     greg\pen /colour 0 /weight 1
     set font duplex
     set character 0.250
-    greg1\draw text 134.064 -42.2 "5" 
+    greg1\draw text 138.864 -152.600 "5" 
   
 
 !outflows
@@ -300,9 +300,9 @@ greg\set character 0.4
 greg\label "\GD\Gd (Arcsec) " /y
 greg\label "\GD\Ga (Arcsec) " /x
     greg\set character 0.4
-	greg\draw text 80 320 "\G| \RT\DM\DB \R[K km/s]"
+	greg\draw text 80 200 "\G| \RT\DM\DB \R[K km/s]"
     greg\set character 0.3
-	greg\draw text 170 150 "CS J=3-2"
+	greg\draw text 170 100 "CS J=3-2"
 
 !set viewport 0.05 0.3 0.06 0.4
 !!file in l483_12co65_5x5.apex

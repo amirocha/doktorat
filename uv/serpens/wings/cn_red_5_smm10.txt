@@ -1,0 +1,9 @@
+!
+! 14-NOV-2019 22:01:23
+! Input file  : ../serpens_cn10_conv.30m
+! Input command: ANALYSE\PRINT area 10.1 13 /OUTPUT cn_red_5_smm10.txt
+!
+ 415     33.286     22.550  0.30977    
+ 416     47.936     22.550  0.17495    
+ 443     47.936     37.200  0.13804    
+ 444     33.286     37.200  0.25870    

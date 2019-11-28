@@ -3,7 +3,7 @@
 #!/usr/bin/python3.5
 
 # name the output file
-psname = 'test.eps'
+psname = 'test_cn.eps'
 
 # import packages
 from numpy import *
@@ -20,7 +20,7 @@ import pandas as pd
 rms = 2.139E-02 # rms taken from CLASS
 rms_3 = 3*rms
 
-input_file='serpens_hcn10_pos5.txt'
+input_file='serpens_hcn10_smm5.txt'
 # read the spectrum
 spec_df = pd.read_table(input_file, delim_whitespace=True, header=None)
 
@@ -136,14 +136,21 @@ plt.axhline(y=rms, xmin = -60.0, xmax = 40.0, color = 'green', linewidth=1.5, li
 
 
 # plot the vertical lines for x = min1 and x = min2
-plt.axvline(x=final1_df[1].ix[min1].round(1), color='red', linestyle='--')
-plt.axvline(x=final2_df[1].ix[min2].round(1), color='red', linestyle='--')
-
-
-
+#plt.axvline(x=final1_df[1].ix[min1].round(1), color='red', linestyle='--')
+#plt.axvline(x=final2_df[1].ix[min2].round(1), color='red', linestyle='--')
+'''CN lines
+plt.axvline(x=7.5+8.5, color='red', linestyle='--')
+plt.axvline(x=-22.878+8.5, color='red', linestyle='--')
+plt.axvline(x=-47.42+8.5, color='red', linestyle='--')
+plt.axvline(x=-77.76+8.5, color='red', linestyle='--')
+plt.axvline(x=8.5, color='red', linestyle='--')
+'''
+plt.axvline(x=7.6, color='red', linestyle='--')
+plt.axvline(x=-7.065+7.6, color='red', linestyle='--')
+plt.axvline(x=4.8396+7.6, color='red', linestyle='--')
 
 # the upper and lower axis limits on a LEFT GRAPH
-ax.set_xlim([-10.0, 40.0])
+ax.set_xlim([-100.0, 30.0])
 ax.set_ylim([-0.1, 1.2])
 
 

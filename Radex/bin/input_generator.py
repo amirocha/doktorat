@@ -2,7 +2,7 @@
 TEMPERATURES = ['30', '75', '200']
 H2_DENSITIES = ['1e4', '1e5', '1e6']
 MOLECULES = ['hcn', 'cs', 'cn']
-COLUMN_DENSITIES = ['1e12', '1e13', '1e14']
+COLUMN_DENSITIES = ['1e6', '1e7', '1e8', '1e9', '1e10']
 
 
 def generate_data(mol, temp, H2_dens, col_dens):

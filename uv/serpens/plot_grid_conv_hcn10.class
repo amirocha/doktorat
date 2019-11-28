@@ -7,7 +7,7 @@
 ! CREATED: 		09.06.2017
 
 
-file in SMM1_13CO_6-5.apex	!	read a file
+file in serpens_hcn10_red.30m	!	read a file
 find /all	!	find it
 
 clear	!	clear the window with plot
@@ -62,5 +62,5 @@ set mode y -1 6.0	!	Zoom in Y axis
 
 map /grid /nolabel	!	Plot a grid map, but without labels (they have been created already)
 
-sys "rm -f 13co65_grid_conv.eps"	!	Remove the old .eps file
-hardcopy "13co65_grid_conv.eps"		!	Save the new plot as .eps file
+sys "rm -f hcn10_grid.eps"	!	Remove the old .eps file
+hardcopy "hcn10_grid.eps"		!	Save the new plot as .eps file
