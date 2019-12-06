@@ -3,7 +3,7 @@
 #!/usr/bin/python3.5
 
 # name the output file
-psname = 'test_cn.eps'
+psname = 'smm3r_hcn.eps'
 
 # import packages
 from numpy import *
@@ -17,17 +17,17 @@ import pandas as pd
 # find the x ranges (in km/s), which are above 3RMS
 # level - for flux integration of line
 
-rms = 2.139E-02 # rms taken from CLASS
+rms = 4.584E-02 # rms taken from CLASS
 rms_3 = 3*rms
 
-input_file='serpens_hcn10_smm5.txt'
+input_file='serpens_hcn10_smm3r.txt'
 # read the spectrum
 spec_df = pd.read_table(input_file, delim_whitespace=True, header=None)
 
 ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ###
 # left (x1) and right (x2) ranges in which we are looking for minima 
-x1_ran_df = spec_df[(spec_df[0] > -3) & (spec_df[0] < 0.)]    #change ranges!! 
-x2_ran_df = spec_df[(spec_df[0] > 0) & (spec_df[0] < 16)]
+x1_ran_df = spec_df[(spec_df[0] > -10) & (spec_df[0] < -4.2)]    #change ranges!! 
+x2_ran_df = spec_df[(spec_df[0] > 14) & (spec_df[0] < 25)]
 
 
 # for both X ranges take the column with flux and calculate abs(yi - 3rms)
@@ -136,8 +136,8 @@ plt.axhline(y=rms, xmin = -60.0, xmax = 40.0, color = 'green', linewidth=1.5, li
 
 
 # plot the vertical lines for x = min1 and x = min2
-#plt.axvline(x=final1_df[1].ix[min1].round(1), color='red', linestyle='--')
-#plt.axvline(x=final2_df[1].ix[min2].round(1), color='red', linestyle='--')
+plt.axvline(x=final1_df[1].ix[min1].round(1), color='red', linestyle='--')
+plt.axvline(x=final2_df[1].ix[min2].round(1), color='red', linestyle='--')
 '''CN lines
 plt.axvline(x=7.5+8.5, color='red', linestyle='--')
 plt.axvline(x=-22.878+8.5, color='red', linestyle='--')
@@ -145,9 +145,9 @@ plt.axvline(x=-47.42+8.5, color='red', linestyle='--')
 plt.axvline(x=-77.76+8.5, color='red', linestyle='--')
 plt.axvline(x=8.5, color='red', linestyle='--')
 '''
-plt.axvline(x=7.6, color='red', linestyle='--')
-plt.axvline(x=-7.065+7.6, color='red', linestyle='--')
-plt.axvline(x=4.8396+7.6, color='red', linestyle='--')
+#plt.axvline(x=7.6, color='red', linestyle='--')
+#plt.axvline(x=-7.065+7.6, color='red', linestyle='--')
+#plt.axvline(x=4.8396+7.6, color='red', linestyle='--')
 
 # the upper and lower axis limits on a LEFT GRAPH
 ax.set_xlim([-100.0, 30.0])

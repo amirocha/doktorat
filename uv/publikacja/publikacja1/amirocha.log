@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2019.5.16)  27 NOV 2019 00:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2019.5.16)  6 DEC 2019 15:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -884,6 +884,9 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 LaTeX Warning: Label `spectra' multiply defined.
 
 
+LaTeX Warning: Label `G0' multiply defined.
+
+
 LaTeX Warning: Label `seds' multiply defined.
 
 
@@ -891,45 +894,6 @@ LaTeX Warning: Label `table:fluxes' multiply defined.
 
 
 LaTeX Warning: Label `reactions' multiply defined.
-
-
-LaTeX Warning: Label `model1' multiply defined.
-
-
-LaTeX Warning: Label `sub@model1' multiply defined.
-
-
-LaTeX Warning: Label `model2' multiply defined.
-
-
-LaTeX Warning: Label `sub@model2' multiply defined.
-
-
-LaTeX Warning: Label `model3' multiply defined.
-
-
-LaTeX Warning: Label `sub@model3' multiply defined.
-
-
-LaTeX Warning: Label `model4' multiply defined.
-
-
-LaTeX Warning: Label `sub@model4' multiply defined.
-
-
-LaTeX Warning: Label `model5' multiply defined.
-
-
-LaTeX Warning: Label `sub@model5' multiply defined.
-
-
-LaTeX Warning: Label `model6' multiply defined.
-
-
-LaTeX Warning: Label `sub@model6' multiply defined.
-
-
-LaTeX Warning: Label `RADEX_models' multiply defined.
 
 )
 \openout1 = `amirocha.aux'.
@@ -1089,67 +1053,80 @@ LaTeX Font Info:    Font shape `T1/txss/m/it' in size <10> not available
 (Font)              Font shape `T1/txss/m/sl' tried instead on input line 239.
 LaTeX Font Info:    Font shape `T1/txss/m/sl' will be
 (Font)              scaled to size 9.49997pt on input line 239.
- [2]
+
+
+Package natbib Warning: Citation `Kir13' on page 2 undefined on input line 256.
+
+
+
+Package natbib Warning: Citation `Kon15' on page 2 undefined on input line 256.
+
+
+[2]
 File: serpens_hcn10.eps Graphic file (type eps)
  <serpens_hcn10.eps>
 File: serpens_cs32.eps Graphic file (type eps)
  <serpens_cs32.eps>
 File: serpens_cn10.eps Graphic file (type eps)
-
-<serpens_cn10.eps>
+ <serpens_cn10.eps>
 File: serpens_co65.eps Graphic file (type eps)
- <serpens_co65.eps>
+
+<serpens_co65.eps>
 File: serpens_spectra_smm4+h13cn21.eps Graphic file (type eps)
  <serpens_spectra_smm4+h13cn21.eps>
-Overfull \hbox (37.5293pt too wide) in paragraph at lines 356--382
- [][] 
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[3]
+ [3]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
-[5]
+Underfull \vbox (badness 1762) has occurred while \output is active []
+
+ [5]
 File: RADEX_CN_HCN_200K_1e5.eps Graphic file (type eps)
- <RADEX_CN_HCN_200K_1e5.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 460--464
+
+<RADEX_CN_HCN_200K_1e5.eps>
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 456--460
  [][] 
  []
 
 
-Overfull \hbox (19.53322pt too wide) in paragraph at lines 471--487
+Overfull \hbox (19.53322pt too wide) in paragraph at lines 467--483
  [][] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6]
+[6]
 ! Missing } inserted.
 <inserted text> 
                 }
-l.542 \end{equation}
+l.539 \end{equation}
                     
 ? 
 File: starless.eps Graphic file (type eps)
 <starless.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 623--628
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 617--622
  [][] 
  []
 
 File: AV5.eps Graphic file (type eps)
 <AV5.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 635--638
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 629--632
  [][] 
  []
 
 [7]
+File: G0_50K.eps Graphic file (type eps)
+ <G0_50K.eps>
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 677--679
+ [][] 
+ []
+
 File: G0_200K.eps Graphic file (type eps)
- <G0_200K.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 691--694
+<G0_200K.eps>
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 685--688
  [][] 
  []
 
@@ -1157,26 +1134,26 @@ File: serpens_hcn10_and_cn10.eps Graphic file (type eps)
 <serpens_hcn10_and_cn10.eps> [8]
 File: reactions-mediumG0.eps Graphic file (type eps)
  <reactions-mediumG0.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 778--779
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 772--773
 [][] 
  []
 
 File: destruction_HCN_dominant.eps Graphic file (type eps)
 <destruction_HCN_dominant.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 784--787
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 778--781
 [][] 
  []
 
 [9]
-Underfull \vbox (badness 1137) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10]
-(./amirocha.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+(./amirocha.bbl [11]
+Underfull \hbox (badness 10000) in paragraph at lines 336--338
 []\T1/txr/m/n/8 Pickett, H. M., Poyn-ter, R. L., Co-hen, E. A., et al. 1998,
  []
 
-[11]) [12
+) [12
 
 ]
 File: serpens_seds.eps Graphic file (type eps)
@@ -1195,71 +1172,66 @@ File: serpens_spectra_3.eps Graphic file (type eps)
 File: serpens_spectra_4.eps Graphic file (type eps)
 
 <serpens_spectra_4.eps>
+File: serpens_spectra_5.eps Graphic file (type eps)
+ <serpens_spectra_5.eps>
 File: RADEX_CN_HCN_30K_1e4.eps Graphic file (type eps)
  <RADEX_CN_HCN_30K_1e4.eps>
 File: RADEX_CN_HCN_75K_1e4.eps Graphic file (type eps)
- <RADEX_CN_HCN_75K_1e4.eps>
+
+<RADEX_CN_HCN_75K_1e4.eps>
 File: RADEX_CN_HCN_200K_1e4.eps Graphic file (type eps)
-
-<RADEX_CN_HCN_200K_1e4.eps>
+ <RADEX_CN_HCN_200K_1e4.eps>
 File: RADEX_CN_HCN_30K_1e5.eps Graphic file (type eps)
- <RADEX_CN_HCN_30K_1e5.eps>
+
+<RADEX_CN_HCN_30K_1e5.eps>
 File: RADEX_CN_HCN_75K_1e5.eps Graphic file (type eps)
-
-<RADEX_CN_HCN_75K_1e5.eps>
+ <RADEX_CN_HCN_75K_1e5.eps>
 File: RADEX_CN_HCN_30K_1e6.eps Graphic file (type eps)
- <RADEX_CN_HCN_30K_1e6.eps>
+
+<RADEX_CN_HCN_30K_1e6.eps>
 File: RADEX_CN_HCN_75K_1e6.eps Graphic file (type eps)
-
-<RADEX_CN_HCN_75K_1e6.eps>
+ <RADEX_CN_HCN_75K_1e6.eps>
 File: RADEX_CN_HCN_200K_1e6.eps Graphic file (type eps)
- <RADEX_CN_HCN_200K_1e6.eps>
 
-LaTeX Warning: Float too large for page by 25.74976pt on input line 1204.
+<RADEX_CN_HCN_200K_1e6.eps>
+
+LaTeX Warning: Float too large for page by 25.74976pt on input line 1234.
 
 File: destruction_CN_dominant.eps Graphic file (type eps)
 <destruction_CN_dominant.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 1241--1243
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 1271--1273
 [][] 
  []
 
 File: production_CN_dominant.eps Graphic file (type eps)
 <production_CN_dominant.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 1246--1247
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 1276--1277
 [][] 
  []
 
 File: production_HCN_dominant.eps Graphic file (type eps)
 <production_HCN_dominant.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 1252--1253
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 1282--1283
 [][] 
  []
 
 File: reactions-smallG0.eps Graphic file (type eps)
 <reactions-smallG0.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 1258--1259
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 1288--1289
 [][] 
  []
 
 File: reations_large.eps Graphic file (type eps)
 <reations_large.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 1264--1265
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 1294--1295
 [][] 
  []
 
-File: CN_Lbol_correlation.eps Graphic file (type eps)
-<CN_Lbol_correlation.eps>
-File: CN_Tbol_correlation.eps Graphic file (type eps)
- <CN_Tbol_correlation.eps>
-File: HCN_Lbol_correlation.eps Graphic file (type eps)
- <HCN_Lbol_correlation.eps>
-File: HCN_Tbol_correlation.eps Graphic file (type eps)
+File: Lbol_Tbol_correlations.eps Graphic file (type eps)
+<Lbol_Tbol_correlations.eps>
 
-<HCN_Tbol_correlation.eps>
-File: CS_Lbol_correlation.eps Graphic file (type eps)
- <CS_Lbol_correlation.eps>
-File: CS_Tbol_correlation.eps Graphic file (type eps)
- <CS_Tbol_correlation.eps>
+Package natbib Warning: There were undefined citations.
+
 [13
 
 ] [14
@@ -1270,12 +1242,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7930 strings out of 494924
- 109615 string characters out of 6180768
- 236743 words of memory out of 5000000
- 11021 multiletter control sequences out of 15000+600000
- 63905 words of font info for 108 fonts, out of 8000000 for 9000
+ 7924 strings out of 494924
+ 109349 string characters out of 6180768
+ 241948 words of memory out of 5000000
+ 11018 multiletter control sequences out of 15000+600000
+ 65604 words of font info for 109 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,15n,77p,2020b,582s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on amirocha.dvi (22 pages, 101124 bytes).
+Output written on amirocha.dvi (22 pages, 104092 bytes).

@@ -94,7 +94,7 @@ def make_picture(new_lists):
 	plt.figure()
 	#plt.title(u"Molecular abudances time evolution")
 	plt.ylabel(r"$\log(\frac{N(X)}{N(H_2)})$", fontsize=14)
-	plt.xlabel(r"$\log(t/yr)$]", fontsize=14)
+	plt.xlabel(r"$\log(t/yr)$", fontsize=14)
 	plt.plot(new_lists[0], new_lists[1], 'k-')
 	plt.plot(new_lists[0], new_lists[2], 'r-')
 	plt.plot(new_lists[0], new_lists[3], 'b-')

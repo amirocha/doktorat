@@ -8,7 +8,7 @@ from scipy.stats import linregress as regr
 
 RATIO = [-2, -1, 0, 1, 2]
 TEMP = '30'
-H2_dens = '1e4'
+H2_dens = '1e5'
 
 
 def read_data(file_name):
@@ -50,8 +50,8 @@ def make_picture(ratio, fluxes, low_obs_log, high_obs_log, low_obs_log_smm, high
 	ax.axvline(limits2[1], linestyle = '--', color = 'navy')
 	plt.ylabel(r'$\log(\frac{I_\mathrm{CN}}{I_\mathrm{HCN}}$)', size=16)
 	plt.xlabel(r'$\log(\frac{N_\mathrm{CN}}{N_\mathrm{HCN}}$)', size=16)
-	props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
-	ax.text(0.1, 0.8, 'T = '+TEMP+' K \n $n_{H_2} = 10^{4}$ cm$^{-3}$', transform=ax.transAxes, fontsize=14, verticalalignment='bottom', bbox=props)
+	props = dict(boxstyle='round', facecolor='white', alpha=0.5)
+	ax.text(0.1, 0.8, 'T = '+TEMP+' K \n $n_{H_2} = 10^{5}$ cm$^{-3}$', transform=ax.transAxes, fontsize=14, verticalalignment='bottom', bbox=props)
 
 	plt.savefig('RADEX_CN_HCN_'+TEMP+'K_'+H2_dens+'.pdf')
 	plt.close()

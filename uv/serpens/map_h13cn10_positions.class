@@ -299,7 +299,7 @@ greg\set character 0.4
 greg\label "\GD\Gd (Arcsec) " /y
 greg\label "\GD\Ga (Arcsec) " /x
     greg\set character 0.4
-	greg\draw text 80 200 "\G| \RT\DM\DB \R[K km/s]"
+	greg\draw text 80 200 "\G| \RT\DM\DB \R(K km/s)"
     greg\set character 0.3
 	greg\draw text 160 100 "H\U1\U3CN J=1-0"
 

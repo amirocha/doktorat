@@ -109,7 +109,7 @@ fig.subplots_adjust(wspace=0) # width spaces
 FIRST PANEL - CREATE A PLOT
 """
 #ax1.set_xlabel(r'$\mathrm{V_{LSR}\;[km/s]}$', fontsize = 14)
-ax1.set_ylabel(r'$T_\mathrm{MB}$ [K] + Offset', fontsize = 14)
+ax1.set_ylabel(r'$T_\mathrm{MB}$ (K) + Offset', fontsize = 14)
 
 
 # major x ticks every 20, minor ticks every 10
@@ -264,7 +264,7 @@ v_co65_p2, Tmb_co65_p2 = loadtxt('./serpens_co65_pos3.txt', usecols=(0, 1), unpa
 SECOND PANEL - CREATE A PLOT
 """
 #ax2.set_xlabel(r'$\mathrm{V_{LSR}\;[km/s]}$', fontsize = 14)
-fig.text(0.5, 0.04, r'$\mathrm{V_{LSR}\;[km/s]}$', fontsize = 14, ha='center')
+fig.text(0.5, 0.04, r'$v_{\mathrm{LSR}}\;$(km s$^{-1}$)', fontsize = 14, ha='center')
 
 
 # major x ticks every 20, minor ticks every 10
@@ -343,7 +343,7 @@ ax2.annotate(r'$\mathrm{H^{13}CN\;\;2-1\;(\times3)}$', fontsize=12, xy=(-85.0, 1
 ax2.annotate(r'$\mathrm{H^{13}CN\;\;1-0\;(\times5)}$', fontsize=12, xy=(-85.0, 11.5), textcoords='data')
 ax2.annotate(r'$\mathrm{HCN\;\;1-0}$', fontsize=12, xy=(-85.0, 4.5), textcoords='data')
 ax2.annotate(r'$\mathrm{CN\;\;1-0}$', fontsize=12, xy=(-85.0, 1.7), textcoords='data')
-ax2.annotate(r'$\mathrm{SMM4\;\;Outflow\;3}$', color='blue', fontsize=18, xy=(-80.0, 30.5), textcoords='data')
+ax2.annotate(r'$\mathrm{SMM4\;\;Outflow}$', color='blue', fontsize=18, xy=(-80.0, 30.5), textcoords='data')
 
 
 

@@ -105,7 +105,7 @@ fig.subplots_adjust(wspace=0) # width spaces
 FIRST PANEL - CREATE A PLOT
 """
 #ax1.set_xlabel(r'$\mathrm{V_{LSR}\;[km/s]}$', fontsize = 14)
-ax1.set_ylabel(r'$T_\mathrm{MB}$ [K] + Offset', fontsize = 14)
+ax1.set_ylabel(r'$T_\mathrm{MB}$ (K) + Offset', fontsize = 14)
 
 
 # major x ticks every 20, minor ticks every 10

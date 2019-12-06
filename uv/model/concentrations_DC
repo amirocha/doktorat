@@ -1,7 +1,7 @@
 %!PS-Adobe-3.0 EPSF-3.0
 %%Title: concentrations_DC
 %%Creator: matplotlib version 3.0.3, http://matplotlib.org/
-%%CreationDate: Mon Jul 29 01:21:24 2019
+%%CreationDate: Fri Nov 29 14:53:27 2019
 %%Orientation: portrait
 %%BoundingBox: 75 223 536 568
 %%EndComments
@@ -42,7 +42,7 @@ newpath
 /FontMatrix[.001 0 0 .001 0 0]def
 /FontBBox[-1021 -463 1793 1232]def
 /FontType 3 def
-/Encoding [ /parenleft /parenright /slash /zero /one /two /three /four /five /six /seven /eight /nine /C /H /N /S /bracketright /g /l /o /minus ] def
+/Encoding [ /parenleft /parenright /slash /zero /one /two /three /four /five /six /seven /eight /nine /C /H /N /S /g /l /o /minus ] def
 /FontInfo 10 dict dup begin
 /FamilyName (DejaVu Sans) def
 /FullName (DejaVu Sans) def
@@ -54,7 +54,7 @@ newpath
 /UnderlinePosition -130 def
 /UnderlineThickness 90 def
 end readonly def
-/CharStrings 23 dict dup begin
+/CharStrings 22 dict dup begin
 /.notdef 0 def
 /parenleft{390 0 86 -131 310 759 _sc
 310 759 _m
@@ -407,17 +407,6 @@ _cl}_d
 356 742 390 739 426 733 _c
 461 727 497 717 535 705 _c
 }_e{_cl}_e}_d
-/bracketright{390 0 97 -131 304 760 _sc
-304 760 _m
-304 -131 _l
-97 -131 _l
-97 -61 _l
-214 -61 _l
-214 690 _l
-97 690 _l
-97 760 _l
-304 760 _l
-_cl}_d
 /g{{635 0 55 -207 544 560 _sc
 454 280 _m
 454 344 440 395 414 431 _c
@@ -855,7 +844,7 @@ gsave
 0.000000 0.000000 m /eight glyphshow
 grestore
 gsave
-205.160000 6.344125 translate
+207.660000 6.344125 translate
 0.000000 rotate
 /DejaVuSans findfont
 14.0 scalefont
@@ -898,9 +887,6 @@ setfont
 setfont
 51.050781 0.359375 moveto
 /parenright glyphshow
-
-56.512695 0.359375 moveto
-/bracketright glyphshow
 
 
 grestore

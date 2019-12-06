@@ -1,4 +1,4 @@
-\begin{thebibliography}{81}
+\begin{thebibliography}{80}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Andr{\'e}} {et~al.}(2010){Andr{\'e}}, {Men'shchikov}, {Bontemps},
@@ -156,6 +156,15 @@
 {Goldsmith}, P.~F., {Snell}, R.~L., {Hemeon-Heyer}, M., \& {Langer}, W.~D.
   1984, \apj, 286, 599
 
+\bibitem[{{Graves} {et~al.}(2010){Graves}, {Richer}, {Buckle}, {Duarte-Cabral},
+  {Fuller}, {Hogerheijde}, {Owen}, {Brunt}, {Butner}, {Cavanagh},
+  {Chrysostomou}, {Curtis}, {Davis}, {Etxaluze}, {di Francesco}, {Friberg},
+  {Friesen}, {Greaves}, {Hatchell}, {Johnstone}, {Matthews}, {Matthews},
+  {Matzner}, {Nutter}, {Rawlings}, {Roberts}, {Sadavoy}, {Simpson}, {Tothill},
+  {Tsamis}, {Viti}, {Ward-Thompson}, {White}, {Wouterloot}, \& {Yates}}]{Gra10}
+{Graves}, S.~F., {Richer}, J.~S., {Buckle}, J.~V., {et~al.} 2010, \mnras, 409,
+  1412
+
 \bibitem[{{Green} {et~al.}(2013){Green}, {Evans}, {J{\o}rgensen}, {Herczeg},
   {Kristensen}, {Lee}, {Dionatos}, {Yildiz}, {Salyk}, {Meeus}, {Bouwman},
   {Visser}, {Bergin}, {van Dishoeck}, {Rascati}, {Karska}, {van Kempen},
@@ -197,16 +206,6 @@
   {Wright}, {Xu}, {Zavagno}, {Zemcov}, {Zhang}, \& {Zonca}}]{Gri10}
 {Griffin}, M.~J., {Abergel}, A., {Abreu}, A., {et~al.} 2010, \aap, 518, L3
 
-\bibitem[{{G{\"u}sten} {et~al.}(2008){G{\"u}sten}, {Baryshev}, {Bell},
-  {Belloche}, {Graf}, {Hafok}, {Heyminck}, {Hochg{\"u}rtel}, {Honingh},
-  {Jacobs}, {Kasemann}, {Klein}, {Klein}, {Korn}, {Kr{\"a}mer}, {Leinz},
-  {Lundgren}, {Menten}, {Meyer}, {Muders}, {Pacek}, {Rabanus}, {Sch{\"a}fer},
-  {Schilke}, {Schneider}, {Stutzki}, {Wieching}, {Wunsch}, \&
-  {Wyrowski}}]{Gus08}
-{G{\"u}sten}, R., {Baryshev}, A., {Bell}, A., {et~al.} 2008, Society of
-  Photo-Optical Instrumentation Engineers (SPIE) Conference Series, Vol. 7020,
-  {Submillimeter heterodyne arrays for APEX}, 702010
-
 \bibitem[{{Han} {et~al.}(2015){Han}, {Zhou}, {Wang}, {Esimbek}, {Zhang}, \&
   {Wang}}]{Han15}
 {Han}, X.~H., {Zhou}, J.~J., {Wang}, J.~Z., {et~al.} 2015, Astronomy and
@@ -234,7 +233,7 @@
 
 \bibitem[{{Karska} {et~al.}(2013){Karska}, {Herczeg}, {van Dishoeck},
   {Wampfler}, {Kristensen}, {Goicoechea}, {Visser}, {Nisini}, {San
-  Jos{\'e}-Garc{\'{\i}}a}, {Bruderer}, {{\'S}niady}, {Doty}, {Fedele},
+  Jos{\'e}-Garc{\'\i}a}, {Bruderer}, {{\'S}niady}, {Doty}, {Fedele},
   {Y{\i}ld{\i}z}, {Benz}, {Bergin}, {Caselli}, {Herpin}, {Hogerheijde},
   {Johnstone}, {J{\o}rgensen}, {Liseau}, {Tafalla}, {van der Tak}, \&
   {Wyrowski}}]{Kar13}
@@ -254,21 +253,9 @@
 {Karska}, A., {Kristensen}, L.~E., {van Dishoeck}, E.~F., {et~al.} 2014, \aap,
   572, A9
 
-\bibitem[{{Kasemann} {et~al.}(2006){Kasemann}, {G{\"u}sten}, {Heyminck},
-  {Klein}, {Klein}, {Philipp}, {Korn}, {Schneider}, {Henseler}, {Baryshev}, \&
-  {Klapwijk}}]{Kas06}
-{Kasemann}, C., {G{\"u}sten}, R., {Heyminck}, S., {et~al.} 2006, Society of
-  Photo-Optical Instrumentation Engineers (SPIE) Conference Series, Vol. 6275,
-  {CHAMP $^{+}$: a powerful array receiver for APEX}, 62750N
-
 \bibitem[{{Klein} {et~al.}(2006){Klein}, {Philipp}, {Kr{\"a}mer}, {Kasemann},
   {G{\"u}sten}, \& {Menten}}]{Kle06}
 {Klein}, B., {Philipp}, S.~D., {Kr{\"a}mer}, I., {et~al.} 2006, \aap, 454, L29
-
-\bibitem[{{Kristensen} {et~al.}(2003){Kristensen}, {Gustafsson}, {Field},
-  {Callejo}, {Lemaire}, {Vannier}, \& {Pineau des For{\^e}ts}}]{Kri03}
-{Kristensen}, L.~E., {Gustafsson}, M., {Field}, D., {et~al.} 2003, \aap, 412,
-  727
 
 \bibitem[{{Kristensen} {et~al.}(2013){Kristensen}, {van Dishoeck}, {Benz},
   {Bruderer}, {Visser}, \& {Wampfler}}]{Kri13}
@@ -517,6 +504,12 @@
   {Risacher}, {van der Marel}, {van Weeren}, \& {Wyrowski}}]{Yil15}
 {Y{\i}ld{\i}z}, U.~A., {Kristensen}, L.~E., {van Dishoeck}, E.~F., {et~al.}
   2015, \aap, 576, A109
+
+\bibitem[{{Y{\i}ld{\i}z} {et~al.}(2013){Y{\i}ld{\i}z}, {Kristensen}, {van
+  Dishoeck}, {San Jos{\'e}-Garc{\'\i}a}, {Karska}, {Harsono}, {Tafalla},
+  {Fuente}, {Visser}, {J{\o}rgensen}, \& {Hogerheijde}}]{Yil13}
+{Y{\i}ld{\i}z}, U.~A., {Kristensen}, L.~E., {van Dishoeck}, E.~F., {et~al.}
+  2013, \aap, 556, A89
 
 \bibitem[{{Yvart} {et~al.}(2016){Yvart}, {Cabrit}, {Pineau des For{\^e}ts}, \&
   {Ferreira}}]{Yva16}

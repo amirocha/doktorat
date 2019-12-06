@@ -3,52 +3,45 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: amirocha.aux
 The style file: aa.bst
 Database file #1: amirocha.bib
-Repeated entry---line 862 of file amirocha.bib
- : @article{Kar13
- :               ,
-I'm skipping whatever remains of this entry
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Warning--empty publisher in Gus08
-Warning--empty publisher in Kas06
-You've used 81 entries,
+You've used 80 entries,
             3039 wiz_defined-function locations,
-            1254 strings with 42402 characters,
-and the built_in function-call counts, 90735 in all, are:
-= -- 6579
-> -- 12880
-< -- 14
-+ -- 4299
-- -- 4217
-* -- 8849
-:= -- 17126
-add.period$ -- 81
-call.type$ -- 81
-change.case$ -- 1729
-chr.to.int$ -- 80
-cite$ -- 83
-duplicate$ -- 1523
-empty$ -- 2145
-format.name$ -- 4426
-if$ -- 17585
+            1246 strings with 41932 characters,
+and the built_in function-call counts, 90178 in all, are:
+= -- 6526
+> -- 12869
+< -- 12
++ -- 4295
+- -- 4214
+* -- 8821
+:= -- 17057
+add.period$ -- 80
+call.type$ -- 80
+change.case$ -- 1724
+chr.to.int$ -- 79
+cite$ -- 80
+duplicate$ -- 1481
+empty$ -- 2096
+format.name$ -- 4421
+if$ -- 17450
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 80
-newline$ -- 247
-num.names$ -- 325
-pop$ -- 1730
+missing$ -- 79
+newline$ -- 244
+num.names$ -- 321
+pop$ -- 1714
 preamble$ -- 1
-purify$ -- 1729
+purify$ -- 1724
 quote$ -- 0
-skip$ -- 1313
+skip$ -- 1268
 stack$ -- 0
-substring$ -- 1705
-swap$ -- 39
-text.length$ -- 3
+substring$ -- 1683
+swap$ -- 11
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 723
-warning$ -- 2
-while$ -- 325
+type$ -- 720
+warning$ -- 0
+while$ -- 321
 width$ -- 0
-write$ -- 813
-(There was 1 error message)
+write$ -- 803

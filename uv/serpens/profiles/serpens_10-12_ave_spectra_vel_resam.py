@@ -10,7 +10,7 @@ beam size for other molecules.
 #!/usr/bin/python3.3
 
 # name the output file
-psname = 'serpens_10-12_spectra_vel_resam.eps'
+psname = 'serpens_spectra_4.eps'
 
 # import packages
 from numpy import *

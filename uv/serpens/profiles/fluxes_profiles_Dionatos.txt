@@ -1,0 +1,7 @@
+Protostar   Molecule   Region   Flux
+smm3r   cn10  total  11.954385
+smm3b   cn10  total  11.177179
+smm4b   cn10  total  10.219788
+smm3r   hcn10  total  15.113137
+smm3b   hcn10  total  13.012468
+smm4b   hcn10  total  22.134680

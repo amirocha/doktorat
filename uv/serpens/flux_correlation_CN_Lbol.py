@@ -2,7 +2,12 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy.stats as stat
+import math as m
 
+DIST=436. #Ortiz-Leon 2017
+L_sun = 3.86e26 #W  
+freq = {'CN': 113490985000}
+ 
 
 def read_data(filename):
 	file = open(filename,'r')
@@ -79,21 +84,36 @@ def sort_points(list_to_sort, other_list):
 	sorted_list = sorted(merged_list, key=lambda x: x[0])
 	return [elem[0] for elem in sorted_list], [elem[1] for elem in sorted_list]
 
+def calculate_Lbol_for_molecule(fluxes, mol):
+	Lbol_source = []
+
+	for line in fluxes:
+		new_line = []
+		for i in range(1,len(line)):
+			L_bol = (1e-26*line[i]*freq[mol]*4.0*m.pi*(DIST*3.0857e16)**2)/L_sun
+			new_line.append(L_bol)
+		Lbol_source.append(new_line)
+	print(Lbol_source)
+
+	return Lbol_source
+	
+
 def main():
 	data = read_data('SMM_fluxes') 
 	fluxes = create_flux_file(data)
+	Lbol_source = calculate_Lbol_for_molecule(fluxes, 'CN')
 	
 	Lbol = [78.7, 4.1, 6.9, 4.4, 3.7, 43.1, 0.2, 10.3, 6.2, 5.7]
 	Tbol = [35, 31, 35, 77, 151, 532, 15, 35, 83, 97]
 
-	CN_list = [point[1] for point in fluxes]
-	HCN_list = [point[2] for point in fluxes]
-	CS_list = [point[3] for point in fluxes]
-	Lbol, CN_list = sort_points(Lbol, CN_list)
+	CN_list = [point[0] for point in Lbol_source]
+	HCN_list = [point[1] for point in Lbol_source]
+	CS_list = [point[2] for point in Lbol_source]
+	Lbol, CN_list = sort_points(Lbol, Lbol_source)
 
 	a, b, stderr = fit_linear_regression(Lbol, CN_list)
 	pearson = calculate_pearson(Lbol, CN_list)
-	plot_correlation(Lbol, CN_list, a, b, pearson)
+	#plot_correlation(Lbol, CN_list, a, b, pearson)
     
 	#write_data('CN_Lbol_corr.txt', fluxes, a, b, pearson, stderr)
 if __name__ == '__main__':

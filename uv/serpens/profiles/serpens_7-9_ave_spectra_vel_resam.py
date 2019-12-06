@@ -10,7 +10,7 @@ beam size for other molecules.
 #!/usr/bin/python3.3
 
 # name the output file
-psname = 'serpens_7-9_spectra_vel_resam.eps'
+psname = 'serpens_spectra_3'
 
 # import packages
 from numpy import *
@@ -104,8 +104,8 @@ fig.subplots_adjust(wspace=0) # width spaces
 """
 FIRST PANEL - CREATE A PLOT
 """
-#ax1.set_xlabel(r'$\mathrm{V_{LSR}\;[km/s]}$', fontsize = 14)
-ax1.set_ylabel(r'$T_\mathrm{MB}$ [K] + Offset', fontsize = 14)
+#ax1.set_xlabel(r'$v_\mathrm{{LSR}\;$(km/s)}', fontsize = 14)
+ax1.set_ylabel(r'$T_\mathrm{MB}$ (K) + Offset', fontsize = 14)
 
 
 # major x ticks every 20, minor ticks every 10
@@ -249,7 +249,7 @@ v_co65_p2, Tmb_co65_p2 = loadtxt('./serpens_co65_smm12.txt', usecols=(0, 1), unp
 """
 SECOND PANEL - CREATE A PLOT
 """
-#ax2.set_xlabel(r'$\mathrm{V_{LSR}\;[km/s]}$', fontsize = 14)
+ax2.set_xlabel(r'$v_\mathrm{{LSR}}\;$(km s$^{-1}$)', fontsize = 14)
 
 
 # major x ticks every 20, minor ticks every 10
