@@ -1,0 +1,165 @@
+-----------------------------------------------------------------------
+=======================================================================
+
+       FFFFFF   LLL       UUU    UUU  XXX   XXX    EEEEEEE    RRRRRRR
+      FFF      LLL       UUU    UUU    XXX XXX    EEE        RRR  RRR
+     FFFFFF   LLL       UUU    UUU      XXX      EEEEEEE    RRRRRRR
+    FFF      LLL       UUU    UUU    XXX XXX    EEE        RRRRR
+   FFF      LLLLLLL   UUUUUUUUUU    XXX   XXX  EEEEEEE    RRR  RRRR
+
+=======================================================================
+-----------------------------------------------------------------------
+
+Fluxer allows extraction of spectra from the data cube from an arbitrary 
+aligned slit. To do so, select 'Slit' in the 'Panel Mouse Mode' section.
+Fluxer also allows to plot a position velocity (PV) diagram.
+
+Available mouse button actions are summarized in 'Help->Mouse Modes' from the
+main menubar.
+
+The length (in spectral direction) of the extracted spectra can be chosen to
+be either the length that is displayed in the Plot window (and controlled by
+the parameter 'half # of slices' left in the Plot seciotn of the GUI) or the
+full length of the spectra. Be aware that extracting full length spectra may
+take some time.
+
+
+Slit extraction :
+-----------------
+
+Available mouse button actions are:
+
+   - Left click-hold-move defines the slit. The slit is plotted in both panel
+        windows. 
+
+   - Right click extracts the spectra from the slit and saves the
+   	   result to a fitsfile.
+
+   - Middle click invokes a GUI that allows to set the slit parameters like,
+   	    stepwidth, the slit width and the oversampling factor for
+   	    extracting the spectra.
+
+Slit parameters:
+
+   Half width of slit        : This is the half width of the slit. The true
+                               width is twice this number plus one.
+   Half step size along slit : This is the half step size along the slit. The
+                               true step size is twice this number plur one.
+
+                               -> The subapertures have a size of 
+                               (2*halfwidth+1)^2
+
+   Sampling                  : Spectra are extracted by oversampling the data
+                               cube in all angular axes. Sampling is the
+                               factor by which each slice of the 
+                               data cube is oversampled to get the value of
+                               the extracted spectrum at a specific location
+                               along the slit. 
+
+   Cancel                    : Closes this GUI and leaves the settings
+                               unchanged. 
+
+   Done                      : Above settings take effect after this button 
+                               has been pressed. The GUI is closed.
+
+The reference point of the slit (slit position 0) corresponds to the location
+(in data units) where the left mouse button has been pressed. It is displayed
+in red. 
+
+Data stored to fitsfile :
+-------------------------
+
+The stored data format is as follows:
+
+    The following keywords are added to the header:
+
+   Keyword      Value
+   'FLUXER'    : 'SLIT' This keyword is checked when viewing a PV diagramm
+                 using fluxer_plot_pv of from within Fluxer.
+   'ANCHORX'   : the x starting point of the slit in data coordinates
+   'ANCHORY'   : the y starting point of the slit in data coordinates
+   'ANGLE'     : the angle of the slit in radian. The angle is 0. at 9 o'clock
+                 and counts positive ccw.
+   'SAMPLING'  : the oversampling factor selected in the 'Extract slit
+                 spectra' dialog 
+   'SLITSTEP'  : the step size selected in the 'Extract slit
+                 spectra' dialog 
+   'SLITWIDT'  : the slit width in pixel
+   'CDELT2'    : the spacing of the wavelength axis
+   'CRPIX2'    : the reference pixel of the wavelength axis
+   'CRVAL2'    : the wavelength value at the reference pixel
+   'WUNIT'     : 'WAVE' if wavelengths are present, 'INDEX' if no wavelengths
+                 are present
+   'WUNIT2'    : 'Angstroem','Nm','Micron' unit of the wavelengths if
+                 wavelengths are present, 'Pixel' otherwise.
+
+   The fitsfile contains several extensions:
+   0. ext.  : the extracted spectra as an image with dimension [# of spectral
+              channels, # of spectra] 
+   1. ext.  : an image with same format as extension 0. 1: where a valid value
+              has been found (inside), 0 else (outside)
+   2. ext.  : an image with same format as extension 0 giving the number of
+              valid oversampled data elements per element. Since the extracted
+              spectra are averaged over the subaperture, the total flux can be
+              reconstructed by multiplying this image to extension 0 and
+              dividing by sampling^2  
+   3. ext.  : a vector with length (# of spectra + 1) giving the x positions
+              along the slit of the slit apertures in pixel. The difference
+              between the first and the last entry corresponds to the slit
+              length. 
+   4. ext.  : the image of the right panel window oversampled by Sampling.
+   5. ext.  : the image of the slit. This image has the same dimensions as the
+              extension 4.
+
+   Using the data:
+   The lines below show an example about how to use
+   the data to plot pv-diagrams.
+
+   a = readfits('test.fits',h)
+   x = readfits('test.fits',ext=3)
+   x = interpol(x,(n_elements(x)-1))
+   CRPIX2 = sxpar(h,'CRPIX2')
+   CDELT2 = sxpar(h,'CDELT2')
+   CRVAL2 = sxpar(h,'CRVAL2')
+   WAVE   = sxpar(h,'WUNIT') eq 'WAVE'
+   nda = size(a)
+   l   = (dindgen(nda(2))-(CRPIX2-1))*CDELT2+CRVAL2
+   c   = 12345   ; here you have to define the center wavelength
+   v   = WAVE ? ((l-c)*2.998D5/c) : (l-c)
+   contour, a, x, v, /nodata, xst=1, yst=1
+   tvimage, bytscl(a,min(a),max(a)),/overplot
+   axis, xaxis=0,/xst,xtitle='[pixel]'
+   axis, xaxis=1,/xst
+   axis, yaxis=0,/yst,ytitle=(WAVE ? '[km/s]':'[Slice]')
+   axis, yaxis=1,/yst
+
+
+
+Plot PV diagram:
+----------------
+If you have extracted spectra from a slit (see 'Slit extraction') you can plot
+a pv diagram directly from the main GUI (Tools->Plot PV diagram).
+This starts the Fluxer PV Viewer GUI.
+
+Parameters can be set in the left area of the GUI, the pv diagram is shown in
+the middle, and the slit arrangement is shown to the right together with a
+additional infos.
+
+Parameters:
+   Center wavelength  : Here you define the center wavelength in units as
+                        specified. This wavelength corresponds zero velocity. 
+   Minimum data value : The minimum data value to be plotted.
+   Maximum data value : The maximum data value to be plotted.
+   Oversampling       : The pv diagram can be oversampled to get smoother
+                        pv diagrams.
+   IDL colortable     : an IDL colortable index
+   Image Scaling      : Either 
+   	 	      	'Linear'  for linear image scaling
+                        'Log'     for logarithmic image scaling
+                        'Asinh'   for Asinh image scaling
+   Quit               : Quits the GUI
+   Write to PS        : Writes the pv diagram to a ps file.
+
+This GUI is intended as a quick viewer. For more sophisticated plots, you find
+a few IDL lines in 'Slit extraction' explaining how to read the data.   
+

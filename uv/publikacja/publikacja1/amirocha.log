@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2019.5.16)  6 DEC 2019 15:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2019.5.16)  2 APR 2020 20:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -881,19 +881,10 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 ))
 (./amirocha.aux
 
-LaTeX Warning: Label `spectra' multiply defined.
-
-
-LaTeX Warning: Label `G0' multiply defined.
-
-
 LaTeX Warning: Label `seds' multiply defined.
 
 
-LaTeX Warning: Label `table:fluxes' multiply defined.
-
-
-LaTeX Warning: Label `reactions' multiply defined.
+LaTeX Warning: Label `eq8' multiply defined.
 
 )
 \openout1 = `amirocha.aux'.
@@ -972,95 +963,82 @@ File: t1txr.fd 2000/12/15 v3.1
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 104.
-
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 97.
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 104.
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 104.
-
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 97.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 97.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsya on input line 104.
-
+LaTeX Font Info:    Try loading font information for U+txsya on input line 97.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 104.
-
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 97.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txmia on input line 104.
-
+LaTeX Font Info:    Try loading font information for U+txmia on input line 97.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 104.
-
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 97.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for T1+txss on input line 104.
-
+LaTeX Font Info:    Try loading font information for T1+txss on input line 97.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txss.fd
 File: t1txss.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 16.41594pt on input line 104.
+(Font)              scaled to size 16.41594pt on input line 97.
 LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
-(Font)              scaled to size 16.41594pt on input line 104.
+(Font)              scaled to size 16.41594pt on input line 97.
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+Underfull \hbox (badness 10000) in paragraph at lines 97--97
   
  []
 
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 8.54997pt on input line 104.
+(Font)              scaled to size 8.54997pt on input line 97.
 LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
-(Font)              scaled to size 8.54997pt on input line 104.
+(Font)              scaled to size 8.54997pt on input line 97.
 LaTeX Font Info:    Font shape `T1/txss/m/it' in size <9> not available
-(Font)              Font shape `T1/txss/m/sl' tried instead on input line 104.
+(Font)              Font shape `T1/txss/m/sl' tried instead on input line 97.
 LaTeX Font Info:    Font shape `T1/txss/m/sl' will be
-(Font)              scaled to size 8.54997pt on input line 104.
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 104.
-
+(Font)              scaled to size 8.54997pt on input line 97.
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 97.
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 10.40245pt on input line 108.
+(Font)              scaled to size 10.40245pt on input line 101.
 LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
-(Font)              scaled to size 10.40245pt on input line 108.
+(Font)              scaled to size 10.40245pt on input line 101.
 File: serpens_hcn10_on_dust.eps Graphic file (type eps)
 
-<serpens_hcn10_on_dust.eps> [1
+<serpens_hcn10_on_dust.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
 
 
 ]
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 9.49997pt on input line 239.
+(Font)              scaled to size 9.49997pt on input line 230.
 LaTeX Font Info:    Font shape `T1/txss/m/it' in size <10> not available
-(Font)              Font shape `T1/txss/m/sl' tried instead on input line 239.
+(Font)              Font shape `T1/txss/m/sl' tried instead on input line 230.
 LaTeX Font Info:    Font shape `T1/txss/m/sl' will be
-(Font)              scaled to size 9.49997pt on input line 239.
-
-
-Package natbib Warning: Citation `Kir13' on page 2 undefined on input line 256.
-
-
-
-Package natbib Warning: Citation `Kon15' on page 2 undefined on input line 256.
-
+(Font)              scaled to size 9.49997pt on input line 230.
 
 [2]
 File: serpens_hcn10.eps Graphic file (type eps)
@@ -1072,90 +1050,97 @@ File: serpens_cn10.eps Graphic file (type eps)
 File: serpens_co65.eps Graphic file (type eps)
 
 <serpens_co65.eps>
-File: serpens_spectra_smm4+h13cn21.eps Graphic file (type eps)
- <serpens_spectra_smm4+h13cn21.eps>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3]
+File: serpens_spectra_smm4+h13cn21.eps Graphic file (type eps)
+
+<serpens_spectra_smm4+h13cn21.eps> [3]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
-Underfull \vbox (badness 1762) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5]
 File: RADEX_CN_HCN_200K_1e5.eps Graphic file (type eps)
 
 <RADEX_CN_HCN_200K_1e5.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 456--460
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 445--449
  [][] 
  []
 
 
-Overfull \hbox (19.53322pt too wide) in paragraph at lines 467--483
+Overfull \hbox (19.53322pt too wide) in paragraph at lines 457--473
  [][] 
  []
 
 [6]
-! Missing } inserted.
-<inserted text> 
-                }
-l.539 \end{equation}
-                    
-? 
+Underfull \hbox (badness 1558) in paragraph at lines 542--547
+[]\T1/txr/m/n/10 The ex-ci-ta-tion tem-per-a-ture is 2.43 K and 2.77 K for
+ []
+
+
+Underfull \vbox (badness 1158) has occurred while \output is active []
+
+
+Underfull \hbox (badness 1077) in paragraph at lines 577--582
+\T1/txr/m/n/10 molecule, we adopt a gas tem-per-a-ture of 75 K (see Sec-
+ []
+
 File: starless.eps Graphic file (type eps)
 <starless.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 617--622
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 625--630
  [][] 
  []
 
 File: AV5.eps Graphic file (type eps)
 <AV5.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 629--632
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 637--639
  [][] 
  []
 
 [7]
-File: G0_50K.eps Graphic file (type eps)
- <G0_50K.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 677--679
+File: G0_50K_modification.eps Graphic file (type eps)
+ <G0_50K_modification.eps>
+File: G0_200K_modification.eps Graphic file (type eps)
+ <G0_200K_modification.eps>
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 680--684
  [][] 
  []
 
-File: G0_200K.eps Graphic file (type eps)
-<G0_200K.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 685--688
- [][] 
+
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 680--684
+ [] 
  []
 
 File: serpens_hcn10_and_cn10.eps Graphic file (type eps)
 <serpens_hcn10_and_cn10.eps> [8]
-File: reactions-mediumG0.eps Graphic file (type eps)
- <reactions-mediumG0.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 772--773
-[][] 
- []
+Underfull \vbox (badness 1184) has occurred while \output is active []
 
+File: reactions-large.eps Graphic file (type eps)
+
+<reactions-large.eps>
 File: destruction_HCN_dominant.eps Graphic file (type eps)
-<destruction_HCN_dominant.eps>
+ <destruction_HCN_dominant.eps>
 Overfull \hbox (28.45276pt too wide) in paragraph at lines 778--781
 [][] 
  []
 
 [9]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1546) has occurred while \output is active []
+
+
+Underfull \vbox (badness 2469) has occurred while \output is active []
 
  [10]
-(./amirocha.bbl [11]
-Underfull \hbox (badness 10000) in paragraph at lines 336--338
+[11] (./amirocha.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 349--351
 []\T1/txr/m/n/8 Pickett, H. M., Poyn-ter, R. L., Co-hen, E. A., et al. 1998,
  []
 
-) [12
-
-]
+) [12]
 File: serpens_seds.eps Graphic file (type eps)
  <serpens_seds.eps>
 File: serpens_h13cn10.eps Graphic file (type eps)
@@ -1195,59 +1180,61 @@ File: RADEX_CN_HCN_200K_1e6.eps Graphic file (type eps)
 
 <RADEX_CN_HCN_200K_1e6.eps>
 
-LaTeX Warning: Float too large for page by 25.74976pt on input line 1234.
+LaTeX Warning: Float too large for page by 25.74976pt on input line 1193.
+
+[13
+
+]
+Underfull \vbox (badness 2990) has occurred while \output is active []
 
 File: destruction_CN_dominant.eps Graphic file (type eps)
-<destruction_CN_dominant.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 1271--1273
-[][] 
- []
 
-File: production_CN_dominant.eps Graphic file (type eps)
-<production_CN_dominant.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 1276--1277
+<destruction_CN_dominant.eps>
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 1232--1234
 [][] 
  []
 
 File: production_HCN_dominant.eps Graphic file (type eps)
 <production_HCN_dominant.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 1282--1283
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 1237--1238
+[][] 
+ []
+
+File: production_CN_dominant.eps Graphic file (type eps)
+<production_CN_dominant.eps>
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 1243--1244
 [][] 
  []
 
 File: reactions-smallG0.eps Graphic file (type eps)
 <reactions-smallG0.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 1288--1289
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 1250--1251
 [][] 
  []
 
-File: reations_large.eps Graphic file (type eps)
-<reations_large.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 1294--1295
+File: reactions-mediumG0.eps Graphic file (type eps)
+<reactions-mediumG0.eps>
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 1256--1257
 [][] 
  []
 
+[14] [15] [16]
 File: Lbol_Tbol_correlations.eps Graphic file (type eps)
-<Lbol_Tbol_correlations.eps>
+ <Lbol_Tbol_correlations.eps> [17
 
-Package natbib Warning: There were undefined citations.
-
-[13
-
-] [14
-
-] [15] [16] [17] [18] [19] [20] [21] [22] (./amirocha.aux)
+] [18] [19] [20] [21]
+(./amirocha.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7924 strings out of 494924
- 109349 string characters out of 6180768
- 241948 words of memory out of 5000000
- 11018 multiletter control sequences out of 15000+600000
- 65604 words of font info for 109 fonts, out of 8000000 for 9000
+ 7995 strings out of 494924
+ 110520 string characters out of 6180768
+ 233643 words of memory out of 5000000
+ 11078 multiletter control sequences out of 15000+600000
+ 81501 words of font info for 141 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 39i,15n,77p,2020b,582s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,15n,77p,2020b,580s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on amirocha.dvi (22 pages, 104092 bytes).
+Output written on amirocha.dvi (21 pages, 112728 bytes).

@@ -3,7 +3,7 @@ define double l_new b_new
 file in  "../spectraOdp.30m"
 
 find /all
-set source NGC1333-I4AB 
+set source NGC1333-I2A
 set line CS(3-2)
 !set frequency 146916 147022
 find /all
@@ -39,7 +39,7 @@ let l_new lambda*12/pi
 let b_new beta*180/pi
 
 find /all
-set source NGC1333-I2A
+set source NGC1333-I4AB
 set line CS(3-2)
 !set frequency 146916 147022
 find /all
@@ -66,7 +66,7 @@ for i 1 to found
     draw fill 1373
     draw fill 2285
     base 0
-    modify source NGC1333-I4AB 
+    modify source NGC1333-I2A 
     modify position l_new b_new
     write
 next

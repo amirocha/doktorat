@@ -7,6 +7,8 @@
 \usepackage[polish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
+\usepackage{arydshln}
+\usepackage{epstopdf}
 \textheight 23cm \textwidth 18cm \hoffset= 0mm \voffset= 0cm
 \topmargin -1cm \oddsidemargin -8mm \evensidemargin 0mm \columnsep = 4ex
 \pagestyle{myheadings}
@@ -25,9 +27,9 @@
 
 \begin{document}
 \fontsize{11}{11}\selectfont % the font size cannot be changed in any case!
-%  insert your title, authors information and text instead of the one provided below
-\title{Signatures of UV radiation around low-mass protostars in Serpens}
-\author{\textsl{A.~Mirocha$^{1,}^{2}$, A.~Karska$^{2}$, L.\,E.~Kristensen$^{3}$, M.\,Gronowski$^{4}$, M.\,Figueira$^{5}$, M.\, Gładkowski$^{2,}^{6}$}, \\  \textsl{M.\,Żółtowski$^{7}$, Ł.Tychoniec$^{8}$}}
+% insert your title, authors information and text instead of the one provided below
+\title{Tracing the UV radiation with CN, HCN and CS molecules}
+\author{\textsl{A.~Mirocha$^{1,}^{2}$, A.~Karska$^{2}$, L.\,E.~Kristensen$^{3}$, M.\,Gronowski$^{4}$, M.\,Figueira$^{5}$, M.\, Gładkowski$^{2,}^{6}$}, \\ \textsl{M.\,Żółtowski$^{7}$, Ł.Tychoniec$^{8}$}}
 \date{\vspace*{-6ex}}
 \maketitle
 \begin{center} {\small $^{1}$ Astronomical Observatory of the Jagiellonian University, ul. Orla 171, 30-244 Kraków, Poland\\
@@ -42,34 +44,44 @@ $^{8}$Leiden Observatory, Leiden University, P.O. Box 9513, NL-2300RA Leiden, Th
 \end{center}
 
 \begin{abstract}
-A new-born protostar forms in a dense core deep inside a molecular cloud. The molecular cloud is characterised by high extinction in the optical range so observations at long wavelengths are necessary. In particular, submillimetre spectra include rotational lines of key molecules which are useful tracers of physics and chemistry around low-mass protostars. HCN, CN, and CS emission is modelled using the radiative transfer code RADEX to determine the gas physical conditions and molecular abundances. This information provides input parameters to use in an astrochemical model in order to characterise the strength of the UV radiation. Thus, we gain a new understanding of chemical and physical processes around low-mass protostars.\\[1ex]
+A new-born protostar forms in a dense core deep inside a molecular cloud. The molecular cloud is characterised by high extinction in the optical range so observations at long wavelengths are necessary. Submillimetre spectra include rotational lines of key molecules which are useful tracers of physics and chemistry around low-mass protostars. HCN, CN, and CS emission from the Serpens Main region is modelled using the radiative transfer code RADEX to determine the gas physical conditions and molecular abundances. This information provides input parameters to use in an astrochemical model in order to characterise the strength of the UV radiation. Thus, we gain a new understanding of chemical and physical processes around low-mass protostars.\\[1ex]
 {\bf Key words:} stars: formation, ISM: individual objects: Serpens Main, ISM: molecules
 \end{abstract}
 
 \section*{\sc introduction}
-\indent \indent New discoveries of extrasolar planets trigger questions about star and planet formation and composition. Detailed studies on the earliest stages of stellar evolution are necessary in order to understand these phenomena. Protostars are formed in dense cores inside a molecular cloud. They can be classified by their bolometric luminosity for: low-mass protostars ($L_{\mathrm{bol}} < 10^2 \, L{_\odot}$), intermediate-mass protostars ($10^2 \, L{_\odot} - 10^4 \, L{_\odot}$) and high-mass protostars ($L_{\mathrm{bol}} > 10^4 \, L{_\odot}$). The earliest phases of star formation are characterised by gas and dust accretion from an envelope and bipolar, collimated outflows which transport molecular gas from the dense core (\cite{arce2006}). Protostars interact with their surroundings, changing the chemical and the physical properties of the matter in which the stars and planets form. In this turbulent environment, an energetic electromagnetic radiation, such as ultraviolet or X-rays, is produced which may ionise the environment of young stellar objects (\cite{stauber2007}). The UV radiation around high-mass protostars is estimated at 20-600 times higher than average in the interstellar medium (\cite{benz2016}). The strength of the UV radiation around less massive young stellar objects is still a matter of debates. 
+\indent \indent New discoveries of extrasolar planets trigger questions about star and planet formation and composition. Detailed studies on the earliest stages of stellar evolution are necessary in order to understand these phenomena. Protostars are formed in dense cores inside a molecular cloud. They can be classified by their bolometric luminosity for: low-mass protostars ($L_{\mathrm{bol}} < 10^2 \, L{_\odot}$), intermediate-mass protostars ($10^2 \, L{_\odot} - 10^4 \, L{_\odot}$) and high-mass protostars ($L_{\mathrm{bol}} > 10^4 \, L{_\odot}$). The earliest phases of star formation are characterised by gas and dust accretion from an envelope and bipolar, collimated outflows which transport molecular gas from the dense core (\cite{arce2006}). Protostars interact with their surroundings, changing the chemical and the physical properties of the matter in which the stars and planets form. In this turbulent environment, an energetic electromagnetic radiation, such as ultraviolet or X-rays, is produced which may ionise the environment of young stellar objects (\cite{stauber2007}). The UV radiation field around high-mass protostars is estimated at 20-600 times higher than the average in the interstellar medium (\cite{benz2016}). The strength of the UV radiation around less massive young stellar objects is still a matter of debate. 
 
 \indent \indent The Serpens molecular cloud is characterised by a large sample of known protostars (\cite{evans2009}). At a distance of 436 $\pm$ 9 pc (\cite{ortiz2017}) it is one of the largest clouds containing low-mass protostars within 500 pc. The Serpens Main region is located in the northern part of the cloud. There are several low-mass protostars at a very early stage of their evolution. The initial identification of the protostars was obtained in the submillimetre range, hence the objects got numbered by their submillimetre luminosity with the SMM prefix. 
 
 \section*{\sc observations}
 
-\indent \indent The observations were obtained with the IRAM 30 telescope in 2009, between July 14 and 17, in good weather conditions. The observations were conducted with the Eight MIxer Receiver (EMIR) in E090 (73-117 GHz) and E150 (125-184 GHz) bands and the VESPA correlator as the backend which allows obtaining spectra of the targeted lines: HCN, CN, CS and their isotopologues. Each spectra consist of 2800 channels with velocity resolution of 0.1 km s$^{-1}$. Two on-the-fly maps of the Ser-SMM1 region (centered at $\alpha_\mathrm{J2000}$ = 18$^h$29$^m$49.6$^s$, $\delta_\mathrm{J2000}$ = +01$^{\circ}$15$^{\prime}$20.5$^{\prime\prime}$) and the Ser-SMM3/Ser-SMM4 region (centered at $\alpha_\mathrm{J2000}$ = 18$^h$29$^m$56.6$^s$, $\delta_\mathrm{J2000}$ = +01$^{\circ}$14$^{\prime}$00.3$^{\prime\prime}$) were obtained. The observations were conducted using position-switching toward an emission-free reference position. The beam size varies from 14$^{\prime\prime}$ for H$^{13}$CN $J=2-1$ to 29 arcsec for H$^{13}$CN $J=1-0$. The observation summary is shown in Tab.\,\ref{tab:1}.
+\indent \indent The observations were obtained with the IRAM 30 telescope in 2009, between July 14 and 17, in good weather conditions. The observations were conducted with the Eight MIxer Receiver (EMIR) in the E090 (73-117 GHz) and the E150 (125-184 GHz) bands and the VESPA correlator as the backend which allows us to obtain the spectra of the targeted lines: HCN, CN, CS and their isotopologues. Each spectrum (Fig.\ref{fig1}) consists of 2800 channels with a velocity resolution of 0.1 km s$^{-1}$. Two on-the-fly maps of the Ser-SMM1 region (centered at $\alpha_\mathrm{J2000}$ = 18$^h$29$^m$49.6$^s$, $\delta_\mathrm{J2000}$ = +01$^{\circ}$15$^{\prime}$20.5$^{\prime\prime}$) and the Ser-SMM3/Ser-SMM4 region (centered at $\alpha_\mathrm{J2000}$ = 18$^h$29$^m$56.6$^s$, $\delta_\mathrm{J2000}$ = +01$^{\circ}$14$^{\prime}$00.3$^{\prime\prime}$) were obtained. The observations were conducted using position-switching toward an emission-free reference position. The beam size varies from 14$^{\prime\prime}$ for H$^{13}$CN 2-1 to 29 arcsec for H$^{13}$CN 1-0. A summary of the observations is presented in Tab.\,\ref{tab:1}.
 \begin{table}
-\caption{Overview of the observations}             % title of Table
-\label{tab:1}      % is used to refer this table in the text
-\centering                          % used for centering table
-\begin{tabular}{r r r r r}        % centered columns (4 columns)
-\hline\hline                 % inserts double horizontal lines
+\caption{Overview of the observations} % title of Table
+\label{tab:1} % is used to refer this table in the text
+\centering % used for centering table
+\begin{tabular}{r r r r r} % centered columns (4 columns)
+\hline\hline % inserts double horizontal lines
 Mol. & Trans. & $\nu$ & Beam size & Beam eff.\\
- & & (GHz) & ($^{\prime\prime}$) & $\eta_\mathrm{MB}$\\
-\hline                        % inserts single horizontal line
-HCN & $1-0$ & 88.631602 & 28 & 0.81\\
-CN & $1-0$ & 113.494921 & 22 & 0.78\\
-CS & $3-2$ & 146.969029 & 16 & 0.74\\
-C$^{34}$S & $3-2$ & 144.617109 & 16 & 0.74\\
-H$^{13}$CN & $1-0$ & 86.342274 & 29 & 0.81\\
-H$^{13}$CN & $2-1$ & 172.677881 & 14 & 0.68\\
-\hline                                   
+& & (GHz) & ($^{\prime\prime}$) & $\eta_\mathrm{MB}$\\
+\hline % inserts single horizontal line
+\multirow{3}{*}{HCN} & \multirow{3}{*}{1-0} & 88.630416 & \multirow{3}{*}{28} & \multirow{3}{*}{0.81}\\
+& & 88.631847 & & \\
+& & 88.633936 & & \\ \hdashline
+\multirow{5}{*}{CN} & \multirow{5}{*}{1-0} & 113.123369 & \multirow{5}{*}{22} & \multirow{5}{*}{0.78}\\
+& & 113.170535 & & \\
+& & 113.488142 & & \\
+& & 113.490985 & & \\
+& & 113.499643 & & \\\hdashline
+CS & 3-2 & 146.969029 & 16 & 0.74\\ \hdashline
+C$^{34}$S & 3-2 & 144.617109 & 16 & 0.74\\ \hdashline
+\multirow{3}{*}{H$^{13}$CN} & \multirow{3}{*}{1-0} & 86.338767 & \multirow{3}{*}{29} & \multirow{3}{*}{0.81}\\
+& & 86.340184 & & \\
+& & 86.342274 & & \\ \hdashline
+\multirow{3}{*}{H$^{13}$CN} & \multirow{3}{*}{2-1} & 172676.573 & \multirow{3}{*}{14} & \multirow{3}{*}{0.68}\\
+& & 172.677881 & & \\
+& & 172.677959 & & \\
+\hline 
 \end{tabular}
 \begin{flushleft}
 Beam sizes and efficiencies are taken from \url{http://www.iram.es/IRAMES/mainWiki/Iram30mEfficiencies}
@@ -77,41 +89,49 @@ Beam sizes and efficiencies are taken from \url{http://www.iram.es/IRAMES/mainWi
 \end{table}
 
 \section*{\sc results and conclusions}
-\indent \indent The HCN molecule photodissociates into the CN radical in the presence of the UV radiation while CN itself is less sensitive to photodissociation. Thus, the CN/HCN ratio is widely used as a tracer of the ultraviolet radiation (e.g. \cite{fuente1995},  \cite{chapillon2012}, \cite{riaz2018}). Fig.\,\ref{fig1} shows CN $J=1-0$ and HCN $J=1-0$ integrated intensity ratio, performed above a $3\sigma$ level. In the studied region the highest CN/HCN ratio is co-spatial with more evolved protostars: SMM5 and SMM6. These results show that the CN/HCN ratio can be a good tracer of more evolved protostars independently of a Spectral Energy Distribution analysis. The HCN emission dominates toward molecular outflow positions as well as in denser regions with a large concentration of protostars, where the energetic radiation is mostly absorbed by the dust.
+\indent \indent The HCN molecule photodissociates into the CN radical in the presence of the UV radiation while CN itself is less sensitive to photodissociation. Thus, the CN/HCN ratio is widely used as a tracer of the ultraviolet radiation (e.g. \cite{fuente1995}, \cite{chapillon2012}, \cite{riaz2018}). Fig.\,\ref{fig2} shows the CN 1-0 to HCN 1-0 integrated intensity ratio over all hyperfine components performed above a $3\sigma$ level. In the studied region the highest CN/HCN ratio is co-spatial with the more evolved protostars: SMM5 and SMM6. These results show that the CN/HCN ratio can be a good tracer of more evolved protostars independent of a Spectral Energy Distribution analysis. The HCN emission dominates toward molecular outflow positions as well as in denser regions with a large concentration of protostars, where the energetic radiation is mostly absorbed by the dust.
 
 \begin{figure}[!h]
 \centering
-\epsfig{file = serpens_cn10_divided_hcn10.eps,width = 0.5\linewidth}
-\caption{Emission of the CN/HCN ratio in the Serpens Main region. Black triangles show the positions of the protostars, whereas black lines show the associated outflow directions. Outflow positions are displayed as purple crosses. The map is centered at the SMM1 position ($\alpha_\mathrm{J2000}$ = 18$^h$29$^m$49.6$^s$, $\delta_\mathrm{J2000}$ = +01$^{\circ}$15$^{\prime}$20.5$^{\prime\prime}$).}
+\includegraphics[height=10cm]{serpens_spectra.pdf}
+%\epsfig{file = serpens_spectra.pdf,width = 0.5\linewidth}
+\caption{Averaged spectra of C$^{34}$S 3-2, CS 3-2, H$^{13}$CN 2-1, H$^{13}$CN 1-0, HCN 1-0 and CN 1-0 lines observed in the Serpens Main region.}
 \label{fig1}
 \end{figure}
 
-\indent \indent The CN, HCN and CS abundances can be calculated based on the intensities of the observed molecular lines using the RADEX radiative transfer code (\cite{tak2007}). We prepared the sets of RADEX models for an envelope parameters: kinetic temperature of 50 K and hydrogen densities varying from $10^3$ to $10^6$ cm$^{-3}$. Based on HCN/H$^{13}$CN ratio, as well as the CN hyperfine components ratio, the optical depht can be determined. Depending on the source, the CN and HCN $J=1-0$ lines opacity varies from 0.3-5.7 to 0.2-1.6, respectively. Even though the absolute column densities may be underestimated in positions where we have an optically thick emission, it should not affect the relative N(CN)/N(HCN). The N(CN)/N(HCN) ratio around low-mass protostars varies between 1 and 10 regardless of molecular hydrogen density. The N(CN)/N(CS) ratio varies between 10 and 30 for all of the protostars positions, while the N(CS)/N(HCN) ratio ranges from 0.1 to 0.3. An example of set of models is shown in Fig.\,\ref{fig2}.
+\begin{figure}[!h]
+\centering
+\epsfig{file = serpens_map.pdf,width = 0.5\linewidth}
+\caption{Integrated CN/HCN 1-0 ratios in the Serpens Main region. Black triangles show the positions of the protostars, whereas purple lines show the associated outflow directions. Outflow positions are displayed as purple crosses. The map is centered at the SMM1 position ($\alpha_\mathrm{J2000}$ = 18$^h$29$^m$49.6$^s$, $\delta_\mathrm{J2000}$ = +01$^{\circ}$15$^{\prime}$20.5$^{\prime\prime}$).}
+\label{fig2}
+\end{figure}
+
+\indent \indent The CN, HCN and CS abundances can be calculated based on the intensities of the observed molecular lines using the RADEX radiative transfer code (\cite{tak2007}). We prepared the sets of RADEX models for the following envelope parameters: kinetic temperature of 50 K and hydrogen densities varying from $10^3$ to $10^6$ cm$^{-3}$. A temperature of 50 K is chosen as a middle value for a protostar envelope temperature profile calculated for Ser-SMM1 and Ser-SMM4 (\cite{kristensen2010}). Three the strongest hyperfine components of CN 1-0 line (F=3/2$\rightarrow$1/2, F=5/2$\rightarrow$3/2, F=1/2$\rightarrow$1/2) was used to determine the optical depth. HCN molecule shows anomalies in the hyperfine components ratio (\cite{loughnane2012}), thus the opacity was calculated based on the HCN 1-0/H$^{13}$CN 1-0 abundances ratio. The HCN/H$^{13}$CN ratio was adopted as 67 (\cite{yan2019}) and the ratios between hyperfine components of CN as 0.1235:0.3333:0.0988 (\cite{skatrud1983}). Depending on the source, the CN and lines opacity varies from 0.3-5.7, and the HCN 1-0 - between 0.64-10.31. Even though the absolute column densities may be underestimated in positions where we have an optically thick emission, it should not affect the N(CN)/N(HCN). The RADEX models show that the N(CN)/N(HCN) ratio around low-mass protostars varies between 1 and 10 regardless of molecular hydrogen density. The N(CN)/N(CS) ratio varies between 10 and 30 for all of the protostellar positions, while the N(CS)/N(HCN) ratio ranges from 0.1 to 0.3. An exemplary set of models is shown in Fig.\,\ref{fig3}.
 
 \begin{figure}[!h]
 \centering
-\includegraphics[height=7cm]{radex.jpg}
-\caption{N(CN)/N(HCN) column density ratio for $n_\mathrm{H_2} = 10^5$ cm$^{-3}$ and $T_\mathrm{kin} = 50$ K (red line). The observed line intensity ratio is plotted in blue (protostars positions) and green (all positions).}\label{fig2}
+\includegraphics[height=10cm]{radex.pdf}
+\caption{N(CN)/N(HCN) column density ratio for $n_\mathrm{H_2} = 10^5$ cm$^{-3}$ and $T_\mathrm{kin} = 50$ K (red line). The observed line intensity ratio is plotted in green (protostellar positions) and blue (all positions).}\label{fig3}
 \end{figure}
 
-\indent \indent The astrochemical model of Nahoon (\cite{wakelam2012}) together with the kida.uva.2014 database (\cite{wakelam2015}) were used in modeling the chemical evolution of the cloud. The astrochemical database kida.uva.2014 contains a list of reactions together with parametrised reaction rate constants. A reaction rate depends on the temperature. However, the chemical evolution depends also on several parameters, including UV radiation flux, the cloud density, and temperature as well as dust grain size and abundance. Our model is nearly pure gas-phase model. Our network contains only two class of grain-related reaction, namely: i) between negatively charged grains and atomic cations ii) between neutral grains and electrons. The model was run in two steps. Firstly, we modeled the starless, dense molecular cloud ($n_\mathrm{HI+2 \dot H_2} = 10^4$ cm$^{-3}$, $T = 10$ K, $A_\mathrm{V}$ = 5 mag). The abundances of chemicals obtained at time $10^6$ years were the initial parameters for a set of models differing by temperature, density, and UV field intensities. The abundances ratio of interesting molecules does not change dynamically at low temperatures which allowed us to fix the temperature parameter at 50 K. Comparing the CN/HCN results with similar plots of CN/CS (Fig.\,\ref{fig3} and Fig.\,\ref{fig4}), we restrict the parameter space to very-low-density and weakly irradiated gas. Astrochemical models computed for the CS/HCN ratio show similar behavior. At the protostellar positions high hydrogen densities ($\approx 10^6$ cm$^{-3}$) can be assumed. The models allow estimating the strength of needed UV radiation field to G$_0 \approx 0.03$. 
+\indent \indent The astrochemical model of Nahoon (\cite{wakelam2012}) together with the kida.uva.2014 database (\cite{wakelam2015}) were used in modelling the chemical evolution of the cloud. The astrochemical database kida.uva.2014 contains a list of reactions together with parametrised reaction rate constants. A reaction rate depends on the temperature. However, the chemical evolution depends also on several parameters, including UV radiation flux and the cloud density, as well as dust grain size and abundance. Our model is a nearly pure gas-phase model. It contains 489 species and 7509 reactions with 13 gas-grain reactions. Our network contains only two classes of grain-related reactions, namely: i) between negatively charged grains and atomic cations ii) between neutral grains and electrons. The model was run in two steps. Firstly, we modelled the starless, dense molecular cloud with typical parameters of $n_\mathrm{HI+2 \dot H_2} = 10^4$ cm$^{-3}$, $T = 10$ K, $A_\mathrm{V}$ = 5 mag. The abundances of chemicals obtained at time $10^6$ years were the initial parameters for a set of models differing by temperature, density, and UV field intensities. This time we modelled the closest environment of a low-mass protostar. The abundances ratios of interesting molecules do not change dynamically at low temperatures which allowed us to fix the temperature parameter at 50 K, which is a typical temperature for a protostar's envelope. Comparing the CN/HCN results with similar plots of CN/CS (Fig.\,\ref{fig4} and Fig.\,\ref{fig5}), we restrict the parameter space to very-low-density and weakly irradiated gas. Astrochemical models computed for the CS/HCN ratio show similar behaviour. At the protostellar positions high hydrogen densities ($\approx 10^6$ cm$^{-3}$) can be assumed. The models allow estimating the strength of needed UV radiation field in terms of Habing units G$_0$, where 1 G$_0$ equals a flux of $1.6 \times 10^{-3}$ erg cm$^{-2}$ s$^{-1}$, integrated over the energy range 6 – 13.6 eV (\cite{habing1968}). The models show that G$_0 \approx 0.03$ is needed to cover the observations. 
 
 \begin{figure}[!h]
 \centering
 \begin{minipage}[t]{.45\linewidth}
 \centering
 \epsfig{file = CN_HCN.pdf,width = 1\linewidth}
-\caption{Contour plot of Nahoon sets of models of CN/HCN abundance ratios with T = 50 K against UV radiation flux (G$_0$ parameter) and hydrogen densities. The observational abundances ratio is represented by the blue area. G$_0$ parameter describes the average UV flux in the ISM of the solar neighbourhood (10$^8$ photons cm$^{−2}$ s$^{−1}$). An additional UV radiation of a few hundredth of the average interstellar UV radiation flux is enough to cover the observations in wide range of total hydrogen densities.}\label{fig3}
+\caption{Contour plot of Nahoon sets of models of CN/HCN abundance ratios with T = 50 K against UV radiation flux (G$_0$ parameter) and hydrogen densities. The observational abundances ratio is represented by the blue area. An additional UV radiation of a few hundredth of the average interstellar UV radiation flux is enough to cover the observations in wide range of total hydrogen densities.}\label{fig4}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{.45\linewidth}
 \centering
 \epsfig{file = CN_CS.pdf,width = 1\linewidth}
-\caption{Similar to Fig.~\ref{fig3} but for CN/CS abundances ratios.}\label{fig4}
+\caption{Similar to Fig.~\ref{fig4} but for CN/CS abundances ratios.}\label{fig5}
 \end{minipage}
 \end{figure}
 
-\indent \indent The astronomical model of Nahoon shows that there is non-zero UV radiation in the gas of 50 K at the positions of low-mass protostars. An additional radiation source of a few hundredth of the average interstellar UV radiation field is required to explain the observational ratios.
+\indent \indent The recent studies showed non-zero UV radiation in outflow cavities of young stellar objects (e.g. \cite{vanKempen2009}, \cite{kristensen2017}, \cite{karska2018}). These results are confirmed with the astronomical model of Nahoon in the gas of 50 K at the positions of low-mass protostars. An additional radiation source of a few hundredth of the average interstellar UV radiation field is required to explain the observational ratios. The presence of energetic particles changes chemical and physical properties of the closest surroundings of low-mass protostars. 
 
 \section*{\sc acknowledgement}
 \indent \indent AM, AK and MG acknowledge support by the Polish National Science Center grant 2016/21/D/ST9/01098. The research was conducted as a part of the InterAPS project of the Polish National Agency of Academic Exchange.\\
@@ -119,19 +139,28 @@ This work is based on observations carried out with the IRAM 30m telescope. IRAM
 This research has made use of data from the Herschel Gould Belt survey (HGBS) project (http://gouldbelt-herschel.cea.fr). The HGBS is a Herschel Key Programme jointly carried out by SPIRE Specialist Astronomy Group 3 (SAG 3), scientists of several institutes in the PACS Consortium (CEA Saclay, INAF-IFSI Rome and INAF-Arcetri, KU Leuven, MPIA Heidelberg), and scientists of the Herschel Science Center (HSC).
 
 % read the instructions for the 
-\begin{thebibliography}{10}
+\begin{thebibliography}{19}
 {\small
 \bibitem{arce2006} Arce, H. G. \& Sargent, A. I. 2006, ApJ, 646, 1070
 \bibitem{benz2016} Benz, A. O., Bruderer, S., van Dishoeck, E. F.;, et al. 2016, A\&A, 590, 105
 \bibitem{chapillon2012} Chapillon, E., Guilloteau, S., Dutrey, A., et al. 2012, A\&A, 537, A60
 \bibitem{evans2009} Evans, Neal J., I., Dunham, M. M., Jørgensen, J. K., et al. 2009, ApJS, 181, 321
 \bibitem{fuente1995} Fuente, A., Martin-Pintado, J., \& Gaume, R. 1995, ApJ, 442, L33
+\bibitem{habing1968} Habing, H. J. 1968, Bull. of the Astron. Inst. of the Neth., 19, 421
+\bibitem{karska2018} Karska, A., Kaufman, M. J., Kristensen, L. E., et al. 2018, ApJS, 235, 45
+\bibitem{kristensen2010} Kristensen, L. E., van Dishoeck, E. F., van Kempen, T. A., et al. 2010, A\&A, 516, 16
+\bibitem{kristensen2017} Kristensen, L. E., van Dishoeck, E. F., Mottram, J. C., et al. 2017, A\&A, 605, 19
+\bibitem{loughnane2012} Loughnane, R. M., Redman, M. P., Thompson, M. A., et al. 2012, MNRAS, 420, 1367
 \bibitem{ortiz2017} Ortiz-León, G. N., Dzib, S. A., Kounkel, M. A., et al. 2017, ApJ, 834, 143
 \bibitem{riaz2018} Riaz, B., Thi, W. F., \& Caselli, P. 2018, MNRAS, 481, 4662
+\bibitem{skatrud1983} Skatrud, D. D., De Lucia, F. C., Blake, G. A., et al. 1983, Journal of Molecular Spectroscopy, 99, 35
 \bibitem{stauber2007} Stäuber, P., Benz, A. O., Jørgensen, J. K., et al. 2007, A\&A, 466, 977 
 \bibitem{tak2007} van der Tak, F. F. S., Black, J. H., Schöier, et al. 2007, A\&A, 468, 627
+\bibitem{vanKempen2009} van Kempen, T. A., van Dishoeck, E. F., Güsten, R., et al., 2009, A\&A, 501, 633
+\bibitem{yan2019}  Yan, Y. T., Zhang, J. S., Henkel, C., et al. 2019, ApJ, 877, 15
 \bibitem{wakelam2012} Wakelam, V., Herbst, E., Loison, J. C., et al. 2012, ApJS, 199, 21
 \bibitem{wakelam2015} Wakelam, V., Loison, J. C., Herbst, E., et al. 2015, ApJS, 217, 7
 }
 \end{thebibliography}
 \end{document}
+

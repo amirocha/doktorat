@@ -1,0 +1,98 @@
+-----------------------------------------------------------------------
+=======================================================================
+
+       FFFFFF   LLL       UUU    UUU  XXX   XXX    EEEEEEE    RRRRRRR
+      FFF      LLL       UUU    UUU    XXX XXX    EEE        RRR  RRR
+     FFFFFF   LLL       UUU    UUU      XXX      EEEEEEE    RRRRRRR
+    FFF      LLL       UUU    UUU    XXX XXX    EEE        RRRRR
+   FFF      LLLLLLL   UUUUUUUUUU    XXX   XXX  EEEEEEE    RRR  RRRR
+
+=======================================================================
+-----------------------------------------------------------------------
+
+Contours :
+----------
+
+Contours can be plotted in both panel windows independently by pressing 'Q'
+when the mouse is within a panel window. Upon 'Q' the contour Creation dialog
+is invoked.
+
+If contours have already been plotted another dialog is invoked which allows
+to change the current contour settings, apply new contours, remove contours
+and so on.
+
+When changing the image in the panel window, the countours remain unchanged.
+
+In the Contour GUI which is launched you have to specify the method for
+contour calculation. 
+You can either select the number of contour levels together with a 
+minimum and maximum value (1) or set contour levels in 1/2^n of the  
+peak value (2) or set contour levels in % of the current 
+peak value (3) or specify contour levels manually (4). 
+
+(The minimum and maximum values shown here may not represent the true minimum
+and maximum values in the image if sigma clipping for determining the min/max
+values is applied.)
+
+When contouring a slice of the data cube, only inside and not queued pixel are
+used. When contouring a fit result, only fit results that are inside and
+contain a valid fit result are used. When a viewing mask is defined
+additionally the pixel must not be masked by the viewing mask.
+
+To (1): Min-Max
+- Calculation of contour levels : 
+  min+(findgen(ncont)+1)*(max-min)/(ncont+1)
+  Hence: max = 5 and min = 1 and ncont = 3 gives the following levels:
+  2.00000      3.00000      4.00000
+  The min and max values are never used as contour levels.
+
+To (2): % of Peak
+- Here percentages of the peak value can be used to determine contour 
+  levels. Additionally, which peak value should be used, must be specified 
+  (is the peak positive, use the maximum value as peak value, or 
+   negative, use the minimum value as peak value).
+
+To (3): Peak over power of 2
+- Contour levels are calculated from a specified peak value:
+  contour levels = peak value / 2^findgen(number of levels), hence 1/2, 1/4,
+  1/8, 1/16 ,... 
+
+To (4): Manual
+Specify manually the contour levels. The list must be comma separated. E.g.
+1,2,3 or 1.2,1.4,1.2e-2. The contour levels may be specified in arbitrary 
+order.
+
+For methods 1 and 4 you can additionally specify the label format
+Allowed format codes: ab.c with a=E or F, b = total # of print characters, 
+c = # of digits, E.g. F7.2
+
+
+More parameter:
+---------------
+
+Indicate Downhill:
+   The downhill direction can be indicated.
+
+Level labeling:
+   Can be switched on and off.
+
+Line thickness, char size and char thickness can be set additionally.
+
+Contour smoothing :
+   The contour levels can also be smoothed using a median filter. The size of
+   the median filter is 1 plus twice the value of the slider
+
+Select a contour color:
+   The contour colors can be specified in all cases and are independent 
+   of which IDL colortable is used. Contour colors can be changed 
+   anytime by pressing Q again. 
+
+
+
+Remove : Remove contours from current panel window, if plotted
+Help   : Opens this help page
+Cancel : Quit without drawing contours
+Quit   : Quit the contour dialog
+
+
+ 

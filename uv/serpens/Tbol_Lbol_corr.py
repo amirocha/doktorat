@@ -67,7 +67,7 @@ def create_flux_file(data, mol):
 	return fluxes
 
 def plot_correlation(points, regresions, pearsons):
-	fig = plt.figure(figsize = (20,20), dpi = 400)
+	fig = plt.figure(figsize = (15,15), dpi = 400)
 	plt.tick_params(axis='y', which='both', right=False)
 	fig.subplots_adjust(wspace=0)
 	fig.subplots_adjust(hspace=0)
@@ -76,85 +76,85 @@ def plot_correlation(points, regresions, pearsons):
 	# Set the tick labels font
 	for label in (ax1.get_xticklabels() + ax1.get_yticklabels()):
 	#    label.set_fontname('Arial')
-   		label.set_fontsize(14)
+   		label.set_fontsize(16)
 	ax1.set_xlim([-1.0, 2.3])
 	ax1.set_ylim([-6, -5.1])
 	major_ticks_y = np.arange(-5.9, -5.1, 0.1)
 	ax1.set_yticks(major_ticks_y)
 	ax1.set_xticks([])
-	plt.plot(points[0][0], points[0][1], 'k.', ms=4.9)
+	plt.plot(points[0][0], points[0][1], 'k.', ms=7)
 	Y = [elem*regresions[0][0]+regresions[0][1] for elem in points[0][0]]
-	plt.plot(points[0][0], Y, 'k-', linewidth=0.5)
+	plt.plot(points[0][0], Y, 'k-', linewidth=0.8)
 
 	ax2 = plt.subplot(3, 2, 2)
 	for label in (ax2.get_xticklabels() + ax2.get_yticklabels()):
 	#    label.set_fontname('Arial')
-   		label.set_fontsize(14)
+   		label.set_fontsize(16)
 	ax2.set_xlim([1.0, 3.1])
 	ax2.set_ylim([-6, -5.1])
 	ax2.set_yticks([])
 	ax2.set_xticks([])
-	plt.plot(points[1][0], points[1][1], 'k.', ms=4.9)
+	plt.plot(points[1][0], points[1][1], 'k.', ms=7)
 	Y = [elem*regresions[1][0]+regresions[1][1] for elem in points[1][0]]
-	plt.plot(points[1][0], Y, 'k-', linewidth=0.5)
+	plt.plot(points[1][0], Y, 'k-', linewidth=0.8)
 
 	ax3 = plt.subplot(3, 2, 3)
 	for label in (ax3.get_xticklabels() + ax3.get_yticklabels()):
 	#    label.set_fontname('Arial')
-   		label.set_fontsize(14)
+   		label.set_fontsize(16)
 	ax3.set_xlim([-1.0, 2.3])
 	ax3.set_ylim([-6.1, -5.1])
 	major_ticks_y = np.arange(-6, -5.1, 0.1)
 	ax3.set_yticks(major_ticks_y)
 	ax3.set_xticks([])
-	plt.plot(points[2][0], points[2][1], 'k.', ms=4.9)
+	plt.plot(points[2][0], points[2][1], 'k.', ms=7)
 	Y = [elem*regresions[2][0]+regresions[2][1] for elem in points[2][0]]
-	plt.plot(points[2][0], Y, 'k-', linewidth=0.5)
+	plt.plot(points[2][0], Y, 'k-', linewidth=0.8)
 
 	ax4 = plt.subplot(3, 2, 4)
 	for label in (ax4.get_xticklabels() + ax4.get_yticklabels()):
 	#    label.set_fontname('Arial')
-   		label.set_fontsize(14)
+   		label.set_fontsize(16)
 	ax4.set_xlim([1.0, 3.1])
 	ax4.set_ylim([-6.1, -5.1])
 	ax4.set_yticks([])
 	ax4.set_xticks([])
-	plt.plot(points[3][0], points[3][1], 'k.', ms=4.9)
+	plt.plot(points[3][0], points[3][1], 'k.', ms=7)
 	Y = [elem*regresions[3][0]+regresions[3][1] for elem in points[3][0]]
-	plt.plot(points[3][0], Y, 'k-', linewidth=0.5)
+	plt.plot(points[3][0], Y, 'k-', linewidth=0.8)
 
 	ax5 = plt.subplot(3, 2, 5)
 	for label in (ax5.get_xticklabels() + ax5.get_yticklabels()):
 	#    label.set_fontname('Arial')
-   		label.set_fontsize(14)
+   		label.set_fontsize(16)
 	ax5.set_xlim([-1.0, 2.3])
 	ax5.set_ylim([-5.8, -4.8])
 	major_ticks_y = np.arange(-5.7, -4.8, 0.1)
 	major_ticks_x = np.arange(-1, 2.2, 0.5)
 	ax5.set_yticks(major_ticks_y)
 	ax5.set_xticks(major_ticks_x)
-	plt.plot(points[4][0], points[4][1], 'k.', ms=4.9)
+	plt.plot(points[4][0], points[4][1], 'k.', ms=7)
 	Y = [elem*regresions[4][0]+regresions[4][1] for elem in points[4][0]]
-	plt.plot(points[4][0], Y, 'k-', linewidth=0.5)
+	plt.plot(points[4][0], Y, 'k-', linewidth=0.8)
 
 	ax6 = plt.subplot(3, 2, 6)
 	for label in (ax6.get_xticklabels() + ax6.get_yticklabels()):
 	#    label.set_fontname('Arial')
-   		label.set_fontsize(14)
+   		label.set_fontsize(16)
 	ax6.set_xlim([1.0, 3.1])
 	ax6.set_ylim([-5.8, -4.8])
 	ax6.set_yticks([])
 	major_ticks_x = np.arange(1, 3.5, 0.5)
 	ax6.set_xticks(major_ticks_x)
-	plt.plot(points[5][0], points[5][1], 'k.', ms=4.9)
+	plt.plot(points[5][0], points[5][1], 'k.', ms=7)
 	Y = [elem*regresions[5][0]+regresions[5][1] for elem in points[5][0]]
-	plt.plot(points[5][0], Y, 'k-', linewidth=0.5)
+	plt.plot(points[5][0], Y, 'k-', linewidth=0.8)
 	
-	ax1.set_ylabel(r"$L_{\mathrm{CN}}$ [L$_\odot$]", fontsize=18)
-	ax3.set_ylabel(r"$L_{\mathrm{HCN}}$ [L$_\odot$]", fontsize=18)
-	ax5.set_ylabel(r"$L_{\mathrm{CS}}$ [L$_\odot$]", fontsize=18)
-	ax5.set_xlabel(r"$L_{\mathrm{bol}}$ [L$_\odot$]", fontsize=18)
-	ax6.set_xlabel(r"$T_{\mathrm{bol}}$ [K]", fontsize=18)
+	ax1.set_ylabel(r"$L_{\mathrm{CN}}$ [L$_\odot$]", fontsize=20)
+	ax3.set_ylabel(r"$L_{\mathrm{HCN}}$ [L$_\odot$]", fontsize=20)
+	ax5.set_ylabel(r"$L_{\mathrm{CS}}$ [L$_\odot$]", fontsize=20)
+	ax5.set_xlabel(r"$L_{\mathrm{bol}}$ [L$_\odot$]", fontsize=20)
+	ax6.set_xlabel(r"$T_{\mathrm{bol}}$ [K]", fontsize=20)
 
 	sources_list_Lbol = ['SMM8','SMM5','SMM2','SMM4','SMM12','SMM10','SMM3','SMM9','SMM6','SMM1']  #Lbol increasing
 	sources_list_Tbol = ['SMM8','SMM2','SMM1','SMM3','SMM9','SMM4','SMM10','SMM12','SMM5','SMM6']  #Tbol increasing
@@ -162,48 +162,48 @@ def plot_correlation(points, regresions, pearsons):
 	for i in range(len(sources_list_Lbol)):
 		if sources_list_Lbol[i] in ['SMM1', 'SMM2', 'SMM3', 'SMM8', 'SMM9']:
 			if sources_list_Lbol[i] == 'SMM3':
-				ax1.text(points[0][0][i]+0.04, points[0][1][i]-0.03, sources_list_Lbol[i], fontsize=14, color='r')
-				ax3.text(points[2][0][i]+0.04, points[2][1][i]-0.03, sources_list_Lbol[i], fontsize=14, color='r')
-				ax5.text(points[4][0][i]+0.04, points[4][1][i]-0.03, sources_list_Lbol[i], fontsize=14, color='r')
+				ax1.text(points[0][0][i]+0.04, points[0][1][i]-0.03, sources_list_Lbol[i], fontsize=16, color='r')
+				ax3.text(points[2][0][i]+0.04, points[2][1][i]-0.03, sources_list_Lbol[i], fontsize=16, color='r')
+				ax5.text(points[4][0][i]+0.04, points[4][1][i]-0.03, sources_list_Lbol[i], fontsize=16, color='r')
 			else:
-				ax1.text(points[0][0][i]+0.02, points[0][1][i], sources_list_Lbol[i], fontsize=14, color='r')
-				ax3.text(points[2][0][i]+0.02, points[2][1][i], sources_list_Lbol[i], fontsize=14, color='r')
-				ax5.text(points[4][0][i]+0.02, points[4][1][i], sources_list_Lbol[i], fontsize=14, color='r')
+				ax1.text(points[0][0][i]+0.02, points[0][1][i], sources_list_Lbol[i], fontsize=16, color='r')
+				ax3.text(points[2][0][i]+0.02, points[2][1][i], sources_list_Lbol[i], fontsize=16, color='r')
+				ax5.text(points[4][0][i]+0.02, points[4][1][i], sources_list_Lbol[i], fontsize=16, color='r')
 		elif sources_list_Lbol[i] not in ['SMM1', 'SMM2', 'SMM3', 'SMM8', 'SMM9']:
 			if sources_list_Lbol[i] == 'SMM4':
-				ax1.text(points[0][0][i]-0.02, points[0][1][i]+0.02, sources_list_Lbol[i], fontsize=14, color='b')
-				ax3.text(points[2][0][i]-0.02, points[2][1][i]+0.02, sources_list_Lbol[i], fontsize=14, color='b')
-				ax5.text(points[4][0][i]-0.02, points[4][1][i]+0.02, sources_list_Lbol[i], fontsize=14, color='b')
+				ax1.text(points[0][0][i]-0.25, points[0][1][i]+0.02, sources_list_Lbol[i], fontsize=16, color='b')
+				ax3.text(points[2][0][i]-0.25, points[2][1][i]+0.02, sources_list_Lbol[i], fontsize=16, color='b')
+				ax5.text(points[4][0][i]-0.25, points[4][1][i]+0.02, sources_list_Lbol[i], fontsize=16, color='b')
 			else:
-				ax1.text(points[0][0][i]+0.02, points[0][1][i], sources_list_Lbol[i], fontsize=14, color='b')
-				ax3.text(points[2][0][i]+0.02, points[2][1][i], sources_list_Lbol[i], fontsize=14, color='b')
-				ax5.text(points[4][0][i]+0.02, points[4][1][i], sources_list_Lbol[i], fontsize=14, color='b')
+				ax1.text(points[0][0][i]-0.15, points[0][1][i], sources_list_Lbol[i], fontsize=16, color='b')
+				ax3.text(points[2][0][i]-0.15, points[2][1][i], sources_list_Lbol[i], fontsize=16, color='b')
+				ax5.text(points[4][0][i]-0.15, points[4][1][i], sources_list_Lbol[i], fontsize=16, color='b')
 	for i in range(len(sources_list_Tbol)):
 		if sources_list_Tbol[i] in ['SMM1', 'SMM2', 'SMM3', 'SMM8', 'SMM9']:
 			if sources_list_Tbol[i] == 'SMM3':
-				ax2.text(points[1][0][i]+0.04, points[1][1][i]-0.01, sources_list_Tbol[i], fontsize=14, color='r')
-				ax4.text(points[3][0][i]+0.04, points[3][1][i]-0.01, sources_list_Tbol[i], fontsize=14, color='r')
-				ax6.text(points[5][0][i]+0.04, points[5][1][i]-0.01, sources_list_Tbol[i], fontsize=14, color='r')
+				ax2.text(points[1][0][i]+0.04, points[1][1][i]-0.01, sources_list_Tbol[i], fontsize=16, color='r')
+				ax4.text(points[3][0][i]+0.04, points[3][1][i]-0.01, sources_list_Tbol[i], fontsize=16, color='r')
+				ax6.text(points[5][0][i]+0.04, points[5][1][i]-0.01, sources_list_Tbol[i], fontsize=16, color='r')
 			else:
-				ax2.text(points[1][0][i]+0.02, points[1][1][i], sources_list_Tbol[i], fontsize=14, color='r')
-				ax4.text(points[3][0][i]+0.02, points[3][1][i], sources_list_Tbol[i], fontsize=14, color='r')
-				ax6.text(points[5][0][i]+0.02, points[5][1][i], sources_list_Tbol[i], fontsize=14, color='r')
+				ax2.text(points[1][0][i]+0.02, points[1][1][i], sources_list_Tbol[i], fontsize=16, color='r')
+				ax4.text(points[3][0][i]+0.02, points[3][1][i], sources_list_Tbol[i], fontsize=16, color='r')
+				ax6.text(points[5][0][i]+0.02, points[5][1][i], sources_list_Tbol[i], fontsize=16, color='r')
 		elif sources_list_Tbol[i] not in ['SMM1', 'SMM2', 'SMM3', 'SMM8', 'SMM9']:
 			if sources_list_Tbol[i] == 'SMM4':
-				ax2.text(points[1][0][i]-0.02, points[1][1][i]+0.02, sources_list_Tbol[i], fontsize=14, color='b')
-				ax4.text(points[3][0][i]-0.02, points[3][1][i]+0.02, sources_list_Tbol[i], fontsize=14, color='b')
-				ax6.text(points[5][0][i]-0.02, points[5][1][i]+0.02, sources_list_Tbol[i], fontsize=14, color='b')
+				ax2.text(points[1][0][i]-0.02, points[1][1][i]+0.02, sources_list_Tbol[i], fontsize=16, color='b')
+				ax4.text(points[3][0][i]-0.02, points[3][1][i]+0.02, sources_list_Tbol[i], fontsize=16, color='b')
+				ax6.text(points[5][0][i]-0.02, points[5][1][i]+0.02, sources_list_Tbol[i], fontsize=16, color='b')
 			else:
-				ax2.text(points[1][0][i]+0.02, points[1][1][i], sources_list_Tbol[i], fontsize=14, color='b')
-				ax4.text(points[3][0][i]+0.02, points[3][1][i], sources_list_Tbol[i], fontsize=14, color='b')
-				ax6.text(points[5][0][i]+0.02, points[5][1][i], sources_list_Tbol[i], fontsize=14, color='b')
+				ax2.text(points[1][0][i]+0.02, points[1][1][i], sources_list_Tbol[i], fontsize=16, color='b')
+				ax4.text(points[3][0][i]+0.02, points[3][1][i], sources_list_Tbol[i], fontsize=16, color='b')
+				ax6.text(points[5][0][i]+0.02, points[5][1][i], sources_list_Tbol[i], fontsize=16, color='b')
 
-	ax1.text(0.05, 0.05, 'r = '+ str(round(pearsons[0],3)) , transform=ax1.transAxes, fontsize=16, verticalalignment='bottom')
-	ax2.text(0.05, 0.05, 'r = '+ str(round(pearsons[1],3)) , transform=ax2.transAxes, fontsize=16, verticalalignment='bottom')
-	ax3.text(0.05, 0.05, 'r = '+ str(round(pearsons[2],3)) , transform=ax3.transAxes, fontsize=16, verticalalignment='bottom')
-	ax4.text(0.05, 0.05, 'r = '+ str(round(pearsons[3],3)) , transform=ax4.transAxes, fontsize=16, verticalalignment='bottom')
-	ax5.text(0.05, 0.05, 'r = '+ str(round(pearsons[4],3)) , transform=ax5.transAxes, fontsize=16, verticalalignment='bottom')
-	ax6.text(0.05, 0.05, 'r = '+ str(round(pearsons[5],3)) , transform=ax6.transAxes, fontsize=16, verticalalignment='bottom')
+	ax1.text(0.05, 0.05, 'r = '+ str(round(pearsons[0],2)) , transform=ax1.transAxes, fontsize=18, verticalalignment='bottom')
+	ax2.text(0.05, 0.05, 'r = '+ str(round(pearsons[1],2)) , transform=ax2.transAxes, fontsize=18, verticalalignment='bottom')
+	ax3.text(0.05, 0.05, 'r = '+ str(round(pearsons[2],2)) , transform=ax3.transAxes, fontsize=18, verticalalignment='bottom')
+	ax4.text(0.05, 0.05, 'r = '+ str(round(pearsons[3],2)) , transform=ax4.transAxes, fontsize=18, verticalalignment='bottom')
+	ax5.text(0.05, 0.05, 'r = '+ str(round(pearsons[4],2)) , transform=ax5.transAxes, fontsize=18, verticalalignment='bottom')
+	ax6.text(0.05, 0.05, 'r = '+ str(round(pearsons[5],2)) , transform=ax6.transAxes, fontsize=18, verticalalignment='bottom')
 	
 	plt.savefig('Lbol_Tbol_correlations.eps', format='eps')
 	plt.close()

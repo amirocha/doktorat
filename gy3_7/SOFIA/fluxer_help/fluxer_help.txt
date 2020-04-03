@@ -1,0 +1,403 @@
+-----------------------------------------------------------------------
+=======================================================================
+
+       FFFFFF   LLL       UUU    UUU  XXX   XXX    EEEEEEE    RRRRRRR
+      FFF      LLL       UUU    UUU    XXX XXX    EEE        RRR  RRR
+     FFFFFF   LLL       UUU    UUU      XXX      EEEEEEE    RRRRRRR
+    FFF      LLL       UUU    UUU    XXX XXX    EEE        RRRRR
+   FFF      LLLLLLL   UUUUUUUUUU    XXX   XXX  EEEEEEE    RRR  RRRR
+
+=======================================================================
+-----------------------------------------------------------------------
+
+FLUXER is a processing and visualization tool for astronomical data cubes. 
+This tool was created to deal with data delivered by imaging field
+spectrographs like OSIRIS@Keck or SINFONI@VLT.
+
+An astronomical data cube is a three-dimensional matrix with two spatial axes
+(right ascencion and declination) and a wavelength axis. Data in such cubes is
+usually equidistantly gridded and only such kind of data is fully supported.
+A slice of a data cube is considered here as a data matrix (image) extracted
+at constant wavelength.  
+
+Capabilities:
+	- Automatic and manual identification of crazy pixels in data cubes
+	- Interpolation of crazy pixels in 1, 2, or pseudo-3 dimensions 
+	- Operations on data cubes, like e.g. smoothing each slice of a data
+	  cube with a gaussian PSF of median filtering each slice
+        - Interactive and automatic fitting to emission/absorption lines with
+	  various profiles, thus extracting of e.g. flux maps, velocity
+	  fields, ...
+        - Extraction of spectra from data cubes
+	- Creation of animated channel maps in gif format (for UNIX only)
+        - Data cube viewing in 2D and 3D
+	- Viewing the fitsheader if provided
+	- Advanced postscript plotting
+	- Creation of Viewing masks for better plot results and analysis
+	- ...
+
+FULL functionality ONLY with a three(!)-button mouse
+
+Warranty: This software comes with no warranty !
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+SOME NOTES ON FLUX and SIGMA:
+-----------------------------
+
+     - What is called flux e.g. derived from a gaussian fit, is the area of
+       the gaussian divided by the spectral bin width! 
+
+     - Gaussian width is the gaussian dispersion (sigma). 
+       Lorentzian width is the HWHM.
+       In all other line fitting modes, the width is always the full width.
+       When a plot is to be displayed in km/s, always the full width is
+       meant (in Gaussian mode 2.35*sigma or 2.*HWHM in lorentzian mode). 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+Usage: 
+------
+       IDL> fluxer, input
+
+       input: Either a fits filename in single quotes, e.g. 'my_data.fits'
+              or a data cube.
+
+       Fitsfile:
+       When reading fits files, Fluxer determines the number of extensions of
+       this file and asks which to load. When reading an extension, Fluxer
+       tries to read the header of the primary as well as of the extension. 
+       Both headers are then merged (see also below, under 'Side effects (not
+       errors)'). If a data cube is read, the last 
+       (third) axis is always considered as the slicing index. This means that
+       the first two axes describe an image, the third the stacking of the
+       images. When dealing with astronomical data cubes read from a fits
+       file, these must follow fits conventions. E.g. the order of the axes
+       must be right ascension, declination, wavelength. 
+       Wavelengths and Astrometry with fluxer is only available when the
+       appropriate information is defined in the fitsfile's header or when the
+       header keyword is used (see also optional input parameters). 
+
+       After the primary data is loaded, Fluxer starts another dialog which
+       allows to supply further data to Fluxer. Check the 'Help' button in
+       that dialog for help.
+
+       Providing a data cube:
+       A data cube can be provided to fluxer directly from command line. 
+       In this case no wavelength information nor astrometry is generated
+       unless you specifiy an appropriate header using the header keyword. 
+       If only the data cube is provided to fluxer, the user will be asked for
+       the slicing axis. Select an axis or click 'Auto' which selects
+       automatically the axis with the most elements.
+       If additionally a header is supplied using the header keyword, the data
+       cube must comply to fits conventions and the third axis is considered
+       as the slicing direction.
+
+       The following table summarizes the behaviour together with header
+       keyword (see also optional input parameters):
+       ---------------------------------------------------------------------
+
+                        w. header keyword set    wo. header keyword set
+
+       Fitsfile         3. axis is slicing       3. axis is slicing 
+       		        direction  		 direction
+
+       Data cube	3. axis is slicing       slicing direction
+                        direction  		 can be chosen
+
+       ---------------------------------------------------------------------
+
+       In general:
+       Fluxer always generates a mask with pixels that shall contain light or
+       are just fillers. Data values in the cube that are INF or NAN are
+       assumed to be fillers. Spectra which contain only a value of 0. are
+       assumed to be fillers as well. Fillers are marked as outside. They can
+       not be used for anything and can not be interpolated.
+
+
+Optional input parameters:
+--------------------------
+
+	plotchannels=plotchannels : Number of spectral channels to be plotted
+		                    in the plot window. Must be greater than 10.
+        LineFile=LineFile         : Line identification table (see the preferences 
+                                    section below for the format of this file).
+        header=header             : Allows the user to parse a header. If a fitsfile has
+		                    been read the header from the fitsfile is ignored.
+
+
+General functionality:
+----------------------
+
+   Fluxer provides three modes of data cube manipulation:
+
+   Spatial healing    : Identify and interpolate bad pixels in 
+   	   	      	individual slices (spectral channels)
+   Wavelength healing : Identify and interpolate bad pixels in 
+   	   	      	individual spectra
+   Line fitting       : Fit emission/absorption lines in individual or 
+                        all spectra
+
+   Only one of these modes can be used at a time.
+
+   Additional functionality that can be used in all modes:
+   - Automatic bad pixel search with various methods.
+   - Simple cube manipulation like median filtering each slice or convolving
+     each slice with a gaussian PSF
+
+On startup:
+-----------
+
+       The main GUI pops up. 
+
+       What you see:
+
+       On the left side of the GUI the parameter section is located where most 
+       of the parameters including methods can be specified.
+       On the right side of the GUI are two panel windows. The left (panel
+       window 1) shows the currently selected slice. Marked or outside pixel
+       have the lowest possible colorindex according to the selected colortable. 
+       The right panel window (panel window 2) shows the same slice with
+       marked pixels being interpolated if a healing mode is active or the
+       result in case of line fitting.
+       Below the panel window text windows (Info area) display information
+       about the world coordinate system, if available, about data at the
+       current mouse position and fit results if in line fitting mode (see
+       'Info areas' below). 
+       To the left, in the middle, there is a text window displaying messages
+       from fluxer to you (Message area). At the bottom the plot window is
+       located. Here the current spectrum is displayed. 
+       To the right of the plot window (Plotting parameter area), plotting
+       parameters can be set.
+
+       The GUI should not be resized. However, you can resize the panel
+       windows and the plot window see Pref ->  Change window sizes in the
+       main menu bar.
+
+       In the menu bar you find additional functionality.
+
+       -------------------------------------------------------------------
+       | Main Menu bar                                                   |
+       -------------------------------------------------------------------
+       |                          |  ---------------    ---------------  |
+       |                          |  |             |    |             |  |
+       |                          |  |  Panel      |    |  Panel      |  |
+       |                          |  |  Window 1   |    |  Window 2   |  |
+       |     Parameter section    |  |             |    |             |  |
+       |                          |  |             |    |             |  |
+       |                          |  |             |    |             |  |
+       |                          |  ---------------    ---------------  |
+       |--------------------------|--------------------------------------|
+       |      Message area        |                                      |
+       |           and            |             Info area                |
+       |   Plotting parameters    |                                      |
+       |-----------------------------------------------------------------|
+       |                                                                 |
+       |                                                                 |
+       |                                                                 |
+       |                        Plot Window                              |
+       |                                                                 |
+       |                                                                 |
+       |                                                                 |
+       |                                                                 |
+       -------------------------------------------------------------------
+
+
+
+Using help:
+-----------
+
+   For all modes exist help pages. For further information about any mode
+   click the appropriate Help button in the GUI.
+
+   In all help pages : marked pixels = queued pixels = pixels that are marked
+			for interpolation = pixel that shall not be used in,
+			e.g., a fit 
+                       good pixel    = pixels that are not marked
+
+                       inside pixel  = pixel that shall contain light
+                       outside pixel = pixel that do not contain light
+
+
+Side effects (not errors) :
+---------------------------
+     - Defines two system variables :!TEXTOUT and !TEXTUNIT
+
+     - Changes several parameters in !P
+
+     - One of the first commands fluxer executes is 'device, decomposed=0'
+
+     - The colortable will be modified.
+
+     - Fluxer takes its time when applying complicated interpolation
+       methods on many pixels. This is because IDL can be slooooooooooow.
+
+     - GEMINI fits files come with a primary and extension. The primary does
+       not contain data, only a header. The extension contains a header and
+       data. Since Fluxer can only handle one header, the headers are merged.
+       A standard header according to the data being loaded is
+       created into which, first, the header of the primary and, second, the
+       header of the extension are inserted. In case of double occurances of
+       header keywords, the already existing keyword will be preserved.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+SOME NOTES ON FLUX and SIGMA:
+-----------------------------
+
+     - What is called flux e.g. derived from a gaussian fit, is the area of
+       the gaussian divided by the spectral bin width!
+
+     - Gaussian width is the gaussian dispersion (sigma). 
+       Lorentzian width is the HWHM.
+       In all other line fitting modes, the width is always the full width.
+       When a plot is to be displayed in km/s, always the full width is
+       meant (in Gaussian mode 2.35*sigma or 2.*HWHM in lorentzian mode). 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+Astro header :
+--------------
+WCS functionality only works if the astro header is correctly specified. 
+E.g. Compass and scalebar are determined by astro functions that evaluate the
+astro header. The WCS string generation is taken from atv.pro.
+Definition of the WCS is not really standardized and may differ amongst
+observatories. 
+
+E.g. the WCS works if the following keywords are present:
+
+- CRVALi, CRPIXi, CDELTi, CTYPEi with i = 1..3
+- Either RADECSYS, EQUINOX or EPOCH for defining the equinox
+- CD1_1, CD1_2, CD2_1, CD2_2 for defining the rotation of the WCS
+- Astrometric information is only read according to extast. Any
+  non-standard telescope offset or similar is ignored.
+
+
+Notes about GEMINI fits data:
+
+   GEMINI fits files come with a primary and extension. The primary does
+   not contain data, only a header. The extension contains a header and
+   data. Since Fluxer can only handle one header, the headers are merged.
+   A standard header according to the data being loaded is
+   created into which, first, the header of the primary and, second, the
+   header of the extension are inserted. In case of double occurances of
+   header keywords, the already existing keyword will be preserved.
+
+
+Additional header keywords recognized by fluxer:
+------------------------------------------------
+
+OBJECT    : Name of the object
+OBS-DATE  : Date of observation
+ORIGIN    : Observatory
+REDSHIFT  : Redshift of the source. If specified and wavelengths are present 
+            fluxer automatically applies this redshift to the wavelengths.
+
+
+Wavelength definition:
+----------------------
+
+From version 2.36 on wavelengths are defined as 
+(dindgen(# of channels)-(CRPIX-1))*CDELT+CRVAL
+
+Prior to version 2.36 wavelengths were defined as 
+(dindgen(# of channels)-CRPIX)*CDELT+CRVAL
+
+Fits convention starts with 1, idl convention with 0.
+
+
+ATV:
+----
+
+Fluxer comes with version 2.3 of atv.pro by A. Barth named fluxer_atv.pro. 
+fluxer_atv.pro is identical to atv.pro but has been modified in many ways.
+Additional capabilities like marking bad pixel, interpolating bad pixel and
+finding bad pixel has been introduced. For further explanations see the help
+page that can be started from fluxer_atv. 
+
+
+Disclaimer and credits: 
+-----------------------
+
+This software comes without any warranty and should not be used to fake data.
+This software should be used for scientific purposes only.
+
+Fluxer only connects to the internet if requested by the user. This is the case 
+for downloading DSS images and for checking for updates. Fluxer does not transmit 
+any private information whatsoever! However, the author can not be held responsible 
+for the content that Fluxer downloads upon user request.
+
+Several routines from other authors are used by Fluxer and part of this
+installation package:
+
+     atv : the version of atv delivered with this package is NOT the original
+     	   atv.pro. This version of atv has been modified for more mouse modes
+     	   and capabilities. This version is based on atv version 2.3 and is
+     	   called fluxer_atv.pro.
+           The original atv by Aaron Barth, UC Irvine, and others 
+           can be downloaded from here http://www.physics.uci.edu/~barth/atv/
+
+     Craig Markwardt : e.g. cmapply.pro, mpfitpeak.pro, mpcurvefit.pro and library
+     	   http://www.physics.wisc.edu/~craigm/idl/fitting.html
+
+     Siree Vatanavigkit : image interpolation 
+     	   "The Small Bodies Note", University of Maryland
+     	    http://pdssbn.astro.umd.edu/volume/con_0001/software/src/cscalpip/idl/mskint12/
+           The maskinterp.pro routine has been adapted. Fluxer uses
+     	   _maskinterp.pro. 
+
+     Astrolib : idlastro.gsfc.nasa.gov
+     	      It is a known problem that some routines of astrolib are
+     	      incompatibel amongst versions of the astrolib. 
+	      Using the astrolib in this package ensures compatibility.  
+ 
+     H. Freudenreich: e.g. robust_sigma.pro, robust_poly_fit.pro
+
+     Cubehelix algorithm based on D. A. Green algorithm, arXiv:1108.5083 and
+            Bull. Astr. Soc. India 39, 289 (2011). 
+
+     Fred Knight : multiplot. The version used in fluxer is fluxer_multiplot
+     	  which is the original version of multiplot adapted to work with fluxer. 
+
+     Michele Cappellari : Voronoi tessellation Cappellari & Copin (2003, MNRAS, 342, 345) 
+
+     M. Liu : imcenterf. The version used in fluxer is fluxer_imcenterf
+     	  which is the original version of imcenterf adapted to work with fluxer. 
+
+     M. Feldt: webget. The version used in fluxer is fluxer_webget
+     	  which is the original version of imcenterf adapted to work with fluxer. 
+
+Logo :
+------
+
+You can create your own rectangular logo as a jpg file and copy it to
+FLUXER_HOME. Just name it fluxer_logo.jpg.
+
+
+Known IDL 'bugs' :
+------------------
+
+A)
+Try on the command line the following :
+plot, [0,1],[5d+1,5d+1],/yst
+It works. Now try:
+plot, [0,1],[5d+16,5d+16],/yst
+It does not work.
+
+B)
+Try:
+print, float(132.400)
+132.400
+print, double(132.400d)
+132.400
+print, double(132.400)
+132.39999
+

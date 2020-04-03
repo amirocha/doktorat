@@ -1,0 +1,248 @@
+-----------------------------------------------------------------------
+=======================================================================
+
+       FFFFFF   LLL       UUU    UUU  XXX   XXX    EEEEEEE    RRRRRRR
+      FFF      LLL       UUU    UUU    XXX XXX    EEE        RRR  RRR
+     FFFFFF   LLL       UUU    UUU      XXX      EEEEEEE    RRRRRRR
+    FFF      LLL       UUU    UUU    XXX XXX    EEE        RRRRR
+   FFF      LLLLLLL   UUUUUUUUUU    XXX   XXX  EEEEEEE    RRR  RRRR
+
+=======================================================================
+-----------------------------------------------------------------------
+
+This is the help page for FLUXER_ALIGNER.
+
+FLUXER_ALIGNER is a tool to regrid a set of fits files to a common grid and
+allows to convolve them to the same angular resolution. The fits files must
+contain valid astrometry (see below). Input files can have any angular
+sampling, any position angle and an equinox of either 2000 or 1950.
+The regridded data has always an equinox of J2000 and north up and east to the
+left. 
+FLUXER_ALIGNER can deal with images and with cubes. In case of cubes the
+spatial axes must be the first and second one, the wavelength axis must be the
+third. Input is always converted to double, output is always in
+double. 
+
+SPECIAL NOTES:
+- Cubes have not been tested yet.
+- The errors in the output images have not been tested.
+
+This tool has been tested only for tangential WCS.
+
+The core routine redistributes flux from the old grid to a new grid 
+according to the overlap of pixels on the old grid with the new grid
+according to the mode selected (see below).
+
+Currently fluxer_aligner does not provide an error frame on output.
+
+
+Please read this full help page before you start!
+
+
+Input file format
+-----------------
+
+Either:
+
+- Fitsfile contains extensions named 'FLUX' or 'FLX' and 'ERROR'
+  or 'ERR'. These extensions are used as the data array and error
+  array. This is compatible with FIFI-LS data
+- Fitsfile contains a valid primary. This is used as the data
+  array and the primary header is read. If the fitsfile has
+  extensions, the first extension is used as the error array.
+  If no extensions are available, no error array is used.
+  This is compatible with FLUXER and fitsfiles with single
+  images/cubes.
+- Fitsfile does not contain a valid primary. If extensions are
+  available, the first extension is used as data array. The header
+  from the first extension is used. No error array is used.
+  This is compatible with some other observatories.
+
+Data and corresponding error values are considered as invalid if at least one
+of them is not finite, the data is exactly 0. or the error is less
+equal 0. 
+
+All input files must have valid astrometry! 
+
+
+Output file format
+------------------
+The output fits files have two extensions:
+     primary      : the regridded data
+     1. extension : the error after regridding, currently useless
+     2. extension : the number of old pixels that contributed in
+                    calculating the new pixel value 
+
+
+
+Starting FLUXER_ALIGNER:
+------------------------
+Type on the IDL commandline: IDL>fluxer_aligner
+To load another input image simply press the 'Load Image' button under 
+the table. You can interpolate as many input images as you like. Simple
+load another input image by pressing the 'Load Data' button under the 
+table again. You can select more than one fits file in the dialog that 
+opens. The input files must be fitsfiles with valid astrometry. Input 
+files can have any position angle, any sampling and any equinox. If 
+you want to delete files from the table, select the rows and press 
+the 'Delete Image' button under the table. 
+
+
+What is shown in the window and what mouse button actions are available :
+-------------------------------------------------------------------------
+The window shows the alignment of the individual input images defined in the
+table. The size of the FoV is chosen such that all images fit into the output
+images. Whenever you load another image or delete an image from the table the
+size is recalculated. 
+
+The input images shown here do not show dead pixels and are not exactly 
+representing the regridded image (rather a preview). Additionally frames
+indicating the borders of the input images are plotted with a number to the
+lower left that corresponds to the row in the table showing the filename.
+
+See the 'Plotting parameters' section below for how to set plotting
+parameters.
+
+There are no mouse button actions for the window.
+
+
+What is shown in the table and what columns can be edited:
+----------------------------------------------------------
+   Ref         : not editable, but clickable. 
+                 Selects the reference data that is plotted last.
+
+   File        : not editable, not clickable
+                 The filename.
+
+   FWHM ["]    : editable, not clickable
+                 FWHM in arcseconds.
+                 This parameter is used to adapt the angular resolution for
+		 your output images.
+                 If set to zero, no convolution is performed. If set to a
+                 positive value the data after it has been regridded is
+                 convolved with a Gaussian having this FWHM. Convolution is
+                 done pixelwise and may take some time on larger images.
+                 All new pixels that are invalid before convolution are
+                 invalid after convolution as well. 
+
+   Mode        :  not editable, but clickable. 
+
+           SUM : for the new pixel, sums up all partially overlapping old
+           pixels. For e.g. flux maps. Disadvantage is that you may have an
+           intensity gradient at the borders of the new image. This is the
+           default.
+
+              Formula : fj = Sum over i (Aij*Fi)
+                        ej = sqrt(Sum over i (Aij^2 *Ei^2))
+              Aij : Percentage of the flux from an old pixel i that is
+              redistributed to a new pixel j
+              Fi : flux in old pixel i
+              Ei : error in old pixel i
+              ej : error in old pixel j 
+              fj : flux in new pixel j
+
+
+           SUM+FLL : like SUM but new pixel that have less than 99.9%
+           coverage with old pixels are marked as invalid.     
+
+              Formula : see SUM
+
+           AVG : averages instead of summing up. No gradients at the border
+           but flux is generally not conserved since the ratio of the pixel
+           areas is not considered. So when the new pixels are e.g. ten times
+           smaller the total flux invcreases by a factor of 100.
+
+              Formula : Wij = Aij/Ei^2
+                        fj = Sum over i (Wij*Fi) / Sum over i (Wij)
+                        ej = sqrt(1./sum over i (Wij))
+              Aij : Percentage of the flux from an old pixel i that is
+              redistributed to a new pixel j
+              Fi : flux in old pixel i
+              Ej : error in old pixel i 
+              fj : flux in new pixel j
+              ej : error in new pixel j
+
+
+           AVG+SCL : like AVG but the ratio of old pixels size to new pixel
+           size is multiplied to the data (sort of flux conservation). 
+
+              Formula : see AVG but scaling with ratio of input/outpixel size is
+              applied. 
+
+   Lon ["], Lat ["] : not editable, not clickable
+                 The longitude and latitude, depending on the wcs used, 
+                 of the center of each input image. 
+
+   CDELT1 ["], CDELT2 ["] : not editable, not clickable
+                 CDELT1 and CDELT2 as coded in each input image
+
+   X/Y [px]    : Size of the input images in pixel.
+
+
+   PA [deg]    : not editable, not clickable
+                 The position angle of the input data.
+
+   WCS         : not editable, not clickable
+                 The type of the world coordinate system
+
+   Equinox     : not editable, not clickable
+                 The numeric equinox of the input image. The input images can have
+		 an equinox of 2000 or 1950.
+
+   Comment     : not editable, clickable
+                 In case of cubes it shows the mean wavelength of the cube as
+                 coded with the CDELT3 fits keyword.
+
+
+Further parameters in the GUI :
+-------------------------------
+
+   Sampling [arcseconds] : Angular sampling of the output data in
+                     arcseconds. Whenever you load or delete a file from the
+                     table, the sampling is recalculated as the mean CDELT1
+                     and CDELT2 of the input data. If you wish another
+                     sampling, reenter it here.
+
+  Output Filename suffix  : The output filename is the input filename with
+                            this suffix appended. E.g. test.fits is the input
+                            filename and the suffix is abs then the output
+                            filename is test_abc.fits. The output directory is
+                            the current working directory.
+
+   Ignore All Errors : if Yes then all error data that may be available with
+                       the data is ignored. if No the error data, if
+                       available, is used.
+
+  Debug                   : The regridded data are concatenated to form a
+                            single cube that is shown in fluxer after
+                            completion. In case of cubes the 
+                            regridded cubes are collapsed along the wavelength
+                            axis and this image is added to the cube. 
+
+
+Once you have set these parameters can can start the regridding by hitting
+the 'Do' button in the GUI.
+
+
+Plotting parameters :
+---------------------
+
+The following parameters allow to control plotting the input images in the
+window.
+
+  IDL colortable   : Allows to load another IDL colortable [0...40]
+                     The color of the image borders can not be changed.
+
+  Number of colors : Number of color to use for plotting the input images in
+                     the window. Higher numbers take longer. 
+
+  Draw Images      : If set to 'No' only the input image borders are plotted.
+
+  Image scaling    : Every input image get its own scaling in intensity when
+                     plotted. if you want to apply the scaling of the
+                     reference image to all images, select 'Reference' here. 
+                     Any image scale clips out 2% of the most extreme values
+                     to get better plotting results. This can not be changed.
+
+
+

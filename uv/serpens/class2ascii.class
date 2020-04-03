@@ -6,19 +6,19 @@ define real vel vel_inc	! vel: the value at the reference channel
 						! vel_inc: the new channel separation
 
 
-file in serpens_hcn10_conv.30m
+file in serpens_h13cn10_red.30m
 find /all
 
 
-set range 82.85 112.15 -133.25 -103.95
+!set range 82.85 112.15 -133.25 -103.95
 find /all
 
-average /nocheck /weight equal   ! for _red files: /res   !for _conv files: /weight equal
+average /nocheck   ! for _red files: /res   !for _conv files: /weight equal
 !smooth !for h13cn21 only!!
 
 
 !modify freq 88631.847      !hcn
-!modify freq 86340.1840   ! h13cn
+modify freq 86340.1840   ! h13cn
 !modify freq 691473.0763   ! co65
 !plot
 
@@ -26,7 +26,7 @@ set mode x tot
 
 set unit v
 
-sic output ./profiles/serpens_hcn10_smm4b.txt
+sic output serpens_h13cn10_ave_spec.txt
 
 for i 1 to channels
 	say 'rx[i]' 'ry[i]' /format g16.8 g16.8 

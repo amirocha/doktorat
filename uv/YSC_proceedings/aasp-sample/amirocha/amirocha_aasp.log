@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.16)  30 NOV 2019 23:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.16)  14 FEB 2020 22:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -756,44 +756,33 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip48
 )
-(./amirocha_aasp.aux)
-\openout1 = `amirocha_aasp.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 26.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
-File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+(/usr/share/texlive/texmf-dist/tex/latex/arydshln/arydshln.sty
+Package: arydshln 2016/04/28 v1.73 
+\dashlinedash=\dimen121
+\dashlinegap=\dimen122
+\adl@box=\box28
+\adl@height=\dimen123
+\adl@heightsave=\dimen124
+\adl@depth=\dimen125
+\adl@depthsave=\dimen126
+\adl@finaldepth=\dimen127
+\adl@columns=\count110
+\adl@ncol=\count111
+\adl@currentcolumn=\count112
+\adl@currentcolumnsave=\count113
+\adl@totalheight=\count114
+\adl@totalheightsave=\count115
+\adl@dash=\count116
+\adl@gap=\count117
+\adl@cla=\count118
+\adl@clb=\count119
+\adl@everyvbox=\toks22
+\adl@LTpagetotal=\dimen128
 )
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
 
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count110
-\scratchdimen=\dimen121
-\scratchbox=\box28
-\nofMPsegments=\count111
-\nofMParguments=\count112
-\everyMPshowfont=\toks22
-\MPscratchCnt=\count113
-\MPscratchDim=\dimen122
-\MPnumerator=\count114
-\makeMPintoPDFobject=\count115
-\everyMPtoPDFconversion=\toks23
-) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
@@ -809,32 +798,69 @@ G,.JBIG2,.JB2,.eps]
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
-))
-\AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring OFF on input line 26.
+)))
+(./amirocha_aasp.aux)
+\openout1 = `amirocha_aasp.aux'.
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 28.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count120
+\scratchdimen=\dimen129
+\scratchbox=\box29
+\nofMPsegments=\count121
+\nofMParguments=\count122
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count123
+\MPscratchDim=\dimen130
+\MPnumerator=\count124
+\makeMPintoPDFobject=\count125
+\everyMPtoPDFconversion=\toks24
+)
+\AtBeginShipoutBox=\box30
+Package hyperref Info: Link coloring OFF on input line 28.
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count116
+\c@section@level=\count126
 )
-LaTeX Info: Redefining \ref on input line 26.
-LaTeX Info: Redefining \pageref on input line 26.
-LaTeX Info: Redefining \nameref on input line 26.
+LaTeX Info: Redefining \ref on input line 28.
+LaTeX Info: Redefining \pageref on input line 28.
+LaTeX Info: Redefining \nameref on input line 28.
 
 (./amirocha_aasp.out) (./amirocha_aasp.out)
 \@outlinefile=\write3
 \openout3 = `amirocha_aasp.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 33.
+LaTeX Font Info:    Try loading font information for U+msa on input line 35.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 33.
+LaTeX Font Info:    Try loading font information for U+msb on input line 35.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -842,149 +868,96 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ! Double superscript.
 <argument> A.~Mirocha$^{1,}^
                             {2}$, A.~Karska$^{2}$, L.\,E.~Kristensen$^{3}$, ...
-l.33 \begin
+l.35 \begin
            {center} {\small $^{1}$ Astronomical Observatory of the Jagiellon...
 
 ? 
 ! Double superscript.
 <argument> ...ueira$^{5}$, M.\, Gładkowski$^{2,}^
                                                   {6}$
-l.33 \begin
+l.35 \begin
            {center} {\small $^{1}$ Astronomical Observatory of the Jagiellon...
 
 ? 
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 41.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 43.
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 50.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 52.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 50.
+(Font)              size <5> substituted on input line 52.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.5> not available
-(Font)              size <5> substituted on input line 50.
+(Font)              size <5> substituted on input line 52.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 50.
+(Font)              size <5> substituted on input line 52.
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Package epstopdf Info: Source file: <serpens_cn10_divided_hcn10.eps>
-(epstopdf)                    date: 2019-07-02 00:48:47
-(epstopdf)                    size: 74865 bytes
-(epstopdf)             Output file: <serpens_cn10_divided_hcn10-eps-converted-t
-o.pdf>
-(epstopdf)                    date: 2019-03-20 10:32:17
-(epstopdf)                    size: 24567 bytes
-(epstopdf)             Command: <repstopdf --outfile=serpens_cn10_divided_hcn10
--eps-converted-to.pdf serpens_cn10_divided_hcn10.eps>
-(epstopdf)             \includegraphics on input line 84.
-runsystem(repstopdf --outfile=serpens_cn10_divided_hcn10-eps-converted-to.pdf s
-erpens_cn10_divided_hcn10.eps)...executed safely (allowed).
+<serpens_spectra.pdf, id=44, 345.56602pt x 508.38182pt>
+File: serpens_spectra.pdf Graphic file (type pdf)
+<use serpens_spectra.pdf>
+Package pdftex.def Info: serpens_spectra.pdf  used on input line 96.
+(pdftex.def)             Requested size: 193.4049pt x 284.52756pt.
 
-Package epstopdf Info: Result file: <serpens_cn10_divided_hcn10-eps-converted-t
-o.pdf>
-(epstopdf)                    date: 2019-03-20 10:32:17
-(epstopdf)                    size: 24567 bytes.
-
-
-pdfTeX warning: pdflatex (file ./serpens_cn10_divided_hcn10-eps-converted-to.pd
-f): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<serpens_cn10_divided_hcn10-eps-converted-to.pdf, id=43, 294.09875pt x 279.0425
-pt>
-File: serpens_cn10_divided_hcn10-eps-converted-to.pdf Graphic file (type pdf)
-<use serpens_cn10_divided_hcn10-eps-converted-to.pdf>
-Package pdftex.def Info: serpens_cn10_divided_hcn10-eps-converted-to.pdf  used 
-on input line 84.
-(pdftex.def)             Requested size: 256.0748pt x 242.96512pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<radex.jpg, id=46, 462.528pt x 346.896pt>
-File: radex.jpg Graphic file (type jpg)
-<use radex.jpg>
-Package pdftex.def Info: radex.jpg  used on input line 93.
-(pdftex.def)             Requested size: 265.55629pt x 199.16928pt.
+
+
+pdfTeX warning: pdflatex (file ./serpens_map.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
+<serpens_map.pdf, id=45, 263.98625pt x 291.0875pt>
+File: serpens_map.pdf Graphic file (type pdf)
+<use serpens_map.pdf>
+Package pdftex.def Info: serpens_map.pdf  used on input line 104.
+(pdftex.def)             Requested size: 256.0748pt x 282.38116pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [2]
-<CN_HCN.pdf, id=72, 462.72874pt x 346.29375pt>
+<radex.pdf, id=72, 578.16pt x 578.16pt>
+File: radex.pdf Graphic file (type pdf)
+<use radex.pdf>
+Package pdftex.def Info: radex.pdf  used on input line 113.
+(pdftex.def)             Requested size: 284.52713pt x 284.52756pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<CN_HCN.pdf, id=78, 462.72874pt x 346.29375pt>
 File: CN_HCN.pdf Graphic file (type pdf)
 <use CN_HCN.pdf>
-Package pdftex.def Info: CN_HCN.pdf  used on input line 103.
+Package pdftex.def Info: CN_HCN.pdf  used on input line 123.
 (pdftex.def)             Requested size: 230.46574pt x 172.47537pt.
-
-
-! Package inputenc Error: Unicode char − (U+2212)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.104 ... wide range of total hydrogen densities.}
-                                                  \label{fig3}
-? 
-
-! Package inputenc Error: Unicode char − (U+2212)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.104 ... wide range of total hydrogen densities.}
-                                                  \label{fig3}
-? 
-
-! Package inputenc Error: Unicode char − (U+2212)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.104 ... wide range of total hydrogen densities.}
-                                                  \label{fig3}
-? 
-
-! Package inputenc Error: Unicode char − (U+2212)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.104 ... wide range of total hydrogen densities.}
-                                                  \label{fig3}
-? 
-<CN_CS.pdf, id=73, 462.72874pt x 346.29375pt>
+<CN_CS.pdf, id=79, 462.72874pt x 346.29375pt>
 File: CN_CS.pdf Graphic file (type pdf)
 <use CN_CS.pdf>
-Package pdftex.def Info: CN_CS.pdf  used on input line 109.
+Package pdftex.def Info: CN_CS.pdf  used on input line 129.
 (pdftex.def)             Requested size: 230.46574pt x 172.47537pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (3.88744pt too wide) in paragraph at lines 117--120
+Overfull \hbox (3.88744pt too wide) in paragraph at lines 137--140
 []\T1/cmr/m/n/10.95 AM, AK and MG ac-knowl-edge sup-port by the Pol-ish Na-tion
 al Sci-ence Cen-ter grant 2016/21/D/ST9/01098.
  []
 
-[3 <./serpens_cn10_divided_hcn10-eps-converted-to.pdf> <./radex.jpg>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
- [4 <./CN_HCN.pdf> <./CN_CS.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 137.
+[3 <./serpens_spectra.pdf>] [4 <./serpens_map.pdf>] [5 <./radex.pdf> <./CN_HCN.
+pdf> <./CN_CS.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 165.
+ [6]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 165.
  (./amirocha_aasp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 137.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 137.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 165.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 165.
 Package rerunfilecheck Info: File `amirocha_aasp.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -992,16 +965,16 @@ Package rerunfilecheck Info: File `amirocha_aasp.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 137.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 165.
  ) 
 Here is how much of TeX's memory you used:
- 7242 strings out of 494923
- 101227 string characters out of 6180742
- 181623 words of memory out of 5000000
- 10413 multiletter control sequences out of 15000+600000
+ 7472 strings out of 494923
+ 104390 string characters out of 6180742
+ 188595 words of memory out of 5000000
+ 10627 multiletter control sequences out of 15000+600000
  23321 words of font info for 71 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 32i,10n,25p,1715b,352s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,13n,24p,2166b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/agnieszka/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000
 .600pk> </home/agnieszka/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ect
 i1000.600pk> </home/agnieszka/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/e
@@ -1024,10 +997,10 @@ s/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on amirocha_aasp.pdf (4 pages, 436921 bytes).
+Output written on amirocha_aasp.pdf (6 pages, 503692 bytes).
 PDF statistics:
- 516 PDF objects out of 1000 (max. 8388607)
- 143 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 643 PDF objects out of 1000 (max. 8388607)
+ 195 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
