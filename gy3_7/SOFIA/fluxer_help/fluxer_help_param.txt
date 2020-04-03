@@ -1,0 +1,574 @@
+-----------------------------------------------------------------------
+=======================================================================
+
+       FFFFFF   LLL       UUU    UUU  XXX   XXX    EEEEEEE    RRRRRRR
+      FFF      LLL       UUU    UUU    XXX XXX    EEE        RRR  RRR
+     FFFFFF   LLL       UUU    UUU      XXX      EEEEEEE    RRRRRRR
+    FFF      LLL       UUU    UUU    XXX XXX    EEE        RRRRR
+   FFF      LLLLLLL   UUUUUUUUUU    XXX   XXX  EEEEEEE    RRR  RRRR
+
+=======================================================================
+-----------------------------------------------------------------------
+
+Here, a list of parameters that are directly available from the main GUI.
+
+General parameters:
+-------------------
+
+      1. row: Slice and redshift selection
+         Slice       : Number of the (current) slice to be displayed
+                       (starting with 0)
+	 Wave        : Wavelength of the slice to be displayed
+	 Arrow image : Move a slice back (left click)
+		     : Move a slice forward (right click)
+         Z           : Opens a new dialog which allows to set redshift,
+                       velocity or distance if wavelengths are
+                       supplied. The Hubble constant which can be specified
+                       here is not set as a preference. Use the Preference
+                       Settings dialog instead.
+
+      2. row: Cursor settings and Image colors and scaling
+	 Cursor	Size : Half-Width of the cursor box. 
+                       -Spatial healing mode, the cursor is rectangular. The
+		        spectrum displayed is always the one spectrum of the
+		        one pixel where the cursor is centered
+                       -Wavelength healing mode, the cursor can not have a
+		        greater size than 0 (means 1 pixel).
+                       -Line fitting mode, all spectra within a circular
+                        aperture around the current mouse position are averaged
+		        or summed. 
+         Cursor	Mode : Only for Line fitting mode. 
+	 	       Average : All spectra within a circular aperture with
+	 	       	       	 radius Cursor Size are averaged. The aperture
+	 			 uses all pixels if the center of a pixel is
+	 			 within the aperture. 
+				 This mode provides error propagation if
+				 errors are provided.  
+                       Sum     : All spectra within a circular aperture with
+	 	       	       	 radius Cursor Size are summed up. The aperture
+	 			 only uses pixels if the center of a pixel
+	 			 within the aperture is within the radius. 
+				 This mode provides error propagation if
+				 errors are provided. If one or more spexel in
+	                         the aperture for a specific slice are
+	 			 invalid, the resultant channel is invalid as
+				 well. 
+	 	       HighRes Average : All spectra within a circular
+                         	 aperture with radius Cursor Size are
+				 averaged. Pixels that are only partially
+      	                         covered by the aperture will be used
+	                         according to the fraction of coverage.  
+				 This mode provides error propagation if
+				 errors are provided.  
+                       HighRes Sum     : All spectra within a circular aperture with
+	 	       	       	 radius Cursor Size are summed up. Pixels that
+	                         are only partially covered by the aperture
+	 			 will be used according to the fraction of coverage.  
+				 This mode provides error propagation if
+				 errors are provided. If one or more spexel in
+	                         the aperture for a specific slice are
+	 			 invalid, the resultant channel is invalid as
+				 well.  
+
+
+      Image Colors and Scaling : A dialog for selecting the colortable or to
+                                 do image scaling (see fluxer_color_scaling_help.txt)
+
+      3. row : Panel Mouse Mode
+      Here you can select the mouse mode that defines mouse button actions in
+      the panel windows.  See "Help->Mouse Modes" from the main menu bar.
+
+
+      4. row: Modes
+      You may either select the spatial or the wavelength healing or
+      line fitting mode. 
+
+
+      5. row: Additional functionality
+
+      Bad pixel search :
+      Bad pixel search can be run on the currently selected slice or on all
+      slices. Select the Help tag from the corresponding pulldown menues to
+      get info about the search algorithm and parameters to be set.
+
+      Calculus :
+      Here you can median or boxcar filter or convolve with a gaussian PSF
+      each slice of your data cube or many more. You can also reset queued
+      pixels here.
+
+      Viewing Masks :
+      Allows to load/create and delete viewing masks. See "Help->Applying
+      Viewing Masks" from the main menu bar.
+
+
+
+Plotting parameters:
+--------------------
+
+   These are the plotting parameters that can be set from the main GUI
+
+   X Axis Scaling:
+
+      Half # of spectral channels to be displayed in the plot window : 
+                            The Plot windows show the extracted spectrum 
+                            between actual slice - # to actual slice + #
+
+      Overplotted spectra get redshift corrected wavelengths : If Yes then the
+                            wavelengths of overplotted spectra is transferred
+                            to rest frame. If No then the wavelengths of
+                            overplotted spectra are not transferred to rest
+                            frame. This is useful for overplotting 
+                            e.g. ATRAN transmission curves.
+
+   Y Axis Scaling:
+
+      Auto Data           : Scaling mode of the plot window. For scaling 
+                            only valid pixel are used.
+     		       	    Auto Data : Automatic scaling. The y-range is set
+   	                             automatically in every spectrum to :
+			   	     [min(data), max(data)]
+
+     		       	    Auto Data+Fit : Automatic scaling. The y-range is set
+   	                             automatically in every spectrum to 
+                                     [min(data,fit),max(data,fit)]
+
+   		       	    Auto Data+Error : Automatic scaling. The y-range is set
+   	                             automatically in every spectrum to :
+                                     [min(data-error),max(data+error)]
+
+     		       	    Auto Data+Fit+Error : Automatic scaling. The y-range is 
+   	                             set automatically in every spectrum to :
+                                     [min(data-error,fit),max(data+error,fit)]
+
+                            Manual : Allows to set the y-range manually with
+      	                             the Min/MaxY values.
+
+      Min/Max Y           : Min/Max y value to be plotted when scaling the plot window
+                            manually. 
+
+      Overplotted spectra get the same Y scale as the currently displayed : 
+                                 If No then the overplots get their own Y
+                                 scale (e.g. when overplotting ATRAN
+                                 transmission curves).
+                                 If Yes then the overplots Y range is
+                                 determined together with the currently
+                                 displayed spectra according to 'Auto Data'
+
+ 
+
+   Line                : Increases or decreases the line thickness of the
+                         plotted spectra or contours.
+   Char                : Increases or decreases the charsize in plots.
+
+
+Mouse Actions:
+--------------
+    Panel Windows :
+    ---------------
+    The action that is invoked by clicking a mouse button in one of the panel
+    windows depends on the mouse mode. See Help->Mouse Modes
+
+
+    Plot window :
+    -------------
+    When moving the cursor over one of the two panel windows, the corresponding
+    spectrum which is extracted from an aperture with half-radius Cursor will
+    be displayed in this window.  
+
+    What do you see:
+        In all modes : Pixels that are marked/outside are indicated with a
+                       white/red diamond at the upper rim of the plot.
+
+        Spatial healing : The spectrum of the current pixel as a histogram
+
+        Wavelength healing : The spectrum of the current pixel. The data
+	                     before interpolation as histogramm, the
+	                     interpolated data as lines.
+
+        Line fitting : Data used for fitting (white)
+                       Fit (red)
+                       Baseline fit (green)
+                       Fit subtracted spectrum (blue)
+
+
+    Possible actions: 
+        Wavelength healing:
+           Left-click   : marks a pixel and interpolates acc. to the selected
+           		  wavelength healing method
+           Right-click  : unmarks a pixel and interpolates remaining marked 
+                          acc. to the selected wavelength healing method 
+
+        Line fitting :
+           Left-hold and move  : Defines the baseline fitting regions. You can
+           	     	       	 select as many as you like.
+                                 Baseline fitting regions can not be moved or
+           			 resized. Baseline fitting regions may overlap
+           			 but this has no additional effect.
+
+           Right-hold and move : Defines the line fitting region. Only good
+                                 pixels are used for the fit. Defining a
+                                 second line fitting region (for a double line fit) is
+                                 only possible when fitting GAUSSIANs.  
+
+           Middle click        : deletes a fit region, if click occured in a
+                                 fit region, or deletes all fit regions if
+                                 click occured outside any fit region.
+
+           Also baseline and line fitting regions are allowed to overlap.
+
+
+    Colorbar window :
+    -----------------
+    Image scale set to 'Auto' :
+    The colorbar and hence the minimum and maximum values to be displayed are
+    determined automatically from the image displayed. When zooming in or out
+    or recentering the image the image scale is kept fix. Any other action
+    rescales the colorbar (and the minimum and maximum value). If you want to
+    rescale the image while zooming or recentering, click on the corresponding
+    colorbar. 
+
+    Image scale set to 'Manual':
+    A left/right click-hold and move within a colorbar changes the min and max
+    value. A middle click invokes a GUI for manual value selection.
+
+
+Info areas :
+------------
+Under the panel windows four info areas are located:
+
+The top left shows the astronomical coordinates (as defined by the WCS menu in
+the menubar of the main window) if an astrometric header has been found.
+The top right info area shows the Method selected (in case of spatial
+healing), the pixel index coordinates, an indicator that indicates the status
+of the pixel the mouse cursor moves over (O: Outside, I: Inside, Q: queued for
+interpolation) and the data values for the images in the left and the right
+panel window when moving the mouse over a panel window. The middle info area
+summarizes the found coefficients when line fitting. When fitting two
+gaussians additionally the distance of the gaussian centers is printed. The
+bottom info area shows information if wavelength healing or line fitting is
+selected and when moving over the plot window. The fitting method, x and y
+coordinate, pixel coordinate and which line identification is closest.  
+
+Menu bar :
+----------
+The menu bar is located on top of the GUI.
+    	- Do:
+
+            Load cube 
+	       Restarts Fluxer to load a new datacube from a fitsfile.
+
+	    Save data
+               Saves the data cube as a fits file. The primary contains the
+               data cube, extension 1 contains the inside cube,
+	       which is of the same size as the data cube with 1 if a pixel is
+	       inside and 0 if outside.
+
+            Save queued data
+               Saves the queued data cube as a fits file. The primary contains
+               a cube of same size as the data cube with 1 where pixels
+               have been queued for interpolation and inside, 0
+               otherwise. Extension 1 contains the inside cube,
+	       which is of the same size as the data cube with 1 if a pixel is
+	       inside and 0 if outside.
+
+            Save continuum subtracted cube
+               Saves the continuum subtracted (baseline subtracted) data cube
+               as a fits file. Of course the baseline must have been
+               determined from a line fit before.
+               Extension 0 contains the baseline subtracted data cube, 
+               extension 1 contains a cube with 1 where the line fit has been
+               successful, 0 otherwise.
+
+            Save fit results
+               Saves the determined fit parameters in line fitting mode as fits
+               files. See 'Fit Parameters and errors' in the 'Help' pulldown
+               menu in the main menu bar. 
+
+            Add Fits keyword
+               Add a fits keyword to the header. If no header exists,
+               create one.
+
+            Delete Fits keyword
+               Delete a fits keyword from the header, if it exists. If no
+               header exists, nothing is done.
+
+            Exit
+               Exits fluxer.
+
+        - Tools:
+
+            Get redshift from NED
+               Given the name of the object, Fluxer contacts NED for the redshift. 
+               If the fits header contains the OBJECT or the OBJ_NAME keyword, 
+               that value is predefined in the GUI. If the name was resolved
+               by NED and the redshift submitted by NED is valid, the user can
+               set this redshift as active by pressing 'Set'. Note, that an active
+               internet connection is required for this.
+
+            Browse : Opens a website in your default browser
+
+               Object Info from NED
+                  Shows infos from NED about the specified object
+
+               Object Info from SIMBAD
+                  Shows infos from SIMBAD about the specified object
+
+               FLUXER Home page
+                  Displays the home page of FLUXER
+
+               Linkname/LinkURL
+                  You can specify any number of links in a file named
+                  fluxer_urls.dat in the FLUXER home directory. The file must
+                  have two columns, seperator is ! and the first two lines are
+                  ignored. Specify any links to be displayed here. Col 1 is the
+                  name of the link, col 2 is the link. All these links appear
+                  then here in the main GUI.
+
+               How to add links here
+                  Explains, how the user can add his favourite links here.
+
+
+            FLUXER Cube Viewer (raw data)
+               Opens the cube viewer with the original data.
+
+            FLUXER Channel Map Viewer (raw data)
+               Opens the channel map viewer with the original data.
+
+            FLUXER Cube Viewer (extracted)
+               Opens the cube viewer with continuum subtracted data if created.
+
+            FLUXER Channel Map Viewer (extracted)
+               Opens the channel map viewer with continuum subtracted data if
+               created.
+
+            FLUXER Plot PV diagram
+               Plots a pv diagram (see 'Plot PV diagram' below).
+
+            FLUXER View Header
+               Opens the header viewer with the header of the fits file loaded
+               (if it contains a header).
+
+            FLUXER View Line Identifications
+               Lists all wavelengths and linenames that are currently used as
+               line identification
+
+            FLUXER Plot spectra from multiple locations in the FoV
+               Plots spectra from individual apertures.
+               The length of the spectra (number of channels) corresponds to
+               the number of channels shown in the plot window. When zooming,
+               only the zoomed data cube is used.  
+               Charsize             : Charsize of plot annotations
+               Aperture step        : Step between apertures, Distance between
+                                      aperture center's in x and y, e.g. 3 means plot
+                                      spectrum from every third spatial position
+                                      E.g.(0,0),(3,0),(6,0),...,(0,3),(3,3),(6,3),...
+               Half aperture size   : Half aperture size, e.g. 0 corresponds
+                                      exactly to one spectrum, 1 means a
+                                      full aperture of 3 (=2*half aperture
+                                      size +1) corresponding to 9 spectra. 
+                                      E.g. an aperture step
+                                      of 3 and an aperture half size of 1 is
+                                      equivalent to a rebin by a factor of 3. 
+               Extraction           : Only used if half aperture size is gt 0.
+                                      Within this aperture values are either
+                                      totalled or medianed. Only pixels which
+                                      are inside, not queued, and that have a
+                                      finite data value are used.
+               Indicate spectrum index : Prints the index of the aperture to
+                                         the plot
+               Title                : Adds this title to the plot
+               Select line          : Only available when wavelengths and
+                                      line identifications are found. 
+                                      Allows to select an emission line
+                                      which represents 0 km/s
+
+            FLUXER Voronoi tesselation :
+               Create tessellation map : Create a voronoi tessellation map according 
+                                         to Cappellari & Copin (2003, MNRAS, 342, 345) 
+
+               Apply tessellation map  : Apply a tessellation map to rebin a data cube
+
+
+            FLUXER IVolume          : Opens the data cube or (if extracted)
+                                      the continuum subtracted data cube in a
+                                      3D viewer. Read the help page that is
+                                      accessible from the GUI that opens after
+                                      having started FLUXER iVolume. From
+                                      IDL version 8 on this routine does not work
+                                      properly for unknown reasons.
+
+            FLUXER ATRAN :
+               FLUXER ATRAN for cube (emission) : downloads ATRAN transmission
+                                         curve T for wavelengths defined with
+                                         your data. If download has been
+                                         successful, the emission spectrum S
+                                         is calculated using the temperature
+                                         of the ambient atmosphere, 
+                                         S(lambda) = BB(lambda,T[K])*(1-T(lambda)),
+                                         and is plotted in the Plot window. 
+                                         Plotting of the curves can
+                                         be stopped by pressing 'Cancel' in the
+                                         'FLUXER ATRAN' GUI.
+               FLUXER ATRAN for cube (transmission)  : downloads ATRAN transmission 
+                                         curves for wavelengths defined with your
+                                         data. If download has been successful, the
+                                         transmission curve is plotted in the
+                                         Plot window. Plotting of the curves can
+                                         be stopped by pressing 'Cancel' in the
+                                         'FLUXER ATRAN' GUI.
+
+               FLUXER ATRAN            : downloads ATRAN transmission curves
+
+            Overplot                :  
+	       Individual spectrum     : Loads a single Fits spectrum and
+	       		  	       	 displays it in the Plot window. The
+	                                 fits file should contain X and Y
+	       				 values. Their number must be the
+	       				 same. The sampling must not be the
+					 same as the one used in fluxer, 
+					 interpolation is offered after the
+	       				 spectrum has been loaded.
+	       Cancel                  : Cancels overplotting individual spectra           
+
+            Transitions             :
+	       Show 		       : Show line identifications
+	       Hide		       : Hides line identifications
+
+
+        - Astrometry:
+            If the astro header is present, these options allow to apply
+            various WCS. 
+	    'Show/Hide Compass'  : plots a compass in the middle of the FoV
+            'Show/Hide Grid'     : plots lines of constant right ascencion and
+            	       		   declination
+            'Show/Hide Scalebar' : plots a scalebar that corresponds to a
+                                   third of the panel window size
+            'Set Color'          : allows to set the (common) color of the
+                                   compass, the grid and the scalebar
+
+        - Pref:
+            Opens the preferences editor or loads a preference file. 
+            Additionally allows to resize the panel and the plot window.
+
+        - Help: 
+             About                  : Displays the version number of Fluxer
+                                      you are using
+             In general             : About Fluxer
+             How to Install         : Installation guide
+             Parameters             : Display this help page 
+             Contouring             : Help about contouring
+             Slits and PVs          : Help about slit extraction and position
+                                      velocity diagrams
+             Voronoi tessellation   : Help on the Voronoi tessellation
+                                      algorithm 
+             ATRAN transmisison curves : Explains how to load ATRAN
+                                      transmission curves for the data range 
+                                      displayed.
+                                    
+             Tutorials              : Some tutorials
+             Mouse Button Actions   : Displays the various mouse actions
+                                      allowed for the currently 
+                                      selected mode in the corresponding window
+             Keyboard Actions       : Displays the various keyboard action in
+                                      the corresponding windows 
+        - Update:
+             Check for updates      : Connects to the internet and checks if 
+                                      a newer version of fluxer is available.
+             Visit Fluxer Home Page : Opens the Fluxer home page in the
+                                      default browser
+
+
+Keyboard events:
+----------------
+Depending on the window keyboard events are available:
+
+NOTE: Some of the visualizations started by keyboard actions are displayed
+wrong depending on the IDL version you use. It is an IDL bug that the scaling 
+of the axes are wrong. Only the visualization is affected.
+
+In the left panel window
+  A: Open this image in fluxer_atv
+  B: Calculate barycentric velocity offset from the fits header keyword
+     DATE-OBS and the equinox specified in the header.
+  C: Plot column of this image using fluxer_plot1d.
+     Triangles on the upper rim indicate pixels queued for interpolation,
+     rectangles pixel that are outside.
+  D: Opens FLUXER DSS/SDSS to get DSS image and SDSS spectra.
+     The image is retrieved for the coordinates specified by the current mouse
+     position. If the Ra and Dec for the current mouse position can not be
+     determined (astro header missing), you must specify the Ra and Dec. 
+  E: Plot spectrum using fluxer_plot1d.
+  F: Fit a gaussian or a moffat funtion to the image. The fit function always
+     contains a baseline. As starting value for the center coords the mouse
+     position where the 'F' keyboard event has been detected is used. In the
+     next GUI you can specify:
+     Fit function : the function to fit (GAUSS or MOFFAT)
+     Fit symmetry : Either symmetric(=circular, /CIRCULAR
+                    keyword to mpfit2dpeak) or asymmetric. 
+                    If symmetric, the FWHM/HWHM are the same.
+     Fit rotation : Allow rotation of the fit function (/TILT keyword to 
+                    mpfit2dpeak).
+     What to show : Either the fit result or the residual
+     Show in      : The result is either shown in fluxer_atv (2D) or 
+                    using isurface (in 3D)
+  I: Show image statistics
+  P: Calculate radial photometry and show it with fluxer_plot1d. In the next GUI
+     you can specify:
+     Radius of annuli                : radial increment of the annuli
+     Sum or average over the annuli  : Either summing up all data values or
+                                       divide by the area of the annuli for 
+                                       averaging
+     Use estimated center position   : the current center position (detected
+                                       when having pressed 'P') and the
+                                       estimated center position are printed
+                                       above in this GUI. The estimated 
+                                       center position is calculated according 
+                                       to imcenterf written by M. Liu. 
+  Q: Overplot contours
+     Small tickmarks along the contour lines, mark the downhill direction.
+     The GUI is self-explaining. Contours are plotted after having pressed
+     'Done'. 'Remove' removes previously plotted contours from a panel
+     image. 'Cancel' cancels contour plotting dialog. Contours are always only
+     plotted for valid image elements.  
+  R: Plot row of this image using fluxer_plot1d
+     Triangles on the upper rim indicate pixels queued for interpolation,
+     rectangles indicate pixel that are outside.
+  S: Surface plot using iSurface
+  W: Write image as PS, TIF (incl. contours and astrometry if requested), or
+     FITS file. PS and TIF will contain the colorbar as well.
+  1: Ask Simbad for object info
+  2: Ask NED for object info
+  3: Set currently selected spectrum as overplot
+  4: Cancel overplotting
+  Up/Right/Page up    : Show next slice
+  Down/Left/Page down : Show previous slice
+  ?: Show the available keyboard actions
+
+
+In the right panel window
+  A: Open this image in fluxer_atv
+  C: see above
+  D: see above
+  E: see above
+  F: see above
+  I: see above
+  O: see above
+  P: see above
+  Q: see above
+  R: see above
+  S: see above
+  W: see above
+  1: see above
+  2: see above
+  3: see above
+  4: see above
+  Up/Right/Page up    : see above
+  Down/Left/Page down : see above
+  ?: see above
+
+In the Plot window
+  W: Save content of the Plot window in a postscript file 
+     (only if cursor is locked)
+  I: Print minimum info about spectrum.
+  L: View Line Identifications
+ 

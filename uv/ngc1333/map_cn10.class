@@ -1,6 +1,6 @@
 
 define double sigma
-let sigma 0.5
+let sigma 0.2
 define double up
 let up 10
 set unit v
@@ -25,20 +25,30 @@ greg\pen /def
 	 greg\column x 2 y 3 z 4 /file ngc1333_cn10_int.txt
     greg2\rgdata x y z /blank '3*sigma'
     greg\limits /rgdata /reverse x
-    greg\level sigma to up by sigma
+    greg\level '3*sigma' to up by sigma
 
     greg\plot /scaling lin '3*sigma' up /blanking '3*sigma' 0
-
+greg\pen /weight 2.75
  	 greg\column x 2 y 3 z 4 /file ngc1333_cn10_int.txt
     greg2\rgdata x y z /blank sigma
     greg\limits /rgdata /reverse x 
-    greg\level '3*sigma' to up by '3*sigma'
+    greg\level '10*sigma' to up by '5*sigma'
 
-    greg\pen /colour 0
+    greg\pen /colour 7
     greg\rgmap /abs
+
+!draw beam
+define header h ngc1333_cn10.lmv read /global   !read the header from serpens_hcn10_conv_tab.lmv only and set it as h variable
+greg\pen /weight 0.75
+greg\pen /colour 0
+limits user_xmin*sec user_xmax*sec user_ymin*sec user_ymax*sec
+go beam h 0.15
+limits user_xmin/sec user_xmax/sec user_ymin/sec user_ymax/sec
+dele /var h
 
 !axes
     greg\set character 0.3
+    greg\pen /weight 0.75
     greg\pen /colour 0
     greg\box n o i
 
@@ -50,13 +60,76 @@ greg\pen /def
 
     greg1\column /close
 
+
+!sources
+    greg\set character 0.5   !I2A
+    greg\pen /colour 0 /weight 3
+    greg1\set marker 3 3 .2 0
+    set coord user
+    greg1\draw marker -0.6 -0.5
+    greg\pen /colour 0 /weight 1
+    set font duplex
+    set character 0.2
+    greg1\draw text -0.6 9.5 "I2A" 
+
+    greg\set character 0.5   !I2B
+    greg\pen /colour 0 /weight 3
+    greg1\set marker 3 3 .2 0
+    set coord user
+    greg1\draw marker 26.4 -21.4
+    greg\pen /colour 0 /weight 1
+    set font duplex
+    set character 0.2
+    greg1\draw text 26.4 -11.4 "I2B" 
+
+    greg\set character 0.5   !HRF 65
+    greg\pen /colour 0 /weight 3
+    greg1\set marker 3 3 .2 0
+    set coord user
+    greg1\draw marker 73.8 -156.4
+    greg\pen /colour 0 /weight 1
+    set font duplex
+    set character 0.2
+    greg1\draw text 73.8 -146.4 "HRF 65" 
+
+    greg\set character 0.5   !I4A
+    greg\pen /colour 0 /weight 3
+    greg1\set marker 3 3 .2 0
+    set coord user
+    greg1\draw marker 223.5 -66.1 
+    greg\pen /colour 0 /weight 1
+    set font duplex
+    set character 0.2
+    greg1\draw text 223.5 -56.1 "I4A" 
+
+    greg\set character 0.5   !I4B
+    greg\pen /colour 0 /weight 3
+    greg1\set marker 3 3 .2 0
+    set coord user
+    greg1\draw marker 246.6 -95.6
+    greg\pen /colour 0 /weight 1
+    set font duplex
+    set character 0.2
+    greg1\draw text 246.6 -85.6 "I4B" 
+
+    greg\set character 0.5   !I4C
+    greg\pen /colour 0 /weight 3
+    greg1\set marker 3 3 .2 0
+    set coord user
+    greg1\draw marker 268.8 -39.1 
+    greg\pen /colour 0 /weight 1
+    set font duplex
+    set character 0.2
+    greg1\draw text 268.8 -29.1 "I4C" 
+
     greg\set character 0.5   !SVS13
-    greg\pen /colour 7 /weight 3
-    greg1\set marker 4 1 .4 0
+    greg\pen /colour 0 /weight 3
+    greg1\set marker 3 3 .2 0
     set coord user
     greg1\draw marker 121.95 85.9
-    greg\pen /colour 7 /weight 1
-    set character 0.25
+    greg\pen /colour 0 /weight 1
+    set font duplex
+    set character 0.2
     greg1\draw text 121.95 95.9 "SVS13" 
 
 !    greg\set character 0.5   !IRAS4A1
@@ -78,15 +151,6 @@ greg\pen /def
 !    set font duplex
 !    set character 0.25
 !    greg1\draw text 21.565 -23.1 "IRAS4A2" 
-
-    greg\set character 0.5   !IRAS4A
-    greg\pen /colour 7 /weight 3
-    greg1\set marker 4 1 .4 0
-    set coord user
-    greg1\draw marker 223.5 -65.4
-    greg\pen /colour 7 /weight 1
-    set character 0.25
-    greg1\draw text 223.5 -55.4 "IRAS4A" 
 
 !    greg\set character 0.5   !IRAS4B1
 !    greg\pen /colour 7 /weight 3
@@ -118,15 +182,6 @@ greg\pen /def
 !    set character 0.25
 !    greg1\draw text 241.645 -88.05 "IRAS2A1" 
 
-    greg\set character 0.5   !IRAS2A
-    greg\pen /colour 7 /weight 3
-    greg1\set marker 4 1 .4 0
-    set coord user
-    greg1\draw marker 0.15 -0.2
-    greg\pen /colour 7 /weight 1
-    set character 0.25
-    greg1\draw text 0.15 9.8 "IRAS2A" 
-
 !    greg\set character 0.5   !IRAS2A3
 !    greg\pen /colour 7 /weight 3
 !    greg1\set marker 4 1 .4 0
@@ -145,15 +200,42 @@ greg\pen /def
 !    greg\pen /colour 7 /weight 1
 !    set font duplex
 !    set character 0.25
-!    greg1\draw text 232.845 -96.56 "IRAS2A2"     
+!    greg1\draw text 232.845 -96.56 "IRAS2A2"    
+
+
+!outflows ]
+!Persson+2012
+!IRAS4A
+    greg\pen /def
+    greg\pen /colour 6 /weight 2   !----- to jest kolor i grubosc lini
+    !greg\draw line 223.5 -66.1 /user /clip   !------ tutaj ta pozioma
+    greg\draw relocate 211.8 -93.7 /user  !----- te dwie kolejne liniki sa do ukosnej
+    greg\draw line 235.2 -38.5 /user /clip
+    greg\pen /def
+
+!IRAS2A
+    greg\pen /def
+    greg\pen /colour 6 /weight 2    
+    !greg\draw line -0.6 -0.5 /user /clip   !center
+    greg\draw relocate -13.28 -27.7 /user  ! -difference
+    greg\draw line 12.8 26.7 /user /clip !+ diference
+    greg\pen /def
+
+    greg\pen /def
+    greg\pen /colour 6 /weight 2    
+    !greg\draw line -0.6 -0.5 /user /clip   !center
+    greg\draw relocate -29.6 8.3 /user  ! -difference
+    greg\draw line 28.4 -7.3 /user /clip !+ diference
+    greg\pen /def 
 
 greg\pen /colour 0 /weight 1
 greg\set character 0.4
 greg\label "\GD\Gd (Arcsec) " /y
 greg\label "\GD\Ga (Arcsec) " /x
-    greg\set character 0.5
-    greg\pen /colour 0 /weight 1
-	greg\draw text 80 200 "NGC1333 CN J=1-0"
+    greg\set character 0.4
+	greg\draw text 80 200 "\G| \RT\DM\DB \R(K km/s)"
+    greg\set character 0.3
+	greg\draw text 280 100 "CN J=1-0"
 
 
 

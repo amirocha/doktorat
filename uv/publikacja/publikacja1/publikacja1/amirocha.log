@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2019.5.16)  3 DEC 2019 00:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2019.5.16)  17 DEC 2019 23:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -884,31 +884,10 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 LaTeX Warning: Label `spectra' multiply defined.
 
 
-LaTeX Warning: Label `G0' multiply defined.
-
-
 LaTeX Warning: Label `seds' multiply defined.
 
 
-LaTeX Warning: Label `table:fluxes' multiply defined.
-
-
-LaTeX Warning: Label `reactions' multiply defined.
-
-
-LaTeX Warning: Label `model1' multiply defined.
-
-
-LaTeX Warning: Label `sub@model1' multiply defined.
-
-
-LaTeX Warning: Label `model2' multiply defined.
-
-
-LaTeX Warning: Label `sub@model2' multiply defined.
-
-
-LaTeX Warning: Label `RADEX_models' multiply defined.
+LaTeX Warning: Label `eq8' multiply defined.
 
 )
 \openout1 = `amirocha.aux'.
@@ -1073,6 +1052,14 @@ LaTeX Font Info:    Font shape `T1/txss/m/sl' will be
 Package natbib Warning: Citation `Gra10' on page 2 undefined on input line 246.
 
 
+
+Package natbib Warning: Citation `Kir13' on page 2 undefined on input line 256.
+
+
+
+Package natbib Warning: Citation `Kon15' on page 2 undefined on input line 256.
+
+
 [2]
 File: serpens_hcn10.eps Graphic file (type eps)
  <serpens_hcn10.eps>
@@ -1103,11 +1090,8 @@ Overfull \hbox (28.45276pt too wide) in paragraph at lines 456--460
  [][] 
  []
 
-
-Underfull \vbox (badness 6316) has occurred while \output is active []
-
- [5]
-Overfull \hbox (19.53322pt too wide) in paragraph at lines 467--483
+[5]
+Overfull \hbox (19.53322pt too wide) in paragraph at lines 468--484
  [][] 
  []
 
@@ -1115,73 +1099,66 @@ Overfull \hbox (19.53322pt too wide) in paragraph at lines 467--483
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6]
-! Missing } inserted.
-<inserted text> 
-                }
-l.539 \end{equation}
-                    
-? 
 
 Package natbib Warning: Citation `Yil13' on page 7 undefined on input line 542.
 
 
 File: starless.eps Graphic file (type eps)
 <starless.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 617--622
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 618--623
  [][] 
  []
 
 File: AV5.eps Graphic file (type eps)
 <AV5.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 629--632
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 630--633
  [][] 
  []
 
 [7]
-Underfull \vbox (badness 1622) has occurred while \output is active []
-
-File: G0_50K.eps Graphic file (type eps)
-
-<G0_50K.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 677--679
+File: G0_50K_modification.eps Graphic file (type eps)
+ <G0_50K_modification.eps>
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 678--681
  [][] 
  []
 
-File: G0_200K.eps Graphic file (type eps)
-<G0_200K.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 685--688
+File: G0_200K_modification.eps Graphic file (type eps)
+<G0_200K_modification.eps>
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 687--688
  [][] 
  []
 
 File: serpens_hcn10_and_cn10.eps Graphic file (type eps)
-<serpens_hcn10_and_cn10.eps> [8]
+<serpens_hcn10_and_cn10.eps>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
 File: reactions-mediumG0.eps Graphic file (type eps)
- <reactions-mediumG0.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 772--773
+
+<reactions-mediumG0.eps>
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 773--774
 [][] 
  []
 
 File: destruction_HCN_dominant.eps Graphic file (type eps)
 <destruction_HCN_dominant.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 778--781
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 779--782
 [][] 
  []
 
-
-Underfull \vbox (badness 5756) has occurred while \output is active []
-
- [9]
+[9]
 Underfull \vbox (badness 2469) has occurred while \output is active []
 
  [10]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 (./amirocha.bbl [11]
 Underfull \hbox (badness 10000) in paragraph at lines 349--351
 []\T1/txr/m/n/8 Pickett, H. M., Poyn-ter, R. L., Co-hen, E. A., et al. 1998,
  []
 
-) [12
-
-]
+) [12]
 File: serpens_seds.eps Graphic file (type eps)
  <serpens_seds.eps>
 File: serpens_h13cn10.eps Graphic file (type eps)
@@ -1221,59 +1198,66 @@ File: RADEX_CN_HCN_200K_1e6.eps Graphic file (type eps)
 
 <RADEX_CN_HCN_200K_1e6.eps>
 
-LaTeX Warning: Float too large for page by 25.74976pt on input line 1210.
+LaTeX Warning: Float too large for page by 25.74976pt on input line 1196.
+
+[13
+
+]
+Underfull \vbox (badness 2990) has occurred while \output is active []
 
 File: destruction_CN_dominant.eps Graphic file (type eps)
-<destruction_CN_dominant.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 1247--1249
-[][] 
- []
 
-File: production_CN_dominant.eps Graphic file (type eps)
-<production_CN_dominant.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 1252--1253
+<destruction_CN_dominant.eps>
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 1235--1237
 [][] 
  []
 
 File: production_HCN_dominant.eps Graphic file (type eps)
 <production_HCN_dominant.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 1258--1259
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 1240--1241
+[][] 
+ []
+
+File: production_CN_dominant.eps Graphic file (type eps)
+<production_CN_dominant.eps>
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 1246--1247
 [][] 
  []
 
 File: reactions-smallG0.eps Graphic file (type eps)
 <reactions-smallG0.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 1264--1265
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 1253--1254
 [][] 
  []
 
 File: reations_large.eps Graphic file (type eps)
 <reations_large.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 1270--1271
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 1259--1260
 [][] 
  []
 
+[14] [15] [16]
 File: Lbol_Tbol_correlations.eps Graphic file (type eps)
-<Lbol_Tbol_correlations.eps>
+ <Lbol_Tbol_correlations.eps>
 
 Package natbib Warning: There were undefined citations.
 
-[13
+[17
 
-] [14
+] [18] [19] [20
 
-] [15] [16] [17] [18] [19] [20] [21] [22] (./amirocha.aux)
+] [21] (./amirocha.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7925 strings out of 494924
- 109362 string characters out of 6180768
- 242852 words of memory out of 5000000
- 11019 multiletter control sequences out of 15000+600000
- 63905 words of font info for 108 fonts, out of 8000000 for 9000
+ 7972 strings out of 494924
+ 110052 string characters out of 6180768
+ 232453 words of memory out of 5000000
+ 11056 multiletter control sequences out of 15000+600000
+ 75633 words of font info for 139 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 39i,15n,77p,2020b,582s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,15n,77p,2020b,580s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on amirocha.dvi (22 pages, 103264 bytes).
+Output written on amirocha.dvi (21 pages, 110548 bytes).

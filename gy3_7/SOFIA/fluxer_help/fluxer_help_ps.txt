@@ -1,0 +1,69 @@
+-----------------------------------------------------------------------
+=======================================================================
+
+       FFFFFF   LLL       UUU    UUU  XXX   XXX    EEEEEEE    RRRRRRR
+      FFF      LLL       UUU    UUU    XXX XXX    EEE        RRR  RRR
+     FFFFFF   LLL       UUU    UUU      XXX      EEEEEEE    RRRRRRR
+    FFF      LLL       UUU    UUU    XXX XXX    EEE        RRRRR
+   FFF      LLLLLLL   UUUUUUUUUU    XXX   XXX  EEEEEEE    RRR  RRRR
+
+=======================================================================
+-----------------------------------------------------------------------
+
+This is the help page for the PS GUI. It helps to create postscript files
+for images displayed in the panel windows. Note, that once you started the PS
+GUI it is linked to the image displayed in the panel window from which the
+PS GUI was invoked. To change to the other panel window, close the PS GUI and
+invoke the PS GUI from the other panel window. While the PS GUI is open, you
+can set the minimum and maximum value in the Main GUI, change contrast and
+brightness, ...
+
+If you have selected an output file, you can simply create a postscript file 
+by pressing 'Create'.
+
+If astrometry is available, the GUI allows you to print astrometric
+information to the axes:
+
+   RADEC  : Print RA and DEC
+   Center : Print offsets to center position
+   None   : Print the content of the 'X Title' and 'Y Title' fields
+
+Additional Plots / Infos
+   Colorbar : Plot the colorbar
+   Info     : Annotate the center position of the FoV
+
+If fitting mask are available (indicating if a fit has been performed
+successfully or not after having fitted all spectra), this mask can be applied.
+For fits that failed, the background color will be used.
+
+Background Color : Select the background color for pixels where the fit failed
+or where data is marked as invalid or queued for interpolation (left panel
+window) or still queued for interpoolation (right panel window).
+
+Axis thickness, Char Thickness and Char Size :
+   Set the thickness of lines, the thickness of chars and the size of chars.
+
+Use TrueType Font : If 'Yes' use truetype fonts instead. If 'No' not.
+   Be aware that depending on the font, the format code differs for the
+   titles. 
+
+Plot Title : Title of the plot. IDL format codes are allowed.
+
+Colorbar Title : Title of the colorbar. IDL format codes are allowed.
+
+X Title, Y Title : Axis titles. IDL format codes are allowed.
+
+Plot position : Device normal coordinates [x0,y0,x1,y1] for the Plot Area
+                After a postscript file has been created, the normal
+                coordinates displayed are updated. This allows e.g. to arrange
+                the colorbar exactly. 
+
+Colorbar Position : Device normal coordinates [x0,y0,x1,y1] for the Colorbar
+
+Output File : The name of the output file. Not editable.
+
+Create : Create the PS file.
+Reset  : Resets the plotting parameters to default values
+File   : Select a new output file.
+Help   : Show this help page
+Quit   : Quit this GUI

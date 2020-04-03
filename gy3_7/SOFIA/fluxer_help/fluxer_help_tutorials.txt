@@ -1,0 +1,265 @@
+-----------------------------------------------------------------------
+=======================================================================
+
+       FFFFFF   LLL       UUU    UUU  XXX   XXX    EEEEEEE    RRRRRRR
+      FFF      LLL       UUU    UUU    XXX XXX    EEE        RRR  RRR
+     FFFFFF   LLL       UUU    UUU      XXX      EEEEEEE    RRRRRRR
+    FFF      LLL       UUU    UUU    XXX XXX    EEE        RRRRR
+   FFF      LLLLLLL   UUUUUUUUUU    XXX   XXX  EEEEEEE    RRR  RRRR
+
+=======================================================================
+-----------------------------------------------------------------------
+
+Tutorials and Quick guides :
+----------------------------
+
+
+        - Viewing spectra
+        =================
+        After you have loaded a data cube with fluxer the main GUI is
+        started. In the two panel windows on the upper right of the main GUI
+        the very first slice (image of constant wavelength) of your data cube
+        is shown. To see the next slice click the rainbow colored double
+        headed arrow in the top left of the main GUI with the right mouse
+        button. To see the previous slice click the on the arrow with the left
+        mouse button. Alternatively you can specify the index of the slice you
+        want to view by entering it in the 'Slice Index' field on the top left
+        of the main GUI. If wavelengths are specified you can also enter the
+        wavelength in the 'Wavelength' field.
+
+        If you move your mouse over any of the two panel windows the
+        corresponding spectrum is shown below. On startup the maximum number
+        of wavelength channels displayed is 100. If more channels are
+        available in your data and you want to see all channels (e.g. the full
+        spectral range) enter the number of channels to be displayed in the
+        middle left of the main GUI 'X Range: Half # of slices in
+        spectrum'. This specifies the number of channels to the left and to
+        the right of the slice currently displayed in the panel window.
+
+
+        - Zooming in the panel windows
+        ==============================
+        You can zoom into the slices in the panel windows by selecting 'Zoom'
+        in the 'Panel Mouse Mode' section in the middle left of the main GUI.
+        Click the left mouse button in any panel window and you zoom in, a
+        right mouse button click zooms out, a middle mouse button click 
+        recenters without changing the zoom level.
+
+
+        - Changing colors, contrast, brightness etc.
+        ============================================
+        The colors of the in the panel windows displayed slices can be changed
+        in various ways.
+        Colortables : The colortable can be changed by selecting any from the
+                      'Image Colors + Scaling -> Colortable' pulldown menu.
+        Scaling     : The scaling can be changed by selecting any scale from
+                      the 'Image Colors + Scaling -> Scaling'.
+        Contrast and brightness : Select 'Color' as the 'Panel Mouse Mode' in
+                      the middle left of the main GUI. Move the mouse over any
+                      panel window click the left mouse button, keep it
+                      pressed and move the mouse up and down and left and
+                      right. This changes contrast and brightness. A right
+                      mouse button click resets the default brightness and
+                      contrast.
+    
+
+        - Setting min and max values for displaying slices
+        ==================================================
+        The minimum and maximum values to be displayed in the panel windows
+        can be set by selecting 'Manual Min/Max' from the pulldown menu under
+        any panel window. The min and max values apply only to that panel
+        window. Those can be set by either clicking on the colorbar with the
+        middle mouse button or click the colorbar with the left mouse button
+        keep it pressed and move it up/down to increase/decrease the minimum
+        value or use the right mouse button in the same way to change the
+        maximum.
+
+
+        - Setting the spectral extraction mode
+        ======================================
+        When moving the mouse over the panel window usually only one
+        single spectrum is displayed. If you want to sum up spectra from an
+        aperture, set the 'Cursor Size' in the top left of the main GUI. This
+        specifies the half radius of the extraction aperture which is integer
+        pixel based. E.g. if set to 1 the aperture has the form of a cross,
+        the middle one and the left, right, top and bottom spectra. If you
+        want circular apertures select any HighRes extraction mode from the
+        'Cursor Mode' pulldown menu. 
+ 
+
+        - Addtional keyboard actions for the panel windows
+        ==================================================
+        There are many actions available when clicking a key when the mouse is
+        placed in any panel window. Move the mouse over any panel window and
+        click the question mark to get a list of available keyboard
+        actions. This list can also be displayed be selecting 'Help ->
+        Keyboard actions' from the main menu bar. 
+
+
+        - Line extraction
+        =================
+
+        Fitting one or two Gaussians to emission or absorpion line profiles:
+        --------------------------------------------------------------------
+        First you have to switch to a line extraction mode. Select
+        e.g. GAUSSIAN from the 'Method' pulldown menu in the line fitting
+        section. Now, move the cursor over the left panel window. The 
+	corresponding spectrum will be displayed in the Plot window. To fit a
+        function, data values have to be marked to which the baseline
+        (baseline fitting regions) and the fit function (line fitting region)
+        shall be fitted. The figure below illustrates the two different fit
+        regions. 
+
+        ^
+      F	|
+      l	|                  /\
+      u	|                 /  \     Emission line in spectrum
+      x	|                /    \
+	|               /      \
+	|--------------/        \-----------------------
+	|
+	| [       ] (              )  [              ]               
+	|
+	|------------------------------------------------> Wavelength
+
+	[  ]  : baseline fitting regions
+	(  )  : line fitting region
+ 
+
+        To define these fit regions, press the left mouse button in the left
+	panel window to lock the mouse. The effect is, that the spectrum does
+	not change anymore when you move the mouse over any panel window.
+        Now, have a closer look at the spectrum. Define the data ranges of the
+	spectrum to which the baseline shall be fitted. Move the mouse to the
+	Plot window, press the left mouse button, keep it pressed and move it.
+        Releasing the left mouse button defines the data range. You can repeat
+	this step as many times you want to e.g. either side of an emission
+	line. Now, you have to define the data range for line
+	extraction (data values to which the fit function shall be fitted after
+        the baseline has been subtracted). Press the right mouse button keep
+        it pressed, move it and release it. Now, the baseline and the
+        requested fit function (gaussian) are fitted. You can delete a
+        specific fit region by doing a middle mouse click within that fit
+        region in the Plot window. All fit regions can be deleted by doing a 
+        middle mouse click outside any fit region in the Plot window or by 
+        selecting 'Reset Fit limits' from the 'Action' pulldown menu in the
+        line fitting section of the main GUI. 
+
+        When fitting a Gaussian you can select a second line fit region which
+        fits a double Gaussian. In this case the data ranges can only be
+        deleted by selecting 'Reset Fit limits' from the Action pulldown
+        menu. The middle mouse button instead opens the parinfo editor which
+        allows you to confine the allowed sigma values for fitting. Simply
+        move the sliders. 
+
+        Considering the case of fitting one gaussian only, you can now select
+        the 'Fit all spectra' from the Action pulldown menu which fits all
+        spectra in your cube with the defined data ranges. Take care, that due
+        to dynamics of your source, the emission line is always within the
+        data range defined for line extraction. Otherwise some fits may
+        fail. You can have a look at the results by selecting any result from
+        the pulldown menues under the panel images.
+
+
+        Constraining line extraction to positive /negative values:
+        ----------------------------------------------------------
+        In all line fitting modes you can force Fluxer to apply 
+        positive/negative (emission/absorption) peak fits only. 
+        Additionally you can allow Fluxer to decide if the peak fit shall be
+        positive or negative. 
+        This can be done by opening the parinfo editor from the 
+        'Line fitting->Action' pulldown menu.
+
+
+        Extracting a telluric spectrum and removing intrinsic 
+		   absorption lines :
+        ----------------------------------------------------------
+        In the near-infrared (e.g. in K-band around 2.2 micron) the 
+        atmosphere is calibrated by taking data of O- or B- giants or 
+        supergiants. Usually these stars exhibit hydrogen absorption 
+        lines that falsify the result. 
+	Set the cursor size to e.g. twice the FWHM of the stellar PSF.
+        Center the cursor on the star and lock the mouse. Select as Cursor
+        Mode 'HighRes Sum'. Now fit e.g. the Brackett gamma line in 
+        absorption with a Lorentzian. Once you are happy with the fit,
+	select 'Action->Save fit subtracted single spectrum' and the fit
+        subtracted spectrum is saved as a fits file. Intensities are stored
+	in the primary, wavelengths are stored in the first extension.
+
+
+        Dividing all spectra by a telluric spectrum :
+        ----------------------------------------------------------
+        Select 'Calculus->Cube->Divide by spectrum'. Select the data 
+	to be loaded, either Y values (intensities) only or X and Y values
+        (wavelengths and intensities). Click 'Done'. Then specify the 
+        the filename and load the X and Y values. If the X values do not
+        correspod to the wavelengths of your cube, you can interpolate them
+        onto your wavelength grid before division.
+
+
+
+        - Astrometry
+        ============
+
+        Astrometry is only available if Fluxer gets a fits header with
+        corresponding fits header keywords. A fits header is supplied by
+        reading a fitsfile or using the header keyword from commandline:
+        IDL>fluxer,mydata,header=h
+        where mydata is your data matrix and h the corresponding header.
+        Minimum requirement for astrometry is that the CRPIXi, CRREFi and
+        CDELTi keywords (with i=1,2) are defined propperly. Additionally the
+        equinox must be defined (e.g. EQUINOX=2000.0) and the type of the
+        coordinate system (CTYPEi with i=1,2, e.g. CTYPE1='RA___TAN' and 
+        CTYPE2='DEC--TAN'). 
+
+
+        Measuring the angular distance between two spatial elements in the FoV:
+        -----------------------------------------------------------------------
+        If astrometry is well defined, select 'Profile' from the 'Panel Mouse
+	Mode' section. A left click-hold-move draws the profile and gives info
+	about the angular distance between the starting and current end point
+	of the profile. The profile is shown in the plot
+	window and can be analyzed in fluxer_plot1d after having released the
+	left mouse button.
+         
+ 
+        Determine the angular resolution in stellar data cubes:
+	-------------------------------------------------------
+	First create a good image of your star by e.g. collapsing the data
+	cube along the wavelength axis. This can be done by selecting
+	'Collapsed' from the pulldown menu under the panel windows.
+
+	Then, either extract a profile through the image of the star (see
+	example above). The profile is shown in fluxer_plot1d. There you can
+	fit the profile with a Gaussian. The width (sigma) is shown.
+ 	Or, press 'F' in the panel image that displays the collapsed data
+	cube. That invokes another GUI that allows you to fit a 2-dimensional
+	function to the image. 
+
+
+	- Spatial healing
+        =================
+        Select a Spatial healing method e.g. Median 3x3, select 'Queue' in
+        the 'Panel Mouse Mode' section and display a slice in the left and
+        right panel window by selecting 'Slice' from the pulldown menues under
+        the panel window. Move the cursor over the left panel window. 
+	The corresponding spectrum will be displayed in the Plot
+	window. Clicking the left mouse button marks a pixel, clicking
+	the right mouse button unmarks it. 
+	The way how marked pixels are interpolated is controlled by the
+	method you have selected. A Spatial Method interpolates marked
+        pixels with good pixels only of the same slice. It is 2-dimensional
+	by definition. Available methods
+	are: Median, Smooth, Plane, Second Order, Gauss,
+	Bi-cubic spline and Chebyshef and SelfSim.
+        Select any and see the result in the right panel window.
+	Setting a Cursor Size greater than 0 allows larger areas to be queued
+        or unqueued. Anytime a pixel is queued or unqueued for interpolation,
+        the interpolation result is shown in the right panel window. The
+        interpolation result is not yet accepted, you can change the
+        interpolation method by selecting a method from the 'Method' pulldown
+        menu in the 'Spatial healing' section. Once you are satisfied with the
+        result you can accept the result as new input by healing it. This is
+        done be selecting 'This', to heal all queued pixel in the currently
+        displayed slice, or 'All', to heal all queued pixel in the data cube,
+        from the 'Heal' pulldown menue in the 'Spatial healing' section.

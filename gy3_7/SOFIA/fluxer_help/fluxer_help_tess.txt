@@ -1,0 +1,79 @@
+-----------------------------------------------------------------------
+=======================================================================
+
+       FFFFFF   LLL       UUU    UUU  XXX   XXX    EEEEEEE    RRRRRRR
+      FFF      LLL       UUU    UUU    XXX XXX    EEE        RRR  RRR
+     FFFFFF   LLL       UUU    UUU      XXX      EEEEEEE    RRRRRRR
+    FFF      LLL       UUU    UUU    XXX XXX    EEE        RRRRR
+   FFF      LLLLLLL   UUUUUUUUUU    XXX   XXX  EEEEEEE    RRR  RRRR
+
+=======================================================================
+-----------------------------------------------------------------------
+
+FLUXER has the Voronoi Binning method of Cappellari & Copin 
+(2003, MNRAS, 342, 345) implemented which optimally solves the problem 
+of preserving the maximum spatial resolution of general two-dimensional 
+data, given a constraint on the minimum signal-to-noise ratio.
+
+The original source code can be downloaded from Michele Cappellaris's 
+homepage :  http://www-astro.physics.ox.ac.uk/~mxc/software/
+
+Fluxer only provides a GUI.
+
+In the Tools pulldown menu two methods dealing with the voronoi tessellation
+are declared:
+
+Create tessellation map : This starts the tessellation dialog to create the
+       		    	  tessellation map. Prior, a signal map has to be read.
+
+                          Notes on the signal map : 
+			     - The signal map is a fits file with two extensions
+			       containing :
+				- the signal image
+				- the noise image (extension 1) 
+				- an indicator if the signal's pixel value is
+			  	  valid (=1) or not (=0) (extension 2)
+                             - The signal map can be created be e.g. fitting a
+			       Gaussian to the signal. Save the results of
+			       this fit and these can be used as signal maps. 
+
+                          Notes on the tessellation map :
+                             The tessellation map is of same size as the
+			     signal map. It contains integer values
+			     identifying the bin number, starting with zero.
+                             A value of -1 indicates an invalid value. 
+
+Apply tessellation map : This applies a tessellation map to a data cube.
+
+
+Parameters in the tessellation map creation dialog :
+
+   Additional methods :
+
+     None : No additional method applied
+    NO_CVT: Set this keyword to skip the Centroidal Voronoi Tessellation
+            (CVT) step (vii) of the algorithm in Section 5.1 of
+            Cappellari & Copin (2003).
+            This may be useful if the noise is strongly non Poissonian,
+            the pixels are not optimally weighted, and the CVT step
+            appears to introduces significant gradients in the S/N.
+            A similar alternative consists of using the /WVT keyword below.
+       WVT: When this keyword is set, the routine bin2d_cvt_equal_mass is
+            modified as proposed by Diehl & Statler (2006, MNRAS, 368, 497).
+            In this case the final step of the algorithm, after the bin-accretion
+            stage, is not a modified Centroidal Voronoi Tessellation, but it uses
+            a Weighted Voronoi Tessellation.
+            This may be useful if the noise is strongly non Poissonian,
+            the pixels are not optimally weighted, and the CVT step
+            appears to introduces significant gradients in the S/N.
+            A similar alternative consists of using the /NO_CVT keyword above.
+            If you use the /WVT keyword you should also include a reference to
+            `the WVT modification proposed by Diehl & Statler (2006).'
+
+   SNR requested : the signal-to-noise ratio requested
+
+   Save tessellation map into Outputfile
+
+   Show tessellation map : Shows the tessellation map in fluxer_atv 
+
+
