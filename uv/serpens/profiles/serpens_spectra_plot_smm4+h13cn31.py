@@ -191,7 +191,7 @@ ax1.axhline(y=25, xmin = -90.0, xmax = 40.0, color = 'green', linewidth=1, lines
 ax1.annotate(r'$\mathrm{CO\;\;6-5\;(\div2)}$', fontsize=14, xy=(-85.0, 26), textcoords='data')
 ax1.annotate(r'$\mathrm{C^{34}S\;\;3-2\;(\times3)}$', fontsize=14, xy=(-85.0, 23.0), textcoords='data')
 ax1.annotate(r'$\mathrm{CS\;\;3-2}$', fontsize=14, xy=(-85.0, 20), textcoords='data')
-ax1.annotate(r'$\mathrm{H^{13}CN\;\;2-1\;(\times3)}$', fontsize=12, xy=(-85.0, 16), textcoords='data')
+ax1.annotate(r'$\mathrm{H^{13}CN\;\;2-1\;(\times3)}$', fontsize=14, xy=(-85.0, 16), textcoords='data')
 ax1.annotate(r'$\mathrm{H^{13}CN\;\;1-0\;(\times5)}$', fontsize=14, xy=(-85.0, 11.5), textcoords='data')
 ax1.annotate(r'$\mathrm{HCN\;\;1-0}$', fontsize=14, xy=(-85.0, 4.5), textcoords='data')
 ax1.annotate(r'$\mathrm{CN\;\;1-0\;(\times2)}$', fontsize=14, xy=(-85.0, 1.7), textcoords='data')
@@ -337,12 +337,12 @@ ax2.axhline(y=25, xmin = -90.0, xmax = 40.0, color = 'green', linewidth=1, lines
 
 
 ax2.annotate(r'$\mathrm{CO\;\;6-5}$', fontsize=14, xy=(-85.0, 26), textcoords='data')
-ax2.annotate(r'$\mathrm{C^{34}S\;\;3-2\;(\times3)}$', fontsize=12, xy=(-85.0, 23.0), textcoords='data')
-ax2.annotate(r'$\mathrm{CS\;\;3-2}$', fontsize=12, xy=(-85.0, 20), textcoords='data')
-ax2.annotate(r'$\mathrm{H^{13}CN\;\;2-1\;(\times3)}$', fontsize=12, xy=(-85.0, 16), textcoords='data')
-ax2.annotate(r'$\mathrm{H^{13}CN\;\;1-0\;(\times5)}$', fontsize=12, xy=(-85.0, 11.5), textcoords='data')
-ax2.annotate(r'$\mathrm{HCN\;\;1-0}$', fontsize=12, xy=(-85.0, 4.5), textcoords='data')
-ax2.annotate(r'$\mathrm{CN\;\;1-0}$', fontsize=12, xy=(-85.0, 1.7), textcoords='data')
+ax2.annotate(r'$\mathrm{C^{34}S\;\;3-2\;(\times3)}$', fontsize=14, xy=(-85.0, 23.0), textcoords='data')
+ax2.annotate(r'$\mathrm{CS\;\;3-2}$', fontsize=14, xy=(-85.0, 20), textcoords='data')
+ax2.annotate(r'$\mathrm{H^{13}CN\;\;2-1\;(\times3)}$', fontsize=14, xy=(-85.0, 16), textcoords='data')
+ax2.annotate(r'$\mathrm{H^{13}CN\;\;1-0\;(\times5)}$', fontsize=14, xy=(-85.0, 11.5), textcoords='data')
+ax2.annotate(r'$\mathrm{HCN\;\;1-0}$', fontsize=14, xy=(-85.0, 4.5), textcoords='data')
+ax2.annotate(r'$\mathrm{CN\;\;1-0\;(\times2)}$', fontsize=14, xy=(-85.0, 1.7), textcoords='data')
 ax2.annotate(r'$\mathrm{SMM4\;\;Outflow}$', color='blue', fontsize=18, xy=(-80.0, 30.5), textcoords='data')
 
 

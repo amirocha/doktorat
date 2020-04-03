@@ -1,0 +1,112 @@
+-----------------------------------------------------------------------
+=======================================================================
+
+       FFFFFF   LLL       UUU    UUU  XXX   XXX    EEEEEEE    RRRRRRR
+      FFF      LLL       UUU    UUU    XXX XXX    EEE        RRR  RRR
+     FFFFFF   LLL       UUU    UUU      XXX      EEEEEEE    RRRRRRR
+    FFF      LLL       UUU    UUU    XXX XXX    EEE        RRRRR
+   FFF      LLLLLLL   UUUUUUUUUU    XXX   XXX  EEEEEEE    RRR  RRRR
+
+=======================================================================
+-----------------------------------------------------------------------
+
+This is the help page for fluxer_astrometor.
+
+This tool allows to assign a fits coordinate system to JPG images and saves
+the JPG image as a RGB fitsfile. The RGB fitsfile can also be aligned with
+fluxer_aligner.
+
+To assign fits coordinates you must have any fits image as reference.
+Point-like objects can be fitted with a Gaussian in the fits image as well
+in the JPG image. The known RA and DEC position from the Gaussian fitted in
+the fits image are correlated with the fitted position of the same object in
+the JPG image. After 3 positions have been determined the fits coordinate
+system can be calculated. The input fits file can have any astrometry defined.
+The final RGB fits file has always a tangential 'RA---TAN' astrometry (J2000)
+as defined by the fits keywords: the CD matrix, CRPIX, CRVAL, CTYPE and
+CDELT. Any distortions however defined in the fits image can not be 
+transferred.
+After having created the RGB fits file, it can be processed further e.g. by
+fluxer_aligner.
+
+The easiest way to obtain a fits image with astrometry as reference 
+is to start fluxer_sdss from the IDL command line and download a fits image
+from the DSS server. E.g. enter the object name in the 'Object Name' 
+field, hit enter, hit 'Get image only' and hit 'Save Image'.
+
+You can use any fits image with correctly defined astrometry. The fits image
+can have any coordinate system, any equinox, any sampling and any position
+angle. However, if the astrometry in your fits image is not set up correctly 
+fluxer_astrometor may simply crash.
+ 
+
+The GUI:
+--------
+
+Fluxer_astrometor shows the fits image in the left window and the jpg in the
+right window. There are two mouse modes which allow either to zoom into an
+image or fit a Gaussian to a pointlike object. The panel windows below show
+the part of the image that shall be fitted with a Gaussian. The table to the
+right shows the reference points.
+
+
+Table of reference points:
+--------------------------
+X1 and Y1 (the X/Y positions in the fits image) with corresponding coordinates 
+RA and DEC, X2 and Y2 the X/Y positions in the JPG image. The table can not be
+edited. The last reference point added to the table can be deleted by clicking
+'Delete Last'. If X2 and Y2 are not defined for a reference position X1/Y1 the
+entry in the table is NAN. You always have to fit a position in the fits
+image first and add it to the list of reference points before you can fit a
+position in the JPG image.
+
+
+Parameters :
+------------
+
+   'Load Fits File with Astrometry' : Loads a fits file with defined
+            astrometry.
+
+   'Load JPG File'  : Loads a JPG image.
+
+   'Zoom Size'      : Sets the size of the image extracted from the original 
+                      to be fitted with a Gaussian.
+
+   The text area gives information about the current and fitted position
+
+   'Mouse mode'     :
+
+      There are two mouse modes and only one can be used at a time.
+      'Zoom'     : 
+      		 Left click   : zoom in
+ 		 Middle click : recenter
+		 Right click  : zoom out
+
+      'Fit'      :
+       		 Left click   : Fit a Gaussian and indicate the FWHM of the
+       		                fit as a red circle in the panel window. 
+		 Right click  : Same as left click but additionally adds the
+       		                fitted center to the list of reference points.
+
+   'Image Scale'  : Allows to set the min and max values of the fits image to
+                    get better plot results
+
+   'Color Table'  : Allows to set the IDL colortable to display the fits image 
+   	  	    only. 
+
+   'Delete Last'  : Delete the last entry form the table of reference points.
+
+   'Do'           : Creates the RGB fits file. Exactly three reference points
+                    are needed
+
+   'Help'         : Displays this help page.
+
+   'Quit'         : Quits
+
+
+Disclaimer:
+-----------
+This software comes with no warranty. If you download JPG files from the
+internet and use them for your publications make sure that you have the 
+permission to use the image from the original owner.
+

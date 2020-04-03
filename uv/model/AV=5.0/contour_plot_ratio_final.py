@@ -64,7 +64,7 @@ def make_picture(X, Y, Z, t):
 	plt.ylabel(r'$\log$(n$_{\mathrm{H_2}}$/cm$^{-3}$)', fontsize=14)
 	plt.xlabel(u"$\log$(T/K)", fontsize=14)
 	props = dict(boxstyle='round', facecolor='white', alpha=0.5)
-	ax.text(0.65, 0.805, r'$AV$ = 5.00', transform=ax.transAxes, fontsize=14,
+	ax.text(0.65, 0.805, r'$A_\mathrm{V}$ = 5.00', transform=ax.transAxes, fontsize=14,
         verticalalignment='bottom', bbox=props)
 
 	plt.savefig('contour_plot_CN_HCN_time='+time[t]+'.eps')

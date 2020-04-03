@@ -106,14 +106,14 @@ def make_picture(grids, action, mol, reaction, method):
 		ax.text(1, 4.75, r'HCNH$^+$+e$^-$$\rightarrow$H+HCN', fontsize=12)
 	if action == 'destruction' and mol == 'CN':
 		ax.text(-3., 4.56, r'O+CN$\rightarrow$N+CO', fontsize=12)
-		ax.text(2, 5., r'CN+ph$\rightarrow$C+N', fontsize=12)
+		ax.text(2, 5., r'CN+h$\nu\rightarrow$C+N', fontsize=12)
 		ax.text(-3.2, 5.75, r'CN+N$\rightarrow$C+N$_2$', fontsize=12)
 	if action == 'destruction' and mol == 'HCN':
 		ax.text(-2, 5., r'HCN+C$^+$$\rightarrow$H+CNC$^+$', fontsize=12)
-		ax.text(2.5, 4.75, r'HCN+ph$\rightarrow$H+CN', fontsize=12)
+		ax.text(2.5, 4.75, r'HCN+h$\nu\rightarrow$H+CN', fontsize=12)
 		ax.text(-5., 4.1, r'HCN+H$^+$$\rightarrow$H+HNC$^+$', fontsize=12)
 		ax.text(-5.5, 5.85, r'HCN$^+$+HCO$^+$$\rightarrow$CO+HCNH$^+$', fontsize=12)
-	plt.savefig(action+'_'+mol+'_dominant.eps')
+	plt.savefig(action+'_'+mol+'_dominant.pdf')
 	plt.close()
 
 

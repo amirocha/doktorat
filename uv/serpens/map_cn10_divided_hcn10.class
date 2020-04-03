@@ -126,7 +126,7 @@ greg\pen /def
 !outflows
 !smm1
     greg\pen /def
-    greg\pen /colour 0 /weight 1   !----- to jest kolor i grubosc lini
+    greg\pen /colour 6 /weight 1   !----- to jest kolor i grubosc lini
     !greg\draw line -0.6 1.4 /user /clip   !------ tutaj ta pozioma
     greg\draw relocate 7.48 -28.14 /user  !----- te dwie kolejne liniki sa do ukosnej
     greg\draw line -8.68 30.94 /user /clip
@@ -134,14 +134,14 @@ greg\pen /def
 
 !smm4
     greg\pen /def
-    greg\pen /colour 0 /weight 1    
+    greg\pen /colour 6 /weight 1    
     !greg\draw line 104.625 -138.18 /user /clip   !center
     greg\draw relocate 102.75 -153.06 /user  ! -difference
     greg\draw line 106.5 -123.3 /user /clip !+ diference
     greg\pen /def
 
     greg\pen /def
-    greg\pen /colour 0 /weight 1    
+    greg\pen /colour 6 /weight 1    
     !greg\draw line 89.625 -110.44 /user /clip   !center
     greg\draw relocate 72.75 -118.06 /user  ! -difference
     greg\draw line 106.5 -123.3 /user /clip !+ diference
@@ -149,7 +149,7 @@ greg\pen /def
 
 !smm3
     greg\pen /def
-    greg\pen /colour 0 /weight 1    !----- to jest kolor i grubosc lini
+    greg\pen /colour 6 /weight 1    !----- to jest kolor i grubosc lini
     !greg\draw line 145.5 -78.8 /user /clip   !------ tutaj ta pozioma
     greg\draw relocate 115.91 -83.69 /user  !----- te dwie kolejne liniki sa do ukosnej
     greg\draw line 175.09 -73.91 /user /clip
@@ -390,7 +390,8 @@ greg\set character 0.4
 greg\label "\GD\Gd (Arcsec) " /y
 greg\label "\GD\Ga (Arcsec) " /x
     greg\set character 0.5
-	greg\draw text 80 260 "Serpens CN J=1-0 divided by HCN J=1-0"
+	greg\draw text 80 280 "Serpens Main CN 1-0 / HCN 1-0"
+        greg\draw text 80 250 "integrated line intensity ratios"
 
 !set viewport 0.05 0.3 0.06 0.4
 !!file in l483_12co65_5x5.apex

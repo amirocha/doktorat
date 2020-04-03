@@ -25,11 +25,12 @@ import pandas as pd
 # find the x ranges (in km/s), which are above 3RMS
 # level - for flux integration of line
 
-rms = 5.379E-02 # rms taken from CLASS
+rms = 2.153E-02 # rms taken from CLASS
 rms_3 = 3*rms
+file_in = 'ngc1333_c34s32_ave_spec.txt'
 
 # read the spectrum
-spec_df = pd.read_table('ngc1333_c34s32_ave_spec.txt', delim_whitespace=True, header=None)
+spec_df = pd.read_table(file_in, delim_whitespace=True, header=None)
 
 ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ### 3 SIGMA ###
 # left (x1) and right (x2) ranges in which we are looking for minima 
@@ -65,7 +66,7 @@ print ('X2 (3s) =', final2_df[1].ix[min2].round(1))
 
 ### 1 SIGMA ### 1 SIGMA ### 1 SIGMA ### 1 SIGMA ### 1 SIGMA ###
 # left (x3) and right (x4) ranges in which we are looking for minima 
-x3_ran_df = spec_df[(spec_df[0] > -20.0) & (spec_df[0] < -10.0)]  #change ranges!!
+x3_ran_df = spec_df[(spec_df[0] > -13.0) & (spec_df[0] < -10.0)]  #change ranges!!
 x4_ran_df = spec_df[(spec_df[0] > -10.0) & (spec_df[0] < -7.0)]
 
 #change ranges!!

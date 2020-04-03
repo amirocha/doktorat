@@ -1,0 +1,605 @@
+-----------------------------------------------------------------------
+=======================================================================
+
+       FFFFFF   LLL       UUU    UUU  XXX   XXX    EEEEEEE    RRRRRRR
+      FFF      LLL       UUU    UUU    XXX XXX    EEE        RRR  RRR
+     FFFFFF   LLL       UUU    UUU      XXX      EEEEEEE    RRRRRRR
+    FFF      LLL       UUU    UUU    XXX XXX    EEE        RRRRR
+   FFF      LLLLLLL   UUUUUUUUUU    XXX   XXX  EEEEEEE    RRR  RRRR
+
+=======================================================================
+-----------------------------------------------------------------------
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+SOME NOTES ON FLUX and SIGMA AND ERRORS:
+----------------------------------------
+
+     - What is called flux e.g. derived from a gaussian fit, is the area of
+       the gaussian divided by the spectral bin width! 
+
+     - Gaussian width is the gaussian dispersion (sigma). 
+       Lorentzian width is the HWHM.
+       In all other line fitting modes, the width is always the full width.
+       When a plot is to be displayed in km/s, always the full width is
+       meant (in Gaussian mode 2.35*sigma or 2.*HWHM in lorentzian mode). 
+
+     - From version 2.60 on, the errors saved in the fit results are not
+       scaled to the data anymore. Hence the errors are absolute.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+Introduction:
+=============
+
+The Line fitting method allows to extract information from spectra by
+e.g. fitting a Gaussian to an emission line.
+
+
+Assume a spectrum as shown below:
+
+
+        ^
+      F	|
+      l	|                  /\
+      u	|                 /  \     Emission line in spectrum
+      x	|                /    \
+	|               /      \
+	|--------------/        \-----------------------
+	|
+	| [       ] (              )  [              ]               
+	|
+	|------------------------------------------------> Wavelength
+
+	[  ]  : baseline fitting regions
+	(  )  : line fitting region
+
+
+Properties of fitting regions:
+==============================
+
+Baseline fitting region : 
+
+   - Is defined in the Plot window with a
+        left mouse button click and hold -> move -> release
+   - is used to fit the continuum "baseline"
+   - number of baseline fitting regions can range from 0 to any number
+   - may overlap but the overlap is ignored
+
+Line fitting region     : 
+
+   - Is defined in the Plot window with a
+     right mouse button click and hold -> move -> release  
+   - must contain at least one peak (either positive or negative) to be fitted
+   - number of peaks to be fitted (= number of line fitting regions) 
+     depends on fitting method 
+   - two line fitting regions may overlap
+
+
+-------------------------------------------------------------------------
+Number of |  Number of | Fit Method | Algorithm
+baseline  |  line      | (see 	    |
+fitting   |  fitting   | below)     |
+regions	  |  regions   |            |
+-------------------------------------------------------------------------
+
+   0		0	 All Modes    No Fit
+
+   0		1	 COI          No Fit
+   			 DCI	      No Fit
+     	                 GAUSSIAN     Fit with baseline of given order (*)
+   			 LORENTZIAN   Fit with baseline of given order (*)
+
+   >0           1        COI	      Fit (!)
+   			 DCI	      Fit (!)
+			 GAUSSIAN     Fit with separate prior baseline fit (!) 
+			 LORENTZIAN   Fit with separate prior baseline fit (!)
+
+   >0           2        COI          No Fit
+   			 DCI	      No Fit
+			 GAUSSIAN     Fit of two Gaussian peaks (!)
+			 LORENTZIAN   No Fit
+-------------------------------------------------------------------------
+
+(*) : uses fluxer_mpfitpeak which is a modified version of mpfitpeak from the 
+Markwardt library to deal with nterms gt 5 (e.g. parabolic baselines)
+
+(!) : in these cases the baseline is fitted first as a polynomial of given
+order using all valid, inside and not queued data values in all baseline
+fitting regions. The polynomial fit is then subtracted and afterwards the fit
+function is fitted. 
+
+
+Fit Methods:
+============
+
+The 'Method' pulldown menu allows to select the fit function:
+
+In case of Gaussian and Lorentzian peak fits, errors, if supplied on start-up,
+are considered. The baseline fit if requested however is done without
+considering errors since a robust method is used. 
+
+
+  Method : 
+	COI        : sums all bins within the line fit region. 
+
+ 	DCI        : sums up all bins from the middle of the line fit
+   		     region (see Plot Window) until flux
+   	 	     contributions from positive/negative peaks become 
+                     smaller/greater 0 to both sides or an outside or
+   		     marked pixel is reached on one of the sides.
+                     The minimum valid size of the DCI window is 1 bin.
+
+	GAUSSIAN   : Gaussian fit. The fit is always tied: the gaussian
+        	     center must be within the line fitting region. 
+                     The flux is the summed values of pixels (inside 
+                     and not marked).
+
+                     When fitting two gaussians additionally:
+		     - the respective centers must lie within the line
+		     fitting regions. As gaussian center starting
+		     value the middle of the line fitting region is
+		     used. 
+
+        LORENTZIAN : Lorentzian fit. The fit is always tied: the 
+                     lorentzian center must be within the line 
+                     fitting region.   
+
+
+See the tutorials for an example of how to fit.
+
+
+Summary of available mouse button actions in the Plot window :
+==============================================================
+
+           Left-hold and move  : Defines the baseline fitting regions. You can
+           	     	       	 select as many as you like.
+                                 Baseline fitting regions can not be moved or
+           			 resized. Baseline fitting regions may overlap
+           			 but this has no additional effect.
+
+           Right-hold and move : Defines the line fitting region. Only good
+                                 pixels are used for the fit. Only one line
+                                 fitting region is allowed.
+                                 Remarks: 
+                                 - When fitting Gaussians a second line
+                                 fitting region (for a double gaussian fit) is
+                                 allowed.  
+                                 - IN COI mode the user can specify a fixed
+                                 fitting region by just clicking (without
+                                 moving). The width will be specified in km/s
+                                 if wavelengths are available, otherwise the
+                                 width is in spectral channels.
+
+           Middle click        : Deletes the (either baseline or line) fitting
+                                 region, which boundary is closest to the
+                                 position where the middle mouse click occured.
+                                 
+
+Buttons and PDMenues:
+=====================
+
+The individual fit results can be viewed using the pulldown menus below the
+panel windows (see also below: Display Fit Results).
+
+In the Action pulldown menu the user can select various actions:
+
+   Action : 
+
+      Reset Fit limits        :
+                 Resets fit regions
+
+      View Fit limits         :
+                 Shows the limits of the currently defined fit regions
+
+      Save fit limits         :
+                 Saves the currently set fit limits into an ascii file
+                 (*.flm). If wavelengths are present in the current FLUXER
+                 session, the limits are written as wavelengths. The file
+                 format is explained in 'Load fit limits', below.
+
+      Load fit limits         :
+                 Loads fit limits from an ascii file (*.flm)
+                 The file format is as follows:
+                 1. row : 0 or 1, indicating if the fit limits are in pixel or
+                          wavelengths  
+                 2. row : number of baseline fit regions
+                 3. row 
+                   to
+                 3. row + number of baseline fit regions :
+                          pairs of lower and upper range of one baseline fit region
+                 3. row + number of baseline fit regions + 1 :
+                          number of line fit regions (can be 1 in all modes
+                          and 2 in 'GAUSSIAN' mode only)
+                 3. row + number of baseline fit regions + 2 
+                   to 
+                 3. row + number of baseline fit regions + 1 + number of line
+                    fit regions  :
+                          pairs of lower and upper range of one line fit
+                          region
+        
+                 Example :
+                 1             ; wavelengths !
+		 2             ; two baseline fit regions
+                 2.1, 2.2      ; lower an upper of first baseline fit region
+                 2.5, 2.4      ; lower an upper of second baseline fit region
+                 1             ; number of line fit regions
+                 2.25, 2.35    ; lower an upper of line fit region
+
+                 Any lower and upper limit pair can actually be specified in
+                 arbitrary order (see line 4 of the example).
+
+                 The wavelengths saved are eventually redshifted if a redshift
+                 has been suplied to FLUXER.
+
+                 If a fit limit file has been supplied by the user, the user
+                 has to ensure that the wavelengths defined in this file are
+                 correctly covered by the data.
+
+      Start parinfo editor    : 
+                 Starts the parinfo editor which helps to constrain the fit
+                 parameters.  
+
+      Select continuum fit order :
+                 Allows to select the continuum fit order. If a fit can be
+                 performed and a new order is selected the fit is redone automatically.
+
+      Fit all spectra         : 
+      	         Fits all spectra in a cube extracted from a
+                 running aperture having a half-radius of Cursor. 
+
+      Replace fit result      :
+                 Replaces a fit result. When fitting spectra for all locations
+                 ('Fit all spectra') the fit results for some locations may be
+                 off. For these locations the user can manually redo the fit
+                 with a different parameter set (another baseline fit order or
+                 different baseline fit windows, ...). To do so, lock the
+                 spectrum on the desired location, redo the fit with adapted
+                 parameters and select 'Replace fit result' which replaces the
+                 fit results with the current fit results. Note, that all
+                 locations must have been fitted ('Fit all spectra') prior to
+                 a replacement. 
+                 It is generally possible to replace fit results obtained with
+                 one method with results obtained with another
+                 method. However, when fitting double Gaussians only results
+                 from other double Gaussian fits can be replaced. 
+                 
+      Save spectrum : 
+                 Saves the currently selected (and locked) full spectrum which is
+                 extracted from an aperture with a half-radius of Cursor as a
+                 fitsfile. The primary of the fitsfile contains the
+                 wavelengths corresponding to a redshift or 0, the first
+                 extension the spectrum, the second 
+                 extension the quality spectrum (1 where spectrum is valid, 0 else).
+
+      Save fit subtracted single spectrum :
+                 Saves the currently selected (locked) spectrum with
+                 the fit result subtracted as a fitsfile. The primary of the
+                 fitsfile contains the wavelengths corresponding to a redshift
+                 or 0, the first extension the spectrum.
+
+                 Useful to e.g. extract a near-infrared spectrum 
+                 from a calibrator star, fit the Brackett gamma line and
+                 subtract it for subsequent use as telluric. 
+
+      Subtract fitted continuum from all spectra :
+                 This subtracts the fitted polynomial continuum. Inside status
+                 is not changed. Queued status is preserved. Ensure that the fit
+                 has been performed successfully (by using a failsafe method
+                 like COI). 
+
+      Add fitted continuum to all spectra :
+                 This adds the fitted polynomial continuum back. Inside status
+                 is not changed. Queued status is preserved. Undo to 'Subtract
+                 fitted continuum from all spectra'.
+
+
+   Help : Displays this help page
+
+
+
+Constraints on the fit and how to use the Parinfo editor to constrain fits
+==========================================================================
+
+For Gaussian and Lorentzian fits, the center position is constrained to the
+line fitting region. Also, the width (Gaussian Sigma or Lorentzian HWHM) is
+constrained. The lowest width allowed corresponds to twice the average data 
+sampling in the line fit region. The highest value allowed is half the size of
+the line fitting region.
+
+Sometimes it is useful to constrain e.g. the center of the fit
+function additionally. The constraints that can be specified depend on the 
+line fitting mode and only the constraints that are allowed for this 
+mode are displayed. Any time the user is changing the constraints, the fit is
+repeated automatically. As long as the parinfo editor is open, the constraints 
+are active. When the editor is closed, the constraints are deleted.
+
+
+Constraints that are available in the parinfo editor are :
+
+      Peak orientation :
+          For all methods except 'COI' you can force the fit to assume
+          a positive or negative peak (emission/absorption line). 
+
+      Redshift :
+      	  The center position of the peak can be constrained 
+          within the limits of the defined line fit region(s).
+          The user can specify the allowed minimum and maximum 
+          redshift as well as the starting redshift.
+          Cyan or purple, dashed dotted lines in the Plot window 
+          indicate the constraints on redshift.
+
+      Sigma : 
+          in 'GAUSSIAN' and 'LORENTZIAN' line fitting mode, the 
+          user can also specify the allowed minimum and maximum width 
+          (sigma for Gaussians, HWHM for Lorentzians) as well as the
+          starting value.
+
+      Baseline Fit Order has an extra dialog since version 2.74
+
+
+Definition of fit parameters:
+=============================
+
+There are four fitting functions available to fit emission or absorption
+lines : COI, DCI, GAUSSIAN and LORENTZIAN. The term 'Width' may therefore have
+different meanings depending on the fit method used. A definition of the fit
+parameters (and derived quantities) and their errors depending on the fit
+method used can be found here:
+
+       Flux  : - sum of bins, not the area, in the line fitting region (COI and
+                 DCI)
+               - area calculated from the peak value and the Gaussian
+                 sigma/Lorentzian HWHM divided by the spectral bin width 
+                 (GAUSSIAN and LORENTZIAN)
+
+                 In case of irregularly sampled wavelengths supplied on
+                 start-up, Flux is really the area since there is no
+                 binwidth. 
+               
+       Center : - coi in the line fitting region (COI and DCI)
+                - center wavelength of the fit (GAUSSIAN and LORENTZIAN)
+
+       Width : - full width of the line fitting region (COI)
+               - full width until flux contributions become positive/negative
+                 depending on the peak orientation. (DCI)
+               - Gaussian sigma (GAUSSIAN)
+               - HWHM (LORENTZIAN)
+
+       Continuum : the baseline level at the center position. Derived from
+                   the coefficients of the baseline fit (all modes).
+
+       Slope : the slope of a linear fit to data values in the baseline
+               fitting regions (all modes)
+
+       Equivalent width : equivalent width (all modes)
+
+       Chi2 : the mean squared difference between the fit and the data in the
+              line fit region/s. In case of double Gaussian fits both
+              components have the same Chi2 value 
+
+       Special : only available when performing an independent baseline fit, 
+                 peak value divided by the RMS of the baseline fit.
+
+
+   Their corresponding errors are defined like this (see also the appendix at
+   the end of this document):
+
+       Error of Flux : - the scaled formal 1-sigma error of above flux in
+                         percent of the flux value (GAUSSIAN and LORENTZIAN) 
+                       - no error estimate in COI and DCI mode but to get the
+                         error of the flux in COI and DCI mode, the error of
+                         the continuum can be used (see below). 
+
+       Error of Center : - the scaled formal 1-sigma error of the center
+                           position (GAUSSIAN and LORENTZIAN)
+                         - the center error in COI and DCI mode is always 0.
+
+       Error of Width : - the scaled formal 1-sigma error of the width in
+                          percent of the width (GAUSSIAN and LORENTZIAN)
+                        - the width error in COI and DCI mode is always 0.
+
+       Error of Continuum : stddev between the data values and the fitted
+                            baseline in the baseline fitting region (all modes)
+
+       Error of Equivalent width : error of the equivalent width in percent of
+                                   the equivalent width. 
+                          Error of equivalent width = Error of Flux / 100. *
+                                   Flux / Continuum * binsize / 
+                                   equivalent width * 100.
+                          Binsize is the width of a bin in spectral direction.
+                          The error of the continuum is ignored.
+
+
+
+Fit parameters shown in the Info area:
+======================================
+
+The fit parameters shown in the Info area are listed below.
+The top line in the Info area states the fit parameters and the second line 
+states the error of the fit parameter:
+
+Abbreviation in the Info area | Physical quantity 
+------------------------------|---------------------
+Flux			      | Flux
+Cent			      | Center
+Sigma, HWHM or Width,         |
+   depending on method used   | Width
+Cont			      | Continuum
+Slope			      |	Slope
+EW                            | Equivalent width
+
+
+
+
+
+
+Display Fit Results:
+====================
+When having fitted all spectra ('Action->Fit all spectra') the determined fit
+parameters or derived quantities can be displayed in any panel window by
+selecting an entry form the pulldown menu located below the panel windows.
+
+The following table lists the name of the fit parameter (or derived quantity)
+in the these pulldown menus and the physical quantity.
+
+Name in the 'Show'      | Physical quantity 
+pulldown menu           |
+in the Line fitting     |
+section                 |
+------------------------|--------------------------------------------------------
+Flux                    | Flux 
+Flux Error [%]          | Error of flux in percent of the flux
+Center                  | Center wavelength 
+Center Error            | Error in center wavelength
+Center rel. to line     |
+   ident. [km/s]        | Velocity offset relative to line identification in
+                        |   km/s if wavelengths are available
+                        |   At least one line identification must be present
+			|   in the spectrum plotted in the Plot window.
+Center Error rel. to    |
+   line ident. [km/s]   | Error in velocity offset relative to line
+                        |   identification in km/s if wavelengths are
+			|   available (only GAUSSIAN and LORENTZIAN). At least
+			|   one line identification must be present in the
+			|   spectrum plotted in the Plot window.
+Width                   | The width
+Width Error [%]         | The error of the width in percent of the width
+Width[km/s]             | The full width in km/s when wavelengths are available:
+                        |    - GAUSSIAN : 2.35*Sigma / center wavelength * sol 
+                        |    - LORENTZIAN : 2*HWHM /center wavelength * sol
+                        |    sol : speed of light
+                        |    Be aware that in COI mode the width is not
+                        |    constant since the center wavelength may vary.
+Equivalent Width        | The equivalent width
+Equivalent Width Error  | The equivalent width error
+Continuum               | The continuum level
+Continuum Error         | The continuum level error
+Linear Continuum Slope  | The slope
+Chi2                    | The mean squared difference between the fit and data
+Special                 | only available when performing an independent baseline fit, 
+                          peak value divided by the RMS of the baseline fit.
+
+
+In case of double Gaussian fits, the results may need sorting if the two line
+fit regions are significantly overlapping. After having
+selected what to show another dialog pops up which allows to sort the
+parameters of the two Gaussians. Sorting options are:
+   Sort flux             : In each pixel sort the two flux values of the fit.
+   Sort wavelength       : In each pixel sort the two wavelength values of the fit.
+   Sort width            : In each pixel sort the two sigma values of the fit.
+   Sort equivalent width : In each pixel sort the two equivalent width values of the fit.
+
+   Show component : Displays either the lower or the higher component in the
+   right panel window
+
+   Do not sort : Do not sort
+
+Example 1: a double gaussian fit has been performed. Selecting 'Flux' from the
+'Show' menu and 'Sort wavelength' with 'Show component: Lower' displays the
+flux values of the gaussian fit with the lower central wavelength. 
+
+Example 2: a double gaussian fit has been performed. Selecting 'Flux' from the
+'Show' menu and 'Sort width' with 'Show component: Lower' displays the
+flux values of the gaussian fit with the smaller width. This is useful if a
+broad component with a narrow component atop has been fitted. 
+
+
+
+What fit parameters are saved:
+==============================
+Fit results and their errors are saved in fits files. Unless noted, the main
+image contains the fit parameter, the first extension contains the error, and
+the second extension is 1 where the fit succeeded and 0 else. The files are
+named 'XXX_YYY_ZZZ.fits with XXX being the name you have chosen, ZZZ being 
+the fit method (COI, DCI, GAUSSIAN or LORENTZIAN) and YYY being one of the
+following:
+
+YYY       | what is saved in which extension
+----------|-----------------------------------------------
+Flux      |   main   : Flux
+          |   1. ext : Error of flux
+          |   2. ext : 1 if fit succeeded, 0 else
+Center    |   main   : Center
+          |   1. ext : Error of center
+          |   2. ext : 1 if fit succeeded, 0 else
+Width     |   main   : Width
+          |   1. ext : Error of width
+          |   2. ext : 1 if fit succeeded, 0 else
+Cont      |   main   : Continuum
+          |   1. ext : Error of continuum
+          |   2. ext : 1 if fit succeeded, 0 else
+EW        |   main   : equivalent width
+          |   1. ext : Error of equivalent width
+          |   2. ext : 1 if fit succeeded, 0 else
+ContSlope |   main   : Slope
+          |   1. ext : 1 if fit succeeded, 0 else
+Chi2      |   main   : Chi2
+          |   1. ext : 1 if fit succeeded, 0 else
+Special   |   main   : Chi2
+          |   1. ext : 1 if fit succeeded, 0 else
+
+In case of double Gaussian fits, all fits files contain three further
+extensions.
+E.g. Flux Compononent 1, Error of Flux Component 1, Success Component 1,
+     Flux Compononent 2, Error of Flux Component 2, Success Component 2
+
+
+==============================================================================
+! ! ! ! ! ! ! !
+IMPORTANT NOTE: 
+! ! ! ! ! ! ! !
+
+From version 2.60 on all errors saved to a fitsfile are absolute and are not
+scaled to the corresponding data value anymore.
+==============================================================================
+
+
+
+Appendix:
+=========
+
+
+Some notes on error calculus in IDL:
+------------------------------------
+Error calculus is only available when fitting a Gaussian or Lorentzian.
+The Gaussian and Lorentzian are determined by:
+
+   Model     A[0]*exp(-0.5*u^2)   A[0]/(u^2 + 1) 
+
+   A[0]         Peak Value          Peak Value     
+   A[1]        Peak Centroid       Peak Centroid   
+   A[2]       Gaussian Sigma           HWHM (1)
+
+   Notes: u = (x - A[1])/A[2]
+          (1) Half-width at half maximum
+
+   The area under a gaussian peak is   AG = A[0]*A[2]*SQRT(2*!PI)
+   The area under a lorentzian peak is AL = A[0]*A[2]*!PI.
+
+   As measurement error the square root of the absolute data values is used.
+
+   The formal 1-sigma errors in each parameter are then calculated by:
+
+   bestnorm : the value of the summed squared weighted
+              residuals for the returned parameter values,
+              i.e. TOTAL(DEVIATES^2)
+   perror   : The formal 1-sigma errors in each parameter, computed
+              from the covariance matrix
+
+   DOF   = N_ELEMENTS(X) - N_ELEMENTS(PARMS) ; deg of freedom
+   ERROR = PERROR * SQRT(BESTNORM / DOF)     ; scaled uncertainties
+
+   ERROR, the scaled formal 1-sigma errors, are used and displayed as errors.
+
+   The total flux is defined as AG or AL divided by the spectral sampling (width of
+   a spectral bin) !!!
+   The error in total flux (in percent of the total flux) is then defined as :
+      sqrt( (ERROR[0]*A[2])^2 + (ERROR[2]*A[0])^2 ) / (A[0]*A[2]) * 100.
+
+
+

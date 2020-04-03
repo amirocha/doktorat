@@ -5,10 +5,8 @@ file in  "../spectraOdp.30m"
 find /all
 set source NGC1333-I2A 
 set line C34S(3-2)
-!set frequency 146916 147022
+set frequency 144564 144670
 find /all
-
-
 
 
 file out ngc1333_c34s32_red.30m single /overwrite
@@ -33,8 +31,8 @@ let b_new beta*180/pi
 
 find /all
 set source NGC1333-I4AB
-set line CS(3-2)
-!set frequency 146916 147022
+set line C34S(3-2)
+set frequency 144564 144670
 find /all
 
 for i 1 to found
