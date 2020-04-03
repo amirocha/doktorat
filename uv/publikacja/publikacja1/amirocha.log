@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2019.5.16)  2 APR 2020 20:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2019.5.16)  3 APR 2020 04:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1117,25 +1117,27 @@ Overfull \hbox (28.45276pt too wide) in paragraph at lines 680--684
 
 File: serpens_hcn10_and_cn10.eps Graphic file (type eps)
 <serpens_hcn10_and_cn10.eps> [8]
-Underfull \vbox (badness 1184) has occurred while \output is active []
+Underfull \hbox (badness 2644) in paragraph at lines 760--766
+[]\T1/txr/m/n/10 Majority of the sources show firm de-tec-tion in both
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: reactions-large.eps Graphic file (type eps)
 
 <reactions-large.eps>
 File: destruction_HCN_dominant.eps Graphic file (type eps)
  <destruction_HCN_dominant.eps>
-Overfull \hbox (28.45276pt too wide) in paragraph at lines 778--781
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 777--780
 [][] 
  []
 
 [9]
-Underfull \vbox (badness 1546) has occurred while \output is active []
-
-
 Underfull \vbox (badness 2469) has occurred while \output is active []
 
  [10]
-[11] (./amirocha.bbl
+(./amirocha.bbl [11]
 Underfull \hbox (badness 10000) in paragraph at lines 349--351
 []\T1/txr/m/n/8 Pickett, H. M., Poyn-ter, R. L., Co-hen, E. A., et al. 1998,
  []
@@ -1231,10 +1233,10 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  7995 strings out of 494924
  110520 string characters out of 6180768
- 233643 words of memory out of 5000000
+ 232643 words of memory out of 5000000
  11078 multiletter control sequences out of 15000+600000
  81501 words of font info for 141 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,15n,77p,2020b,580s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on amirocha.dvi (21 pages, 112728 bytes).
+Output written on amirocha.dvi (21 pages, 112292 bytes).
