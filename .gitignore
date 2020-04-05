@@ -6,6 +6,7 @@ env/
 *.apex
 *.tgz
 *.fits
+*.zip
 
 #lmv maps
 *.tab

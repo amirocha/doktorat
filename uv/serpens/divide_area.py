@@ -4,11 +4,11 @@ import math as m
 
 
 
-file2=open('serpens_hcn10_int.txt,'r')
+file2=open('serpens_hcn10_wings_smm4.txt','r')
 lines2=file2.readlines()
 file2.close()
 
-file1=open('serpens_cn10_int.txt','r')
+file1=open('serpens_cn10_wings_smm4.txt','r')
 lines=file1.readlines()
 file1.close()
 
@@ -42,7 +42,7 @@ for i in range(len(cn10)):  #rewrite the third column
    column3.append(cn10[i][2])
 
 
-fileend=open('serpens_cn10_hcn10_divided.txt','w')
+fileend=open('serpens_cn10_hcn10_divided_smm4_wings.txt','w')
 
 results=[]
 for i in range(len(column1)):

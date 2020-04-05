@@ -1,4 +1,4 @@
-\begin{thebibliography}{81}
+\begin{thebibliography}{80}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Andr{\'e}} {et~al.}(2010){Andr{\'e}}, {Men'shchikov}, {Bontemps},
@@ -209,11 +209,6 @@
   {Wright}, {Xu}, {Zavagno}, {Zemcov}, {Zhang}, \& {Zonca}}]{Gri10}
 {Griffin}, M.~J., {Abergel}, A., {Abreu}, A., {et~al.} 2010, \aap, 518, L3
 
-\bibitem[{{Han} {et~al.}(2015){Han}, {Zhou}, {Wang}, {Esimbek}, {Zhang}, \&
-  {Wang}}]{Han15}
-{Han}, X.~H., {Zhou}, J.~J., {Wang}, J.~Z., {et~al.} 2015, Astronomy and
-  Astrophysics, 576, A131
-
 \bibitem[{{Harsono} {et~al.}(2015){Harsono}, {van Dishoeck}, {Bruderer}, {Li},
   \& {J{\o}rgensen}}]{Har15}
 {Harsono}, D., {van Dishoeck}, E.~F., {Bruderer}, S., {Li}, Z.~Y., \&
@@ -365,6 +360,10 @@
   {Wieprecht}, \& {Wiezorrek}}]{Pog10}
 {Poglitsch}, A., {Waelkens}, C., {Geis}, N., {et~al.} 2010, \aap, 518, L2
 
+\bibitem[{{Pratap} {et~al.}(1997){Pratap}, {Dickens}, {Snell}, {Miralles},
+  {Bergin}, {Irvine}, \& {Schloerb}}]{Pra97}
+{Pratap}, P., {Dickens}, J.~E., {Snell}, R.~L., {et~al.} 1997, \apj, 486, 862
+
 \bibitem[{{Riaz} {et~al.}(2018){Riaz}, {Thi}, \& {Caselli}}]{Ria18}
 {Riaz}, B., {Thi}, W.~F., \& {Caselli}, P. 2018, \mnras, 481, 4662
 
@@ -413,11 +412,6 @@
 
 \bibitem[{{Testi} \& {Sargent}(1998)}]{Tes98}
 {Testi}, L. \& {Sargent}, A.~I. 1998, \apjl, 508, L91
-
-\bibitem[{{Thi} {et~al.}(2004){Thi}, {van Zadelhoff}, \& {van
-  Dishoeck}}]{Thi04}
-{Thi}, W.~F., {van Zadelhoff}, G.~J., \& {van Dishoeck}, E.~F. 2004, Astronomy
-  and Astrophysics, 425, 955
 
 \bibitem[{{van der Tak} {et~al.}(2007){van der Tak}, {Black}, {Sch{\"o}ier},
   {Jansen}, \& {van Dishoeck}}]{vdT07}

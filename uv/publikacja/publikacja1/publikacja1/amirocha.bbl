@@ -1,4 +1,4 @@
-\begin{thebibliography}{81}
+\begin{thebibliography}{80}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Andr{\'e}} {et~al.}(2010){Andr{\'e}}, {Men'shchikov}, {Bontemps},
@@ -13,6 +13,9 @@
   {Waelkens}, {Woodcraft}, \& {Zavagno}}]{And10}
 {Andr{\'e}}, P., {Men'shchikov}, A., {Bontemps}, S., {et~al.} 2010, \aap, 518,
   L102
+
+\bibitem[{{Arce} \& {Sargent}(2006)}]{Arc06}
+{Arce}, H.~G. \& {Sargent}, A.~I. 2006, \apj, 646, 1070
 
 \bibitem[{{Bachiller} {et~al.}(2001){Bachiller}, {P{\'e}rez Guti{\'e}rrez},
   {Kumar}, \& {Tafalla}}]{Bac01}
@@ -156,6 +159,15 @@
 {Goldsmith}, P.~F., {Snell}, R.~L., {Hemeon-Heyer}, M., \& {Langer}, W.~D.
   1984, \apj, 286, 599
 
+\bibitem[{{Graves} {et~al.}(2010){Graves}, {Richer}, {Buckle}, {Duarte-Cabral},
+  {Fuller}, {Hogerheijde}, {Owen}, {Brunt}, {Butner}, {Cavanagh},
+  {Chrysostomou}, {Curtis}, {Davis}, {Etxaluze}, {di Francesco}, {Friberg},
+  {Friesen}, {Greaves}, {Hatchell}, {Johnstone}, {Matthews}, {Matthews},
+  {Matzner}, {Nutter}, {Rawlings}, {Roberts}, {Sadavoy}, {Simpson}, {Tothill},
+  {Tsamis}, {Viti}, {Ward-Thompson}, {White}, {Wouterloot}, \& {Yates}}]{Gra10}
+{Graves}, S.~F., {Richer}, J.~S., {Buckle}, J.~V., {et~al.} 2010, \mnras, 409,
+  1412
+
 \bibitem[{{Green} {et~al.}(2013){Green}, {Evans}, {J{\o}rgensen}, {Herczeg},
   {Kristensen}, {Lee}, {Dionatos}, {Yildiz}, {Salyk}, {Meeus}, {Bouwman},
   {Visser}, {Bergin}, {van Dishoeck}, {Rascati}, {Karska}, {van Kempen},
@@ -197,21 +209,6 @@
   {Wright}, {Xu}, {Zavagno}, {Zemcov}, {Zhang}, \& {Zonca}}]{Gri10}
 {Griffin}, M.~J., {Abergel}, A., {Abreu}, A., {et~al.} 2010, \aap, 518, L3
 
-\bibitem[{{G{\"u}sten} {et~al.}(2008){G{\"u}sten}, {Baryshev}, {Bell},
-  {Belloche}, {Graf}, {Hafok}, {Heyminck}, {Hochg{\"u}rtel}, {Honingh},
-  {Jacobs}, {Kasemann}, {Klein}, {Klein}, {Korn}, {Kr{\"a}mer}, {Leinz},
-  {Lundgren}, {Menten}, {Meyer}, {Muders}, {Pacek}, {Rabanus}, {Sch{\"a}fer},
-  {Schilke}, {Schneider}, {Stutzki}, {Wieching}, {Wunsch}, \&
-  {Wyrowski}}]{Gus08}
-{G{\"u}sten}, R., {Baryshev}, A., {Bell}, A., {et~al.} 2008, Society of
-  Photo-Optical Instrumentation Engineers (SPIE) Conference Series, Vol. 7020,
-  {Submillimeter heterodyne arrays for APEX}, 702010
-
-\bibitem[{{Han} {et~al.}(2015){Han}, {Zhou}, {Wang}, {Esimbek}, {Zhang}, \&
-  {Wang}}]{Han15}
-{Han}, X.~H., {Zhou}, J.~J., {Wang}, J.~Z., {et~al.} 2015, Astronomy and
-  Astrophysics, 576, A131
-
 \bibitem[{{Harsono} {et~al.}(2015){Harsono}, {van Dishoeck}, {Bruderer}, {Li},
   \& {J{\o}rgensen}}]{Har15}
 {Harsono}, D., {van Dishoeck}, E.~F., {Bruderer}, S., {Li}, Z.~Y., \&
@@ -234,7 +231,7 @@
 
 \bibitem[{{Karska} {et~al.}(2013){Karska}, {Herczeg}, {van Dishoeck},
   {Wampfler}, {Kristensen}, {Goicoechea}, {Visser}, {Nisini}, {San
-  Jos{\'e}-Garc{\'{\i}}a}, {Bruderer}, {{\'S}niady}, {Doty}, {Fedele},
+  Jos{\'e}-Garc{\'\i}a}, {Bruderer}, {{\'S}niady}, {Doty}, {Fedele},
   {Y{\i}ld{\i}z}, {Benz}, {Bergin}, {Caselli}, {Herpin}, {Hogerheijde},
   {Johnstone}, {J{\o}rgensen}, {Liseau}, {Tafalla}, {van der Tak}, \&
   {Wyrowski}}]{Kar13}
@@ -254,21 +251,27 @@
 {Karska}, A., {Kristensen}, L.~E., {van Dishoeck}, E.~F., {et~al.} 2014, \aap,
   572, A9
 
-\bibitem[{{Kasemann} {et~al.}(2006){Kasemann}, {G{\"u}sten}, {Heyminck},
-  {Klein}, {Klein}, {Philipp}, {Korn}, {Schneider}, {Henseler}, {Baryshev}, \&
-  {Klapwijk}}]{Kas06}
-{Kasemann}, C., {G{\"u}sten}, R., {Heyminck}, S., {et~al.} 2006, Society of
-  Photo-Optical Instrumentation Engineers (SPIE) Conference Series, Vol. 6275,
-  {CHAMP $^{+}$: a powerful array receiver for APEX}, 62750N
+\bibitem[{{Kirk} {et~al.}(2013){Kirk}, {Ward-Thompson}, {Palmeirim},
+  {Andr{\'e}}, {Griffin}, {Hargrave}, {K{\"o}nyves}, {Bernard}, {Nutter},
+  {Sibthorpe}, {Di Francesco}, {Abergel}, {Arzoumanian}, {Benedettini},
+  {Bontemps}, {Elia}, {Hennemann}, {Hill}, {Men'shchikov}, {Motte},
+  {Nguyen-Luong}, {Peretto}, {Pezzuto}, {Rygl}, {Sadavoy}, {Schisano},
+  {Schneider}, {Testi}, \& {White}}]{Kir13}
+{Kirk}, J.~M., {Ward-Thompson}, D., {Palmeirim}, P., {et~al.} 2013, \mnras,
+  432, 1424
 
 \bibitem[{{Klein} {et~al.}(2006){Klein}, {Philipp}, {Kr{\"a}mer}, {Kasemann},
   {G{\"u}sten}, \& {Menten}}]{Kle06}
 {Klein}, B., {Philipp}, S.~D., {Kr{\"a}mer}, I., {et~al.} 2006, \aap, 454, L29
 
-\bibitem[{{Kristensen} {et~al.}(2003){Kristensen}, {Gustafsson}, {Field},
-  {Callejo}, {Lemaire}, {Vannier}, \& {Pineau des For{\^e}ts}}]{Kri03}
-{Kristensen}, L.~E., {Gustafsson}, M., {Field}, D., {et~al.} 2003, \aap, 412,
-  727
+\bibitem[{{K{\"o}nyves} {et~al.}(2015){K{\"o}nyves}, {Andr{\'e}},
+  {Men'shchikov}, {Palmeirim}, {Arzoumanian}, {Schneider}, {Roy}, {Didelon},
+  {Maury}, {Shimajiri}, {Di Francesco}, {Bontemps}, {Peretto}, {Benedettini},
+  {Bernard}, {Elia}, {Griffin}, {Hill}, {Kirk}, {Ladjelate}, {Marsh}, {Martin},
+  {Motte}, {Nguy{\^e}n Luong}, {Pezzuto}, {Roussel}, {Rygl}, {Sadavoy},
+  {Schisano}, {Spinoglio}, {Ward-Thompson}, \& {White}}]{Kon15}
+{K{\"o}nyves}, V., {Andr{\'e}}, P., {Men'shchikov}, A., {et~al.} 2015, \aap,
+  584, A91
 
 \bibitem[{{Kristensen} {et~al.}(2013){Kristensen}, {van Dishoeck}, {Benz},
   {Bruderer}, {Visser}, \& {Wampfler}}]{Kri13}
@@ -281,14 +284,6 @@
   {Lee}, {Maret}, {Tafalla}, {Visser}, \& {Wampfler}}]{Kri17}
 {Kristensen}, L.~E., {van Dishoeck}, E.~F., {Mottram}, J.~C., {et~al.} 2017,
   \aap, 605, A93
-
-\bibitem[{{Kristensen} {et~al.}(2010){Kristensen}, {van Dishoeck}, {van
-  Kempen}, {Cuppen}, {Brinch}, {J{\o}rgensen}, \& {Hogerheijde}}]{Kri10}
-{Kristensen}, L.~E., {van Dishoeck}, E.~F., {van Kempen}, T.~A., {et~al.} 2010,
-  \aap, 516, A57
-
-\bibitem[{{Kroupa}(2002)}]{Kro02}
-{Kroupa}, P. 2002, Science, 295, 82
 
 \bibitem[{{Lee} {et~al.}(2014){Lee}, {Fern{\'a}ndez-L{\'o}pez}, {Storm},
   {Looney}, {Mundy}, {Segura-Cox}, {Teuben}, {Rosolowsky}, {Arce}, {Ostriker},
@@ -365,6 +360,10 @@
   {Wieprecht}, \& {Wiezorrek}}]{Pog10}
 {Poglitsch}, A., {Waelkens}, C., {Geis}, N., {et~al.} 2010, \aap, 518, L2
 
+\bibitem[{{Pratap} {et~al.}(1997){Pratap}, {Dickens}, {Snell}, {Miralles},
+  {Bergin}, {Irvine}, \& {Schloerb}}]{Pra97}
+{Pratap}, P., {Dickens}, J.~E., {Snell}, R.~L., {et~al.} 1997, \apj, 486, 862
+
 \bibitem[{{Riaz} {et~al.}(2018){Riaz}, {Thi}, \& {Caselli}}]{Ria18}
 {Riaz}, B., {Thi}, W.~F., \& {Caselli}, P. 2018, \mnras, 481, 4662
 
@@ -414,11 +413,6 @@
 \bibitem[{{Testi} \& {Sargent}(1998)}]{Tes98}
 {Testi}, L. \& {Sargent}, A.~I. 1998, \apjl, 508, L91
 
-\bibitem[{{Thi} {et~al.}(2004){Thi}, {van Zadelhoff}, \& {van
-  Dishoeck}}]{Thi04}
-{Thi}, W.~F., {van Zadelhoff}, G.~J., \& {van Dishoeck}, E.~F. 2004, Astronomy
-  and Astrophysics, 425, 955
-
 \bibitem[{{van der Tak} {et~al.}(2007){van der Tak}, {Black}, {Sch{\"o}ier},
   {Jansen}, \& {van Dishoeck}}]{vdT07}
 {van der Tak}, F.~F.~S., {Black}, J.~H., {Sch{\"o}ier}, F.~L., {Jansen}, D.~J.,
@@ -428,52 +422,40 @@
 {van Dishoeck}, E.~F. 1987, in IAU Symposium, Vol. 120, Astrochemistry, ed.
   M.~S. {Vardya} \& S.~P. {Tarafdar}, 51--65
 
-\bibitem[{{van Dishoeck} {et~al.}(2011{\natexlab{a}}){van Dishoeck},
-  {Kristensen}, {Benz}, {Bergin}, {Caselli}, {Cernicharo}, {Herpin},
-  {Hogerheijde}, {Johnstone}, {Liseau}, {Nisini}, {Shipman}, {Tafalla}, {van
-  der Tak}, {Wyrowski}, {Aikawa}, {Bachiller}, {Baudry}, {Benedettini},
-  {Bjerkeli}, {Blake}, {Bontemps}, {Braine}, {Brinch}, {Bruderer},
-  {Chavarr{\'{\i}}a}, {Codella}, {Daniel}, {de Graauw}, {Deul}, {di Giorgio},
-  {Dominik}, {Doty}, {Dubernet}, {Encrenaz}, {Feuchtgruber}, {Fich},
-  {Frieswijk}, {Fuente}, {Giannini}, {Goicoechea}, {Helmich}, {Herczeg},
-  {Jacq}, {J{\o}rgensen}, {Karska}, {Kaufman}, {Keto}, {Larsson}, {Lefloch},
-  {Lis}, {Marseille}, {McCoey}, {Melnick}, {Neufeld}, {Olberg}, {Pagani},
-  {Pani{\'c}}, {Parise}, {Pearson}, {Plume}, {Risacher}, {Salter},
-  {Santiago-Garc{\'{\i}}a}, {Saraceno}, {St{\"a}uber}, {van Kempen}, {Visser},
-  {Viti}, {Walmsley}, {Wampfler}, \& {Y{\i}ld{\i}z}}]{WISH}
-{van Dishoeck}, E.~F., {Kristensen}, L.~E., {Benz}, A.~O., {et~al.}
-  2011{\natexlab{a}}, \pasp, 123, 138
+\bibitem[{{van Dishoeck} {et~al.}(2011){van Dishoeck}, {Kristensen}, {Benz},
+  {Bergin}, {Caselli}, {Cernicharo}, {Herpin}, {Hogerheijde}, {Johnstone},
+  {Liseau}, {Nisini}, {Shipman}, {Tafalla}, {van der Tak}, {Wyrowski},
+  {Aikawa}, {Bachiller}, {Baudry}, {Benedettini}, {Bjerkeli}, {Blake},
+  {Bontemps}, {Braine}, {Brinch}, {Bruderer}, {Chavarr{\'\i}a}, {Codella},
+  {Daniel}, {de Graauw}, {Deul}, {di Giorgio}, {Dominik}, {Doty}, {Dubernet},
+  {Encrenaz}, {Feuchtgruber}, {Fich}, {Frieswijk}, {Fuente}, {Giannini},
+  {Goicoechea}, {Helmich}, {Herczeg}, {Jacq}, {J{\o}rgensen}, {Karska},
+  {Kaufman}, {Keto}, {Larsson}, {Lefloch}, {Lis}, {Marseille}, {McCoey},
+  {Melnick}, {Neufeld}, {Olberg}, {Pagani}, {Pani{\'c}}, {Parise}, {Pearson},
+  {Plume}, {Risacher}, {Salter}, {Santiago-Garc{\'\i}a}, {Saraceno},
+  {St{\"a}uber}, {van Kempen}, {Visser}, {Viti}, {Walmsley}, {Wampfler}, \&
+  {Y{\i}ld{\i}z}}]{vDi11}
+{van Dishoeck}, E.~F., {Kristensen}, L.~E., {Benz}, A.~O., {et~al.} 2011,
+  \pasp, 123, 138
 
-\bibitem[{{van Dishoeck} {et~al.}(2011{\natexlab{b}}){van Dishoeck},
-  {Kristensen}, {Benz}, {Bergin}, {Caselli}, {Cernicharo}, {Herpin},
-  {Hogerheijde}, {Johnstone}, {Liseau}, {Nisini}, {Shipman}, {Tafalla}, {van
-  der Tak}, {Wyrowski}, {Aikawa}, {Bachiller}, {Baudry}, {Benedettini},
-  {Bjerkeli}, {Blake}, {Bontemps}, {Braine}, {Brinch}, {Bruderer},
-  {Chavarr{\'\i}a}, {Codella}, {Daniel}, {de Graauw}, {Deul}, {di Giorgio},
-  {Dominik}, {Doty}, {Dubernet}, {Encrenaz}, {Feuchtgruber}, {Fich},
-  {Frieswijk}, {Fuente}, {Giannini}, {Goicoechea}, {Helmich}, {Herczeg},
-  {Jacq}, {J{\o}rgensen}, {Karska}, {Kaufman}, {Keto}, {Larsson}, {Lefloch},
-  {Lis}, {Marseille}, {McCoey}, {Melnick}, {Neufeld}, {Olberg}, {Pagani},
-  {Pani{\'c}}, {Parise}, {Pearson}, {Plume}, {Risacher}, {Salter},
-  {Santiago-Garc{\'\i}a}, {Saraceno}, {St{\"a}uber}, {van Kempen}, {Visser},
-  {Viti}, {Walmsley}, {Wampfler}, \& {Y{\i}ld{\i}z}}]{vDi11}
-{van Dishoeck}, E.~F., {Kristensen}, L.~E., {Benz}, A.~O., {et~al.}
-  2011{\natexlab{b}}, \pasp, 123, 138
+\bibitem[{{van Kempen} {et~al.}(2009{\natexlab{a}}){van Kempen}, {van
+  Dishoeck}, {G{\"u}sten}, {Kristensen}, {Schilke}, {Hogerheijde}, {Boland },
+  {Menten}, \& {Wyrowski}}]{vKe09a}
+{van Kempen}, T.~A., {van Dishoeck}, E.~F., {G{\"u}sten}, R., {et~al.}
+  2009{\natexlab{a}}, \aap, 507, 1425
 
-\bibitem[{{van Kempen} {et~al.}(2009){van Kempen}, {van Dishoeck},
-  {G{\"u}sten}, {Kristensen}, {Schilke}, {Hogerheijde}, {Boland }, {Menten}, \&
-  {Wyrowski}}]{vK09}
-{van Kempen}, T.~A., {van Dishoeck}, E.~F., {G{\"u}sten}, R., {et~al.} 2009,
-  \aap, 507, 1425
+\bibitem[{{van Kempen} {et~al.}(2009{\natexlab{b}}){van Kempen}, {van
+  Dishoeck}, {G{\"u}sten}, {Kristensen}, {Schilke}, {Hogerheijde}, {Boland},
+  {Nefs}, {Menten}, {Baryshev}, \& {Wyrowski}}]{vKe09b}
+{van Kempen}, T.~A., {van Dishoeck}, E.~F., {G{\"u}sten}, R., {et~al.}
+  2009{\natexlab{b}}, \aap, 501, 633
 
-\bibitem[{{Wakelam} {et~al.}(2012){Wakelam}, {Herbst}, {Loison}, {Smith},
-  {Chandrasekaran}, {Pavone}, {Adams}, {Bacchus-Montabonel}, {Bergeat},
-  {B{\'e}roff}, {Bierbaum}, {Chabot}, {Dalgarno}, {van Dishoeck}, {Faure},
-  {Geppert}, {Gerlich}, {Galli}, {H{\'e}brard}, {Hersant}, {Hickson},
-  {Honvault}, {Klippenstein}, {Le Picard}, {Nyman}, {Pernot}, {Schlemmer},
-  {Selsis}, {Sims}, {Talbi}, {Tennyson}, {Troe}, {Wester}, \&
-  {Wiesenfeld}}]{Wak12}
-{Wakelam}, V., {Herbst}, E., {Loison}, J.~C., {et~al.} 2012, \apjs, 199, 21
+\bibitem[{{Wakelam} {et~al.}(2015){Wakelam}, {Loison}, {Herbst}, {Pavone},
+  {Bergeat}, {B{\'e}roff}, {Chabot}, {Faure}, {Galli}, {Geppert}, {Gerlich},
+  {Gratier}, {Harada}, {Hickson}, {Honvault}, {Klippenstein}, {Le Picard},
+  {Nyman}, {Ruaud}, {Schlemmer}, {Sims}, {Talbi}, {Tennyson}, \&
+  {Wester}}]{Wak15}
+{Wakelam}, V., {Loison}, J.~C., {Herbst}, E., {et~al.} 2015, \apjs, 217, 20
 
 \bibitem[{{Walker-Smith} {et~al.}(2014){Walker-Smith}, {Richer}, {Buckle},
   {Hatchell}, \& {Drabek-Maunder}}]{Wal14}
@@ -517,6 +499,12 @@
   {Risacher}, {van der Marel}, {van Weeren}, \& {Wyrowski}}]{Yil15}
 {Y{\i}ld{\i}z}, U.~A., {Kristensen}, L.~E., {van Dishoeck}, E.~F., {et~al.}
   2015, \aap, 576, A109
+
+\bibitem[{{Y{\i}ld{\i}z} {et~al.}(2013){Y{\i}ld{\i}z}, {Kristensen}, {van
+  Dishoeck}, {San Jos{\'e}-Garc{\'\i}a}, {Karska}, {Harsono}, {Tafalla},
+  {Fuente}, {Visser}, {J{\o}rgensen}, \& {Hogerheijde}}]{Yil13}
+{Y{\i}ld{\i}z}, U.~A., {Kristensen}, L.~E., {van Dishoeck}, E.~F., {et~al.}
+  2013, \aap, 556, A89
 
 \bibitem[{{Yvart} {et~al.}(2016){Yvart}, {Cabrit}, {Pineau des For{\^e}ts}, \&
   {Ferreira}}]{Yva16}

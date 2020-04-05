@@ -4,44 +4,44 @@ The top-level auxiliary file: amirocha.aux
 The style file: aa.bst
 Database file #1: amirocha.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 81 entries,
+You've used 80 entries,
             3039 wiz_defined-function locations,
-            1253 strings with 41844 characters,
-and the built_in function-call counts, 89780 in all, are:
-= -- 6514
-> -- 12729
+            1245 strings with 41595 characters,
+and the built_in function-call counts, 89370 in all, are:
+= -- 6478
+> -- 12707
 < -- 12
-+ -- 4248
-- -- 4166
-* -- 8769
-:= -- 16971
-add.period$ -- 81
-call.type$ -- 81
-change.case$ -- 1712
-chr.to.int$ -- 80
-cite$ -- 81
-duplicate$ -- 1501
-empty$ -- 2125
-format.name$ -- 4379
-if$ -- 17380
++ -- 4241
+- -- 4160
+* -- 8735
+:= -- 16897
+add.period$ -- 80
+call.type$ -- 80
+change.case$ -- 1706
+chr.to.int$ -- 79
+cite$ -- 80
+duplicate$ -- 1482
+empty$ -- 2098
+format.name$ -- 4370
+if$ -- 17298
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 80
-newline$ -- 247
-num.names$ -- 325
-pop$ -- 1704
+missing$ -- 79
+newline$ -- 244
+num.names$ -- 321
+pop$ -- 1698
 preamble$ -- 1
-purify$ -- 1712
+purify$ -- 1706
 quote$ -- 0
-skip$ -- 1287
+skip$ -- 1270
 stack$ -- 0
-substring$ -- 1713
+substring$ -- 1689
 swap$ -- 11
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 729
+type$ -- 720
 warning$ -- 0
-while$ -- 325
+while$ -- 321
 width$ -- 0
-write$ -- 813
+write$ -- 803
