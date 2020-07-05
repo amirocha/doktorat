@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.16)  14 FEB 2020 22:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.16)  20 APR 2020 21:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -900,7 +900,7 @@ LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<serpens_spectra.pdf, id=44, 345.56602pt x 508.38182pt>
+<serpens_spectra.pdf, id=45, 345.56602pt x 508.38182pt>
 File: serpens_spectra.pdf Graphic file (type pdf)
 <use serpens_spectra.pdf>
 Package pdftex.def Info: serpens_spectra.pdf  used on input line 96.
@@ -913,7 +913,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 pdfTeX warning: pdflatex (file ./serpens_map.pdf): PDF inclusion: found PDF ver
 sion <1.7>, but at most version <1.5> allowed
-<serpens_map.pdf, id=45, 263.98625pt x 291.0875pt>
+<serpens_map.pdf, id=48, 263.98625pt x 291.0875pt>
 File: serpens_map.pdf Graphic file (type pdf)
 <use serpens_map.pdf>
 Package pdftex.def Info: serpens_map.pdf  used on input line 104.
@@ -922,7 +922,7 @@ Package pdftex.def Info: serpens_map.pdf  used on input line 104.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [2]
-<radex.pdf, id=72, 578.16pt x 578.16pt>
+<radex.pdf, id=76, 578.16pt x 578.16pt>
 File: radex.pdf Graphic file (type pdf)
 <use radex.pdf>
 Package pdftex.def Info: radex.pdf  used on input line 113.
@@ -931,16 +931,17 @@ Package pdftex.def Info: radex.pdf  used on input line 113.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<CN_HCN.pdf, id=78, 462.72874pt x 346.29375pt>
+<CN_HCN.pdf, id=82, 462.72874pt x 346.29375pt>
 File: CN_HCN.pdf Graphic file (type pdf)
 <use CN_HCN.pdf>
 Package pdftex.def Info: CN_HCN.pdf  used on input line 123.
 (pdftex.def)             Requested size: 230.46574pt x 172.47537pt.
-<CN_CS.pdf, id=79, 462.72874pt x 346.29375pt>
+<CN_CS.pdf, id=83, 462.72874pt x 346.29375pt>
 File: CN_CS.pdf Graphic file (type pdf)
 <use CN_CS.pdf>
 Package pdftex.def Info: CN_CS.pdf  used on input line 129.
 (pdftex.def)             Requested size: 230.46574pt x 172.47537pt.
+[3 <./serpens_spectra.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -950,14 +951,17 @@ Overfull \hbox (3.88744pt too wide) in paragraph at lines 137--140
 al Sci-ence Cen-ter grant 2016/21/D/ST9/01098.
  []
 
-[3 <./serpens_spectra.pdf>] [4 <./serpens_map.pdf>] [5 <./radex.pdf> <./CN_HCN.
-pdf> <./CN_CS.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 165.
+[4 <./serpens_map.pdf>]
+
+LaTeX Warning: Text page 5 contains only floats.
+
+[5 <./radex.pdf> <./CN_HCN.pdf> <./CN_CS.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 166.
  [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 165.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 166.
  (./amirocha_aasp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 165.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 165.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 166.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 166.
 Package rerunfilecheck Info: File `amirocha_aasp.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -965,16 +969,16 @@ Package rerunfilecheck Info: File `amirocha_aasp.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 165.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 166.
  ) 
 Here is how much of TeX's memory you used:
- 7472 strings out of 494923
- 104390 string characters out of 6180742
- 188595 words of memory out of 5000000
- 10627 multiletter control sequences out of 15000+600000
+ 7474 strings out of 494923
+ 104413 string characters out of 6180742
+ 188824 words of memory out of 5000000
+ 10628 multiletter control sequences out of 15000+600000
  23321 words of font info for 71 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 32i,13n,24p,2166b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,13n,24p,2361b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/agnieszka/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000
 .600pk> </home/agnieszka/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ect
 i1000.600pk> </home/agnieszka/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/e
@@ -997,10 +1001,10 @@ s/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on amirocha_aasp.pdf (6 pages, 503692 bytes).
+Output written on amirocha_aasp.pdf (6 pages, 506126 bytes).
 PDF statistics:
- 643 PDF objects out of 1000 (max. 8388607)
- 195 compressed objects within 2 object streams
- 37 named destinations out of 1000 (max. 500000)
+ 649 PDF objects out of 1000 (max. 8388607)
+ 198 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
