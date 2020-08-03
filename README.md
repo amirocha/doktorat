@@ -20,7 +20,7 @@ alias doc="cd ~/doktorat && ve"`
 Przeładować terminal i potem można z dowolnego miejsca polecieniem `doc` przejść do doktoratu z aktywnym wirtualnym środowiskiem
 
 ## Wirtualne środowisko
-#### Nowe biblioteki dodawać do pliku `libraries.txt` a następnie instalować polecieniem `make install`. Dzięki temu będzie dla potomności wiadomo, co jest potrzebne w projekcie
+Nowe biblioteki dodawać do pliku `libraries.txt` a następnie instalować polecieniem `make install`. Dzięki temu będzie dla potomności wiadomo, co jest potrzebne w projekcie
 
 ## GIT
 - sprawdzenie, jakie zmiany zaszły od ostatniego wpisu: `git status`
